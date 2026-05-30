@@ -28,7 +28,7 @@ export default function Home() {
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-6">
           {/* Hero badge */}
-          ZAX · 個人 AI 工作站
+          ZAX 台灣隊 | AI 工作站
         </div>
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           ZAX 台灣隊、二手 server,<br />
@@ -68,16 +68,16 @@ export default function Home() {
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
           fortune 系統是 ZAX 主腦線上第一個跑到「真實朋友 user」的產品。
-          AI 算命 LINE bot — 接 LINE webhook、本地 qwen3 30B 出文、4 主題卡片 +
+          AI 算命 LINE bot — 接 LINE webhook、本地 AI 模型出文、4 主題卡片 +
           三派折疊 + hero 區塊;目前先在朋友開的通訊行落地試用。
         </p>
         <div className="grid md:grid-cols-3 gap-4">
           <div className="glass rounded-xl p-5 glow-cyan">
             <div className="text-[color:var(--accent-cyan)] text-xs mb-2">UPSTREAM</div>
-            <div className="font-semibold mb-1">本地 qwen3 30B</div>
+            <div className="font-semibold mb-1">本地 AI 模型</div>
             <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
               Combo prompt hard contract + extractTopics 4 變體寬鬆 regex,
-              讓 30B 穩穩出 4 主題不偷懶。
+              讓本地模型穩穩出 4 主題不偷懶。
             </p>
           </div>
           <div className="glass rounded-xl p-5">
@@ -353,7 +353,7 @@ export default function Home() {
       <footer className="px-6 py-10 mt-auto border-t border-[color:var(--border)] text-xs text-[color:var(--fg-2)]">
         <div className="max-w-5xl mx-auto flex flex-wrap items-center gap-3">
           <span className="neon-text font-bold tracking-widest">ZAX</span>
-          <span>· 個人 AI 工作站 · 台灣隊</span>
+          <span>· AI 工作站 · 台灣隊</span>
           <span className="grow" />
           <span>© 2026 zax.com.tw</span>
         </div>
