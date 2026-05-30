@@ -31,7 +31,7 @@ export default function Home() {
           ZAX · 個人 AI 工作站
         </div>
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-          一個人、台南、二手 server,<br />
+          ZAX 台灣隊、二手 server,<br />
           <span className="neon-text">把 AI 變成自己用得到的工作站。</span>
         </h1>
         <p className="text-[color:var(--fg-1)] text-base md:text-lg max-w-3xl mb-10 leading-relaxed">
@@ -155,14 +155,59 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ── 4. Phase 1 demo ── */}
+      {/* ── 4. Real case — ZAX 會員網 ── */}
+      <section
+        id="real-case-member"
+        className="px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
+          {/* Real case section — ZAX 會員網 */}
+          04 · REAL CASE
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          ZAX 會員網 — 老客戶圈 穩定供貨
+        </h2>
+        <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
+          ZAX 會員網是集團最早一條變現線。沒有公開廣告、不對外擴張,
+          服務集團多年累積的老客戶。下一代會員系統規劃中,
+          持續延伸這條線的價值。
+        </p>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">LEGACY</div>
+            <div className="font-semibold mb-1">集團原會員網</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              ZAX 集團 multi-year 累積的老客戶圈,統編 81177549,
+              不公開廣告、口碑線運作。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">CHANNEL</div>
+            <div className="font-semibold mb-1">LINE 為主 / PAYUNi 全通道</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              既有客戶日常下單以 LINE 為主,大額金流走 PAYUNi 全通道
+              (一次付清 / Apple Pay / ATM / 超商代碼)。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5 glow-purple">
+            <div className="text-[color:var(--accent-purple)] text-xs mb-2">NEXT</div>
+            <div className="font-semibold mb-1">下一代會員系統</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              規劃中:整合線上扣款 + 紅利錢包 + LINE 通知歸口,
+              把老客戶體驗收成一條線。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. Phase 1 demo ── */}
       <section
         id="demo"
         className="px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Phase 1 demo */}
-          04 · PHASE 1 DEMO
+          05 · PHASE 1 DEMO
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           social-poster — 11 產業社群發文 SaaS
@@ -218,14 +263,14 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ── 4. About ── */}
+      {/* ── 6. About ── */}
       <section
         id="about"
         className="px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* About */}
-          05 · ABOUT
+          06 · ABOUT
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           About — 一個人,沒有團隊。
@@ -233,8 +278,8 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-6 text-[color:var(--fg-1)] leading-relaxed">
           <div className="glass rounded-xl p-6">
             <p className="mb-3">
-              ZAX 是 一個人的工作站。台南、二手 server、不跟巨頭軍備、
-              不堆漂亮數字、不接創投線。
+              ZAX 是 一個人的工作站,也是台灣隊的小型 AI 自主線。
+              二手 server、不跟巨頭軍備、不堆漂亮數字、不接創投線。
             </p>
             <p>
               寫程式 → 失業 → 寫 AI → 把每天用得到的工具收成一條主腦線。
@@ -254,14 +299,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 5. Contact ── */}
+      {/* ── 7. Contact ── */}
       <section
         id="contact"
         className="px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Contact */}
-          06 · CONTACT
+          07 · CONTACT
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           想聊聊 / 想試用 / 想找問題
@@ -271,10 +316,10 @@ export default function Home() {
             <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">Email</span>
               <a
-                href="mailto:ardery8011@gmail.com"
+                href="mailto:zaxardery8011@gmail.com"
                 className="text-[color:var(--accent-cyan)] hover:underline"
               >
-                ardery8011@gmail.com
+                zaxardery8011@gmail.com
               </a>
             </div>
             <div className="flex items-baseline gap-3">
@@ -290,12 +335,12 @@ export default function Home() {
             </div>
             <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">所在</span>
-              <span>台南</span>
+              <span>台灣</span>
             </div>
           </div>
           <div className="mt-6 pt-5 border-t border-[color:var(--border)]">
             <a
-              href="mailto:ardery8011@gmail.com?subject=ZAX%20%E8%AB%AE%E8%A9%A2"
+              href="mailto:zaxardery8011@gmail.com?subject=ZAX%20%E5%8F%B0%E7%81%A3%E9%9A%8A%20%E8%AB%AE%E8%A9%A2"
               className="inline-block px-5 py-2.5 rounded-md text-sm btn-primary transition"
             >
               寄信給 ZAX
@@ -308,7 +353,7 @@ export default function Home() {
       <footer className="px-6 py-10 mt-auto border-t border-[color:var(--border)] text-xs text-[color:var(--fg-2)]">
         <div className="max-w-5xl mx-auto flex flex-wrap items-center gap-3">
           <span className="neon-text font-bold tracking-widest">ZAX</span>
-          <span>· 個人 AI 工作站 · 台南</span>
+          <span>· 個人 AI 工作站 · 台灣隊</span>
           <span className="grow" />
           <span>© 2026 zax.com.tw</span>
         </div>
