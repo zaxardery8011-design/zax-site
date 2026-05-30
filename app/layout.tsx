@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ZAX | 個人 AI 工作站",
   description:
-    "一個人、台南、二手 server — 不跟巨頭打軍備，做自己用得到的 AI 工作站。",
+    "ZAX 台灣隊、二手 server — 不跟巨頭打軍備，做自己用得到的 AI 工作站。",
 };
 
 export default function RootLayout({
