@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --bg-0: #070b18;
+  --bg-1: #0b1730;
+  --bg-2: #11264a;
+  --fg-0: #d6e1ee;
+  --fg-1: #98a4b6;
+  --fg-2: #5a6677;
+  --accent-cyan: #4ff0de;
+  --accent-purple: #b48fff;
+  --border: rgba(180, 143, 255, 0.18);
+  --glass: rgba(17, 38, 74, 0.55);
+}
+
+@theme inline {
+  --color-bg-0: var(--bg-0);
+  --color-bg-1: var(--bg-1);
+  --color-bg-2: var(--bg-2);
+  --color-fg-0: var(--fg-0);
+  --color-fg-1: var(--fg-1);
+  --color-fg-2: var(--fg-2);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-purple: var(--accent-purple);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html, body {
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(180, 143, 255, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(79, 240, 222, 0.10), transparent 65%),
+    linear-gradient(180deg, #070b18 0%, #0b1730 40%, #11264a 100%);
+  color: var(--fg-0);
+  background-attachment: fixed;
+  font-family: var(--font-sans), "Noto Sans TC", -apple-system, "Segoe UI", sans-serif;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(17, 38, 74, 0.65), rgba(11, 23, 48, 0.55));
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glow-cyan { box-shadow: 0 0 24px rgba(79, 240, 222, 0.18); }
+.glow-purple { box-shadow: 0 0 28px rgba(180, 143, 255, 0.22); }
+
+.neon-text {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+  color: #070b18;
+  font-weight: 600;
+}
+.btn-primary:hover { filter: brightness(1.08); }
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--fg-0);
+}
+.btn-ghost:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
