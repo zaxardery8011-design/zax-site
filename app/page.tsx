@@ -98,14 +98,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 3. Phase 1 demo ── */}
+      {/* ── 3. Real case — LINC ── */}
+      <section
+        id="real-case-linc"
+        className="px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
+          {/* Real case section — LINC */}
+          03 · REAL CASE
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          LINC — 遠端 VM 群監控儀表板
+        </h2>
+        <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
+          幫客戶裝完 VM 之後,下一個真實痛點是「人眼盯不過來幾十台機器」。
+          LINC 把自架 VM 群的畫面集中到一個瀏覽器頁面,
+          拖拉分類、即時看狀態、出狀況時 AI 視覺辨識先一步抓出來。
+          已 production 服務既有付費客戶,不是 demo。
+        </p>
+        <div className="grid md:grid-cols-3 gap-4 mb-6">
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">PAIN</div>
+            <div className="font-semibold mb-1">幾十台機器同時跑</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              自架 VM 群跑長時運算、多機並行任務,
+              人眼輪不過來,出事時通常已經晚了一輪。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">STACK</div>
+            <div className="font-semibold mb-1">Vue 3 + FastAPI + YOLO11</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              前端 Vue 3 SPA + 後端 FastAPI;Go TURN (WebRTC) 串影像、
+              Cloudflare tunnel 對外、YOLO11 在 inference server 做視覺辨識。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5 glow-purple">
+            <div className="text-[color:var(--accent-purple)] text-xs mb-2">STATUS</div>
+            <div className="font-semibold mb-1">已 production</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              對既有 VM 裝機客戶開放,自架機房 + Tailnet 私網 + cloudflared
+              對外 HTTPS,登入後才看得到畫面。
+            </p>
+          </div>
+        </div>
+        <p className="text-xs text-[color:var(--fg-2)]">
+          Live (login required) ·{" "}
+          <a
+            href="https://lc.zaxtw.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--accent-cyan)] hover:underline"
+          >
+            lc.zaxtw.com
+          </a>
+        </p>
+      </section>
+
+      {/* ── 4. Phase 1 demo ── */}
       <section
         id="demo"
         className="px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Phase 1 demo */}
-          03 · PHASE 1 DEMO
+          04 · PHASE 1 DEMO
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           social-poster — 11 產業社群發文 SaaS
@@ -168,7 +225,7 @@ export default function Home() {
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* About */}
-          04 · ABOUT
+          05 · ABOUT
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           About — 一個人,沒有團隊。
@@ -204,7 +261,7 @@ export default function Home() {
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Contact */}
-          05 · CONTACT
+          06 · CONTACT
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           想聊聊 / 想試用 / 想找問題
