@@ -11,7 +11,7 @@ export default function Contact() {
           CONTACT
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          想聊聊 / 想試用 / 想找問題
+          不用先想清楚要什麼——把最煩的一件事講給我,我幫你看。
         </h2>
         <div className="glass rounded-xl p-6 max-w-2xl">
           <div className="space-y-4 text-sm">

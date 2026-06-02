@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ZAX 台灣隊 | AI 工作站",
+  title: "ZAX 台灣隊 | 幫你把 AI 用在你的生意上",
   description:
-    "ZAX 台灣隊、二手 server — 不跟巨頭打軍備，做自己用得到的 AI 工作站。",
+    "不教你 AI、不賣你工具——從你最煩的一件重複事開始，幫你把 AI 做成它自己會跑。焊接師傅的驗收紀律：做得出來、修得動，才算數。",
   openGraph: {
-    title: "ZAX 台灣隊 | AI 工作站",
+    title: "ZAX 台灣隊 | 幫你把 AI 用在你的生意上",
     description:
-      "ZAX 台灣隊、二手 server — 不跟巨頭打軍備，做自己用得到的 AI 工作站。",
+      "不教你 AI、不賣你工具——從你最煩的一件重複事開始，幫你把 AI 做成它自己會跑。焊接師傅的驗收紀律：做得出來、修得動，才算數。",
   },
 };
 
@@ -50,7 +50,7 @@ export default function RootLayout({
             href="/contact"
             className="text-xs px-3 py-1.5 rounded-md btn-ghost transition"
           >
-            諮詢
+            找我聊聊
           </Link>
         </nav>
 
