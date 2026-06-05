@@ -36,6 +36,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── A. 你的客戶在哪一格 ── */}
+      <section
+        id="where-you-are"
+        className="px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
+          {/* Where You Are */}
+          WHERE YOU ARE
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          真正在用 AI 的人,比你想的少很多
+        </h2>
+        <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
+          把全世界的人照「用 AI 的深度」粗分四格,你會發現一件事——絕大多數人,
+          包括你的同行、你的客戶,其實都還沒真的開始。
+        </p>
+        {/* 由淺到深,寬度遞減成金字塔感 */}
+        <div className="flex flex-col items-center gap-3 mb-8">
+          <div className="glass rounded-xl p-5 w-full">
+            <div className="flex items-baseline justify-between gap-3">
+              <div className="font-semibold">⬜ 還沒用</div>
+              <div className="text-xs text-[color:var(--fg-2)] whitespace-nowrap">約佔多數人</div>
+            </div>
+            <div className="text-sm text-[color:var(--fg-1)] mt-1">連碰都沒碰過 AI</div>
+          </div>
+          <div className="glass rounded-xl p-5 w-full md:w-[80%]">
+            <div className="flex items-baseline justify-between gap-3">
+              <div className="font-semibold">🟩 偶爾用</div>
+              <div className="text-xs text-[color:var(--fg-2)] whitespace-nowrap">數以億計</div>
+            </div>
+            <div className="text-sm text-[color:var(--fg-1)] mt-1">免費聊天機器人問一下就關掉</div>
+          </div>
+          <div className="glass rounded-xl p-5 w-full md:w-[60%]">
+            <div className="flex items-baseline justify-between gap-3">
+              <div className="font-semibold">🟨 付費用</div>
+              <div className="text-xs text-[color:var(--fg-2)] whitespace-nowrap">少數</div>
+            </div>
+            <div className="text-sm text-[color:var(--fg-1)] mt-1">月付幾百塊在用,當工具</div>
+          </div>
+          <div className="glass rounded-xl p-5 w-full md:w-[42%] glow-cyan">
+            <div className="flex items-baseline justify-between gap-3">
+              <div className="font-semibold text-[color:var(--accent-cyan)]">🟥 深度用</div>
+              <div className="text-xs text-[color:var(--accent-cyan)] whitespace-nowrap">全球極少數</div>
+            </div>
+            <div className="text-sm text-[color:var(--fg-1)] mt-1">嵌進每天的工作、靠它做事</div>
+          </div>
+        </div>
+        <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
+          你的客戶、你的對手,幾乎都在前兩格。ZAX 在最後一格——而且不只是用,
+          是替自己造工具、24 小時讓系統替我做事。我們的工作,就是把你從「偶爾問一下」
+          推進到「AI 真的在幫你賺錢」的那一格。
+        </p>
+      </section>
+
       {/* ── 2. 我能幫你做什麼 ── */}
       <section
         id="what-i-do"
@@ -72,6 +126,56 @@ export default function Home() {
         </div>
         <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
           不確定哪個適合你?把最煩的那件事講給我聽,我幫你看怎麼做、先做個小的給你試。
+        </p>
+      </section>
+
+      {/* ── B. 為什麼找落地工程師 (FDE) ── */}
+      <section
+        id="why-fde"
+        className="px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
+          {/* Why FDE */}
+          WHY FDE
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          為什麼多數公司導入 AI 會失敗
+        </h2>
+        <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
+          業界一個常見的觀察:超過一半的 AI 導入專案,最後沒做出成果。
+          原因通常不是技術不夠強——是方法錯了。
+        </p>
+        <div className="grid md:grid-cols-2 gap-4 mb-8">
+          <div className="glass rounded-xl p-5">
+            <div className="text-[color:var(--fg-2)] text-xs mb-2">✗ 失敗常態</div>
+            <p className="text-sm text-[color:var(--fg-2)] leading-relaxed">
+              把 AI 當一般 IT 專案發包出去 → 做完沒人用
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">✓ 會跑的做法</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              從你最痛、最重複的那個業務流程下手,先做個小的能跑的
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5">
+            <div className="text-[color:var(--fg-2)] text-xs mb-2">✗ 失敗常態</div>
+            <p className="text-sm text-[color:var(--fg-2)] leading-relaxed">
+              期待一次到位、全自動 → 跟現實落差太大,放棄
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">✓ 會跑的做法</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              有人陪你調流程、改習慣,不是丟個工具就走人
+            </p>
+          </div>
+        </div>
+        <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
+          這就是 FDE(Forward Deployed Engineer,前置部署工程師)在做的事——進你的現場,
+          從你的生意出發,做出真的會跑的東西。這個角色,OpenAI、Anthropic 都把它當成
+          AI 真正落地的關鍵。ZAX 做的,就是台灣中小生意的 FDE:
+          <span className="text-[color:var(--accent-cyan)]">不教你 AI、不賣你工具,陪你把它用在你的生意上。</span>
         </p>
       </section>
 
