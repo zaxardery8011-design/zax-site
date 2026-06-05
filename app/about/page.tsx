@@ -33,6 +33,14 @@ export default function About() {
             </ul>
           </div>
         </div>
+        <div className="glass rounded-xl p-6 mt-6 text-[color:var(--fg-1)] leading-relaxed">
+          <div className="text-[color:var(--accent-purple)] text-xs tracking-[0.3em] mb-3">
+            FDE · AI 落地工程師
+          </div>
+          <p>
+            最近這個角色有了名字:Forward Deployed Engineer(FDE,中文叫 AI 落地工程師)。講白話就是——不待在辦公室裡寫通用工具,而是直接進到你的現場,搞懂你的流程、你最煩的那件事,然後用 AI 幫你做出一套真的會跑、你每天用得到的系統。我做的就是這個。差別是,我還帶著焊接的驗收標準:做不出來、修不動,我不會擺上來給你看。
+          </p>
+        </div>
       </section>
     </main>
   );

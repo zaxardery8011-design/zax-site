@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ZAX 台灣隊 | 幫你把 AI 用在你的生意上",
+  title: "ZAX 台灣隊 | AI 落地工程師 (FDE)・幫你把 AI 用在你的生意上",
   description:
-    "不教你 AI、不賣你工具——從你最煩的一件重複事開始，幫你把 AI 做成它自己會跑。焊接師傅的驗收紀律：做得出來、修得動，才算數。",
+    "我是 AI 落地工程師(Forward Deployed Engineer)——不教你 AI、不賣你工具,從你最煩的一件重複事開始,進到你的現場把 AI 做成它自己會跑。焊接師傅的驗收紀律:做得出來、修得動,才算數。",
   openGraph: {
-    title: "ZAX 台灣隊 | 幫你把 AI 用在你的生意上",
+    title: "ZAX 台灣隊 | AI 落地工程師 (FDE)・幫你把 AI 用在你的生意上",
     description:
-      "不教你 AI、不賣你工具——從你最煩的一件重複事開始，幫你把 AI 做成它自己會跑。焊接師傅的驗收紀律：做得出來、修得動，才算數。",
+      "我是 AI 落地工程師(Forward Deployed Engineer)——不教你 AI、不賣你工具,從你最煩的一件重複事開始,進到你的現場把 AI 做成它自己會跑。焊接師傅的驗收紀律:做得出來、修得動,才算數。",
   },
 };
 

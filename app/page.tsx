@@ -10,7 +10,7 @@ export default function Home() {
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-6">
           {/* Hero badge */}
-          ZAX 台灣隊 | AI 落地實作
+          ZAX 台灣隊 | AI 落地工程師 · Forward Deployed Engineer
         </div>
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           不教你 AI,也不賣你工具——<br />
