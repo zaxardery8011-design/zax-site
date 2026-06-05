@@ -38,12 +38,12 @@ export default function Contact() {
             <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">LINE</span>
               <a
-                href="https://line.me/ti/p/~zaxvip888"
+                href="https://line.me/R/ti/p/%40zax.vip"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[color:var(--accent-cyan)] hover:underline"
               >
-                zaxvip888
+                @zax.vip
               </a>
             </div>
             <div className="flex items-baseline gap-3">
