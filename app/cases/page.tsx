@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Cases() {
   return (
     <main className="flex flex-col w-full">
@@ -212,6 +214,200 @@ export default function Cases() {
           狀態真實揭露:Phase 1 dashboard 在做,Meta App Review 排隊中,
           不假裝已經有真實付費用戶。
         </p>
+      </section>
+
+      {/* ── Self-built — 自家實測 ── */}
+      <section
+        id="self-built"
+        className="px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
+          {/* Self-built section */}
+          SELF-BUILT
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          自家實測 — 我先拿自己開刀
+        </h2>
+        <p className="text-[color:var(--fg-1)] mb-12 leading-relaxed max-w-3xl">
+          我做得出來、跑得起來,才敢拿來幫你做。下面這些,全是我自己每天真的在用的東西。
+        </p>
+
+        <div className="flex flex-col gap-8">
+          {/* Self-built case 1 — social poster (featured, with image) */}
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
+                自家實測
+              </span>
+              <span className="text-xs text-[color:var(--fg-2)]">
+                用在我自己的社群經營
+              </span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-5">
+              社群貼文:從「想半天擠不出」到「3 分鐘出草稿」
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4 mb-5">
+              <div className="rounded-lg p-4 bg-[color:var(--accent-purple)]/10 border border-[color:var(--accent-purple)]/20">
+                <div className="text-xs tracking-[0.2em] text-[color:var(--accent-purple)] mb-1.5">
+                  BEFORE
+                </div>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+                  想經營粉專卻每天擠不出文;好不容易寫了,又一股 AI
+                  味、不像自己講話。
+                </p>
+              </div>
+              <div className="rounded-lg p-4 bg-[color:var(--accent-cyan)]/10 border border-[color:var(--accent-cyan)]/20">
+                <div className="text-xs tracking-[0.2em] text-[color:var(--accent-cyan)] mb-1.5">
+                  AFTER
+                </div>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+                  丟幾篇舊文進去,3 分鐘出一版「像自己寫的」草稿,順一下就能發。
+                </p>
+              </div>
+            </div>
+            <ol className="flex flex-col gap-2 mb-5 text-sm text-[color:var(--fg-1)]">
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-cyan)] font-bold">1.</span>
+                把自己幾篇舊貼文貼進工具,它先學會你的語氣、用詞、節奏
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-cyan)] font-bold">2.</span>
+                套上我驗證過、實際有成效的貼文結構(公式骨架)
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-cyan)] font-bold">3.</span>
+                產出一篇「像你自己寫」的草稿,你順一下就能發
+              </li>
+            </ol>
+            <div className="rounded-lg overflow-hidden border border-[color:var(--border)] mb-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/case1_tool.png"
+                alt="社群貼文工具實際畫面"
+                className="block w-full"
+              />
+            </div>
+            <p className="text-xs text-[color:var(--fg-2)] mb-4">
+              ↑ 工具實際畫面:左邊貼舊文＋主題,右邊內建貼文公式,按一下就出文
+            </p>
+            <p className="text-xs text-[color:var(--fg-2)] border-l-2 border-[color:var(--accent-cyan)] pl-3 leading-relaxed">
+              誠實註記:這是我自家在用的工具,目前用在我自己的社群經營上。你正在看的這頁、以及我發的貼文,都是它做出來的。
+            </p>
+          </div>
+
+          {/* Self-built case 2 — video digest */}
+          <div className="glass rounded-xl p-5 glow-purple">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
+                自家實測
+              </span>
+              <span className="text-xs text-[color:var(--fg-2)]">
+                每天消化十幾支影片
+              </span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-5">
+              一小時的影片 / 長資料,幾分鐘變成重點懶人包
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4 mb-5">
+              <div className="rounded-lg p-4 bg-[color:var(--accent-purple)]/10 border border-[color:var(--accent-purple)]/20">
+                <div className="text-xs tracking-[0.2em] text-[color:var(--accent-purple)] mb-1.5">
+                  BEFORE
+                </div>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+                  一堆教學影片、會議錄影、長報告,要看完再整理就累,最後都擱著。
+                </p>
+              </div>
+              <div className="rounded-lg p-4 bg-[color:var(--accent-cyan)]/10 border border-[color:var(--accent-cyan)]/20">
+                <div className="text-xs tracking-[0.2em] text-[color:var(--accent-cyan)] mb-1.5">
+                  AFTER
+                </div>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+                  丟一個連結,幾分鐘拿到一頁繁中重點,不再被「待看清單」追著跑。
+                </p>
+              </div>
+            </div>
+            <ol className="flex flex-col gap-2 mb-5 text-sm text-[color:var(--fg-1)]">
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-purple)] font-bold">1.</span>
+                丟一個影片連結進去
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-purple)] font-bold">2.</span>
+                系統自己下載、把整段話轉成逐字稿
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-purple)] font-bold">3.</span>
+                濃縮成一頁繁體中文重點,全程不用動手
+              </li>
+            </ol>
+            <p className="text-xs text-[color:var(--fg-2)] border-l-2 border-[color:var(--accent-purple)] pl-3 leading-relaxed">
+              誠實註記:自家每日在跑的流程,成本幾乎是零(用本地與免費資源)。
+            </p>
+          </div>
+
+          {/* Self-built case 3 — task auto-verify */}
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
+                自家實測
+              </span>
+              <span className="text-xs text-[color:var(--fg-2)]">
+                不靠人記憶去追進度
+              </span>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-5">
+              交辦的事「有沒有真的做完」,讓系統自己盯
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4 mb-5">
+              <div className="rounded-lg p-4 bg-[color:var(--accent-purple)]/10 border border-[color:var(--accent-purple)]/20">
+                <div className="text-xs tracking-[0.2em] text-[color:var(--accent-purple)] mb-1.5">
+                  BEFORE
+                </div>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+                  交辦出去常以為做完了其實沒有,要一件一件回頭追,耗神又容易漏。
+                </p>
+              </div>
+              <div className="rounded-lg p-4 bg-[color:var(--accent-cyan)]/10 border border-[color:var(--accent-cyan)]/20">
+                <div className="text-xs tracking-[0.2em] text-[color:var(--accent-cyan)] mb-1.5">
+                  AFTER
+                </div>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+                  沒做完的會自己被攔下來,我只看真正需要我判斷的。
+                </p>
+              </div>
+            </div>
+            <ol className="flex flex-col gap-2 mb-5 text-sm text-[color:var(--fg-1)]">
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-cyan)] font-bold">1.</span>
+                每件任務「回報完成」時,系統自動再派一個獨立檢查
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-cyan)] font-bold">2.</span>
+                去驗它是不是真的做到,做不到就退回重做
+              </li>
+              <li className="flex gap-3">
+                <span className="text-[color:var(--accent-cyan)] font-bold">3.</span>
+                不靠人記憶追進度,漏接的自動被攔下
+              </li>
+            </ol>
+            <p className="text-xs text-[color:var(--fg-2)] border-l-2 border-[color:var(--accent-cyan)] pl-3 leading-relaxed">
+              誠實註記:這是我自家系統每天在跑的機制。
+            </p>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 text-center">
+          <p className="text-[color:var(--fg-1)] mb-6 leading-relaxed">
+            換你了:說出你最煩、最重複、最花時間的那件事,其他交給我。
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block px-5 py-2.5 rounded-md text-sm btn-primary transition"
+          >
+            說出你最煩的一件事 →
+          </Link>
+        </div>
       </section>
     </main>
   );
