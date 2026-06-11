@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,6 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// TODO: 待 user 提供 GoatCounter site code 後填入並復原下方計數器
 const GOATCOUNTER_CODE = "YOUR_GOATCOUNTER_CODE";
 const GOATCOUNTER_ENDPOINT = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
 
@@ -65,21 +65,6 @@ function MailIcon() {
   );
 }
 
-function PhoneIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4">
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.8"
-        d="M8.3 5.2 10 8.8l-1.4 1.4c.8 1.7 2.1 3 3.8 3.8l1.4-1.4 3.6 1.7-.6 3.1c-.1.6-.6 1-1.2 1C9.9 18.4 5.6 14.1 5.6 8.4c0-.6.4-1.1 1-1.2l1.7-.3Z"
-      />
-    </svg>
-  );
-}
-
 function GithubIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4">
@@ -117,33 +102,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
-        <Script
-          id="goatcounter-count-script"
-          data-goatcounter={GOATCOUNTER_ENDPOINT}
-          src="https://gc.zgo.at/count.js"
-          strategy="afterInteractive"
-        />
-        <Script id="goatcounter-visitor-count" strategy="afterInteractive">
-          {`
-            (function () {
-              var attempts = 0;
-              var timer = setInterval(function () {
-                attempts += 1;
-                if (window.goatcounter && window.goatcounter.visit_count) {
-                  clearInterval(timer);
-                  window.goatcounter.visit_count({
-                    append: '#goatcounter-visitor-count-target',
-                    type: 'html'
-                  });
-                }
-                if (attempts > 80) {
-                  clearInterval(timer);
-                }
-              }, 100);
-            })();
-          `}
-        </Script>
-
         {/* ── Top Nav ── */}
         <nav className="sticky top-0 z-20 w-full px-5 sm:px-6 py-4 flex items-center gap-4 sm:gap-6 glass border-b border-[color:var(--border)]">
           <Link href="/" className="font-bold tracking-widest text-lg neon-text">
@@ -177,40 +135,42 @@ export default function RootLayout({
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="https://www.facebook.com/HLC2703600"
+                href="https://www.facebook.com/ardery8011"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="合利鑫科技 Facebook"
-                title="合利鑫科技 Facebook"
+                aria-label="ZAX Facebook"
+                title="ZAX Facebook"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition"
               >
                 <FacebookIcon />
               </a>
               <a
-                href="https://line.me/R/ti/p/@hlc2703600"
+                href="https://line.me/R/ti/p/~zaxvip888"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="合利鑫科技 LINE"
-                title="合利鑫科技 LINE"
+                aria-label="ZAX 個人 LINE"
+                title="ZAX 個人 LINE"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition"
               >
                 <LineIcon />
               </a>
               <a
-                href="mailto:hlc2703600@gmail.com"
-                aria-label="寄信給合利鑫科技"
-                title="寄信給合利鑫科技"
+                href="https://line.me/R/ti/p/@395jcpsb"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="AI 主腦實驗室 LINE"
+                title="AI 主腦實驗室 LINE"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition"
+              >
+                <LineIcon />
+              </a>
+              <a
+                href="mailto:zaxardery8011@gmail.com"
+                aria-label="寄信給 ZAX"
+                title="寄信給 ZAX"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition"
               >
                 <MailIcon />
-              </a>
-              <a
-                href="tel:062703600"
-                aria-label="撥打合利鑫科技電話"
-                title="撥打合利鑫科技電話"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition"
-              >
-                <PhoneIcon />
               </a>
               <a
                 href="https://github.com/zaxardery8011-design"
@@ -231,15 +191,6 @@ export default function RootLayout({
                 <ContactIcon />
               </Link>
               <span className="grow" />
-              <div className="flex min-h-9 items-center gap-2 text-[color:var(--fg-1)]">
-                <span>瀏覽人次</span>
-                <span
-                  id="goatcounter-visitor-count-target"
-                  className="inline-flex items-center text-[color:var(--accent-cyan)]"
-                >
-                  GoatCounter
-                </span>
-              </div>
             </div>
           </div>
         </footer>

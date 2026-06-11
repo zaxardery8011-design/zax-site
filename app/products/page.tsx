@@ -38,6 +38,7 @@ const contactItems = [
   { label: "電話", value: "06-2703600", href: "tel:062703600" },
   { label: "Email", value: "hlc2703600@gmail.com", href: "mailto:hlc2703600@gmail.com" },
   { label: "LINE ID", value: "@hlc2703600", href: "https://line.me/R/ti/p/@hlc2703600" },
+  { label: "Facebook", value: "合利鑫科技", href: "https://www.facebook.com/HLC2703600" },
   { label: "地址", value: "台南市仁德區中山路730號(仁德家樂福對面)" },
   { label: "營業時間", value: "週一至週五 08:30–18:00(週末公休)" },
   { label: "服務範圍", value: "台南為主，含南部地區" },
@@ -173,7 +174,9 @@ export default function Products() {
             需要監控器材、影音對講、商用音響或南部工程服務，可直接聯絡合利鑫科技確認產品與現場需求。
           </p>
           <a
-            href="mailto:hlc2703600@gmail.com?subject=%E5%90%88%E5%88%A9%E9%91%AB%E7%A7%91%E6%8A%80%E7%94%A2%E5%93%81%E8%AB%AE%E8%A9%A2"
+            href="https://line.me/R/ti/p/@hlc2703600"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-5 py-2.5 rounded-md text-sm btn-primary transition"
           >
             詢問產品與工程服務 →
