@@ -153,6 +153,138 @@ export default function Cases() {
         </div>
       </section>
 
+      {/* ── Real case — soplint ── */}
+      <section
+        id="real-case-soplint"
+        className="px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
+          {/* Real case section — soplint */}
+          REAL CASE
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          soplint — AI agent 行為規範 lint 工具
+        </h2>
+        <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
+          soplint 是開源 AI agent 行為規範 lint 工具，lint behavior, not config。
+          GitHub 已 public，CI 三平台綠。
+        </p>
+        <div className="grid md:grid-cols-3 gap-4 mb-6">
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">FOCUS</div>
+            <div className="font-semibold mb-1">Lint behavior</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              檢查 AI agent 行為規範，而不是只檢查設定檔格式。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">OPEN SOURCE</div>
+            <div className="font-semibold mb-1">已 public</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              專案公開在 GitHub，方便外部查看與後續協作。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5 glow-purple">
+            <div className="text-[color:var(--accent-purple)] text-xs mb-2">CI</div>
+            <div className="font-semibold mb-1">三平台綠</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              CI 已在三平台通過，維持基礎品質閘門。
+            </p>
+          </div>
+        </div>
+        <p className="text-xs text-[color:var(--fg-2)]">
+          GitHub ·{" "}
+          <a
+            href="https://github.com/zaxardery8011-design/soplint"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--accent-cyan)] hover:underline"
+          >
+            github.com/zaxardery8011-design/soplint
+          </a>
+        </p>
+      </section>
+
+      {/* ── Real case — AI brain lab LINE bot ── */}
+      <section
+        id="real-case-ai-brain-line"
+        className="px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
+          {/* Real case section — AI brain lab LINE bot */}
+          REAL CASE
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          AI 主腦實驗室 LINE bot
+        </h2>
+        <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
+          AI 主腦實驗室 LINE bot 是 AI 算命 + 主腦實驗室入口，已上線。
+        </p>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">ENTRY</div>
+            <div className="font-semibold mb-1">主腦實驗室入口</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              用 LINE bot 承接外部使用者進入 AI 主腦實驗室。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">FEATURE</div>
+            <div className="font-semibold mb-1">AI 算命</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              以 AI 算命作為入口功能，讓使用者從具體互動開始。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5 glow-purple">
+            <div className="text-[color:var(--accent-purple)] text-xs mb-2">STATUS</div>
+            <div className="font-semibold mb-1">已上線</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              目前狀態已上線，後續可再補流量或使用者數據。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Real case — AI brain lab Discord ── */}
+      <section
+        id="real-case-ai-brain-discord"
+        className="px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
+          {/* Real case section — AI brain lab Discord */}
+          REAL CASE
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          AI 主腦實驗室 Discord 社群
+        </h2>
+        <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
+          AI 主腦實驗室 Discord 是對外社群，含影片蒸餾廳 / 開源工坊頻道。
+        </p>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="glass rounded-xl p-5 glow-cyan">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">COMMUNITY</div>
+            <div className="font-semibold mb-1">對外社群</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              作為 AI 主腦實驗室對外交流與沉澱的 Discord 社群。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5">
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">CHANNEL</div>
+            <div className="font-semibold mb-1">影片蒸餾廳</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              頻道聚焦影片內容蒸餾與整理。
+            </p>
+          </div>
+          <div className="glass rounded-xl p-5 glow-purple">
+            <div className="text-[color:var(--accent-purple)] text-xs mb-2">CHANNEL</div>
+            <div className="font-semibold mb-1">開源工坊</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              頻道聚焦開源專案與工坊式協作。
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Phase 1 demo — social-poster ── */}
       <section
         id="demo"
