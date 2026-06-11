@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// TODO: 待 user 提供 GoatCounter site code 後填入並復原下方計數器
-const GOATCOUNTER_CODE = "YOUR_GOATCOUNTER_CODE";
+const GOATCOUNTER_CODE = "zaxtw";
 const GOATCOUNTER_ENDPOINT = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
 
 export const metadata: Metadata = {
@@ -102,6 +102,33 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
+        <Script
+          id="goatcounter-count-script"
+          data-goatcounter={GOATCOUNTER_ENDPOINT}
+          src="https://gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
+        <Script id="goatcounter-visitor-count" strategy="afterInteractive">
+          {`
+            (function () {
+              var attempts = 0;
+              var timer = setInterval(function () {
+                attempts += 1;
+                if (window.goatcounter && window.goatcounter.visit_count) {
+                  clearInterval(timer);
+                  window.goatcounter.visit_count({
+                    append: '#goatcounter-visitor-count-target',
+                    type: 'html'
+                  });
+                }
+                if (attempts > 80) {
+                  clearInterval(timer);
+                }
+              }, 100);
+            })();
+          `}
+        </Script>
+
         {/* ── Top Nav ── */}
         <nav className="sticky top-0 z-20 w-full px-5 sm:px-6 py-4 flex items-center gap-4 sm:gap-6 glass border-b border-[color:var(--border)]">
           <Link href="/" className="font-bold tracking-widest text-lg neon-text">
@@ -191,6 +218,15 @@ export default function RootLayout({
                 <ContactIcon />
               </Link>
               <span className="grow" />
+              <div className="flex min-h-9 items-center gap-2 text-[color:var(--fg-1)]">
+                <span>瀏覽人次</span>
+                <span
+                  id="goatcounter-visitor-count-target"
+                  className="inline-flex items-center text-[color:var(--accent-cyan)]"
+                >
+                  GoatCounter
+                </span>
+              </div>
             </div>
           </div>
         </footer>
