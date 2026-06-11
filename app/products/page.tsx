@@ -1,18 +1,3 @@
-import fs from "fs";
-import path from "path";
-
-function getGalleryImages(): string[] {
-  const dir = path.join(process.cwd(), "public", "products", "gallery");
-  try {
-    return fs
-      .readdirSync(dir)
-      .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
-      .sort();
-  } catch {
-    return [];
-  }
-}
-
 const serviceItems = [
   {
     title: "監控器材經銷批發",
@@ -59,8 +44,6 @@ const contactItems = [
 ];
 
 export default function Products() {
-  const images = getGalleryImages();
-
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
       <section className="px-5 sm:px-6 pt-24 pb-16 md:pt-32 md:pb-20 max-w-5xl mx-auto w-full">
@@ -135,25 +118,21 @@ export default function Products() {
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
-          INSTALLATION GALLERY
+          PRODUCT LINE
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">合利鑫實裝實績 / 實拍</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">產品線</h2>
         <p className="text-[color:var(--fg-1)] mb-8 leading-relaxed max-w-3xl">
-          以下保留既有監控實裝照，作為合利鑫科技監控與工程服務的實拍展示。
+          產品線整理中，陸續上架。
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
-          {images.map((name) => (
-            <div
-              key={name}
-              className="glass rounded-lg overflow-hidden aspect-square"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`/products/gallery/${name}`}
-                alt="合利鑫科技監控實裝實拍"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+        {/* TODO: 產品線卡片，等 user 提供展品資料 */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" aria-hidden="true">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div key={index} className="glass rounded-lg p-5 min-h-36">
+              <div className="h-3 w-24 rounded bg-[color:var(--fg-2)]/20 mb-5" />
+              <div className="space-y-3">
+                <div className="h-2 rounded bg-[color:var(--fg-2)]/15" />
+                <div className="h-2 w-2/3 rounded bg-[color:var(--fg-2)]/15" />
+              </div>
             </div>
           ))}
         </div>
