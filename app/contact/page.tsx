@@ -1,16 +1,16 @@
 export default function Contact() {
   return (
-    <main className="flex flex-col w-full">
+    <main className="flex flex-col w-full overflow-x-hidden">
       {/* ── Contact ── */}
       <section
         id="contact"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Contact */}
           CONTACT
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
           不用先想清楚要什麼——把最煩的一件事講給我,我幫你看。
         </h2>
         <div className="glass rounded-xl p-6 max-w-2xl">

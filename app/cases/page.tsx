@@ -2,21 +2,21 @@ import Link from "next/link";
 
 export default function Cases() {
   return (
-    <main className="flex flex-col w-full">
-      <section className="px-6 pt-20 pb-4 max-w-5xl mx-auto w-full">
-        <h1 className="text-4xl md:text-5xl font-bold neon-text">實戰案例</h1>
+    <main className="flex flex-col w-full overflow-x-hidden">
+      <section className="px-5 sm:px-6 pt-20 pb-4 max-w-5xl mx-auto w-full">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold neon-text">實戰案例</h1>
       </section>
 
       {/* ── Real case — fortune ── */}
       <section
         id="real-case"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* Real case section */}
           REAL CASE
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           fortune LINE bot — 5/29 上線
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -54,13 +54,13 @@ export default function Cases() {
       {/* ── Real case — LINC ── */}
       <section
         id="real-case-linc"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* Real case section — LINC */}
           REAL CASE
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           LINC — 遠端 VM 群監控儀表板
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -111,13 +111,13 @@ export default function Cases() {
       {/* ── Real case — ZAX 會員網 ── */}
       <section
         id="real-case-member"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* Real case section — ZAX 會員網 */}
           REAL CASE
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           ZAX 會員網 — 老客戶圈 穩定供貨
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -156,13 +156,13 @@ export default function Cases() {
       {/* ── Real case — soplint ── */}
       <section
         id="real-case-soplint"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* Real case section — soplint */}
           REAL CASE
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           soplint — AI agent 行為規範 lint 工具
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -208,13 +208,13 @@ export default function Cases() {
       {/* ── Real case — AI brain lab LINE bot ── */}
       <section
         id="real-case-ai-brain-line"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* Real case section — AI brain lab LINE bot */}
           REAL CASE
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           AI 主腦實驗室 LINE bot
         </h2>
         <p className="text-[color:var(--fg-1)] mb-6 leading-relaxed max-w-3xl">
@@ -256,13 +256,13 @@ export default function Cases() {
       {/* ── Real case — AI brain lab Discord ── */}
       <section
         id="real-case-ai-brain-discord"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* Real case section — AI brain lab Discord */}
           REAL CASE
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           AI 主腦實驗室 Discord 社群
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -296,13 +296,13 @@ export default function Cases() {
       {/* ── Phase 1 demo — social-poster ── */}
       <section
         id="demo"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Phase 1 demo */}
           PHASE 1 DEMO
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           social-poster — 11 產業社群發文 SaaS
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -359,13 +359,13 @@ export default function Cases() {
       {/* ── Self-built — 自家實測 ── */}
       <section
         id="self-built"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Self-built section */}
           SELF-BUILT
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           自家實測 — 我先拿自己開刀
         </h2>
         <p className="text-[color:var(--fg-1)] mb-12 leading-relaxed max-w-3xl">

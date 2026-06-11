@@ -1,16 +1,16 @@
 export default function About() {
   return (
-    <main className="flex flex-col w-full">
+    <main className="flex flex-col w-full overflow-x-hidden">
       {/* ── About ── */}
       <section
         id="about"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           {/* About */}
           ABOUT
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
           About — 白天焊金屬,晚上焊系統。
         </h2>
         <div className="grid md:grid-cols-2 gap-6 text-[color:var(--fg-1)] leading-relaxed">

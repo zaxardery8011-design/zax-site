@@ -2,17 +2,17 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full">
+    <main className="flex flex-col w-full overflow-x-hidden">
       {/* ── 1. Hero ── */}
       <section
         id="hero"
-        className="px-6 pt-24 pb-28 md:pt-32 md:pb-36 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 pt-24 pb-28 md:pt-32 md:pb-36 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-6">
           {/* Hero badge */}
           ZAX 台灣隊 | AI 落地工程師 · Forward Deployed Engineer
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6">
           不教你 AI,也不賣你工具——<br />
           <span className="neon-text">我幫你把 AI 用在你的生意上。</span>
         </h1>
@@ -39,13 +39,13 @@ export default function Home() {
       {/* ── A. 你的客戶在哪一格 ── */}
       <section
         id="where-you-are"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Where You Are */}
           WHERE YOU ARE
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           真正在用 AI 的人,比你想的少很多
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -93,13 +93,13 @@ export default function Home() {
       {/* ── 2. 我能幫你做什麼 ── */}
       <section
         id="what-i-do"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* What I Do */}
           WHAT I DO
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
           你有這些煩惱,我幫你做成自動的
         </h2>
         <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -132,13 +132,13 @@ export default function Home() {
       {/* ── B. 為什麼找落地工程師 (FDE) ── */}
       <section
         id="why-fde"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* Why FDE */}
           WHY FDE
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           為什麼多數公司導入 AI 會失敗
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -182,13 +182,13 @@ export default function Home() {
       {/* ── 3. The Brain — AIWFF ── */}
       <section
         id="brain"
-        className="px-6 py-20 max-w-5xl mx-auto w-full"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           {/* The Brain — AIWFF */}
           THE BRAIN
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           為什麼我做得又快又穩
         </h2>
         <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
@@ -230,7 +230,7 @@ export default function Home() {
       </section>
 
       {/* ── 3. 入口卡 ── */}
-      <section className="px-6 py-20 max-w-5xl mx-auto w-full">
+      <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           <Link href="/cases" className="glass rounded-xl p-6 glow-cyan transition hover:scale-[1.02]">
             <div className="text-[color:var(--accent-cyan)] text-xs mb-2">CASES</div>

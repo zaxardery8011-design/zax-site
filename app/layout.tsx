@@ -116,7 +116,7 @@ export default function RootLayout({
       lang="zh-Hant"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         <Script
           id="goatcounter-count-script"
           data-goatcounter={GOATCOUNTER_ENDPOINT}
@@ -145,7 +145,7 @@ export default function RootLayout({
         </Script>
 
         {/* ── Top Nav ── */}
-        <nav className="sticky top-0 z-20 w-full px-6 py-4 flex items-center gap-6 glass border-b border-[color:var(--border)]">
+        <nav className="sticky top-0 z-20 w-full px-5 sm:px-6 py-4 flex items-center gap-4 sm:gap-6 glass border-b border-[color:var(--border)]">
           <Link href="/" className="font-bold tracking-widest text-lg neon-text">
             ZAX
           </Link>
@@ -167,7 +167,7 @@ export default function RootLayout({
         {children}
 
         {/* ── Footer ── */}
-        <footer className="px-6 py-10 mt-auto border-t border-[color:var(--border)] text-xs text-[color:var(--fg-2)]">
+        <footer className="px-5 sm:px-6 py-10 mt-auto border-t border-[color:var(--border)] text-xs text-[color:var(--fg-2)]">
           <div className="max-w-5xl mx-auto flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-3">
               <span className="neon-text font-bold tracking-widest">ZAX</span>

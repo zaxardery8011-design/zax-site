@@ -62,12 +62,12 @@ export default function Products() {
   const images = getGalleryImages();
 
   return (
-    <main className="flex flex-col w-full">
-      <section className="px-6 pt-24 pb-16 md:pt-32 md:pb-20 max-w-5xl mx-auto w-full">
+    <main className="flex flex-col w-full overflow-x-hidden">
+      <section className="px-5 sm:px-6 pt-24 pb-16 md:pt-32 md:pb-20 max-w-5xl mx-auto w-full">
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-6">
           PRODUCTS · 合利鑫科技
         </div>
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight mb-6">
           <span className="neon-text">合利鑫科技有限公司</span>
           <br />
           監控器材 · 影音對講 · 商用音響 · 工程服務
@@ -83,7 +83,7 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="px-6 py-12 max-w-5xl mx-auto w-full">
+      <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <div className="grid md:grid-cols-3 gap-4">
           {serviceItems.map((item) => (
             <div key={item.title} className="glass rounded-xl p-5">
@@ -98,7 +98,7 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="px-6 py-12 max-w-5xl mx-auto w-full">
+      <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
           AUTHORIZED BRANDS
         </div>
@@ -120,7 +120,7 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="px-6 py-12 max-w-5xl mx-auto w-full">
+      <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <div className="glass rounded-xl p-6 glow-cyan">
           <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
             PROJECTS
@@ -133,7 +133,7 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="px-6 py-12 max-w-5xl mx-auto w-full">
+      <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
           INSTALLATION GALLERY
         </div>
@@ -159,7 +159,7 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="px-6 py-12 max-w-5xl mx-auto w-full">
+      <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <div className="glass rounded-xl p-6">
           <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-4">
             CONTACT
@@ -188,7 +188,7 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="px-6 py-20 max-w-5xl mx-auto w-full">
+      <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
         <div className="glass rounded-xl p-8 glow-purple">
           <p className="text-[color:var(--fg-0)] text-lg md:text-xl mb-6 leading-relaxed">
             需要監控器材、影音對講、商用音響或南部工程服務，可直接聯絡合利鑫科技確認產品與現場需求。
