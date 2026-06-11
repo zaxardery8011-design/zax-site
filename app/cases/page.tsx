@@ -217,9 +217,17 @@ export default function Cases() {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           AI 主腦實驗室 LINE bot
         </h2>
-        <p className="text-[color:var(--fg-1)] mb-10 leading-relaxed max-w-3xl">
+        <p className="text-[color:var(--fg-1)] mb-6 leading-relaxed max-w-3xl">
           AI 主腦實驗室 LINE bot 是 AI 算命 + 主腦實驗室入口，已上線。
         </p>
+        <a
+          href="https://line.me/R/ti/p/%40395jcpsb"
+          target="_blank"
+          rel="noopener"
+          className="inline-block px-5 py-2.5 rounded-md text-sm btn-primary transition mb-10"
+        >
+          📱 加好友體驗主腦實驗室
+        </a>
         <div className="grid md:grid-cols-3 gap-4">
           <div className="glass rounded-xl p-5 glow-cyan">
             <div className="text-[color:var(--accent-cyan)] text-xs mb-2">ENTRY</div>

@@ -231,7 +231,7 @@ export default function Home() {
 
       {/* ── 3. 入口卡 ── */}
       <section className="px-6 py-20 max-w-5xl mx-auto w-full">
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           <Link href="/cases" className="glass rounded-xl p-6 glow-cyan transition hover:scale-[1.02]">
             <div className="text-[color:var(--accent-cyan)] text-xs mb-2">CASES</div>
             <div className="font-semibold mb-1 text-lg">實戰案例 →</div>
@@ -239,6 +239,18 @@ export default function Home() {
               fortune bot · LINC · 會員網 · social-poster
             </p>
           </Link>
+          <a
+            href="https://line.me/R/ti/p/%40395jcpsb"
+            target="_blank"
+            rel="noopener"
+            className="glass rounded-xl p-6 glow-cyan transition hover:scale-[1.02]"
+          >
+            <div className="text-[color:var(--accent-cyan)] text-xs mb-2">LINE BOT</div>
+            <div className="font-semibold mb-1 text-lg">體驗 AI 主腦實驗室 →</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              加好友,從 LINE 直接試用主腦實驗室入口
+            </p>
+          </a>
           <Link href="/about" className="glass rounded-xl p-6 transition hover:scale-[1.02]">
             <div className="text-[color:var(--accent-cyan)] text-xs mb-2">ABOUT</div>
             <div className="font-semibold mb-1 text-lg">關於 ZAX →</div>
