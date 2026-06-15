@@ -137,6 +137,7 @@ export default function RootLayout({
           <div className="hidden md:flex gap-5 text-sm text-[color:var(--fg-1)] ml-4">
             <Link href="/cases" className="hover:text-[color:var(--accent-cyan)]">實戰案例</Link>
             <Link href="/products" className="hover:text-[color:var(--accent-cyan)]">產品專區</Link>
+            <Link href="/open-source" className="hover:text-[color:var(--accent-cyan)]">開源</Link>
             <Link href="/about" className="hover:text-[color:var(--accent-cyan)]">關於 ZAX</Link>
             <Link href="/contact" className="hover:text-[color:var(--accent-cyan)]">聯絡</Link>
           </div>

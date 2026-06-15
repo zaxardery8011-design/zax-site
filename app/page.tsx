@@ -36,6 +36,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── 1B. Our Way ── */}
+      <section
+        id="our-way"
+        className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
+      >
+        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
+          OUR WAY
+        </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4">
+          <span className="neon-text">站在巨人肩上,長成讓人站的巨人。</span>
+        </h2>
+        <p className="text-[color:var(--fg-1)] text-base md:text-lg max-w-3xl leading-relaxed">
+          Stand on giants. Grow into one. Let others stand on you.
+        </p>
+      </section>
+
       {/* ── A. 你的客戶在哪一格 ── */}
       <section
         id="where-you-are"
@@ -231,12 +247,19 @@ export default function Home() {
 
       {/* ── 3. 入口卡 ── */}
       <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
           <Link href="/cases" className="glass rounded-xl p-6 glow-cyan transition hover:scale-[1.02]">
             <div className="text-[color:var(--accent-cyan)] text-xs mb-2">CASES</div>
             <div className="font-semibold mb-1 text-lg">實戰案例 →</div>
             <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
               fortune bot · LINC · 會員網 · social-poster
+            </p>
+          </Link>
+          <Link href="/open-source" className="glass rounded-xl p-6 glow-purple transition hover:scale-[1.02]">
+            <div className="text-[color:var(--accent-purple)] text-xs mb-2">OPEN SOURCE</div>
+            <div className="font-semibold mb-1 text-lg">開源作品 →</div>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+              我們開源的工具:soplint · 桌寵 · 潮痕 · execution-proofs…
             </p>
           </Link>
           <a
