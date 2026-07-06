@@ -18,13 +18,13 @@ const GOATCOUNTER_CODE = "zaxtw";
 const GOATCOUNTER_ENDPOINT = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
 
 export const metadata: Metadata = {
-  title: "ZAX 台灣隊 | AI 落地工程師 (FDE)・幫你把 AI 用在你的生意上",
+  title: "ZAX | 小主腦與 AI 工作站",
   description:
-    "我是 AI 落地工程師(Forward Deployed Engineer)——不教你 AI、不賣你工具,從你最煩的一件重複事開始,進到你的現場把 AI 做成它自己會跑。焊接師傅的驗收紀律:做得出來、修得動,才算數。",
+    "ZAX 做可在本機跑的小主腦與 AI 工作站:丟一件事,背景跑完,結果與過程都留在你看得到的檔案裡。",
   openGraph: {
-    title: "ZAX 台灣隊 | AI 落地工程師 (FDE)・幫你把 AI 用在你的生意上",
+    title: "ZAX | 小主腦與 AI 工作站",
     description:
-      "我是 AI 落地工程師(Forward Deployed Engineer)——不教你 AI、不賣你工具,從你最煩的一件重複事開始,進到你的現場把 AI 做成它自己會跑。焊接師傅的驗收紀律:做得出來、修得動,才算數。",
+      "ZAX 做可在本機跑的小主腦與 AI 工作站:丟一件事,背景跑完,結果與過程都留在你看得到的檔案裡。",
   },
 };
 
@@ -158,7 +158,9 @@ export default function RootLayout({
           <div className="max-w-5xl mx-auto flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-3">
               <span className="neon-text font-bold tracking-widest">ZAX</span>
-              <span>· AI 工作站 · 台灣隊</span>
+              <span>· 小主腦 open source · MIT</span>
+              <span>· 技術支援: GitHub Issues</span>
+              <span>· 完整版 / 客製: zax.com.tw</span>
               <span className="grow" />
               <span>© 2026 zax.com.tw</span>
             </div>
@@ -172,16 +174,6 @@ export default function RootLayout({
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition"
               >
                 <FacebookIcon />
-              </a>
-              <a
-                href="https://line.me/R/ti/p/~zaxvip888"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="ZAX 個人 LINE"
-                title="ZAX 個人 LINE"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition"
-              >
-                <LineIcon />
               </a>
               <a
                 href="https://line.me/R/ti/p/@395jcpsb"
