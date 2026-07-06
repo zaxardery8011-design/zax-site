@@ -103,3 +103,9 @@ npm run start   # 本地預覽 production build,localhost:3000
 設計參考 `C:\AIWFF\agent\public\index.html` 與 dashboard 既有 neon
 配色:`#070b18 / #0b1730 / #11264a` 深色漸層 + `#4ff0de` 青 / `#b48fff` 紫
 neon accent + glassmorphism cards (見 `app/globals.css` 的 `.glass` / `.neon-text`)。
+
+## License / 授權
+
+本站原始碼公開是為了透明與展示 build in public 的過程。不授權複製、修改、散布，或再利用於其他網站、產品或商業用途；All rights reserved。想借鏡做法或討論實作方式，歡迎開 issue 交流。
+
+This source code is public for transparency and to show the build-in-public process. It is not licensed for copying, modification, distribution, or reuse in other websites, products, or commercial projects; all rights reserved. If you want to discuss the approach or implementation ideas, please open an issue.
