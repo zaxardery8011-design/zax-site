@@ -176,6 +176,16 @@ export default function RootLayout({
                 <FacebookIcon />
               </a>
               <a
+                href="https://line.me/R/ti/p/~zaxvip888"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ZAX 個人 LINE"
+                title="ZAX 個人 LINE"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition"
+              >
+                <LineIcon />
+              </a>
+              <a
                 href="https://line.me/R/ti/p/@395jcpsb"
                 target="_blank"
                 rel="noopener noreferrer"
