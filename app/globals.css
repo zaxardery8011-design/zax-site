@@ -47,6 +47,130 @@ html, body {
 .glow-cyan { box-shadow: 0 0 24px rgba(79, 240, 222, 0.18); }
 .glow-purple { box-shadow: 0 0 28px rgba(180, 143, 255, 0.22); }
 
+.card-hover {
+  position: relative;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.card-hover::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(79, 240, 222, 0.52),
+      rgba(180, 143, 255, 0.48),
+      rgba(79, 240, 222, 0.08)
+    );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.card-hover:hover {
+  border-color: rgba(79, 240, 222, 0.36);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.24),
+    0 0 30px rgba(79, 240, 222, 0.13);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.card-hover:hover::before { opacity: 1; }
+
+.glow-cyan.card-hover:hover {
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.24),
+    0 0 34px rgba(79, 240, 222, 0.26);
+}
+
+.glow-purple.card-hover:hover {
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.24),
+    0 0 36px rgba(180, 143, 255, 0.3);
+}
+
+.hero-ambient {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero-ambient > :not(.hero-motion-layer) {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-motion-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 6% -10% 4%;
+  background-image:
+    linear-gradient(rgba(79, 240, 222, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 143, 255, 0.08) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 70%, transparent);
+  opacity: 0.32;
+  transform: perspective(900px) rotateX(58deg) translateY(8%);
+  animation: hero-grid-drift 16s linear infinite;
+}
+
+.hero-ribbon {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79, 240, 222, 0.46), rgba(180, 143, 255, 0.32), transparent);
+  transform: rotate(-10deg);
+  animation: hero-ribbon-sweep 12s ease-in-out infinite;
+}
+
+.hero-ribbon-one {
+  left: 28%;
+  top: 18%;
+  width: 56%;
+}
+
+.hero-ribbon-two {
+  left: 8%;
+  top: 62%;
+  width: 44%;
+  animation-delay: -5s;
+  opacity: 0.72;
+}
+
+@keyframes hero-grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 52px 52px, 52px 52px; }
+}
+
+@keyframes hero-ribbon-sweep {
+  0%, 100% { opacity: 0.12; transform: translate3d(-2%, 0, 0) rotate(-10deg); }
+  50% { opacity: 0.5; transform: translate3d(6%, 14px, 0) rotate(-10deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid,
+  .hero-ribbon {
+    animation: none;
+  }
+}
+
 .neon-text {
   background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
   -webkit-background-clip: text;

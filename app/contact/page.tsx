@@ -1,3 +1,5 @@
+import { Card, CTAButton, SectionHeader } from "@/app/components";
+
 export default function Contact() {
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
@@ -6,14 +8,12 @@ export default function Contact() {
         id="contact"
         className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
-        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
-          {/* Contact */}
-          CONTACT
-        </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-          不用先想清楚要什麼——把最煩的一件事講給我,我幫你看。
-        </h2>
-        <div className="glass rounded-xl p-6 max-w-2xl">
+        <SectionHeader
+          badge="CONTACT"
+          title="不用先想清楚要什麼——把最煩的一件事講給我,我幫你看。"
+          titleClassName="mb-6"
+        />
+        <Card className="p-6 max-w-2xl">
           <div className="space-y-4 text-sm">
             <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">Email</span>
@@ -49,14 +49,14 @@ export default function Contact() {
             </div>
           </div>
           <div className="mt-6 pt-5 border-t border-[color:var(--border)]">
-            <a
+            <CTAButton
               href="mailto:zaxardery8011@gmail.com?subject=ZAX%20%E5%8F%B0%E7%81%A3%E9%9A%8A%20%E8%AB%AE%E8%A9%A2"
-              className="inline-block px-5 py-2.5 rounded-md text-sm btn-primary transition"
+              className="inline-block"
             >
               寄信給 ZAX
-            </a>
+            </CTAButton>
           </div>
-        </div>
+        </Card>
       </section>
     </main>
   );

@@ -1,3 +1,5 @@
+import { Card, CTAButton, PageHero, SectionHeader } from "@/app/components";
+
 const serviceItems = [
   {
     title: "監控器材經銷批發",
@@ -47,16 +49,17 @@ const contactItems = [
 export default function Products() {
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
-      <section className="px-5 sm:px-6 pt-24 pb-16 md:pt-32 md:pb-20 max-w-5xl mx-auto w-full">
-        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-6">
-          PRODUCTS · 合利鑫科技
-        </div>
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight mb-6">
-          <span className="neon-text">合利鑫科技有限公司</span>
-          <br />
-          監控器材 · 影音對講 · 商用音響 · 工程服務
-        </h1>
-        <p className="text-[color:var(--fg-1)] text-base md:text-lg max-w-3xl leading-relaxed mb-6">
+      <PageHero
+        badge="PRODUCTS · 合利鑫科技"
+        title={
+          <>
+            <span className="neon-text">合利鑫科技有限公司</span>
+            <br />
+            監控器材 · 影音對講 · 商用音響 · 工程服務
+          </>
+        }
+      >
+        <p className="mb-6">
           ZAX 提供 AI 落地服務，硬體產品線由關係企業「合利鑫科技」供應。
           這裡把分工講清楚：ZAX 做服務落地，合利鑫做產品供應與工程建置。
         </p>
@@ -65,31 +68,33 @@ export default function Products() {
           <span className="px-3 py-1.5 rounded-md btn-ghost">設立 2017 年</span>
           <span className="px-3 py-1.5 rounded-md btn-ghost">台南與南部地區服務</span>
         </div>
-      </section>
+      </PageHero>
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <div className="grid md:grid-cols-3 gap-4">
           {serviceItems.map((item) => (
-            <div key={item.title} className="glass rounded-xl p-5">
+            <Card key={item.title} className="p-5">
               <div className="font-semibold mb-2 text-lg text-[color:var(--accent-cyan)]">
                 {item.title}
               </div>
               <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
                 {item.desc}
               </p>
-            </div>
+            </Card>
           ))}
         </div>
       </section>
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
-        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
-          AUTHORIZED BRANDS
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">代理品牌</h2>
+        <SectionHeader
+          accent="purple"
+          badge="AUTHORIZED BRANDS"
+          headingClassName="text-2xl md:text-3xl font-bold mb-8"
+          title="代理品牌"
+        />
         <div className="grid md:grid-cols-2 gap-4">
           {brands.map((brand) => (
-            <div key={brand.name} className="glass rounded-xl p-6">
+            <Card key={brand.name} className="p-6">
               <div className="flex flex-wrap items-center gap-3 mb-3">
                 <h3 className="text-xl font-bold">{brand.name}</h3>
                 <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
@@ -99,32 +104,35 @@ export default function Products() {
               <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
                 {brand.desc}
               </p>
-            </div>
+            </Card>
           ))}
         </div>
       </section>
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
-        <div className="glass rounded-xl p-6 glow-cyan">
-          <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
-            PROJECTS
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">南部工程實績</h2>
+        <Card className="p-6" glow="cyan">
+          <SectionHeader
+            badge="PROJECTS"
+            descriptionClassName="hidden"
+            headingClassName="text-2xl md:text-3xl font-bold mb-4"
+            title="南部工程實績"
+          />
           <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
             服務台南及南部地區社區大樓、店面、工廠、校園等場域之監控、影音對講與廣播系統建置。
             具體標案名稱、機關與金額待確認後再補，不在此頁預先揭露。
           </p>
-        </div>
+        </Card>
       </section>
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
-        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
-          PRODUCT LINE
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">產品線</h2>
-        <p className="text-[color:var(--fg-1)] mb-8 leading-relaxed max-w-3xl">
+        <SectionHeader
+          badge="PRODUCT LINE"
+          descriptionClassName="mb-8"
+          headingClassName="text-2xl md:text-3xl font-bold mb-4"
+          title="產品線"
+        >
           產品線整理中，陸續上架。
-        </p>
+        </SectionHeader>
         {/* TODO: 產品線卡片，等 user 提供展品資料 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" aria-hidden="true">
           {Array.from({ length: 4 }).map((_, index) => (
@@ -140,10 +148,8 @@ export default function Products() {
       </section>
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
-        <div className="glass rounded-xl p-6">
-          <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-4">
-            CONTACT
-          </div>
+        <Card className="p-6">
+          <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-4">CONTACT</div>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             {contactItems.map((item) => (
               <div key={item.label} className="flex gap-3">
@@ -165,23 +171,22 @@ export default function Products() {
               </div>
             ))}
           </div>
-        </div>
+        </Card>
       </section>
 
       <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
-        <div className="glass rounded-xl p-8 glow-purple">
+        <Card className="p-8" glow="purple">
           <p className="text-[color:var(--fg-0)] text-lg md:text-xl mb-6 leading-relaxed">
             需要監控器材、影音對講、商用音響或南部工程服務，可直接聯絡合利鑫科技確認產品與現場需求。
           </p>
-          <a
+          <CTAButton
             href="https://line.me/R/ti/p/@hlc2703600"
             target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-5 py-2.5 rounded-md text-sm btn-primary transition"
+            className="inline-block"
           >
             詢問產品與工程服務 →
-          </a>
-        </div>
+          </CTAButton>
+        </Card>
       </section>
     </main>
   );

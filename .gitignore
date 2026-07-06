@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# local Codex artifacts
+/.codex-artifacts/
+
 # next.js
 /.next/
 /out/

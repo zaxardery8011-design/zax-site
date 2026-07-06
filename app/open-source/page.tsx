@@ -1,3 +1,5 @@
+import { Card, PageHero, SectionHeader } from "@/app/components";
+
 const openSourceRepos = [
   {
     name: "soplint",
@@ -52,36 +54,37 @@ const openSourceRepos = [
 export default function OpenSource() {
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
-      <section className="px-5 sm:px-6 pt-24 pb-16 md:pt-32 md:pb-20 max-w-5xl mx-auto w-full">
-        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-6">
-          OPEN SOURCE
-        </div>
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight mb-6">
-          <span className="neon-text">站在巨人肩上,</span>
-          <br />
-          長成讓人站的巨人。
-        </h1>
-        <p className="text-[color:var(--fg-1)] text-base md:text-lg max-w-3xl leading-relaxed">
+      <PageHero
+        badge="OPEN SOURCE"
+        title={
+          <>
+            <span className="neon-text">站在巨人肩上,</span>
+            <br />
+            長成讓人站的巨人。
+          </>
+        }
+      >
+        <p>
           我們把踩過的坑碼化成工具,開源給站在後面的人。這裡只放已公開的 repo,
           星數與授權照目前定版資料呈現,不灌水、不補假截圖。
         </p>
-      </section>
+      </PageHero>
 
       <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
-        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
-          PUBLIC REPOS
-        </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10">
-          做給自己用,也讓開發者直接看見做法
-        </h2>
+        <SectionHeader
+          badge="PUBLIC REPOS"
+          title="做給自己用,也讓開發者直接看見做法"
+          titleClassName="mb-10"
+        />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {openSourceRepos.map((repo) => (
-            <a
+            <Card
+              as="a"
               key={repo.name}
               href={repo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="glass rounded-xl p-5 transition hover:scale-[1.02] flex flex-col min-h-64"
+              className="p-5 flex flex-col min-h-64"
             >
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="text-xs px-2.5 py-1 rounded border border-[color:var(--border)] text-[color:var(--fg-1)]">
@@ -100,17 +103,19 @@ export default function OpenSource() {
               <span className="mt-auto text-sm text-[color:var(--accent-cyan)]">
                 GitHub →
               </span>
-            </a>
+            </Card>
           ))}
         </div>
       </section>
 
       <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
-        <a
+        <Card
+          as="a"
           href="https://github.com/zaxardery8011-design"
           target="_blank"
           rel="noopener noreferrer"
-          className="glass rounded-xl p-6 sm:p-8 glow-cyan transition hover:scale-[1.02] block"
+          className="p-6 sm:p-8 block"
+          glow="cyan"
         >
           <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
             ZAX GITHUB
@@ -119,7 +124,7 @@ export default function OpenSource() {
           <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
             其他公開實驗、工具與自動化專案會持續放在 GitHub,等有穩定截圖或文件再補進官網。
           </p>
-        </a>
+        </Card>
       </section>
     </main>
   );

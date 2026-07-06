@@ -1,3 +1,5 @@
+import { Card, SectionHeader } from "@/app/components";
+
 export default function About() {
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
@@ -6,23 +8,22 @@ export default function About() {
         id="about"
         className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
-        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
-          {/* About */}
-          ABOUT
-        </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-          About — 白天焊金屬,晚上焊系統。
-        </h2>
+        <SectionHeader
+          accent="purple"
+          badge="ABOUT"
+          title="About — 白天焊金屬,晚上焊系統。"
+          titleClassName="mb-6"
+        />
         <div className="grid md:grid-cols-2 gap-6 text-[color:var(--fg-1)] leading-relaxed">
-          <div className="glass rounded-xl p-6">
+          <Card className="p-6">
             <p className="mb-3">
               ZAX 不是一間科技公司,是一個焊工的工作站。本業是精密氬焊(TIG / ASME 等級),焊的是不能漏、要扛壓力的管路——這行沒有「差不多」:要嘛通過檢驗、壓力測試,要嘛打掉重來,沒有騙的空間。
             </p>
             <p>
               後來開始寫 AI,發現寫系統跟焊接是同一回事:跑得起來、扛得住、修得動,才算數。於是把這套匠人驗收的紀律,寫進一套會自己派工、自己記憶、自己修正的常駐 AI 主腦(AIWFF)。一個人,做給自己用,順手給朋友用。
             </p>
-          </div>
-          <div className="glass rounded-xl p-6">
+          </Card>
+          <Card className="p-6">
             <div className="text-[color:var(--accent-cyan)] text-xs mb-3">守則</div>
             <ul className="space-y-2 text-sm">
               <li>· 不寫「處理 N 萬筆」假數字</li>
@@ -31,16 +32,16 @@ export default function About() {
               <li>· 朋友先用,陌生人之後再說</li>
               <li>· 失敗會留 log,不會 PR 掉</li>
             </ul>
-          </div>
+          </Card>
         </div>
-        <div className="glass rounded-xl p-6 mt-6 text-[color:var(--fg-1)] leading-relaxed">
+        <Card className="p-6 mt-6 text-[color:var(--fg-1)] leading-relaxed">
           <div className="text-[color:var(--accent-purple)] text-xs tracking-[0.3em] mb-3">
             FDE · AI 落地工程師
           </div>
           <p>
             最近這個角色有了名字:Forward Deployed Engineer(FDE,中文叫 AI 落地工程師)。講白話就是——不待在辦公室裡寫通用工具,而是直接進到你的現場,搞懂你的流程、你最煩的那件事,然後用 AI 幫你做出一套真的會跑、你每天用得到的系統。我做的就是這個。差別是,我還帶著焊接的驗收標準:做不出來、修不動,我不會擺上來給你看。
           </p>
-        </div>
+        </Card>
       </section>
     </main>
   );
