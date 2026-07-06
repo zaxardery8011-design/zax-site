@@ -1,11 +1,22 @@
+import Link from "next/link";
 import { Card, PageHero, SectionHeader } from "@/app/components";
 
 const openSourceRepos = [
+  {
+    name: "小主腦 (aiwff-runtime)",
+    url: "/minibrain",
+    stars: null,
+    license: "MIT",
+    kind: "internal",
+    pitch:
+      "裝在自己電腦上的開源 AI 任務主腦。預設 mock 模式免費跑通,要接真 Claude worker 時才需要付費 Claude 訂閱。",
+  },
   {
     name: "soplint",
     url: "https://github.com/zaxardery8011-design/soplint",
     stars: 40,
     license: "MIT",
+    kind: "external",
     pitch:
       "對 AI 工作節點的 SOP 執行做靜態規則審計,治長時間運行的「指令漂移」與工作紀律失修。",
   },
@@ -14,6 +25,7 @@ const openSourceRepos = [
     url: "https://github.com/zaxardery8011-design/my-desktop-pet",
     stars: 0,
     license: "MIT",
+    kind: "external",
     pitch:
       "真寵物照片→AI影片→去背→Electron 透明桌寵;換照片就生整套動作庫。示範滑鼠穿透與局部像素碰撞。",
   },
@@ -22,6 +34,7 @@ const openSourceRepos = [
     url: "https://github.com/zaxardery8011-design/tidetrace",
     stars: 5,
     license: "MIT",
+    kind: "external",
     pitch:
       "Threads 社群輿情監控 Chrome 擴充:本地關鍵字高亮 + 回覆狀態追蹤 + BYOK 多 LLM 自訂回覆生成。",
   },
@@ -30,6 +43,7 @@ const openSourceRepos = [
     url: "https://github.com/zaxardery8011-design/execution-proofs",
     stars: 3,
     license: "MIT",
+    kind: "external",
     pitch:
       "別讓 AI 說謊!基於 MCP 的本地遙測閘道,讓自動化 Client 回報「完成」時必須用真實檔案與時間戳記證明。",
   },
@@ -38,6 +52,7 @@ const openSourceRepos = [
     url: "https://github.com/tingyi365/earthlife",
     stars: 2,
     license: "MIT",
+    kind: "external",
     pitch:
       "每 30 分鐘自主進化的網頁生活模擬器,完全由工作節點疊代開發,展示自動化提交與動態事件的閉環。",
   },
@@ -46,6 +61,7 @@ const openSourceRepos = [
     url: "https://github.com/tingyi365/agy-quota",
     stars: 1,
     license: "MIT",
+    kind: "external",
     pitch:
       "headless 額度查詢工具:無 IDE/TTY 的自動化排程與 CI 環境下,即時查多個 LLM 提供商的額度水位。",
   },
@@ -77,34 +93,62 @@ export default function OpenSource() {
           titleClassName="mb-10"
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {openSourceRepos.map((repo) => (
-            <Card
-              as="a"
-              key={repo.name}
-              href={repo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 flex flex-col min-h-64"
-            >
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="text-xs px-2.5 py-1 rounded border border-[color:var(--border)] text-[color:var(--fg-1)]">
-                  ★ {repo.stars}
+          {openSourceRepos.map((repo) =>
+            repo.kind === "internal" ? (
+              <Card
+                as={Link}
+                key={repo.name}
+                href={repo.url}
+                className="p-5 flex flex-col min-h-64"
+                glow="cyan"
+              >
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="text-xs px-2.5 py-1 rounded border border-[color:var(--border)] text-[color:var(--fg-1)]">
+                    主打頁
+                  </span>
+                  <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
+                    {repo.license}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
+                  {repo.name}
+                </h3>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-6">
+                  {repo.pitch}
+                </p>
+                <span className="mt-auto text-sm text-[color:var(--accent-cyan)]">
+                  看小主腦 →
                 </span>
-                <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
-                  {repo.license}
+              </Card>
+            ) : (
+              <Card
+                as="a"
+                key={repo.name}
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-5 flex flex-col min-h-64"
+              >
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="text-xs px-2.5 py-1 rounded border border-[color:var(--border)] text-[color:var(--fg-1)]">
+                    ★ {repo.stars}
+                  </span>
+                  <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
+                    {repo.license}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
+                  {repo.name}
+                </h3>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-6">
+                  {repo.pitch}
+                </p>
+                <span className="mt-auto text-sm text-[color:var(--accent-cyan)]">
+                  GitHub →
                 </span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
-                {repo.name}
-              </h3>
-              <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-6">
-                {repo.pitch}
-              </p>
-              <span className="mt-auto text-sm text-[color:var(--accent-cyan)]">
-                GitHub →
-              </span>
-            </Card>
-          ))}
+              </Card>
+            ),
+          )}
         </div>
       </section>
 
