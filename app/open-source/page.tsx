@@ -5,7 +5,7 @@ const openSourceRepos = [
   {
     name: "小主腦 (aiwff-runtime)",
     url: "/minibrain",
-    stars: null,
+    stars: 5,
     license: "MIT",
     kind: "internal",
     pitch:
@@ -14,11 +14,20 @@ const openSourceRepos = [
   {
     name: "soplint",
     url: "https://github.com/zaxardery8011-design/soplint",
-    stars: 40,
+    stars: 44,
     license: "MIT",
     kind: "external",
     pitch:
       "對 AI 工作節點的 SOP 執行做靜態規則審計,治長時間運行的「指令漂移」與工作紀律失修。",
+  },
+  {
+    name: "line-persona",
+    url: "https://github.com/zaxardery8011-design/line-persona",
+    stars: 11,
+    license: "MIT",
+    kind: "external",
+    pitch:
+      "LINE 原生 AI 分身框架。填 env、人格與知識檔就能上線,可用自己的 API key 在雲端與本地模型之間切換。",
   },
   {
     name: "Mr.Wu 桌寵 (my-desktop-pet)",
@@ -105,6 +114,9 @@ export default function OpenSource() {
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span className="text-xs px-2.5 py-1 rounded border border-[color:var(--border)] text-[color:var(--fg-1)]">
                     主打頁
+                  </span>
+                  <span className="text-xs px-2.5 py-1 rounded border border-[color:var(--border)] text-[color:var(--fg-1)]">
+                    ★ {repo.stars}
                   </span>
                   <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
                     {repo.license}

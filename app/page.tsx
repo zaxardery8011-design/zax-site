@@ -5,15 +5,26 @@ const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
 const featuredCases = [
   {
+    name: "小主腦 / aiwff-runtime",
+    meta: "★ 5 · MIT",
+    href: "/minibrain",
+    pitch:
+      "裝在自己電腦上的開源 AI 任務 runtime:先用 mock 模式免費跑通,再決定要不要接真實 worker。",
+    method:
+      "用本機檔案匯流排保存任務、進度與產出,讓使用者能在瀏覽器看狀態,也能回頭查檔案證據。",
+    result: "已整理成小主腦頁、安裝手冊與公開 repo,可從零開始導入。",
+    glow: "cyan",
+  },
+  {
     name: "soplint",
-    meta: "★ 40 · MIT",
+    meta: "★ 44 · MIT",
     href: "https://github.com/zaxardery8011-design/soplint",
     pitch:
       "對 AI 工作節點的 SOP 執行做靜態規則審計,治長時間運行的「指令漂移」與工作紀律失修。",
     method:
       "把 SOP 落成可掃描的靜態規則,對節點產出逐條審計,抓出偏離。",
     result: "已開源上架、目前 star 前列。",
-    glow: "cyan",
+    glow: "none",
   },
   {
     name: "tidetrace / 潮痕",
@@ -138,47 +149,51 @@ export default function Home() {
       >
         <SectionHeader
           badge="FEATURED CASES"
-          title="精選案例：工作節點自己做出來的開源工具"
+          title="精選案例：先有引擎,再把護欄補齊"
         >
-          這些不是概念稿——是 AIWFF 工作節點實際迭代、放上 GitHub 開源的專案。
+          這些不是概念稿——是 AIWFF 工作節點實際迭代、放上 GitHub 開源或整理成入口的專案。
           星數與描述取自 open-source 頁。
         </SectionHeader>
 
         <div className="grid gap-4 lg:grid-cols-3">
-          {featuredCases.map((item) => (
-            <Card
-              as="a"
-              key={item.href}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-6 flex min-h-[27rem] flex-col"
-              glow={item.glow}
-            >
-              <div className="flex items-start justify-between gap-3 mb-5">
-                <h2 className="text-xl font-bold">{item.name}</h2>
-                <span className="shrink-0 rounded border border-[color:var(--border)] px-2 py-1 text-xs text-[color:var(--fg-1)]">
-                  {item.meta}
+          {featuredCases.map((item) => {
+            const isExternal = item.href.startsWith("https://");
+
+            return (
+              <Card
+                as={isExternal ? "a" : Link}
+                key={item.href}
+                href={item.href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                className="p-6 flex min-h-[27rem] flex-col"
+                glow={item.glow}
+              >
+                <div className="flex items-start justify-between gap-3 mb-5">
+                  <h2 className="text-xl font-bold">{item.name}</h2>
+                  <span className="shrink-0 rounded border border-[color:var(--border)] px-2 py-1 text-xs text-[color:var(--fg-1)]">
+                    {item.meta}
+                  </span>
+                </div>
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-5">
+                  {item.pitch}
+                </p>
+                <div className="space-y-3 text-sm text-[color:var(--fg-1)] leading-relaxed">
+                  <p>
+                    <span className="text-[color:var(--accent-cyan)]">怎麼做：</span>
+                    {item.method}
+                  </p>
+                  <p>
+                    <span className="text-[color:var(--accent-purple)]">成果：</span>
+                    {item.result}
+                  </p>
+                </div>
+                <span className="mt-auto pt-6 text-sm font-semibold text-[color:var(--accent-cyan)]">
+                  {isExternal ? "看 repo →" : "看入口 →"}
                 </span>
-              </div>
-              <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-5">
-                {item.pitch}
-              </p>
-              <div className="space-y-3 text-sm text-[color:var(--fg-1)] leading-relaxed">
-                <p>
-                  <span className="text-[color:var(--accent-cyan)]">怎麼做：</span>
-                  {item.method}
-                </p>
-                <p>
-                  <span className="text-[color:var(--accent-purple)]">成果：</span>
-                  {item.result}
-                </p>
-              </div>
-              <span className="mt-auto pt-6 text-sm font-semibold text-[color:var(--accent-cyan)]">
-                看 repo →
-              </span>
-            </Card>
-          ))}
+              </Card>
+            );
+          })}
         </div>
 
         <div className="mt-8">
