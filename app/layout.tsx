@@ -111,20 +111,22 @@ export default function RootLayout({
         <Script id="goatcounter-visitor-count" strategy="afterInteractive">
           {`
             (function () {
-              var attempts = 0;
-              var timer = setInterval(function () {
-                attempts += 1;
-                if (window.goatcounter && window.goatcounter.visit_count) {
-                  clearInterval(timer);
-                  window.goatcounter.visit_count({
-                    append: '#goatcounter-visitor-count-target',
-                    type: 'html'
-                  });
-                }
-                if (attempts > 80) {
-                  clearInterval(timer);
-                }
-              }, 100);
+              fetch('https://zaxtw.goatcounter.com/counter/%2F.json')
+                .then(function (response) {
+                  if (!response.ok) {
+                    throw new Error('GoatCounter request failed');
+                  }
+                  return response.json();
+                })
+                .then(function (data) {
+                  var target = document.getElementById('goatcounter-visitor-count-target');
+                  if (target && typeof data.count === 'string') {
+                    target.textContent = data.count;
+                  }
+                })
+                .catch(function () {
+                  // Keep the placeholder when the counter is unavailable.
+                });
             })();
           `}
         </Script>
