@@ -17,8 +17,11 @@ npm run dev   # http://localhost:3000
 
 ## 環境變數
 
-Phase 1 不需要任何環境變數。Phase 2 (要接 LINE webhook / Meta Graph API 等)
-再補 `.env.local`。
+訂閱表單端點走公開 build-time env；Kit (ConvertKit) form action URL 取得後，
+在 `.env.local` 填入 `NEXT_PUBLIC_NEWSLETTER_FORM_ACTION` 並重新 build。
+留空時表單會顯示未開通，不會宣稱送出成功。
+
+其他 Phase 2 變數 (LINE webhook / Meta Graph API 等) 另補 `.env.local`。
 
 ## Build
 

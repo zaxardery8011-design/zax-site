@@ -27,6 +27,10 @@
 .DS_Store
 *.pem
 
+# 備份檔（git 本身就是來取代這些的）
+*.bak
+*.bak_*
+
 # debug
 npm-debug.log*
 yarn-debug.log*

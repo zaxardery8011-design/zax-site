@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Card, CTAButton, PageHero, SectionHeader } from "@/app/components";
+import { Card, CTAButton, NewsletterSignup, PageHero, SectionHeader } from "@/app/components";
 
 const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
@@ -202,6 +202,8 @@ export default function Home() {
           </CTAButton>
         </div>
       </section>
+
+      <NewsletterSignup source="home" />
 
       <section
         id="line"

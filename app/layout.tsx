@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
+import { NewsletterSignup } from "@/app/components";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -154,6 +155,8 @@ export default function RootLayout({
         </nav>
 
         {children}
+
+        <NewsletterSignup compact source="site-footer" />
 
         {/* ── Footer ── */}
         <footer className="px-5 sm:px-6 py-10 mt-auto border-t border-[color:var(--border)] text-xs text-[color:var(--fg-2)]">
