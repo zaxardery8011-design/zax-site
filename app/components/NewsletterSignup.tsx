@@ -8,8 +8,15 @@ type NewsletterSignupProps = {
   source: string;
 };
 
+// Kit 的 form action 是公開端點：它會出現在下方 <form action> 屬性、
+// 任何訪客檢視原始碼都看得到，因此寫成預設值而非機密環境變數。
+// 環境變數仍可覆蓋（換 form 時免改 code）。
+const DEFAULT_NEWSLETTER_FORM_ACTION =
+  "https://app.kit.com/forms/9798851/subscriptions";
+
 const newsletterFormAction =
-  process.env.NEXT_PUBLIC_NEWSLETTER_FORM_ACTION?.trim() ?? "";
+  process.env.NEXT_PUBLIC_NEWSLETTER_FORM_ACTION?.trim() ||
+  DEFAULT_NEWSLETTER_FORM_ACTION;
 const isNewsletterConfigured = newsletterFormAction.startsWith("https://");
 
 export function NewsletterSignup({ compact = false, source }: NewsletterSignupProps) {

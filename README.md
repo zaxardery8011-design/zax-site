@@ -17,9 +17,15 @@ npm run dev   # http://localhost:3000
 
 ## 環境變數
 
-訂閱表單端點走公開 build-time env；Kit (ConvertKit) form action URL 取得後，
-在 `.env.local` 填入 `NEXT_PUBLIC_NEWSLETTER_FORM_ACTION` 並重新 build。
-留空時表單會顯示未開通，不會宣稱送出成功。
+訂閱表單的 Kit (ConvertKit) form action URL **已寫在
+`app/components/NewsletterSignup.tsx` 的 `DEFAULT_NEWSLETTER_FORM_ACTION`**，
+預設即可用，部署端不需另設環境變數。
+
+理由：該值會渲染進 `<form action>`、對所有訪客公開，不是機密；
+放進 Vercel 環境變數只會多一份要手動同步的設定。
+
+要換 form 時可用 `NEXT_PUBLIC_NEWSLETTER_FORM_ACTION` 覆蓋（build-time，需重新 build）。
+兩者皆非 `https://` 開頭時，表單顯示未開通，不會宣稱送出成功。
 
 其他 Phase 2 變數 (LINE webhook / Meta Graph API 等) 另補 `.env.local`。
 
