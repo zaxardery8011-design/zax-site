@@ -1,12 +1,18 @@
 import Link from "next/link";
 import { Card, CTAButton, NewsletterSignup, PageHero, SectionHeader } from "@/app/components";
+import { fetchRepoMetas } from "@/app/lib/github";
+
+// 每小時回源 GitHub 一次：首頁精選卡的星數與最近更新日期都不是寫死的定版數字。
+// 注意：Next 要求這個值是靜態字面量,不能是 import 進來的常數(會擋 build)。
+export const revalidate = 3600;
 
 const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
 const featuredCases = [
   {
     name: "小主腦 / aiwff-runtime",
-    meta: "★ 5 · MIT",
+    repo: "zaxardery8011-design/aiwff-runtime",
+    license: "MIT",
     href: "/minibrain",
     pitch:
       "裝在自己電腦上的開源 AI 任務 runtime:先用 mock 模式免費跑通,再決定要不要接真實 worker。",
@@ -17,7 +23,8 @@ const featuredCases = [
   },
   {
     name: "soplint",
-    meta: "★ 44 · MIT",
+    repo: "zaxardery8011-design/soplint",
+    license: "MIT",
     href: "https://github.com/zaxardery8011-design/soplint",
     pitch:
       "對 AI 工作節點的 SOP 執行做靜態規則審計,治長時間運行的「指令漂移」與工作紀律失修。",
@@ -28,7 +35,8 @@ const featuredCases = [
   },
   {
     name: "tidetrace / 潮痕",
-    meta: "★ 5 · MIT",
+    repo: "zaxardery8011-design/tidetrace",
+    license: "MIT",
     href: "https://github.com/zaxardery8011-design/tidetrace",
     pitch:
       "Threads 社群輿情監控 Chrome 擴充:本地關鍵字高亮 + 回覆狀態追蹤 + BYOK 多 LLM 自訂回覆生成。",
@@ -39,7 +47,8 @@ const featuredCases = [
   },
   {
     name: "execution-proofs",
-    meta: "★ 3 · MIT",
+    repo: "zaxardery8011-design/execution-proofs",
+    license: "MIT",
     href: "https://github.com/zaxardery8011-design/execution-proofs",
     pitch:
       "別讓 AI 說謊!基於 MCP 的本地遙測閘道,讓自動化 Client 回報「完成」時必須用真實檔案與時間戳記證明。",
@@ -69,7 +78,9 @@ const routeCards = [
   },
 ] as const;
 
-export default function Home() {
+export default async function Home() {
+  const metas = await fetchRepoMetas(featuredCases.map((c) => c.repo));
+
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
       <PageHero
@@ -152,12 +163,16 @@ export default function Home() {
           title="精選案例：先有引擎,再把護欄補齊"
         >
           這些不是概念稿——是 AIWFF 工作節點實際迭代、放上 GitHub 開源或整理成入口的專案。
-          星數與描述取自 open-source 頁。
+          每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的,不是寫死的定版數字——
+          <span className="text-[color:var(--fg-0)]">
+            不是我說它還活著,是 GitHub 說的。
+          </span>
         </SectionHeader>
 
         <div className="grid gap-4 lg:grid-cols-3">
-          {featuredCases.map((item) => {
+          {featuredCases.map((item, i) => {
             const isExternal = item.href.startsWith("https://");
+            const meta = metas[i];
 
             return (
               <Card
@@ -169,12 +184,22 @@ export default function Home() {
                 className="p-6 flex min-h-[27rem] flex-col"
                 glow={item.glow}
               >
-                <div className="flex items-start justify-between gap-3 mb-5">
+                <div className="flex items-start justify-between gap-3 mb-3">
                   <h2 className="text-xl font-bold">{item.name}</h2>
                   <span className="shrink-0 rounded border border-[color:var(--border)] px-2 py-1 text-xs text-[color:var(--fg-1)]">
-                    {item.meta}
+                    {meta ? `★ ${meta.stars} · ${item.license}` : item.license}
                   </span>
                 </div>
+                {meta ? (
+                  <div className="text-xs text-[color:var(--fg-1)] mb-4">
+                    最近更新{" "}
+                    <time dateTime={meta.pushedAt} className="font-mono">
+                      {meta.pushedAt}
+                    </time>
+                  </div>
+                ) : (
+                  <div className="mb-4" />
+                )}
                 <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-5">
                   {item.pitch}
                 </p>

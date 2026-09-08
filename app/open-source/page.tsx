@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Card, PageHero, SectionHeader } from "@/app/components";
+import { fetchRepoMetas } from "@/app/lib/github";
 
 // 每小時回源 GitHub 一次：星數與最近更新日期都不是寫死的定版數字。
+// 注意：Next 要求這個值是靜態字面量,不能是 import 進來的常數(會擋 build)。
 export const revalidate = 3600;
 
 const openSourceRepos = [
@@ -103,29 +105,6 @@ const openSourceRepos = [
   },
 ] as const;
 
-type RepoMeta = { stars: number; pushedAt: string };
-
-// 抓不到就回 null——寧可不顯示,也不顯示一個過期的數字。
-async function fetchRepoMeta(repo: string): Promise<RepoMeta | null> {
-  try {
-    const res = await fetch(`https://api.github.com/repos/${repo}`, {
-      headers: { Accept: "application/vnd.github+json" },
-      next: { revalidate },
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (typeof data?.stargazers_count !== "number" || !data?.pushed_at) {
-      return null;
-    }
-    return {
-      stars: data.stargazers_count,
-      pushedAt: String(data.pushed_at).slice(0, 10),
-    };
-  } catch {
-    return null;
-  }
-}
-
 function Badge({
   children,
   tone = "plain",
@@ -145,9 +124,7 @@ function Badge({
 }
 
 export default async function OpenSource() {
-  const metas = await Promise.all(
-    openSourceRepos.map((r) => fetchRepoMeta(r.repo)),
-  );
+  const metas = await fetchRepoMetas(openSourceRepos.map((r) => r.repo));
 
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
