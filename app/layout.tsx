@@ -18,6 +18,17 @@ const geistMono = Geist_Mono({
 const GOATCOUNTER_CODE = "zaxtw";
 const GOATCOUNTER_ENDPOINT = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
 
+// 桌機那排與手機那排共用同一份，改一處兩邊一起動，不會再有一邊漏頁的情況。
+const NAV_LINKS = [
+  { href: "/cases", label: "實戰案例" },
+  { href: "/products", label: "產品專區" },
+  { href: "/minibrain", label: "小主腦" },
+  { href: "/open-source", label: "開源" },
+  { href: "/checklist", label: "檢查表" },
+  { href: "/about", label: "關於 ZAX" },
+  { href: "/contact", label: "聯絡" },
+];
+
 export const metadata: Metadata = {
   title: "ZAX | 小主腦與 AI 工作站",
   description:
@@ -133,26 +144,50 @@ export default function RootLayout({
         </Script>
 
         {/* ── Top Nav ── */}
-        <nav className="sticky top-0 z-20 w-full px-5 sm:px-6 py-4 flex items-center gap-4 sm:gap-6 glass border-b border-[color:var(--border)]">
-          <Link href="/" className="font-bold tracking-widest text-lg neon-text">
-            ZAX
-          </Link>
-          <div className="hidden md:flex gap-5 text-sm text-[color:var(--fg-1)] ml-4">
-            <Link href="/cases" className="hover:text-[color:var(--accent-cyan)]">實戰案例</Link>
-            <Link href="/products" className="hover:text-[color:var(--accent-cyan)]">產品專區</Link>
-            <Link href="/minibrain" className="hover:text-[color:var(--accent-cyan)]">小主腦</Link>
-            <Link href="/open-source" className="hover:text-[color:var(--accent-cyan)]">開源</Link>
-            <Link href="/about" className="hover:text-[color:var(--accent-cyan)]">關於 ZAX</Link>
-            <Link href="/contact" className="hover:text-[color:var(--accent-cyan)]">聯絡</Link>
-          </div>
-          <div className="grow" />
-          <Link
-            href="/contact"
-            className="text-xs px-3 py-1.5 rounded-md btn-ghost transition"
+        <header className="sticky top-0 z-20 w-full">
+          <nav className="w-full px-5 sm:px-6 py-4 flex items-center gap-4 sm:gap-6 glass border-b border-[color:var(--border)]">
+            <Link href="/" className="font-bold tracking-widest text-lg neon-text">
+              ZAX
+            </Link>
+            <div className="hidden md:flex gap-5 text-sm text-[color:var(--fg-1)] ml-4">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-[color:var(--accent-cyan)]"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="grow" />
+            <Link
+              href="/contact"
+              className="text-xs px-3 py-1.5 rounded-md btn-ghost transition"
+            >
+              找我聊聊
+            </Link>
+          </nav>
+
+          {/* 手機那排。上面那排在 md 以下整個 hidden,沒有漢堡選單,
+              等於窄螢幕只到得了首頁跟 /contact。這排用橫向捲動補上,不需要 JS。 */}
+          <nav
+            aria-label="頁面導覽"
+            className="md:hidden w-full glass border-b border-[color:var(--border)]"
           >
-            找我聊聊
-          </Link>
-        </nav>
+            <div className="flex gap-2 overflow-x-auto px-5 py-2.5 text-xs text-[color:var(--fg-1)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="shrink-0 px-3 py-1.5 rounded-md btn-ghost transition whitespace-nowrap"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        </header>
 
         {children}
 
