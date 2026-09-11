@@ -19,6 +19,10 @@ const newsletterFormAction =
   DEFAULT_NEWSLETTER_FORM_ACTION;
 const isNewsletterConfigured = newsletterFormAction.startsWith("https://");
 
+// 已寄出的期數。全站唯一寫死的一個數字,寄出第一封就改這裡,下面的文案會自己跟著變。
+// 不回源抓是因為 Kit 沒有公開的期數端點；寫死可以,但只能寫死在一個地方。
+const ISSUES_SENT = 0;
+
 export function NewsletterSignup({ compact = false, source }: NewsletterSignupProps) {
   const [status, setStatus] = useState<"idle" | "error" | "unconfigured">("idle");
 
@@ -53,11 +57,24 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
             NEWSLETTER
           </div>
           <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
-            每週一封，記錄 AI agent 與自建主腦的實作過程
+            要你的 email 之前,先講清楚你會收到什麼
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-[color:var(--fg-1)] sm:text-base">
-            會寄實作紀錄、開源專案更新、踩坑筆記與可複製的工作流。週更，不灌水；
-            Kit 帳號開通前，這裡先保留前端訂閱介面。
+            寄的是上面那幾個開源專案的實作紀錄。這週改了什麼、哪裡踩坑、哪個做法你可以直接抄回去用。
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[color:var(--fg-1)] sm:text-base">
+            {ISSUES_SENT === 0 ? (
+              <>
+                <span className="text-[color:var(--fg-0)]">目前寄出 0 期。</span>
+                這份名單從今天開始,你會是最早收到的那幾個。
+                沒做出東西的那週就不寄,這裡不會為了湊週更生一封出來。
+              </>
+            ) : (
+              <>
+                <span className="text-[color:var(--fg-0)]">目前寄出 {ISSUES_SENT} 期。</span>
+                沒做出東西的那週就不寄,這裡不會為了湊週更生一封出來。
+              </>
+            )}
           </p>
           <Link
             href="/checklist"
@@ -87,7 +104,7 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
             className="min-h-11 rounded-md border border-[color:var(--border)] bg-[color:var(--bg-0)]/70 px-4 py-2.5 text-sm text-[color:var(--fg-0)] outline-none transition placeholder:text-[color:var(--fg-2)] focus:border-[color:var(--accent-cyan)]"
           />
           <button className="btn-primary min-h-11 rounded-md px-5 py-2.5 text-sm transition" type="submit">
-            訂閱週更紀錄
+            訂閱實作紀錄
           </button>
           {status === "unconfigured" ? (
             <p aria-live="polite" className="text-sm text-[color:var(--accent-cyan)]">
