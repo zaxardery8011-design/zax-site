@@ -1,5 +1,12 @@
 import type { ReactNode } from "react";
 import { Card, CTAButton, PageHero, SectionHeader } from "@/app/components";
+import { fetchRepoMeta, type RepoMeta } from "@/app/lib/github";
+
+// 每小時回源 GitHub 一次:soplint 那則的星數與最近更新都不是寫死的定版數字。
+// 注意:Next 要求這個值是靜態字面量,不能是 import 進來的常數(會擋 build)。
+export const revalidate = 3600;
+
+const SOPLINT_REPO = "zaxardery8011-design/soplint";
 
 type Glow = "none" | "cyan" | "purple";
 type Accent = "cyan" | "purple";
@@ -13,7 +20,8 @@ type SummaryCard = {
 };
 
 type RealCase = {
-  cards: SummaryCard[];
+  // 沒有可查證的三張卡就不給卡——寧可少一排,也不排三句複述標題的話。
+  cards?: SummaryCard[];
   cta?: ReactNode;
   description: ReactNode;
   descriptionClassName?: string;
@@ -175,8 +183,9 @@ const REAL_CASES: RealCase[] = [
     title: "soplint — AI agent 行為規範 lint 工具",
     description: (
       <>
-        soplint 是開源 AI agent 行為規範 lint 工具，lint behavior, not config。
-        GitHub 已 public，CI 三平台綠。
+        長時間跑的 AI 工作節點會「指令漂移」:SOP 還在,但做出來的事慢慢偏掉。
+        soplint 把 SOP 落成可掃描的靜態規則,對節點產出逐條審計——
+        查的是行為,不是設定檔格式。下面三個數字都是點進 repo 就能對的。
       </>
     ),
     footer: (
@@ -192,88 +201,64 @@ const REAL_CASES: RealCase[] = [
         </a>
       </p>
     ),
-    cards: [
-      {
-        label: "FOCUS",
-        title: "Lint behavior",
-        glow: "cyan",
-        body: <>檢查 AI agent 行為規範，而不是只檢查設定檔格式。</>,
-      },
-      {
-        label: "OPEN SOURCE",
-        title: "已 public",
-        body: <>專案公開在 GitHub，方便外部查看與後續協作。</>,
-      },
-      {
-        accent: "purple",
-        label: "CI",
-        title: "三平台綠",
-        glow: "purple",
-        body: <>CI 已在三平台通過，維持基礎品質閘門。</>,
-      },
-    ],
+    // cards 在 render 時由 GitHub 回源填入,見 soplintCards()。
   },
   {
     id: "real-case-ai-brain-line",
     title: "AI 主腦實驗室 LINE bot",
-    description: <>AI 主腦實驗室 LINE bot 是 AI 算命 + 主腦實驗室入口，已上線。</>,
+    description: (
+      <>
+        想先看主腦長什麼樣又不想碰命令列,這是最短的一條路:加好友就能跟一個
+        正在跑的主腦對話,入口功能是 AI 算命。我們不公布它的使用者數——
+        還沒有值得拿出來講的數字,有了再補。
+      </>
+    ),
     descriptionClassName: "mb-6",
     cta: (
       <CTAButton
         href="https://line.me/R/ti/p/%40395jcpsb"
         target="_blank"
-        className="inline-block mb-10"
+        className="inline-block"
       >
         📱 加好友體驗主腦實驗室
       </CTAButton>
     ),
-    cards: [
-      {
-        label: "ENTRY",
-        title: "主腦實驗室入口",
-        glow: "cyan",
-        body: <>用 LINE bot 承接外部使用者進入 AI 主腦實驗室。</>,
-      },
-      {
-        label: "FEATURE",
-        title: "AI 算命",
-        body: <>以 AI 算命作為入口功能，讓使用者從具體互動開始。</>,
-      },
-      {
-        accent: "purple",
-        label: "STATUS",
-        title: "已上線",
-        glow: "purple",
-        body: <>目前狀態已上線，後續可再補流量或使用者數據。</>,
-      },
-    ],
-  },
-  {
-    id: "real-case-ai-brain-discord",
-    title: "AI 主腦實驗室 Discord 社群",
-    description: <>AI 主腦實驗室 Discord 是對外社群，含影片蒸餾廳 / 開源工坊頻道。</>,
-    cards: [
-      {
-        label: "COMMUNITY",
-        title: "對外社群",
-        glow: "cyan",
-        body: <>作為 AI 主腦實驗室對外交流與沉澱的 Discord 社群。</>,
-      },
-      {
-        label: "CHANNEL",
-        title: "影片蒸餾廳",
-        body: <>頻道聚焦影片內容蒸餾與整理。</>,
-      },
-      {
-        accent: "purple",
-        label: "CHANNEL",
-        title: "開源工坊",
-        glow: "purple",
-        body: <>頻道聚焦開源專案與工坊式協作。</>,
-      },
-    ],
   },
 ];
+
+// soplint 那三張卡:數字一律回源 GitHub。抓不到就整張卡不出現,
+// 不留一個去年的星數在這裡冒充今天的證據(同 app/lib/github.ts 的原則)。
+function soplintCards(meta: RepoMeta | null): SummaryCard[] {
+  const cards: SummaryCard[] = [];
+
+  if (meta) {
+    cards.push({
+      label: "STARS",
+      title: `★ ${meta.stars}`,
+      glow: "cyan",
+      body: <>此刻 GitHub 上的星數,每小時回源一次。不是我打上去的定版數字。</>,
+    });
+    cards.push({
+      label: "LAST PUSH",
+      title: meta.pushedAt,
+      body: <>最近一次 push 的日期。這個 repo 還活著不是我說的,是 git 說的。</>,
+    });
+  }
+
+  cards.push({
+    accent: "purple",
+    label: "CI",
+    title: "ubuntu / macOS / windows",
+    glow: "purple",
+    body: (
+      <>
+        測試在三個 OS 上各跑一輪,最近一次全綠。Actions 頁公開,可以自己點進去看。
+      </>
+    ),
+  });
+
+  return cards;
+}
 
 function SummaryCardView({ accent = "cyan", body, glow = "none", label, title }: SummaryCard) {
   const labelClass =
@@ -310,17 +295,28 @@ function RealCaseSection({
         {description}
       </SectionHeader>
       {cta}
-      <div className={`grid md:grid-cols-3 gap-4 ${footer ? "mb-6" : ""}`}>
-        {cards.map((card) => (
-          <SummaryCardView key={`${id}-${card.label}-${card.title}`} {...card} />
-        ))}
-      </div>
+      {cards && cards.length > 0 && (
+        <div
+          className={`grid md:grid-cols-3 gap-4 ${cta ? "mt-10" : ""} ${footer ? "mb-6" : ""}`}
+        >
+          {cards.map((card) => (
+            <SummaryCardView key={`${id}-${card.label}-${card.title}`} {...card} />
+          ))}
+        </div>
+      )}
       {footer}
     </section>
   );
 }
 
-export default function Cases() {
+export default async function Cases() {
+  const soplintMeta = await fetchRepoMeta(SOPLINT_REPO);
+  const cases = REAL_CASES.map((caseItem) =>
+    caseItem.id === "real-case-soplint"
+      ? { ...caseItem, cards: soplintCards(soplintMeta) }
+      : caseItem,
+  );
+
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
       <PageHero
@@ -329,7 +325,7 @@ export default function Cases() {
         titleClassName="text-3xl sm:text-4xl md:text-5xl font-bold"
       />
 
-      {REAL_CASES.map((caseItem) => (
+      {cases.map((caseItem) => (
         <RealCaseSection key={caseItem.id} {...caseItem} />
       ))}
 
