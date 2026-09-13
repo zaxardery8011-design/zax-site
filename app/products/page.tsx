@@ -32,8 +32,19 @@ const brands = [
   {
     name: "優美達 UMDEYE 對講機系統",
     badge: "代理品牌",
-    desc: "型號：M10 10吋室內機 / P7 7吋室內機 / D9000 管理機 / U70 緊急對講機 / U60 門口機 / U2000 大門口機。",
+    desc: "IP 網路型影音對講系統,室內機、門口機到管理機同一套架構。實際供應型號列在下方產品線。",
   },
+];
+
+// 這六個型號原本擠在上面那張品牌卡的一行敘述裡,產品線區塊擺的是四個永遠不會填上的
+// 灰色骨架。真東西在,只是沒被擺到該擺的位置。規格與報價不寫死在頁面上,問現場才準。
+const productLine = [
+  { model: "M10", name: "10 吋室內機", group: "室內機" },
+  { model: "P7", name: "7 吋室內機", group: "室內機" },
+  { model: "U60", name: "門口機", group: "門口機" },
+  { model: "U2000", name: "大門口機", group: "門口機" },
+  { model: "D9000", name: "管理機", group: "管理中心" },
+  { model: "U70", name: "緊急對講機", group: "緊急對講" },
 ];
 
 const contactItems = [
@@ -119,7 +130,7 @@ export default function Products() {
           />
           <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
             服務台南及南部地區社區大樓、店面、工廠、校園等場域之監控、影音對講與廣播系統建置。
-            具體標案名稱、機關與金額待確認後再補，不在此頁預先揭露。
+            個案的業主名稱與金額不在這頁揭露。要確認做過哪些場域,直接打電話問比較快。
           </p>
         </Card>
       </section>
@@ -129,22 +140,40 @@ export default function Products() {
           badge="PRODUCT LINE"
           descriptionClassName="mb-8"
           headingClassName="text-2xl md:text-3xl font-bold mb-4"
-          title="產品線"
+          title="產品線 · 優美達 UMDEYE"
         >
-          產品線整理中，陸續上架。
+          下面六台是這條線目前實際供應的型號。沒列出來的品項不代表調不到,問了才知道。
+          規格與報價會隨場域配置不同,以現場確認為準,不在這頁寫死。
         </SectionHeader>
-        {/* TODO: 產品線卡片，等 user 提供展品資料 */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" aria-hidden="true">
-          {Array.from({ length: 4 }).map((_, index) => (
-            <div key={index} className="glass rounded-lg p-5 min-h-36">
-              <div className="h-3 w-24 rounded bg-[color:var(--fg-2)]/20 mb-5" />
-              <div className="space-y-3">
-                <div className="h-2 rounded bg-[color:var(--fg-2)]/15" />
-                <div className="h-2 w-2/3 rounded bg-[color:var(--fg-2)]/15" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {productLine.map((item) => (
+            <Card key={item.model} className="p-5">
+              <div className="flex items-baseline gap-3 mb-2">
+                <span className="font-mono text-2xl font-bold text-[color:var(--accent-cyan)]">
+                  {item.model}
+                </span>
+                {item.group === item.name ? null : (
+                  <span className="text-xs text-[color:var(--fg-2)]">{item.group}</span>
+                )}
               </div>
-            </div>
+              <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+                {item.name}
+              </p>
+            </Card>
           ))}
         </div>
+        <p className="mt-6 text-sm text-[color:var(--fg-1)]">
+          要問哪一台,直接把型號傳到{" "}
+          <a
+            href="https://line.me/R/ti/p/@hlc2703600"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--accent-cyan)] hover:underline"
+          >
+            LINE @hlc2703600
+          </a>
+          ,或用下面的電話與 Email。
+        </p>
       </section>
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
