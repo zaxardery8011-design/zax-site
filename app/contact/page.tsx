@@ -1,5 +1,10 @@
 import { Card, CTAButton, SectionHeader } from "@/app/components";
 
+// 這頁每個行動原本都只有 mailto 一條路。瀏覽器沒設定郵件程式時,mailto 是點了沒反應
+// 的靜默失敗,所以每個出口都並排一條 LINE,兩條路指向同一個人。
+const LINE_PERSONAL_URL = "https://line.me/R/ti/p/~zaxvip888";
+const EMAIL = "zaxardery8011@gmail.com";
+
 const servicePackages = [
   {
     code: "P-line",
@@ -79,13 +84,27 @@ export default function Contact() {
                 <p className="text-sm font-semibold text-[color:var(--fg-0)] mb-4">
                   價格：洽詢
                 </p>
-                <CTAButton href={item.href} className="w-full justify-center">
+                <CTAButton href={item.href} className="block w-full text-center">
                   {item.cta}
+                </CTAButton>
+                <CTAButton
+                  href={LINE_PERSONAL_URL}
+                  target="_blank"
+                  variant="ghost"
+                  className="mt-3 block w-full text-center"
+                >
+                  或加 LINE 直接問 →
                 </CTAButton>
               </div>
             </Card>
           ))}
         </div>
+
+        <p className="mt-5 text-sm text-[color:var(--fg-1)] leading-relaxed">
+          寄信鍵如果點下去沒反應,是你的瀏覽器沒接郵件程式,不是壞掉。直接把信寄到{" "}
+          <span className="font-mono text-[color:var(--fg-0)]">{EMAIL}</span>
+          ,或走上面那條 LINE。兩條都是我本人收。
+        </p>
 
         <p className="mt-5 text-xs text-[color:var(--fg-2)] leading-relaxed">
           交付驗收後 7 天內免費微調,超過另計；LLM/API 費用由客戶自己的帳號負擔,不含在報價內；簽約與發票主體目前為臻安鑫實業社。
@@ -107,10 +126,10 @@ export default function Contact() {
             <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">Email</span>
               <a
-                href="mailto:zaxardery8011@gmail.com"
+                href={`mailto:${EMAIL}`}
                 className="text-[color:var(--accent-cyan)] hover:underline"
               >
-                zaxardery8011@gmail.com
+                {EMAIL}
               </a>
             </div>
             <div className="flex items-baseline gap-3">
@@ -137,12 +156,20 @@ export default function Contact() {
               <span>台灣</span>
             </div>
           </div>
-          <div className="mt-6 pt-5 border-t border-[color:var(--border)]">
+          <div className="mt-6 pt-5 border-t border-[color:var(--border)] flex flex-col gap-3 sm:flex-row">
             <CTAButton
-              href="mailto:zaxardery8011@gmail.com?subject=ZAX%20%E5%8F%B0%E7%81%A3%E9%9A%8A%20%E8%AB%AE%E8%A9%A2"
-              className="inline-block"
+              href={`mailto:${EMAIL}?subject=ZAX%20%E5%8F%B0%E7%81%A3%E9%9A%8A%20%E8%AB%AE%E8%A9%A2`}
+              className="text-center"
             >
               寄信給 ZAX
+            </CTAButton>
+            <CTAButton
+              href={LINE_PERSONAL_URL}
+              target="_blank"
+              variant="ghost"
+              className="text-center"
+            >
+              加 LINE 直接問
             </CTAButton>
           </div>
         </Card>
