@@ -37,6 +37,33 @@ const installCommands = `git clone https://github.com/zaxardery8011-design/aiwff
 cd aiwff-runtime
 # 對你的 AI coding agent 說：「照 INSTALL_AI.md 幫我裝好」`;
 
+// 路線 B 的命令逐字照官方安裝手冊 docs/zh-TW/install.md §2 步驟 1-8,
+// 不是另外寫一套。npm install 標「可選」是因為這專案 package.json 沒有 dependencies。
+const manualCommands = `git clone https://github.com/zaxardery8011-design/aiwff-runtime
+cd aiwff-runtime
+
+# 確認 Node 版本,要 >= v18
+node --version
+
+# 建 .env(Windows PowerShell)
+Copy-Item .env.example .env
+# bash / macOS / Linux 用 cp .env.example .env
+
+# 可選,本專案零外部相依
+npm install
+
+# 自檢
+npm run doctor
+
+# 跑一次完整任務
+npm run demo
+
+# 驗證產出
+npm run verify-demo
+
+# 開 http://127.0.0.1:3100
+npm run web`;
+
 const scenarioCards = [
   {
     title: "全在你本機",
@@ -124,13 +151,13 @@ export default function MiniBrainPage() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <CTAButton href="#install" className="w-full justify-center sm:w-fit">
-              看一鍵安裝
+            <CTAButton href="#install" className="block w-full text-center sm:w-fit">
+              看怎麼裝（兩條路）
             </CTAButton>
             <CTAButton
               href="#docs"
               variant="ghost"
-              className="w-full justify-center sm:w-fit"
+              className="block w-full text-center sm:w-fit"
             >
               先讀安裝手冊
             </CTAButton>
@@ -163,50 +190,110 @@ export default function MiniBrainPage() {
         id="install"
         className="px-5 sm:px-6 py-16 max-w-5xl mx-auto w-full"
       >
-        <SectionHeader badge="INSTALL" title="最快上手：讓 AI 幫你裝">
-          兩步：clone 下來、把 prompt 貼給 Codex / Claude Code 這類 coding agent。跑完你會拿到一個可開的本機網址，預設是{" "}
-          <code>http://127.0.0.1:3100</code>。
+        <SectionHeader badge="INSTALL" title="開始裝：兩條路，挑一條">
+          硬需求只有兩個：Node.js 18 以上、git。裝完你會拿到一個可開的本機網址，預設是{" "}
+          <code>http://127.0.0.1:3100</code>。有 coding agent 就走路線 A 讓它代勞；
+          手邊沒有、或想自己看著每一步跑，走路線 B 把命令貼進終端機。
+          <span className="text-[color:var(--fg-0)]">
+            兩條路跑完是同一個結果，B 不是簡化版。
+          </span>
         </SectionHeader>
 
-        <Card className="p-5 sm:p-7" interactive={false} glow="cyan">
-          <div className="flex flex-wrap gap-2 mb-5">
-            <span className="text-xs px-3 py-1.5 rounded border border-[color:var(--accent-cyan)]/30 bg-[color:var(--accent-cyan)]/10 text-[color:var(--accent-cyan)]">
-              MIT 開源，可先審再跑
-            </span>
-            <span className="text-xs px-3 py-1.5 rounded border border-[color:var(--accent-purple)]/30 bg-[color:var(--accent-purple)]/10 text-[color:var(--accent-purple)]">
-              零外部相依 · 純 Node.js 18+
-            </span>
-            <a
-              href={REPO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs px-3 py-1.5 rounded border border-[color:var(--border)] text-[color:var(--fg-0)] hover:text-[color:var(--accent-cyan)] transition"
-            >
-              看原始碼 repo
-            </a>
-          </div>
+        <div className="flex flex-wrap gap-2 mb-5">
+          <span className="text-xs px-3 py-1.5 rounded border border-[color:var(--accent-cyan)]/30 bg-[color:var(--accent-cyan)]/10 text-[color:var(--accent-cyan)]">
+            MIT 開源，可先審再跑
+          </span>
+          <span className="text-xs px-3 py-1.5 rounded border border-[color:var(--accent-purple)]/30 bg-[color:var(--accent-purple)]/10 text-[color:var(--accent-purple)]">
+            零外部相依 · 純 Node.js 18+
+          </span>
+          <a
+            href={REPO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs px-3 py-1.5 rounded border border-[color:var(--border)] text-[color:var(--fg-0)] hover:text-[color:var(--accent-cyan)] transition"
+          >
+            看原始碼 repo
+          </a>
+        </div>
 
-          <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-[color:var(--border)] bg-[#050814] p-4 text-sm leading-relaxed text-[color:var(--fg-0)]">
-            <code>{installCommands}</code>
-          </pre>
+        <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
+          <Card className="p-5 sm:p-7 flex flex-col" interactive={false} glow="cyan">
+            <div className="text-xs tracking-[0.24em] text-[color:var(--accent-cyan)] mb-4">
+              路線 A · 讓 AI 幫你裝
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
+              把 prompt 貼給 coding agent
+            </h3>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-5">
+              手邊有 Codex、Claude Code 這類 coding agent 的話，兩步就好：clone 下來，
+              然後把下面那段 prompt 整段貼給它。
+            </p>
 
-          <details className="mt-5 rounded-lg border border-[color:var(--border)] bg-[#050814]/55 p-4">
-            <summary className="cursor-pointer text-sm font-semibold text-[color:var(--accent-cyan)]">
-              展開看它會請 AI 做哪些步驟，包含失敗時怎麼處理
-            </summary>
-            <pre className="mt-4 max-h-[34rem] overflow-x-auto whitespace-pre-wrap text-sm leading-relaxed text-[color:var(--fg-1)]">
-              <code>{installPrompt}</code>
+            <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-[color:var(--border)] bg-[#050814] p-4 text-sm leading-relaxed text-[color:var(--fg-0)]">
+              <code>{installCommands}</code>
             </pre>
-          </details>
 
-          <div className="mt-5">
-            <CopyInstallPrompt promptText={installPrompt} />
-          </div>
+            <details className="mt-5 rounded-lg border border-[color:var(--border)] bg-[#050814]/55 p-4">
+              <summary className="cursor-pointer text-sm font-semibold text-[color:var(--accent-cyan)]">
+                展開看它會請 AI 做哪些步驟，包含失敗時怎麼處理
+              </summary>
+              <pre className="mt-4 max-h-[34rem] overflow-x-auto whitespace-pre-wrap text-sm leading-relaxed text-[color:var(--fg-1)]">
+                <code>{installPrompt}</code>
+              </pre>
+            </details>
 
-          <div className="mt-5">
-            <BillingCallout tone="dark" />
-          </div>
-        </Card>
+            <div className="mt-5">
+              <CopyInstallPrompt promptText={installPrompt} />
+            </div>
+          </Card>
+
+          <Card className="p-5 sm:p-7 flex flex-col" interactive={false} glow="purple">
+            <div className="text-xs tracking-[0.24em] text-[color:var(--accent-purple)] mb-4">
+              路線 B · 自己貼命令
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
+              會開終端機就夠，不用有 AI
+            </h3>
+            <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-5">
+              整段照抄就會跑完。這幾行跟{" "}
+              <a
+                href={INSTALL_DOC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[color:var(--accent-cyan)] underline underline-offset-4"
+              >
+                官方安裝手冊 §2
+              </a>{" "}
+              是同一套，不是另外寫的簡版。
+            </p>
+
+            <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-[color:var(--border)] bg-[#050814] p-4 text-sm leading-relaxed text-[color:var(--fg-0)]">
+              <code>{manualCommands}</code>
+            </pre>
+
+            <p className="mt-5 text-sm text-[color:var(--fg-1)] leading-relaxed">
+              複製出來的 <code>.env</code> 不用改任何一行，
+              <code>MOCK_WORKER=1</code> 已經是預設值。{" "}
+              <span className="text-[color:var(--fg-0)]">跑到 demo 那步就算成功了：</span>
+              它會印出 Task ID 與 Artifact 路徑，那個檔案就在你電腦上，打開看得到內容。
+              <code>npm run verify-demo</code> 是拿它去對驗，不是我說跑完了。
+            </p>
+
+            <div className="mt-5">
+              <CopyInstallPrompt
+                promptText={manualCommands}
+                label="複製這幾行命令"
+                copiedLabel="已複製命令"
+                copiedHint="已複製，可以貼進 PowerShell 或終端機。"
+              />
+            </div>
+          </Card>
+        </div>
+
+        <div className="mt-5">
+          <BillingCallout tone="dark" />
+        </div>
+
       </section>
 
       <section
