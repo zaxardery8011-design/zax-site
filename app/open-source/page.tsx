@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { Card, PageHero, SectionHeader } from "@/app/components";
 import { fetchRepoMetas } from "@/app/lib/github";
+import { pageMetadata } from "@/app/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "開源專案 | ZAX",
+  description:
+    "我們把踩過的坑碼化成工具,開源給站在後面的人。每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的——不是我說它還活著,是 GitHub 說的。",
+  path: "/open-source",
+});
 
 // 每小時回源 GitHub 一次：星數與最近更新日期都不是寫死的定版數字。
 // 注意：Next 要求這個值是靜態字面量,不能是 import 進來的常數(會擋 build)。

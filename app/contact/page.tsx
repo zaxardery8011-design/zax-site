@@ -1,4 +1,12 @@
 import { Card, CTAButton, SectionHeader } from "@/app/components";
+import { pageMetadata } from "@/app/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "聯絡與服務方案 | ZAX",
+  description:
+    "三個方案:LINE 分身架設、小主腦導入、完整版客製大腦。每個方案都寫清楚含什麼、不含什麼,每個出口都有 email 與 LINE 兩條路。",
+  path: "/contact",
+});
 
 // 這頁每個行動原本都只有 mailto 一條路。瀏覽器沒設定郵件程式時,mailto 是點了沒反應
 // 的靜默失敗,所以每個出口都並排一條 LINE,兩條路指向同一個人。

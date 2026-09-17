@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/app/lib/metadata";
 import { Card, CTAButton, NewsletterSignup, PageHero, SectionHeader } from "@/app/components";
 
 const EXECUTION_PROOFS_URL =
@@ -131,10 +131,11 @@ const groups: readonly ChecklistGroup[] = [
 
 const totalItems = groups.reduce((sum, group) => sum + group.items.length, 0);
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "AI agent 紀律檢查表 | ZAX",
   description: `派工給 AI agent 前後的 ${totalItems} 條紀律，每一條都配一個可以當場執行的驗法。完整清單直接看，不用留 email。`,
-};
+  path: "/checklist",
+});
 
 export default function ChecklistPage() {
   return (

@@ -1,6 +1,14 @@
 import type { ReactNode } from "react";
 import { Card, CTAButton, PageHero, SectionHeader } from "@/app/components";
 import { fetchRepoMeta, type RepoMeta } from "@/app/lib/github";
+import { pageMetadata } from "@/app/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "實戰案例 | ZAX",
+  description:
+    "已經在跑的案子:fortune LINE bot、LINC 遠端 VM 群監控、ZAX 會員網、soplint、AI 主腦實驗室。開源那幾個的星數與最近更新是回源 GitHub 抓的,不是寫死的定版數字。",
+  path: "/cases",
+});
 
 // 每小時回源 GitHub 一次:soplint 那則的星數與最近更新都不是寫死的定版數字。
 // 注意:Next 要求這個值是靜態字面量,不能是 import 進來的常數(會擋 build)。

@@ -1,4 +1,12 @@
 import { Card, CTAButton, PageHero, SectionHeader } from "@/app/components";
+import { pageMetadata } from "@/app/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "產品專區 · 合利鑫科技 | ZAX",
+  description:
+    "硬體產品線由關係企業合利鑫科技供應:監控器材經銷批發、IP 網路型影音對講系統、商用音響與現場工程服務,服務台南及南部地區。規格與報價問現場才準。",
+  path: "/products",
+});
 
 const serviceItems = [
   {

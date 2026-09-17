@@ -1,4 +1,12 @@
 import { Card, SectionHeader } from "@/app/components";
+import { pageMetadata } from "@/app/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "關於 ZAX | 白天焊金屬,晚上焊系統",
+  description:
+    "ZAX 是一個焊工的工作站。本業是精密氬焊(TIG / ASME 等級),後來把同一套「要嘛通過檢驗、要嘛打掉重來」的紀律,寫進一套會自己派工的常駐 AI 主腦。",
+  path: "/about",
+});
 
 export default function About() {
   return (

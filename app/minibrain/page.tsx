@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/app/lib/metadata";
 import { Card, CTAButton, SectionHeader } from "@/app/components";
 import { CopyInstallPrompt } from "./CopyInstallPrompt";
 
@@ -110,11 +110,12 @@ const docLinks = [
   },
 ] as const;
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "小主腦 | 開源本機 AI 任務主腦",
   description:
     "小主腦是裝在自己電腦上的開源 AI 任務主腦。預設 mock 模式免費跑通，要接真 Claude worker 時才需要付費 Claude 訂閱。",
-};
+  path: "/minibrain",
+});
 
 function BillingCallout({ tone = "light" }: { tone?: "light" | "dark" }) {
   const classes =

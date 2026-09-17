@@ -29,14 +29,25 @@ const NAV_LINKS = [
   { href: "/contact", label: "聯絡" },
 ];
 
+// 這份是首頁的,同時也是每一頁沒自己寫 metadata 時的退路。
+// metadataBase 一定要有:各頁的 canonical 與 og:url 用相對路徑寫,靠它組成絕對網址。
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.zax.com.tw"),
   title: "ZAX | 小主腦與 AI 工作站",
   description:
     "ZAX 做可在本機跑的小主腦與 AI 工作站:丟一件事,背景跑完,結果與過程都留在你看得到的檔案裡。",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "ZAX | 小主腦與 AI 工作站",
     description:
       "ZAX 做可在本機跑的小主腦與 AI 工作站:丟一件事,背景跑完,結果與過程都留在你看得到的檔案裡。",
+    url: "/",
+    siteName: "ZAX",
+    locale: "zh_TW",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
   },
 };
 
