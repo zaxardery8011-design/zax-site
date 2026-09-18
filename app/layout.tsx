@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
 import { NewsletterSignup } from "@/app/components";
+import { OG_IMAGE } from "@/app/lib/metadata";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -45,9 +46,11 @@ export const metadata: Metadata = {
     siteName: "ZAX",
     locale: "zh_TW",
     type: "website",
+    images: [OG_IMAGE],
   },
+  // 有圖了就要用大圖卡:summary 只會擠出一張縮圖,1200x630 的字會小到看不見。
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
   },
 };
 

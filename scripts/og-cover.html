@@ -1,0 +1,80 @@
+<!doctype html>
+<!--
+  分享卡片(og:image)的來源。輸出 public/og-cover.png,尺寸 1200x630。
+  文案全部取自首頁既有文字,不在這裡新增任何對外宣稱或數字。
+  要改文案就改這裡再重出一次:
+    chrome --headless --disable-gpu --hide-scrollbars \
+      --screenshot=public/og-cover.png --window-size=1200,630 scripts/og-cover.html
+  字型用系統的 Noto Sans TC(站上 globals.css 的 fallback 也是它),
+  所以不必把字型檔塞進 repo。
+-->
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    /* 與 app/globals.css 的 body 背景同一組值 */
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(180, 143, 255, 0.18), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(79, 240, 222, 0.10), transparent 65%),
+      linear-gradient(180deg, #070b18 0%, #0b1730 40%, #11264a 100%);
+    color: #d6e1ee;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 76px 84px;
+  }
+  .eyebrow {
+    font-size: 26px;
+    letter-spacing: 0.18em;
+    color: #4ff0de;
+    font-weight: 500;
+  }
+  h1 {
+    font-size: 78px;
+    line-height: 1.28;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+  }
+  h1 .quiet { color: #b48fff; }
+  .foot {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-top: 1px solid rgba(180, 143, 255, 0.18);
+    padding-top: 26px;
+  }
+  .foot .left { font-size: 27px; color: #98a4b6; line-height: 1.5; }
+  /* 網域用拉丁字型直接指名:交給 Noto Sans TC 的可變字重會被合成成假斜體。 */
+  .foot .right {
+    font-size: 31px;
+    color: #d6e1ee;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.02em;
+  }
+  .dot { color: #5a6677; padding: 0 10px; }
+</style>
+</head>
+<body>
+  <div class="eyebrow">AI 工作節點 · 開源 · 可查證</div>
+
+  <h1>
+    讓 AI 真的把事做完,<br>
+    <span class="quiet">而且能證明它做了。</span>
+  </h1>
+
+  <div class="foot">
+    <div class="left">
+      小主腦 / aiwff-runtime<span class="dot">·</span>soplint<span class="dot">·</span>tidetrace<span class="dot">·</span>execution-proofs<br>
+      裝在自己電腦上,任務與結果都留在你看得到的檔案裡。
+    </div>
+    <div class="right">zax.com.tw</div>
+  </div>
+</body>
+</html>
