@@ -227,23 +227,61 @@ export default async function OpenSource() {
         </div>
       </section>
 
+      {/*
+        這頁收尾原本只有一張 GitHub 大卡,結果是:八張 repo 卡有七張的出口是外連 GitHub,
+        頁尾那張也是 GitHub,整頁通往站內其他頁的路只剩第一張卡裡的「看小主腦」一條。
+        首頁本文只連兩個內部頁(/minibrain 與 /open-source),所以開源頁是引流落點,
+        卻把技術型訪客整批送去 GitHub 就結束。技術訪客看完 repo 的下一個問題是
+        「這些人是不是真的幫人做過事」,那個答案在 /cases(全站最長的一頁),而這裡沒有路過去。
+        所以收尾改成兩條路:往外看程式碼,往內看它們跑在誰的案子上。
+      */}
       <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
-        <Card
-          as="a"
-          href="https://github.com/zaxardery8011-design"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-6 sm:p-8 block"
-          glow="cyan"
-        >
-          <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
-            ZAX GITHUB
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">看全部開源 →</h2>
-          <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
-            其他公開實驗、工具與自動化專案會持續放在 GitHub,等有穩定截圖或文件再補進官網。
-          </p>
-        </Card>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <Card
+            as="a"
+            href="https://github.com/zaxardery8011-design"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-6 sm:p-8 flex flex-col h-full"
+            glow="cyan"
+          >
+            <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
+              ZAX GITHUB
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">看全部開源 →</h2>
+            <p className="text-[color:var(--fg-1)] leading-relaxed">
+              其他公開實驗、工具與自動化專案會持續放在 GitHub,等有穩定截圖或文件再補進官網。
+            </p>
+          </Card>
+
+          <Card
+            as={Link}
+            href="/cases"
+            className="p-6 sm:p-8 flex flex-col h-full"
+          >
+            <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
+              REAL WORK
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              這些工具跑在誰的案子上 →
+            </h2>
+            {/* 字串用大括號包成單一 expression:JSX 的多行文字每個換行會被合併成一個半形空格,
+                中文標點後多那個空格在畫面上很明顯(實際截圖看得到「供貨系統。 案例頁」)。 */}
+            <p className="text-[color:var(--fg-1)] leading-relaxed">
+              {"上面每個 repo 都是先有一件真的要交的事,才被寫出來的。fortune LINE bot 五月底上線,LINC 已經在 production 管幾十台機器,ZAX 會員網是老客戶圈的供貨系統。案例頁寫的是當時卡在哪、最後怎麼繞過去。"}
+            </p>
+          </Card>
+        </div>
+
+        <p className="mt-6 text-sm text-[color:var(--fg-1)] leading-relaxed">
+          手上有一件想自動化的事,想問能不能做,
+          <Link
+            href="/contact"
+            className="text-[color:var(--accent-cyan)] hover:underline"
+          >
+            直接說給我們聽 →
+          </Link>
+        </p>
       </section>
     </main>
   );
