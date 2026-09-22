@@ -159,8 +159,8 @@ export default async function Home() {
         className="px-5 sm:px-6 py-16 md:py-20 max-w-5xl mx-auto w-full"
       >
         <SectionHeader
-          badge="FEATURED CASES"
-          title="精選案例：先有引擎,再把護欄補齊"
+          badge="FEATURED OPEN SOURCE"
+          title="精選開源專案：先有引擎,再把護欄補齊"
         >
           這些不是概念稿——是 AIWFF 工作節點實際迭代、放上 GitHub 開源或整理成入口的專案。
           每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的,不是寫死的定版數字——
@@ -221,7 +221,12 @@ export default async function Home() {
           })}
         </div>
 
-        <div className="mt-8">
+        <p className="mt-8 text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
+          {"上面四個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。"}
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <CTAButton href="/cases">看實戰案例 →</CTAButton>
           <CTAButton href="/open-source" variant="ghost">
             看全部開源專案 →
           </CTAButton>
