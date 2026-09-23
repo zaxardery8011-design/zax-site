@@ -6,7 +6,7 @@ import { pageMetadata } from "@/app/lib/metadata";
 export const metadata = pageMetadata({
   title: "實戰案例 | ZAX",
   description:
-    "已經在跑的案子:fortune LINE bot、LINC 遠端 VM 群監控、ZAX 會員網、soplint、AI 主腦實驗室。開源那幾個的星數與最近更新是回源 GitHub 抓的,不是寫死的定版數字。",
+    "已經在跑的案子:fortune LINE bot、LINC 遠端 VM 群監控、ZAX 會員網、soplint。開源那幾個的星數與最近更新是回源 GitHub 抓的,不是寫死的定版數字。",
   path: "/cases",
 });
 
@@ -210,27 +210,6 @@ const REAL_CASES: RealCase[] = [
       </p>
     ),
     // cards 在 render 時由 GitHub 回源填入,見 soplintCards()。
-  },
-  {
-    id: "real-case-ai-brain-line",
-    title: "AI 主腦實驗室 LINE bot",
-    description: (
-      <>
-        想先看主腦長什麼樣又不想碰命令列,這是最短的一條路:加好友就能跟一個
-        正在跑的主腦對話,入口功能是 AI 算命。我們不公布它的使用者數——
-        還沒有值得拿出來講的數字,有了再補。
-      </>
-    ),
-    descriptionClassName: "mb-6",
-    cta: (
-      <CTAButton
-        href="https://line.me/R/ti/p/%40395jcpsb"
-        target="_blank"
-        className="inline-block"
-      >
-        📱 加好友體驗主腦實驗室
-      </CTAButton>
-    ),
   },
 ];
 

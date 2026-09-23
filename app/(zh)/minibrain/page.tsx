@@ -9,7 +9,6 @@ const USAGE_DOC_URL =
   "https://github.com/zaxardery8011-design/aiwff-runtime/blob/master/docs/zh-TW/usage.md";
 const ISSUES_URL =
   "https://github.com/zaxardery8011-design/aiwff-runtime/issues";
-const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
 const installPrompt = `你是我的本機 coding agent。請幫我安裝並驗證 aiwff-runtime。
 
@@ -325,29 +324,6 @@ export default function MiniBrainPage() {
               </span>
             </Card>
           ))}
-        </div>
-      </section>
-
-      <section className="px-5 sm:px-6 py-16 max-w-5xl mx-auto w-full">
-        <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center rounded-xl border border-[color:var(--label)]/30 bg-[color:var(--label)]/10 p-6 sm:p-8">
-          <div>
-            <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
-              TRY FIRST
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              不想自己裝？先玩玩看
-            </h2>
-            <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
-              不確定合不合用、或懶得碰命令列，可以先到 LINE 主腦實驗室直接跟一個跑起來的主腦聊，體驗過再決定要不要自己裝。
-            </p>
-          </div>
-          <CTAButton
-            href={LINE_URL}
-            target="_blank"
-            className="w-full justify-center sm:w-fit"
-          >
-            加 LINE 主腦實驗室
-          </CTAButton>
         </div>
       </section>
 

@@ -79,9 +79,10 @@ export type HomeContent = {
     titleEmphasis: string;
     subtitle: string;
     primaryCta: LinkText;
-    secondaryCta: LinkText;
+    /** 可選：第二顆按鈕，未填只出主按鈕 */
+    secondaryCta?: LinkText;
   };
-  /** 小主腦兩條路線（現行首頁區塊，規格 §3 未列，先照現況收進合約） */
+  /** 小主腦路線卡（現行首頁區塊，規格 §3 未列，先照現況收進合約）；只填一張時版面改單欄 */
   routes: {
     badge: string;
     title: string;
@@ -121,8 +122,8 @@ export type HomeContent = {
   };
   /** 電子報完整版區塊：目前只有中文文案，英文版設 false 不渲染 */
   showNewsletter: boolean;
-  /** S5 先體驗：LINE 主腦實驗室 */
-  s5Try: {
+  /** S5 下一步（原 LINE 主腦實驗室）。可選＝未填不渲染 */
+  s5Try?: {
     badge: string;
     title: string;
     body: string;

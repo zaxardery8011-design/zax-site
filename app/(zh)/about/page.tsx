@@ -18,7 +18,7 @@ const exits = [
     eyebrow: "看案子",
     title: "實戰案例",
     body:
-      "已經在跑的那幾個:fortune LINE bot、LINC 遠端 VM 群監控、ZAX 會員網、soplint、AI 主腦實驗室。每則寫清楚做了什麼、拿什麼驗。",
+      "已經在跑的那幾個:fortune LINE bot、LINC 遠端 VM 群監控、ZAX 會員網、soplint。每則寫清楚做了什麼、拿什麼驗。",
     cta: "看實戰案例 →",
     href: "/cases",
     glow: "none",

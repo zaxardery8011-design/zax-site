@@ -4,8 +4,6 @@ import type { HomeContent } from "../schema";
 // 規則：能從已公開的 GitHub 個人頁 README 逐字取的就取（註明來源）；
 // 取不到的依中文正本起草英文。
 // 註「README 候選」＝README 有意思相近但不等價的句子，留給 A 決定要不要用。
-const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
-
 export const home: HomeContent = {
   s1Hero: {
     eyebrow: "AI work nodes · open source · verifiable",
@@ -15,9 +13,8 @@ export const home: HomeContent = {
       "I build the part that lets one person keep a crowd of bluffing agents in check.",
     // README 候選：…you get a local AI work node that finishes work *and* proves it.
     subtitle:
-      'Every "done" needs a receipt: the result, the process, and what it failed to do all stay as files you can inspect on your own machine. Install your own node, or try a running one first.',
+      'Every "done" needs a receipt: the result, the process, and what it failed to do all stay as files you can inspect on your own machine.',
     primaryCta: { label: "Install a local task engine →", href: "/minibrain" },
-    secondaryCta: { label: "Try it first on LINE", href: LINE_URL },
   },
   routes: {
     badge: "MINI BRAIN",
@@ -27,18 +24,11 @@ export const home: HomeContent = {
       "Send it a task, let it run in the background, get the result back, and watch progress in the browser. All state stays on your machine, not on someone else's server. Open source, MIT, free to run in mock mode.",
     cards: [
       {
-        eyebrow: "Path A · I want to run it myself",
+        eyebrow: "I want to run it myself",
         title: "DIY: clone it and run it",
         body: "If you can open a terminal and copy-paste, you can start. Mock mode runs the full loop for free, and one prompt can ask your AI coding agent to install it.",
         cta: "Read the one-prompt install →",
         href: "/minibrain",
-      },
-      {
-        eyebrow: "Path B · I want to try it first",
-        title: "Try it: LINE main brain lab",
-        body: "Skip the command line for now. Talk to a running main brain in LINE, see whether the model fits your workflow, then decide whether to run your own copy or plan a fuller setup.",
-        cta: "Add LINE and try it →",
-        href: LINE_URL,
       },
     ],
   },
@@ -108,12 +98,5 @@ export const home: HomeContent = {
   },
   // 電子報文案目前只有中文，英文版不渲染（要開請 A 先給英文文案）
   showNewsletter: false,
-  s5Try: {
-    badge: "LINE MAIN BRAIN LAB",
-    title: "Do not want to install yet? Talk to a running main brain in LINE first",
-    // README 候選：don't want to install anything? Chat with a running brain first, then decide.
-    body: "Add the LINE main brain lab and see how a running brain responds to real tasks. Try the loop first, then decide whether to install your own node or plan a fuller setup.",
-    // README「Elsewhere」
-    cta: { label: "Add on LINE: @395jcpsb", href: LINE_URL },
-  },
+  // s5Try（LINE 主腦實驗室）已拿掉：該 bot 已下線（隊長 2026-09-23 11:23），有確定在跑的 bot 再加回。
 };
