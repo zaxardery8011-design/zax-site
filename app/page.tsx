@@ -242,23 +242,31 @@ export default async function Home() {
         <div className="grid gap-6 rounded-xl border border-[color:var(--accent-cyan)]/30 bg-[color:var(--accent-cyan)]/10 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
-              LINE MAIN BRAIN LAB
+              NEXT STEP
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              不想自己裝？在 LINE 先跟主腦聊聊
+              不想自己裝？先在 LINE 聊,或直接看服務方案
             </h2>
             <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
-              加 LINE 主腦實驗室,直接體驗一個跑起來的主腦怎麼回應你——
-              體驗過再決定要自己裝,還是讓我們幫你導入。
+              {"加 LINE 主腦實驗室,直接體驗一個跑起來的主腦怎麼回應你。已經確定要找人做的,服務方案頁分三層寫:LINE 分身架設、小主腦導入、完整版客製大腦——每層含什麼、不含什麼都列出來了。"}
             </p>
           </div>
-          <CTAButton
-            href={LINE_URL}
-            target="_blank"
-            className="w-full text-center sm:w-fit"
-          >
-            加 LINE 主腦實驗室 →
-          </CTAButton>
+          <div className="flex flex-col gap-3 sm:w-fit">
+            <CTAButton
+              href={LINE_URL}
+              target="_blank"
+              className="w-full text-center sm:w-fit"
+            >
+              加 LINE 主腦實驗室 →
+            </CTAButton>
+            <CTAButton
+              href="/contact"
+              variant="ghost"
+              className="w-full text-center sm:w-fit"
+            >
+              看服務方案 →
+            </CTAButton>
+          </div>
         </div>
       </section>
     </main>
