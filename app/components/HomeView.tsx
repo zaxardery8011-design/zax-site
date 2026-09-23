@@ -178,6 +178,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
       >
         <SectionHeader badge={s4OpenSource.badge} title={s4OpenSource.title}>
           {s4OpenSource.intro}
+          {prefixGap(s4OpenSource.intro)}
           <span className="text-[color:var(--fg-0)]">{s4OpenSource.introEmphasis}</span>
         </SectionHeader>
 

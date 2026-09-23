@@ -45,6 +45,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
       >
         <p>
           {hero.body}
+          {prefixGap(hero.body)}
           <span className="text-[color:var(--fg-0)]">{hero.bodyEmphasis}</span>
         </p>
       </PageHero>
