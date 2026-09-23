@@ -22,7 +22,7 @@ const GOATCOUNTER_ENDPOINT = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`
 const NAV_LINKS = [
   { href: "/cases", label: "實戰案例" },
   { href: "/products", label: "產品專區" },
-  { href: "/minibrain", label: "小主腦" },
+  { href: "/minibrain", label: "本機任務引擎" },
   { href: "/open-source", label: "開源" },
   { href: "/checklist", label: "檢查表" },
   { href: "/about", label: "關於 ZAX" },
@@ -33,14 +33,14 @@ const NAV_LINKS = [
 // metadataBase 一定要有:各頁的 canonical 與 og:url 用相對路徑寫,靠它組成絕對網址。
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zax.com.tw"),
-  title: "ZAX | 小主腦與 AI 工作站",
+  title: "ZAX | 讓一個人管得住一群會唬爛的 AI",
   description:
-    "ZAX 做可在本機跑的小主腦與 AI 工作站:丟一件事,背景跑完,結果與過程都留在你看得到的檔案裡。",
+    "ZAX 做本機任務引擎與 AI 工作站:每個「做完了」都要留收據,結果與過程都留在你看得到的檔案裡。",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "ZAX | 小主腦與 AI 工作站",
+    title: "ZAX | 讓一個人管得住一群會唬爛的 AI",
     description:
-      "ZAX 做可在本機跑的小主腦與 AI 工作站:丟一件事,背景跑完,結果與過程都留在你看得到的檔案裡。",
+      "ZAX 做本機任務引擎與 AI 工作站:每個「做完了」都要留收據,結果與過程都留在你看得到的檔案裡。",
     url: "/",
     siteName: "ZAX",
     locale: "zh_TW",
@@ -209,7 +209,7 @@ export default function RootLayout({
           <div className="max-w-5xl mx-auto flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-3">
               <span className="steel-text font-bold tracking-widest">ZAX</span>
-              <span>· 小主腦 open source · MIT</span>
+              <span>· aiwff-runtime open source · MIT</span>
               <span>· 技術支援: GitHub Issues</span>
               <span>· 完整版 / 客製: zax.com.tw</span>
               <span className="grow" />

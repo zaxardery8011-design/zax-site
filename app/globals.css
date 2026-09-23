@@ -6,7 +6,7 @@
  * - --arc-orange 只用在主 CTA、警示、點亮高光；一屏實心橘塊最多 1 個。
  * - 回火色只出現在「熱影響區」：CTA hover、頁尾分隔線、卡片左緣、hero 一道弧；大面積仍是銀／墨。
  *   hex 從實拍回火鋼條吸色（Wikimedia Commons「Tempering colors in steel.jpg」，21×21 取平均）：
- *   gold @(780,380)、bronze @(1030,400)。紫藍 --temper-edge 這版不落（藍紫＝焊過熱，待隊長定）。
+ *   gold @(780,380)、bronze @(1030,400)。紫藍 --temper-edge 不落（藍紫＝焊過熱；隊長 09-23 定案不用，tle_025766）。
  * - --cta-fill 預設焊弧橘；回火金版把它換成 var(--temper-gold)，兩版截圖待隊長選。
  */
 :root {

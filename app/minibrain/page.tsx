@@ -111,9 +111,9 @@ const docLinks = [
 ] as const;
 
 export const metadata = pageMetadata({
-  title: "小主腦 | 開源本機 AI 任務主腦",
+  title: "本機任務引擎 | aiwff-runtime",
   description:
-    "小主腦是裝在自己電腦上的開源 AI 任務主腦。預設 mock 模式免費跑通，要接真 Claude worker 時才需要付費 Claude 訂閱。",
+    "本機任務引擎（aiwff-runtime）是每個「做完了」都要留收據的 agent runtime，裝在自己電腦上。預設 mock 模式免費跑通，要接真 Claude worker 時才需要付費 Claude 訂閱。",
   path: "/minibrain",
 });
 
@@ -143,7 +143,7 @@ export default function MiniBrainPage() {
               開源 · MIT · 全在你本機
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-              幫自己裝一台 <span className="steel-text">小主腦</span>
+              幫自己裝一台 <span className="steel-text">本機任務引擎</span>
             </h1>
             <p className="text-base md:text-lg text-[color:var(--fg-1)] leading-relaxed max-w-3xl mb-6">
               把一件事丟給它，它會在你電腦裡跑，做完把結果交回來；你也能用瀏覽器看進度。所有狀態都留在你電腦的檔案裡，不上別人的伺服器。
@@ -168,7 +168,7 @@ export default function MiniBrainPage() {
 
       <section className="px-5 sm:px-6 py-16 max-w-5xl mx-auto w-full">
         <SectionHeader badge="WHAT IT DOES" title="它能幫你做什麼">
-          小主腦不是雲端聊天工具；它是一個把任務、進度和產出都留在本機的最小 AI 任務 runtime。
+          本機任務引擎不是雲端聊天工具；它是一個把任務、進度和產出都留在本機的最小 AI 任務 runtime。
         </SectionHeader>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {scenarioCards.map((item) => (
@@ -360,7 +360,7 @@ export default function MiniBrainPage() {
             想要完整版 / 客製化？
           </h2>
           <p className="mx-auto max-w-3xl text-[color:var(--fg-1)] leading-relaxed mb-6">
-            小主腦是開源最小版本。若你要多台機器一起跑、要規則控管、要接進你自己的流程，或想要有人幫你導入客製，聊聊。
+            本機任務引擎是開源最小版本。若你要多台機器一起跑、要規則控管、要接進你自己的流程，或想要有人幫你導入客製，聊聊。
           </p>
           <CTAButton href="/contact" className="w-full justify-center sm:w-fit">
             聯絡 zax.com.tw

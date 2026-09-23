@@ -16,7 +16,7 @@ export const revalidate = 3600;
 
 const openSourceRepos = [
   {
-    name: "小主腦 (aiwff-runtime)",
+    name: "本機任務引擎 (aiwff-runtime)",
     url: "/minibrain",
     repo: "zaxardery8011-design/aiwff-runtime",
     license: "MIT",
@@ -209,7 +209,7 @@ export default async function OpenSource() {
                     href={repo.url}
                     className="mt-auto text-sm text-[color:var(--link)]"
                   >
-                    看小主腦 →
+                    看本機任務引擎 →
                   </Link>
                 ) : (
                   <a

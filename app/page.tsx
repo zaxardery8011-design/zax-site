@@ -10,15 +10,15 @@ const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
 const featuredCases = [
   {
-    name: "小主腦 / aiwff-runtime",
+    name: "本機任務引擎 / aiwff-runtime",
     repo: "zaxardery8011-design/aiwff-runtime",
     license: "MIT",
     href: "/minibrain",
     pitch:
-      "裝在自己電腦上的開源 AI 任務 runtime:先用 mock 模式免費跑通,再決定要不要接真實 worker。",
+      "每個「做完了」都要留收據的 agent runtime:裝在自己電腦上,先用 mock 模式免費跑通,再決定要不要接真實 worker。",
     method:
       "用本機檔案匯流排保存任務、進度與產出,讓使用者能在瀏覽器看狀態,也能回頭查檔案證據。",
-    result: "已整理成小主腦頁、安裝手冊與公開 repo,可從零開始導入。",
+    result: "已整理成本機任務引擎頁、安裝手冊與公開 repo,可從零開始導入。",
     glow: "primary",
   },
   {
@@ -90,15 +90,15 @@ export default async function Home() {
         className="pb-24 md:pb-32"
         title={
           <>
-            讓 AI 真的把事做完,
+            別人讓 AI 跑得動,
             <br />
-            <span className="steel-text">而且能證明它做了。</span>
+            <span className="steel-text">我們讓一個人管得住一群會唬爛的 AI。</span>
           </>
         }
         titleClassName="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6"
         actions={
           <>
-            <CTAButton href="/minibrain">幫自己裝一台小主腦 →</CTAButton>
+            <CTAButton href="/minibrain">幫自己裝一台本機任務引擎 →</CTAButton>
             <CTAButton href={LINE_URL} target="_blank" variant="ghost">
               不想裝？LINE 先體驗
             </CTAButton>
@@ -106,8 +106,8 @@ export default async function Home() {
         }
       >
         <p>
-          我們做在你本機跑得動的 AI 工具:丟一件事,背景跑完,
-          結果與過程都是你電腦上的檔案。想自己裝一台?想先體驗?
+          每個「做完了」都要留收據——結果、過程、它哪裡沒做到,
+          都是你電腦上查得到的檔案。想自己裝一台?想先體驗?
           兩條路都給你。
         </p>
       </PageHero>
@@ -118,7 +118,7 @@ export default async function Home() {
       >
         <SectionHeader
           badge="MINI BRAIN"
-          title="小主腦：裝在你自己電腦上的小型 AI 主腦"
+          title="本機任務引擎：每個「做完了」都要留收據的 agent runtime"
         >
           丟一件事給它,背景跑完,結果推回來,瀏覽器看進度。所有狀態都留在你電腦裡,
           不上別人的伺服器。開源、MIT、免費跑通。

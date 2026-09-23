@@ -4,7 +4,7 @@ import { pageMetadata } from "@/app/lib/metadata";
 export const metadata = pageMetadata({
   title: "聯絡與服務方案 | ZAX",
   description:
-    "三個方案:LINE 分身架設、小主腦導入、完整版客製大腦。每個方案都寫清楚含什麼、不含什麼,每個出口都有 email 與 LINE 兩條路。",
+    "三個方案:LINE 分身架設、本機任務引擎導入、完整版客製大腦。每個方案都寫清楚含什麼、不含什麼,每個出口都有 email 與 LINE 兩條路。",
   path: "/contact",
 });
 
@@ -29,16 +29,16 @@ const servicePackages = [
   },
   {
     code: "P-runtime",
-    name: "小主腦導入",
-    summary: "幫願意本機自跑的人,把小主腦從安裝、mock 驗證走到可理解的使用邊界。",
+    name: "本機任務引擎導入",
+    summary: "幫願意本機自跑的人,把本機任務引擎（aiwff-runtime）從安裝、mock 驗證走到可理解的使用邊界。",
     bullets: [
       "本機安裝教練與環境檢查",
       "mock 驗證與真實 worker 串接邊界說明",
       "使用手冊導讀與後續自跑方式整理",
     ],
     href:
-      "mailto:zaxardery8011@gmail.com?subject=%E5%B0%8F%E4%B8%BB%E8%85%A6%E5%B0%8E%E5%85%A5%E8%AB%AE%E8%A9%A2",
-    cta: "詢問小主腦導入",
+      "mailto:zaxardery8011@gmail.com?subject=%E6%9C%AC%E6%A9%9F%E4%BB%BB%E5%8B%99%E5%BC%95%E6%93%8E%E5%B0%8E%E5%85%A5%E8%AB%AE%E8%A9%A2",
+    cta: "詢問本機任務引擎導入",
   },
   {
     code: "P-full",
@@ -67,7 +67,7 @@ export default function Contact() {
           title="你可以從哪一層開始"
           titleClassName="mb-8"
         >
-          不一定要一次做完整套。先從 LINE 分身、小主腦導入,或直接做客製大腦都可以。
+          不一定要一次做完整套。先從 LINE 分身、本機任務引擎導入,或直接做客製大腦都可以。
         </SectionHeader>
 
         <div className="grid gap-4 lg:grid-cols-3">
