@@ -1,53 +1,53 @@
 import type { HomeContent } from "../schema";
 
-// 英文佔位（B 建框架用，A 來填）。
+// 英文內容（A filled from B framework placeholders）。
 // 規則：能從已公開的 GitHub 個人頁 README 逐字取的就取（註明來源）；
-// 取不到的一律填 "[EN TBD by A] <中文原文>"，B 不自寫行銷英文。
+// 取不到的依中文正本起草英文。
 // 註「README 候選」＝README 有意思相近但不等價的句子，留給 A 決定要不要用。
 const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
 export const home: HomeContent = {
   s1Hero: {
-    eyebrow: "[EN TBD by A] AI 工作節點 · 開源 · 可查證",
+    eyebrow: "AI work nodes · open source · verifiable",
     // README H1（A 09:46 裁示英文首屏可用個人頁 tagline）
     titleLead: "Anyone can make AI agents run.",
     titleEmphasis:
       "I build the part that lets one person keep a crowd of bluffing agents in check.",
     // README 候選：…you get a local AI work node that finishes work *and* proves it.
     subtitle:
-      "[EN TBD by A] 每個「做完了」都要留收據——結果、過程、它哪裡沒做到, 都是你電腦上查得到的檔案。想自己裝一台?想先體驗? 兩條路都給你。",
-    primaryCta: { label: "[EN TBD by A] 幫自己裝一台本機任務引擎 →", href: "/minibrain" },
-    secondaryCta: { label: "[EN TBD by A] 不想裝？LINE 先體驗", href: LINE_URL },
+      'Every "done" needs a receipt: the result, the process, and what it failed to do all stay as files you can inspect on your own machine. Install your own node, or try a running one first.',
+    primaryCta: { label: "Install a local task engine →", href: "/minibrain" },
+    secondaryCta: { label: "Try it first on LINE", href: LINE_URL },
   },
   routes: {
     badge: "MINI BRAIN",
-    title: "[EN TBD by A] 本機任務引擎：每個「做完了」都要留收據的 agent runtime",
+    title: 'Local task engine: an agent runtime where every "done" leaves a receipt',
     // README 候選：A local minimal brain. Send a task to Telegram, Claude runs it on your machine…
     intro:
-      "[EN TBD by A] 丟一件事給它,背景跑完,結果推回來,瀏覽器看進度。所有狀態都留在你電腦裡, 不上別人的伺服器。開源、MIT、免費跑通。",
+      "Send it a task, let it run in the background, get the result back, and watch progress in the browser. All state stays on your machine, not on someone else's server. Open source, MIT, free to run in mock mode.",
     cards: [
       {
-        eyebrow: "[EN TBD by A] 路線 A · 我想自己裝",
-        title: "[EN TBD by A] DIY：clone 下來自己跑",
-        body: "[EN TBD by A] 會開終端機、會複製貼上就夠。預設 mock 模式免費跑通,一段 prompt 交給你的 AI coding agent 自動裝好。",
-        cta: "[EN TBD by A] 看一鍵安裝 →",
+        eyebrow: "Path A · I want to run it myself",
+        title: "DIY: clone it and run it",
+        body: "If you can open a terminal and copy-paste, you can start. Mock mode runs the full loop for free, and one prompt can ask your AI coding agent to install it.",
+        cta: "Read the one-prompt install →",
         href: "/minibrain",
       },
       {
-        eyebrow: "[EN TBD by A] 路線 B · 我想先玩 / 要人幫我做",
-        title: "[EN TBD by A] 先體驗：LINE 主腦實驗室",
-        body: "[EN TBD by A] 懶得碰命令列、想先確認合不合用——直接在 LINE 跟一個跑起來的主腦聊,體驗過再決定。或找我們幫你導入完整版。",
-        cta: "[EN TBD by A] 加 LINE 先體驗 →",
+        eyebrow: "Path B · I want to try it first",
+        title: "Try it: LINE main brain lab",
+        body: "Skip the command line for now. Talk to a running main brain in LINE, see whether the model fits your workflow, then decide whether to run your own copy or plan a fuller setup.",
+        cta: "Add LINE and try it →",
         href: LINE_URL,
       },
     ],
   },
   s4OpenSource: {
     badge: "FEATURED CASES",
-    title: "[EN TBD by A] 精選案例：先有引擎,再把護欄補齊",
+    title: "Featured cases: build the engine first, then add the guardrails",
     intro:
-      "[EN TBD by A] 這些不是概念稿——是 AIWFF 工作節點實際迭代、放上 GitHub 開源或整理成入口的專案。 每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的,不是寫死的定版數字——",
-    introEmphasis: "[EN TBD by A] 不是我說它還活著,是 GitHub 說的。",
+      "These are not concept drafts. They are projects iterated inside AIWFF work nodes, published on GitHub, or turned into entry points. Each card's stars and last-updated value are pulled from GitHub every hour, not frozen by hand.",
+    introEmphasis: "It is not me saying the project is alive. GitHub says it.",
     cards: [
       {
         name: "aiwff-runtime",
@@ -56,10 +56,10 @@ export const home: HomeContent = {
         href: "/minibrain",
         // README 候選：The local agent runtime — the engine that runs disciplined agents
         pitch:
-          "[EN TBD by A] 每個「做完了」都要留收據的 agent runtime:裝在自己電腦上,先用 mock 模式免費跑通,再決定要不要接真實 worker。",
+          'An agent runtime where every "done" leaves a receipt: install it on your own machine, run the full loop in mock mode first, then decide whether to connect real workers.',
         method:
-          "[EN TBD by A] 用本機檔案匯流排保存任務、進度與產出,讓使用者能在瀏覽器看狀態,也能回頭查檔案證據。",
-        result: "[EN TBD by A] 已整理成本機任務引擎頁、安裝手冊與公開 repo,可從零開始導入。",
+          "A local file bus records tasks, progress, and outputs, so users can watch status in the browser and still inspect the file evidence later.",
+        result: "Packaged into the local task engine page, install guide, and public repo so it can be adopted from zero.",
       },
       {
         name: "soplint",
@@ -69,8 +69,8 @@ export const home: HomeContent = {
         // README 核心工具鏈表
         pitch:
           "Static SOP-compliance audit for AI work nodes — catches instruction drift over long runs",
-        method: "[EN TBD by A] 把 SOP 落成可掃描的靜態規則,對節點產出逐條審計,抓出偏離。",
-        result: "[EN TBD by A] 已開源上架、目前 star 前列。",
+        method: "Turns SOPs into scannable static rules, audits node outputs line by line, and catches drift.",
+        result: "Open sourced and currently among the higher-starred repos.",
       },
       {
         name: "tidetrace",
@@ -81,8 +81,8 @@ export const home: HomeContent = {
         pitch:
           "Threads keyword patrol Chrome extension — local highlight + reply tracking + BYOK LLM",
         method:
-          "[EN TBD by A] 做成 Chrome 擴充,在地端跑關鍵字高亮與回覆追蹤,LLM 用 BYOK 自帶金鑰。",
-        result: "[EN TBD by A] 已開源上架,功能鏈完整可裝來用。",
+          "Built as a Chrome extension that runs keyword highlighting and reply tracking locally, with BYOK for LLM access.",
+        result: "Open sourced with a complete usable feature chain.",
       },
       {
         name: "execution-proofs",
@@ -93,26 +93,26 @@ export const home: HomeContent = {
         pitch:
           'MCP telemetry gateway — forces agents to prove "done" with real files & timestamps',
         method:
-          "[EN TBD by A] 做成 MCP 本地遙測閘道,攔下「完成」宣稱、要求附上真實檔案與時間戳。",
-        result: "[EN TBD by A] 已開源上架,把「可查證」變成可裝的護欄。",
+          'Built as a local MCP telemetry gateway that intercepts "done" claims and requires real files plus timestamps.',
+        result: 'Open sourced as an installable guardrail for making "verifiable" real.',
       },
     ],
     labels: {
-      updated: "[EN TBD by A] 最近更新",
-      method: "[EN TBD by A] 怎麼做：",
-      result: "[EN TBD by A] 成果：",
-      repoLink: "[EN TBD by A] 看 repo →",
-      entryLink: "[EN TBD by A] 看入口 →",
+      updated: "Last updated",
+      method: "Method:",
+      result: "Result:",
+      repoLink: "View repo →",
+      entryLink: "View entry →",
     },
-    allCta: { label: "[EN TBD by A] 看全部開源專案 →", href: "/en/open-source" },
+    allCta: { label: "See all open source projects →", href: "/en/open-source" },
   },
   // 電子報文案目前只有中文，英文版不渲染（要開請 A 先給英文文案）
   showNewsletter: false,
   s5Try: {
     badge: "LINE MAIN BRAIN LAB",
-    title: "[EN TBD by A] 不想自己裝？在 LINE 先跟主腦聊聊",
+    title: "Do not want to install yet? Talk to a running main brain in LINE first",
     // README 候選：don't want to install anything? Chat with a running brain first, then decide.
-    body: "[EN TBD by A] 加 LINE 主腦實驗室,直接體驗一個跑起來的主腦怎麼回應你—— 體驗過再決定要自己裝,還是讓我們幫你導入。",
+    body: "Add the LINE main brain lab and see how a running brain responds to real tasks. Try the loop first, then decide whether to install your own node or plan a fuller setup.",
     // README「Elsewhere」
     cta: { label: "Add on LINE: @395jcpsb", href: LINE_URL },
   },

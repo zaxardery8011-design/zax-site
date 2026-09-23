@@ -1,24 +1,24 @@
 import type { OpenSourceContent } from "../schema";
 
-// 英文佔位（B 建框架用，A 來填）。規則同 content/en/home.ts：
-// README 逐字可取的就取（註明來源），取不到的填 "[EN TBD by A] <中文原文>"。
+// 英文內容（A filled from B framework placeholders）。規則同 content/en/home.ts：
+// README 逐字可取的就取（註明來源），取不到的依中文正本起草英文。
 // 指令（start）是程式碼不是文案，照搬。
 export const openSource: OpenSourceContent = {
   meta: {
-    title: "[EN TBD by A] 開源專案 | ZAX",
+    title: "Open source | ZAX",
     description:
-      "[EN TBD by A] 我們把踩過的坑碼化成工具,開源給站在後面的人。每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的——不是我說它還活著,是 GitHub 說的。",
+      "We turn the traps we hit into tools, then open source them for the people building after us. Each card's stars and last-updated value are pulled from GitHub every hour. It is not me saying the project is alive. GitHub says it.",
   },
   hero: {
     badge: "OPEN SOURCE",
-    titleEmphasis: "[EN TBD by A] 站在巨人肩上,",
-    titleRest: "[EN TBD by A] 長成讓人站的巨人。",
-    body: "[EN TBD by A] 我們把踩過的坑碼化成工具,開源給站在後面的人。每張卡的星數與「最近更新」 都是每小時回源 GitHub 抓的,不是寫死的定版數字——",
-    bodyEmphasis: "[EN TBD by A] 不是我說它還活著,是 GitHub 說的。",
+    titleEmphasis: "Build on what came before,",
+    titleRest: "then leave stronger ground for others.",
+    body: "We turn the traps we hit into tools, then open source them for the people building after us. Each card's stars and last-updated value are pulled from GitHub every hour, not frozen by hand.",
+    bodyEmphasis: "It is not me saying the project is alive. GitHub says it.",
   },
   reposSection: {
     badge: "PUBLIC REPOS",
-    title: "[EN TBD by A] 做給自己用,也讓開發者直接看見做法",
+    title: "Built for our own work, exposed so developers can inspect the method",
   },
   repos: [
     {
@@ -29,7 +29,7 @@ export const openSource: OpenSourceContent = {
       kind: "internal",
       // README 候選：A local minimal brain. / Free to try — MOCK_WORKER=1 runs the full loop with no API key.
       pitch:
-        "[EN TBD by A] 裝在自己電腦上的開源 AI 任務主腦。預設 mock 模式免費跑通,要接真 Claude worker 時才需要付費 Claude 訂閱。",
+        "An open source AI task brain that runs on your own machine. Mock mode runs the full loop for free; a paid Claude subscription is only needed when you connect real Claude workers.",
       start:
         "git clone https://github.com/zaxardery8011-design/aiwff-runtime\ncp .env.example .env\nnpm start",
       startNote: "",
@@ -45,7 +45,7 @@ export const openSource: OpenSourceContent = {
         "Static SOP-compliance audit for AI work nodes — catches instruction drift over long runs",
       start: "/plugin marketplace add zaxardery8011-design/soplint",
       startNote:
-        "[EN TBD by A] 在 Claude Code 裡輸入這行即可;不用 plugin 就 clone repo 改 soplint.config.json。",
+        "Run this inside Claude Code; if you do not want the plugin path, clone the repo and edit soplint.config.json.",
     },
     {
       name: "line-persona",
@@ -82,7 +82,7 @@ export const openSource: OpenSourceContent = {
         "Threads keyword patrol Chrome extension — local highlight + reply tracking + BYOK LLM",
       start: "git clone https://github.com/zaxardery8011-design/tidetrace",
       startNote:
-        "[EN TBD by A] 無 build 步驟;chrome://extensions → 開發人員模式 → 載入未封裝,選這個資料夾。",
+        "No build step. Open chrome://extensions, turn on Developer mode, choose Load unpacked, and select this folder.",
     },
     {
       name: "execution-proofs",
@@ -95,7 +95,7 @@ export const openSource: OpenSourceContent = {
         'MCP telemetry gateway — forces agents to prove "done" with real files & timestamps',
       start:
         "git clone https://github.com/zaxardery8011-design/execution-proofs\nnpm install\nnpm run build",
-      startNote: "[EN TBD by A] build 完把 server 加進你的 MCP client 設定檔。",
+      startNote: "After the build, add the server to your MCP client config.",
     },
     {
       name: "earthlife",
@@ -104,10 +104,10 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "external",
       pitch:
-        "[EN TBD by A] 每 30 分鐘自主進化的網頁生活模擬器,完全由工作節點疊代開發,展示自動化提交與動態事件的閉環。",
+        "A web life simulator that evolves itself every 30 minutes through work-node iteration, showing a closed loop of automated commits and dynamic events.",
       start: "git clone https://github.com/tingyi365/earthlife",
       startNote:
-        "[EN TBD by A] 單一 HTML 檔、無框架無 build,直接開 index.html;或線上玩 earthlife.pages.dev。",
+        "Single HTML file, no framework, no build. Open index.html directly, or play online at earthlife.pages.dev.",
     },
     {
       name: "agy-quota",
@@ -116,22 +116,22 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "external",
       pitch:
-        "[EN TBD by A] headless 額度查詢工具:無 IDE/TTY 的自動化排程與 CI 環境下,即時查多個 LLM 提供商的額度水位。",
+        "A headless quota checker for automation schedules and CI environments without an IDE or TTY, reporting live quota levels across multiple LLM providers.",
       start: "git clone https://github.com/tingyi365/agy-quota\nnode bin/agy-quota.js",
       startNote: "",
     },
   ],
   labels: {
-    featured: "[EN TBD by A] 主打頁",
-    updated: "[EN TBD by A] 最近更新",
-    quickStart: "[EN TBD by A] 一行上手",
-    internalLink: "[EN TBD by A] 看本機任務引擎 →",
+    featured: "Featured page",
+    updated: "Last updated",
+    quickStart: "Quick start",
+    internalLink: "View local task engine →",
     externalLink: "GitHub →",
   },
   allRepos: {
     href: "https://github.com/zaxardery8011-design",
     badge: "ZAX GITHUB",
-    title: "[EN TBD by A] 看全部開源 →",
-    body: "[EN TBD by A] 其他公開實驗、工具與自動化專案會持續放在 GitHub,等有穩定截圖或文件再補進官網。",
+    title: "See all open source →",
+    body: "Other public experiments, tools, and automation projects keep landing on GitHub. They get added to the site when the screenshots or docs are stable enough.",
   },
 };
