@@ -35,6 +35,21 @@ export async function HomeView({ content }: { content: HomeContent }) {
       {s5Try.cta.label}
     </CTAButton>
   );
+  // 已確定要找人做的訪客，這區是首頁唯一能直達服務方案的地方——少了這顆就只剩 LINE 一條路。
+  const s5Ctas = s5Try.secondaryCta ? (
+    <div className="flex flex-col gap-3 sm:w-fit">
+      {s5Cta}
+      <CTAButton
+        href={s5Try.secondaryCta.href}
+        variant="ghost"
+        className="w-full text-center sm:w-fit"
+      >
+        {s5Try.secondaryCta.label}
+      </CTAButton>
+    </div>
+  ) : (
+    s5Cta
+  );
 
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
@@ -221,7 +236,17 @@ export async function HomeView({ content }: { content: HomeContent }) {
           })}
         </div>
 
-        <div className="mt-8">
+        {/* 開源卡不是案例：這區若只有「看全部開源」一顆鈕，首頁本文就沒有任何一條路通往 /cases。 */}
+        {s4OpenSource.casesNote ? (
+          <p className="mt-8 text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
+            {s4OpenSource.casesNote}
+          </p>
+        ) : null}
+
+        <div className={`${s4OpenSource.casesNote ? "mt-6" : "mt-8"} flex flex-wrap gap-3`}>
+          {s4OpenSource.casesCta ? (
+            <CTAButton href={s4OpenSource.casesCta.href}>{s4OpenSource.casesCta.label}</CTAButton>
+          ) : null}
           <CTAButton href={s4OpenSource.allCta.href} variant="ghost">
             {s4OpenSource.allCta.label}
           </CTAButton>
@@ -255,10 +280,10 @@ export async function HomeView({ content }: { content: HomeContent }) {
                 height={160}
                 className="rounded-lg bg-white p-2"
               />
-              {s5Cta}
+              {s5Ctas}
             </div>
           ) : (
-            s5Cta
+            s5Ctas
           )}
         </div>
       </section>

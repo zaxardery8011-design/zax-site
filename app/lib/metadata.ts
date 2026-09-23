@@ -12,6 +12,20 @@ export function bilingualAlternates(zhPath: string, enPath: string) {
   };
 }
 
+/**
+ * 分享卡片的圖。八頁共用同一張(來源 scripts/og-cover.html)。
+ *
+ * 為什麼要在每一頁的 openGraph 裡明寫一次:Next 合併 metadata 時,
+ * 頁面的 openGraph 物件是整塊蓋掉 layout 那份,不是逐欄合併 ——
+ * 所以 layout 寫了 images 也救不了任何一個子頁面。同 siteName / locale 的處理。
+ */
+export const OG_IMAGE = {
+  url: "/og-cover.png",
+  width: 1200,
+  height: 630,
+  alt: "ZAX:讓 AI 真的把事做完,而且能證明它做了。",
+} as const;
+
 // 一頁的 <title> 與它分享出去的 og:title 必須是同一句話。
 // 分開寫兩份,改一邊就會分岔 —— 而分享卡片那一份,自己在站上永遠看不到,錯了也不會被發現。
 // 所以這裡只收一份文案,title / og:title / canonical / og:url 全部從它長出來。
@@ -43,6 +57,7 @@ export function pageMetadata({
       siteName: "ZAX",
       locale: ogLocale,
       type: "website",
+      images: [OG_IMAGE],
     },
   };
 }
@@ -62,9 +77,11 @@ export function layoutMetadata(content: LayoutContent): Metadata {
       siteName: "ZAX",
       locale: content.ogLocale,
       type: "website",
+      images: [OG_IMAGE],
     },
+    // 有圖了就要用大圖卡:summary 只會擠出一張縮圖,1200x630 的字會小到看不見。
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
     },
   };
 }

@@ -37,8 +37,8 @@ export const home: HomeContent = {
     ],
   },
   s4OpenSource: {
-    badge: "FEATURED CASES",
-    title: "精選案例：先有引擎,再把護欄補齊",
+    badge: "FEATURED OPEN SOURCE",
+    title: "精選開源專案：先有引擎,再把護欄補齊",
     intro:
       "這些不是概念稿——是 AIWFF 工作節點實際迭代、放上 GitHub 開源或整理成入口的專案。 每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的,不是寫死的定版數字——",
     introEmphasis: "不是我說它還活著,是 GitHub 說的。",
@@ -93,12 +93,16 @@ export const home: HomeContent = {
       entryLink: "看入口 →",
     },
     allCta: { label: "看全部開源專案 →", href: "/open-source" },
+    casesNote:
+      "上面四個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
+    casesCta: { label: "看實戰案例 →", href: "/cases" },
   },
   showNewsletter: true,
   s5Try: {
-    badge: "LINE MAIN BRAIN LAB",
-    title: "不想自己裝？在 LINE 先跟主腦聊聊",
-    body: "加 LINE 主腦實驗室,直接體驗一個跑起來的主腦怎麼回應你—— 體驗過再決定要自己裝,還是讓我們幫你導入。",
+    badge: "NEXT STEP",
+    title: "不想自己裝？先在 LINE 聊,或直接看服務方案",
+    body: "加 LINE 主腦實驗室,直接體驗一個跑起來的主腦怎麼回應你。已經確定要找人做的,服務方案頁分三層寫:LINE 分身架設、小主腦導入、完整版客製大腦——每層含什麼、不含什麼都列出來了。",
     cta: { label: "加 LINE 主腦實驗室 →", href: LINE_URL },
+    secondaryCta: { label: "看服務方案 →", href: "/contact" },
   },
 };

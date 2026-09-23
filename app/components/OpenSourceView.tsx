@@ -117,21 +117,54 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
         </div>
       </section>
 
+      {/*
+        收尾若只有 GitHub 一張卡，技術訪客看完 repo 就整批被送出站；
+        他們的下一個問題是「這些人是不是真的幫人做過事」，答案在 /cases。
+        所以有 casesCard 時收尾是兩條路：往外看程式碼，往內看它們跑在誰的案子上。
+      */}
       <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
-        <Card
-          as="a"
-          href={allRepos.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-6 sm:p-8 block"
-          glow="primary"
-        >
-          <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
-            {allRepos.badge}
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">{allRepos.title}</h2>
-          <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">{allRepos.body}</p>
-        </Card>
+        <div className={content.casesCard ? "grid gap-4 lg:grid-cols-2" : undefined}>
+          <Card
+            as="a"
+            href={allRepos.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-6 sm:p-8 flex flex-col h-full"
+            glow="primary"
+          >
+            <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
+              {allRepos.badge}
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">{allRepos.title}</h2>
+            <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">{allRepos.body}</p>
+          </Card>
+
+          {content.casesCard ? (
+            <Card
+              as={Link}
+              href={content.casesCard.href}
+              className="p-6 sm:p-8 flex flex-col h-full"
+            >
+              <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
+                {content.casesCard.badge}
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">{content.casesCard.title}</h2>
+              <p className="text-[color:var(--fg-1)] leading-relaxed">{content.casesCard.body}</p>
+            </Card>
+          ) : null}
+        </div>
+
+        {content.contactLine ? (
+          <p className="mt-6 text-sm text-[color:var(--fg-1)] leading-relaxed">
+            {content.contactLine.lead}
+            <Link
+              href={content.contactLine.link.href}
+              className="text-[color:var(--link)] hover:underline"
+            >
+              {content.contactLine.link.label}
+            </Link>
+          </p>
+        ) : null}
       </section>
     </main>
   );

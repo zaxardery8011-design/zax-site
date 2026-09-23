@@ -128,4 +128,14 @@ export const openSource: OpenSourceContent = {
     title: "看全部開源 →",
     body: "其他公開實驗、工具與自動化專案會持續放在 GitHub,等有穩定截圖或文件再補進官網。",
   },
+  casesCard: {
+    href: "/cases",
+    badge: "REAL WORK",
+    title: "這些工具跑在誰的案子上 →",
+    body: "上面每個 repo 都是先有一件真的要交的事,才被寫出來的。fortune LINE bot 五月底上線,LINC 已經在 production 管幾十台機器,ZAX 會員網是老客戶圈的供貨系統。案例頁寫的是當時卡在哪、最後怎麼繞過去。",
+  },
+  contactLine: {
+    lead: "手上有一件想自動化的事,想問能不能做,",
+    link: { label: "直接說給我們聽 →", href: "/contact" },
+  },
 };

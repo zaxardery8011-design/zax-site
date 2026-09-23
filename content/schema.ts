@@ -115,6 +115,9 @@ export type HomeContent = {
       entryLink: string;
     };
     allCta: LinkText;
+    /** 可選：卡片下方導向實戰案例頁的一段話＋主按鈕（開源卡≠案例，要有路去 /cases） */
+    casesNote?: string;
+    casesCta?: LinkText;
   };
   /** 電子報完整版區塊：目前只有中文文案，英文版設 false 不渲染 */
   showNewsletter: boolean;
@@ -124,6 +127,8 @@ export type HomeContent = {
     title: string;
     body: string;
     cta: LinkText;
+    /** 可選：第二顆按鈕（已確定要找人做的 → 服務方案），未填不渲染 */
+    secondaryCta?: LinkText;
     /** 可選：LINE ID 與 QR 圖（public/ 下路徑），未填不渲染 */
     lineId?: string;
     qrImage?: string;
@@ -175,5 +180,17 @@ export type OpenSourceContent = {
     badge: string;
     title: string;
     body: string;
+  };
+  /** 可選：收尾第二張卡，往內導向實戰案例頁；未填則收尾只有 GitHub 一張 */
+  casesCard?: {
+    href: string;
+    badge: string;
+    title: string;
+    body: string;
+  };
+  /** 可選：收尾下方一行聯絡導流 */
+  contactLine?: {
+    lead: string;
+    link: LinkText;
   };
 };
