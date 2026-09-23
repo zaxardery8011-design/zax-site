@@ -26,10 +26,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
     content;
   const metas = await fetchRepoMetas(s4OpenSource.cards.map((c) => c.repo));
 
-  // 路線卡只剩一張時改單欄全寬，不留半格空洞。
-  const singleRoute = routes.cards.length === 1;
-
-  const s5Cta = s5Try ? (
+  const s5Cta = (
     <CTAButton
       href={s5Try.cta.href}
       target={isExternalHref(s5Try.cta.href) ? "_blank" : undefined}
@@ -37,9 +34,9 @@ export async function HomeView({ content }: { content: HomeContent }) {
     >
       {s5Try.cta.label}
     </CTAButton>
-  ) : null;
-  // 已確定要找人做的訪客，這區是首頁唯一能直達服務方案的地方。
-  const s5Ctas = s5Try?.secondaryCta ? (
+  );
+  // 已確定要找人做的訪客，這區是首頁唯一能直達服務方案的地方——少了這顆就只剩 LINE 一條路。
+  const s5Ctas = s5Try.secondaryCta ? (
     <div className="flex flex-col gap-3 sm:w-fit">
       {s5Cta}
       <CTAButton
@@ -72,15 +69,13 @@ export async function HomeView({ content }: { content: HomeContent }) {
         actions={
           <>
             <CTAButton href={s1Hero.primaryCta.href}>{s1Hero.primaryCta.label}</CTAButton>
-            {s1Hero.secondaryCta ? (
-              <CTAButton
-                href={s1Hero.secondaryCta.href}
-                target={isExternalHref(s1Hero.secondaryCta.href) ? "_blank" : undefined}
-                variant="ghost"
-              >
-                {s1Hero.secondaryCta.label}
-              </CTAButton>
-            ) : null}
+            <CTAButton
+              href={s1Hero.secondaryCta.href}
+              target={isExternalHref(s1Hero.secondaryCta.href) ? "_blank" : undefined}
+              variant="ghost"
+            >
+              {s1Hero.secondaryCta.label}
+            </CTAButton>
           </>
         }
       >
@@ -122,7 +117,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
           {routes.intro}
         </SectionHeader>
 
-        <div className={`grid gap-4 ${singleRoute ? "" : "md:grid-cols-2"}`}>
+        <div className="grid gap-4 md:grid-cols-2">
           {routes.cards.map((item, i) => {
             const isExternal = isExternalHref(item.href);
 
@@ -133,16 +128,14 @@ export async function HomeView({ content }: { content: HomeContent }) {
                 href={item.href}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
-                className={`p-6 sm:p-7 flex flex-col ${singleRoute ? "sm:p-8" : "min-h-72"}`}
+                className="p-6 sm:p-7 flex min-h-72 flex-col"
                 glow={ROUTE_GLOW[i] ?? "none"}
               >
                 <div className="text-xs tracking-[0.24em] text-[color:var(--label)] mb-4">
                   {item.eyebrow}
                 </div>
                 <h2 className="text-2xl font-bold mb-4">{item.title}</h2>
-                <p
-                  className={`text-sm text-[color:var(--fg-1)] leading-relaxed mb-6 ${singleRoute ? "max-w-3xl" : ""}`}
-                >
+                <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-6">
                   {item.body}
                 </p>
                 <span className="mt-auto text-sm font-semibold text-[color:var(--link)]">
@@ -262,9 +255,8 @@ export async function HomeView({ content }: { content: HomeContent }) {
 
       {content.showNewsletter ? <NewsletterSignup source="home" /> : null}
 
-      {s5Try ? (
       <section
-        id="next"
+        id="line"
         className="px-5 sm:px-6 py-16 md:py-20 max-w-5xl mx-auto w-full"
       >
         <div className="grid gap-6 rounded-xl border border-[color:var(--label)]/30 bg-[color:var(--label)]/10 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -295,7 +287,6 @@ export async function HomeView({ content }: { content: HomeContent }) {
           )}
         </div>
       </section>
-      ) : null}
 
       {s6Collab ? (
         <section

@@ -42,6 +42,7 @@ export const layout: LayoutContent = {
     social: [
       { kind: "facebook", href: "https://www.facebook.com/ardery8011", label: "ZAX Facebook" },
       { kind: "line", href: "https://line.me/R/ti/p/~zaxvip888", label: "ZAX personal LINE" },
+      { kind: "line", href: "https://line.me/R/ti/p/@395jcpsb", label: "AI main brain lab LINE" },
       { kind: "mail", href: "mailto:zaxardery8011@gmail.com", label: "Email ZAX" },
       { kind: "github", href: "https://github.com/zaxardery8011-design", label: "ZAX GitHub" },
       { kind: "contact", href: "/contact", label: "ZAX contact page" },

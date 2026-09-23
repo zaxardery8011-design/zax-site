@@ -38,6 +38,7 @@ export const layout: LayoutContent = {
     social: [
       { kind: "facebook", href: "https://www.facebook.com/ardery8011", label: "ZAX Facebook" },
       { kind: "line", href: "https://line.me/R/ti/p/~zaxvip888", label: "ZAX 個人 LINE" },
+      { kind: "line", href: "https://line.me/R/ti/p/@395jcpsb", label: "AI 主腦實驗室 LINE" },
       { kind: "mail", href: "mailto:zaxardery8011@gmail.com", label: "寄信給 ZAX" },
       { kind: "github", href: "https://github.com/zaxardery8011-design", label: "ZAX GitHub" },
       { kind: "contact", href: "/contact", label: "ZAX 聯絡頁" },

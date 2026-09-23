@@ -156,6 +156,10 @@ export default function Contact() {
               <a href="https://line.me/R/ti/p/~zaxvip888" target="_blank" rel="noopener noreferrer" className="text-[color:var(--link)] hover:underline">~zaxvip888</a>
             </div>
             <div className="flex items-baseline gap-3">
+              <span className="text-[color:var(--fg-2)] w-20 text-xs">LINE 實驗室</span>
+              <a href="https://line.me/R/ti/p/@395jcpsb" target="_blank" rel="noopener noreferrer" className="text-[color:var(--link)] hover:underline">@395jcpsb</a>
+            </div>
+            <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">所在</span>
               <span>台灣</span>
             </div>

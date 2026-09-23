@@ -2,14 +2,17 @@ import type { HomeContent } from "../schema";
 
 // 逐字搬自 app/page.tsx（eaf3d25），文案未改。
 // 原本 JSX 裡跨行的段落，瀏覽器看到的是「行與行之間補一個半形空白」，這裡照渲染結果保留那個空白。
+const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
+
 export const home: HomeContent = {
   s1Hero: {
     eyebrow: "AI 工作節點 · 開源 · 可查證",
     titleLead: "別人讓 AI 跑得動,",
     titleEmphasis: "我們讓一個人管得住一群會唬爛的 AI。",
     subtitle:
-      "每個「做完了」都要留收據——結果、過程、它哪裡沒做到, 都是你電腦上查得到的檔案。",
+      "每個「做完了」都要留收據——結果、過程、它哪裡沒做到, 都是你電腦上查得到的檔案。想自己裝一台?想先體驗? 兩條路都給你。",
     primaryCta: { label: "幫自己裝一台本機任務引擎 →", href: "/minibrain" },
+    secondaryCta: { label: "不想裝？LINE 先體驗", href: LINE_URL },
   },
   routes: {
     badge: "MINI BRAIN",
@@ -18,11 +21,18 @@ export const home: HomeContent = {
       "丟一件事給它,背景跑完,結果推回來,瀏覽器看進度。所有狀態都留在你電腦裡, 不上別人的伺服器。開源、MIT、免費跑通。",
     cards: [
       {
-        eyebrow: "我想自己裝",
+        eyebrow: "路線 A · 我想自己裝",
         title: "DIY：clone 下來自己跑",
         body: "會開終端機、會複製貼上就夠。預設 mock 模式免費跑通,一段 prompt 交給你的 AI coding agent 自動裝好。",
         cta: "看一鍵安裝 →",
         href: "/minibrain",
+      },
+      {
+        eyebrow: "路線 B · 我想先玩 / 要人幫我做",
+        title: "先體驗：LINE 主腦實驗室",
+        body: "懶得碰命令列、想先確認合不合用——直接在 LINE 跟一個跑起來的主腦聊,體驗過再決定。或找我們幫你導入完整版。",
+        cta: "加 LINE 先體驗 →",
+        href: LINE_URL,
       },
     ],
   },
@@ -90,8 +100,9 @@ export const home: HomeContent = {
   showNewsletter: true,
   s5Try: {
     badge: "NEXT STEP",
-    title: "不想自己裝？直接看服務方案",
-    body: "已經確定要找人做的,服務方案頁分三層寫:LINE 分身架設、小主腦導入、完整版客製大腦——每層含什麼、不含什麼都列出來了。",
-    cta: { label: "看服務方案 →", href: "/contact" },
+    title: "不想自己裝？先在 LINE 聊,或直接看服務方案",
+    body: "加 LINE 主腦實驗室,直接體驗一個跑起來的主腦怎麼回應你。已經確定要找人做的,服務方案頁分三層寫:LINE 分身架設、小主腦導入、完整版客製大腦——每層含什麼、不含什麼都列出來了。",
+    cta: { label: "加 LINE 主腦實驗室 →", href: LINE_URL },
+    secondaryCta: { label: "看服務方案 →", href: "/contact" },
   },
 };
