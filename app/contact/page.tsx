@@ -73,7 +73,7 @@ export default function Contact() {
         <div className="grid gap-4 lg:grid-cols-3">
           {servicePackages.map((item) => (
             <Card key={item.code} className="p-6 flex min-h-[29rem] flex-col">
-              <div className="text-xs tracking-[0.24em] text-[color:var(--accent-cyan)] mb-4">
+              <div className="text-xs tracking-[0.24em] text-[color:var(--label)] mb-4">
                 {item.code}
               </div>
               <h2 className="text-xl font-bold mb-3">{item.name}</h2>
@@ -83,7 +83,7 @@ export default function Contact() {
               <ul className="space-y-2 text-sm text-[color:var(--fg-1)] leading-relaxed mb-5">
                 {item.bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-2">
-                    <span className="text-[color:var(--accent-cyan)]">-</span>
+                    <span className="text-[color:var(--label)]">-</span>
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -135,7 +135,7 @@ export default function Contact() {
               <span className="text-[color:var(--fg-2)] w-20 text-xs">Email</span>
               <a
                 href={`mailto:${EMAIL}`}
-                className="text-[color:var(--accent-cyan)] hover:underline"
+                className="text-[color:var(--link)] hover:underline"
               >
                 {EMAIL}
               </a>
@@ -146,18 +146,18 @@ export default function Contact() {
                 href="https://github.com/zaxardery8011-design"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[color:var(--accent-cyan)] hover:underline"
+                className="text-[color:var(--link)] hover:underline"
               >
                 @zaxardery8011-design
               </a>
             </div>
             <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">LINE 個人</span>
-              <a href="https://line.me/R/ti/p/~zaxvip888" target="_blank" rel="noopener noreferrer" className="text-[color:var(--accent-cyan)] hover:underline">~zaxvip888</a>
+              <a href="https://line.me/R/ti/p/~zaxvip888" target="_blank" rel="noopener noreferrer" className="text-[color:var(--link)] hover:underline">~zaxvip888</a>
             </div>
             <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">LINE 實驗室</span>
-              <a href="https://line.me/R/ti/p/@395jcpsb" target="_blank" rel="noopener noreferrer" className="text-[color:var(--accent-cyan)] hover:underline">@395jcpsb</a>
+              <a href="https://line.me/R/ti/p/@395jcpsb" target="_blank" rel="noopener noreferrer" className="text-[color:var(--link)] hover:underline">@395jcpsb</a>
             </div>
             <div className="flex items-baseline gap-3">
               <span className="text-[color:var(--fg-2)] w-20 text-xs">所在</span>

@@ -72,7 +72,7 @@ export default function Products() {
         badge="PRODUCTS · 合利鑫科技"
         title={
           <>
-            <span className="neon-text">合利鑫科技有限公司</span>
+            <span className="steel-text">合利鑫科技有限公司</span>
             <br />
             監控器材 · 影音對講 · 商用音響 · 工程服務
           </>
@@ -93,7 +93,7 @@ export default function Products() {
         <div className="grid md:grid-cols-3 gap-4">
           {serviceItems.map((item) => (
             <Card key={item.title} className="p-5">
-              <div className="font-semibold mb-2 text-lg text-[color:var(--accent-cyan)]">
+              <div className="font-semibold mb-2 text-lg text-[color:var(--label)]">
                 {item.title}
               </div>
               <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
@@ -106,7 +106,7 @@ export default function Products() {
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <SectionHeader
-          accent="purple"
+          accent="secondary"
           badge="AUTHORIZED BRANDS"
           headingClassName="text-2xl md:text-3xl font-bold mb-8"
           title="代理品牌"
@@ -116,7 +116,7 @@ export default function Products() {
             <Card key={brand.name} className="p-6">
               <div className="flex flex-wrap items-center gap-3 mb-3">
                 <h3 className="text-xl font-bold">{brand.name}</h3>
-                <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border border-[color:var(--accent-cyan)]/30">
+                <span className="text-xs px-2.5 py-1 rounded bg-[color:var(--label)]/15 text-[color:var(--label)] border border-[color:var(--label)]/30">
                   {brand.badge}
                 </span>
               </div>
@@ -129,7 +129,7 @@ export default function Products() {
       </section>
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
-        <Card className="p-6" glow="cyan">
+        <Card className="p-6" glow="primary">
           <SectionHeader
             badge="PROJECTS"
             descriptionClassName="hidden"
@@ -157,7 +157,7 @@ export default function Products() {
           {productLine.map((item) => (
             <Card key={item.model} className="p-5">
               <div className="flex items-baseline gap-3 mb-2">
-                <span className="font-mono text-2xl font-bold text-[color:var(--accent-cyan)]">
+                <span className="font-mono text-2xl font-bold text-[color:var(--label)]">
                   {item.model}
                 </span>
                 {item.group === item.name ? null : (
@@ -176,7 +176,7 @@ export default function Products() {
             href="https://line.me/R/ti/p/@hlc2703600"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[color:var(--accent-cyan)] hover:underline"
+            className="text-[color:var(--link)] hover:underline"
           >
             LINE @hlc2703600
           </a>
@@ -186,7 +186,7 @@ export default function Products() {
 
       <section className="px-5 sm:px-6 py-12 max-w-5xl mx-auto w-full">
         <Card className="p-6">
-          <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-4">CONTACT</div>
+          <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-4">CONTACT</div>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             {contactItems.map((item) => (
               <div key={item.label} className="flex gap-3">
@@ -198,7 +198,7 @@ export default function Products() {
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
                     rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-[color:var(--accent-cyan)] hover:underline"
+                    className="text-[color:var(--link)] hover:underline"
                   >
                     {item.value}
                   </a>
@@ -212,7 +212,7 @@ export default function Products() {
       </section>
 
       <section className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
-        <Card className="p-8" glow="purple">
+        <Card className="p-8" glow="secondary">
           <p className="text-[color:var(--fg-0)] text-lg md:text-xl mb-6 leading-relaxed">
             需要監控器材、影音對講、商用音響或南部工程服務，可直接聯絡合利鑫科技確認產品與現場需求。
           </p>

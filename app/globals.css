@@ -1,16 +1,44 @@
 @import "tailwindcss";
 
+/*
+ * 配色：銀（不變色的鋼本色）為主調＋焊弧橘為動作色。
+ * - 銀族（--metal-*、--hairline）一律中性無彩，任何回火色相不得混入。
+ * - --arc-orange 只用在主 CTA、警示、點亮高光；一屏實心橘塊最多 1 個。
+ * - 回火三變數（--temper-gold / --temper-bronze / --temper-edge）hex 待隊長定，尚未落地。
+ */
 :root {
-  --bg-0: #070b18;
-  --bg-1: #0b1730;
-  --bg-2: #11264a;
-  --fg-0: #d6e1ee;
-  --fg-1: #98a4b6;
-  --fg-2: #5a6677;
-  --accent-cyan: #4ff0de;
-  --accent-purple: #b48fff;
-  --border: rgba(180, 143, 255, 0.18);
-  --glass: rgba(17, 38, 74, 0.55);
+  --metal-ink: #1b1a17;
+  --metal-ink-raise: #24231f;
+  --metal-face: #e8e6e1;
+  --metal-face-dim: #a9a7a1;
+  --hairline: rgba(232, 230, 225, 0.14);
+  --arc-orange: #ff7a1a;
+
+  --bg-0: var(--metal-ink);
+  --bg-1: var(--metal-ink-raise);
+  --bg-2: #2d2c28;
+}
+
+/* 深面語境（全頁底、深面板） */
+:root,
+.on-ink {
+  --fg-0: var(--metal-face);
+  --fg-1: var(--metal-face-dim);
+  --fg-2: #8f8d88;
+  --label: var(--metal-face-dim);
+  --link: var(--arc-orange);
+  --border: var(--hairline);
+}
+
+/* 亮面語境（卡片／銘牌的面） */
+.metal-card,
+.on-face {
+  --fg-0: var(--metal-ink);
+  --fg-1: #4d4b46;
+  --fg-2: #5f5d58;
+  --label: #5f5d58;
+  --link: var(--metal-ink);
+  --border: rgba(27, 26, 23, 0.16);
 }
 
 @theme inline {
@@ -20,8 +48,9 @@
   --color-fg-0: var(--fg-0);
   --color-fg-1: var(--fg-1);
   --color-fg-2: var(--fg-2);
-  --color-accent-cyan: var(--accent-cyan);
-  --color-accent-purple: var(--accent-purple);
+  --color-metal-ink: var(--metal-ink);
+  --color-metal-face: var(--metal-face);
+  --color-arc-orange: var(--arc-orange);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -29,23 +58,29 @@
 html, body {
   overflow-x: hidden;
   background:
-    radial-gradient(1200px 600px at 15% -10%, rgba(180, 143, 255, 0.18), transparent 60%),
-    radial-gradient(900px 500px at 90% 10%, rgba(79, 240, 222, 0.10), transparent 65%),
-    linear-gradient(180deg, #070b18 0%, #0b1730 40%, #11264a 100%);
+    radial-gradient(1200px 600px at 15% -10%, rgba(232, 230, 225, 0.06), transparent 60%),
+    var(--metal-ink);
   color: var(--fg-0);
   background-attachment: fixed;
   font-family: var(--font-sans), "Noto Sans TC", -apple-system, "Segoe UI", sans-serif;
 }
 
-.glass {
-  background: linear-gradient(180deg, rgba(17, 38, 74, 0.65), rgba(11, 23, 48, 0.55));
-  border: 1px solid var(--border);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+.on-ink {
+  color: var(--fg-0);
 }
 
-.glow-cyan { box-shadow: 0 0 24px rgba(79, 240, 222, 0.18); }
-.glow-purple { box-shadow: 0 0 28px rgba(180, 143, 255, 0.22); }
+.plate-ink {
+  background: var(--metal-ink-raise);
+}
+
+.metal-card {
+  background: var(--metal-face);
+  color: var(--fg-0);
+  border: 1px solid var(--hairline);
+}
+
+.glow-primary { box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38); }
+.glow-secondary { box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3); }
 
 .card-hover {
   position: relative;
@@ -56,49 +91,10 @@ html, body {
     background 180ms ease;
 }
 
-.card-hover::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(79, 240, 222, 0.52),
-      rgba(180, 143, 255, 0.48),
-      rgba(79, 240, 222, 0.08)
-    );
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms ease;
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
 .card-hover:hover {
-  border-color: rgba(79, 240, 222, 0.36);
-  box-shadow:
-    0 18px 50px rgba(0, 0, 0, 0.24),
-    0 0 30px rgba(79, 240, 222, 0.13);
+  border-color: var(--metal-face-dim);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
   transform: translateY(-2px) scale(1.01);
-}
-
-.card-hover:hover::before { opacity: 1; }
-
-.glow-cyan.card-hover:hover {
-  box-shadow:
-    0 18px 50px rgba(0, 0, 0, 0.24),
-    0 0 34px rgba(79, 240, 222, 0.26);
-}
-
-.glow-purple.card-hover:hover {
-  box-shadow:
-    0 18px 50px rgba(0, 0, 0, 0.24),
-    0 0 36px rgba(180, 143, 255, 0.3);
 }
 
 .hero-ambient {
@@ -123,8 +119,8 @@ html, body {
   position: absolute;
   inset: 6% -10% 4%;
   background-image:
-    linear-gradient(rgba(79, 240, 222, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(180, 143, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(232, 230, 225, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 230, 225, 0.07) 1px, transparent 1px);
   background-size: 52px 52px;
   mask-image: linear-gradient(90deg, transparent, #000 18%, #000 70%, transparent);
   opacity: 0.32;
@@ -132,10 +128,11 @@ html, body {
   animation: hero-grid-drift 16s linear infinite;
 }
 
+/* 中性高光掠過（不染回火色） */
 .hero-ribbon {
   position: absolute;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(79, 240, 222, 0.46), rgba(180, 143, 255, 0.32), transparent);
+  background: linear-gradient(90deg, transparent, rgba(232, 230, 225, 0.42), transparent);
   transform: rotate(-10deg);
   animation: hero-ribbon-sweep 12s ease-in-out infinite;
 }
@@ -171,16 +168,17 @@ html, body {
   }
 }
 
-.neon-text {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+/* 標題強調：鋼面亮部到暗部的中性漸層 */
+.steel-text {
+  background: linear-gradient(180deg, var(--metal-face) 30%, var(--metal-face-dim));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-  color: #070b18;
+  background: var(--arc-orange);
+  color: var(--metal-ink);
   font-weight: 600;
 }
 .btn-primary:hover { filter: brightness(1.08); }
@@ -189,4 +187,4 @@ html, body {
   border: 1px solid var(--border);
   color: var(--fg-0);
 }
-.btn-ghost:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+.btn-ghost:hover { border-color: var(--link); color: var(--link); }

@@ -144,7 +144,7 @@ export default function ChecklistPage() {
         badge={`CHECKLIST · ${totalItems} 條`}
         title={
           <>
-            <span className="neon-text">AI agent 紀律檢查表</span>
+            <span className="steel-text">AI agent 紀律檢查表</span>
             <br />
             派工前先把驗收線拉清楚
           </>
@@ -194,7 +194,7 @@ export default function ChecklistPage() {
                     {item.rule}
                   </h3>
                   <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
-                    <span className="text-[color:var(--accent-cyan)]">怎麼驗：</span>
+                    <span className="text-[color:var(--label)]">怎麼驗：</span>
                     {item.check}
                   </p>
                 </Card>
@@ -205,8 +205,8 @@ export default function ChecklistPage() {
       </section>
 
       <section className="px-5 sm:px-6 py-16 max-w-5xl mx-auto w-full">
-        <div className="rounded-xl border border-[color:var(--border)] bg-[#050814]/35 p-6 sm:p-8">
-          <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
+        <div className="rounded-xl border border-[color:var(--border)] bg-[color:var(--metal-ink-raise)] p-6 sm:p-8">
+          <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
             WHY NO PDF
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">

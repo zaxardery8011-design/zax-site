@@ -139,11 +139,11 @@ export default function MiniBrainPage() {
       <section className="px-5 sm:px-6 pt-20 pb-14 md:pt-28 md:pb-20 max-w-5xl mx-auto w-full">
         <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div>
-            <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-5">
+            <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-5">
               開源 · MIT · 全在你本機
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-              幫自己裝一台 <span className="neon-text">小主腦</span>
+              幫自己裝一台 <span className="steel-text">小主腦</span>
             </h1>
             <p className="text-base md:text-lg text-[color:var(--fg-1)] leading-relaxed max-w-3xl mb-6">
               把一件事丟給它，它會在你電腦裡跑，做完把結果交回來；你也能用瀏覽器看進度。所有狀態都留在你電腦的檔案裡，不上別人的伺服器。
@@ -173,7 +173,7 @@ export default function MiniBrainPage() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {scenarioCards.map((item) => (
             <Card key={item.title} className="p-5" interactive={false}>
-              <div className="text-xs tracking-[0.24em] text-[color:var(--accent-purple)] mb-4">
+              <div className="text-xs tracking-[0.24em] text-[color:var(--label)] mb-4">
                 {item.label}
               </div>
               <h2 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
@@ -201,25 +201,25 @@ export default function MiniBrainPage() {
         </SectionHeader>
 
         <div className="flex flex-wrap gap-2 mb-5">
-          <span className="text-xs px-3 py-1.5 rounded border border-[color:var(--accent-cyan)]/30 bg-[color:var(--accent-cyan)]/10 text-[color:var(--accent-cyan)]">
+          <span className="text-xs px-3 py-1.5 rounded border border-[color:var(--label)]/30 bg-[color:var(--label)]/10 text-[color:var(--label)]">
             MIT 開源，可先審再跑
           </span>
-          <span className="text-xs px-3 py-1.5 rounded border border-[color:var(--accent-purple)]/30 bg-[color:var(--accent-purple)]/10 text-[color:var(--accent-purple)]">
+          <span className="text-xs px-3 py-1.5 rounded border border-[color:var(--label)]/30 bg-[color:var(--label)]/10 text-[color:var(--label)]">
             零外部相依 · 純 Node.js 18+
           </span>
           <a
             href={REPO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs px-3 py-1.5 rounded border border-[color:var(--border)] text-[color:var(--fg-0)] hover:text-[color:var(--accent-cyan)] transition"
+            className="text-xs px-3 py-1.5 rounded border border-[color:var(--border)] text-[color:var(--fg-0)] hover:text-[color:var(--link)] transition"
           >
             看原始碼 repo
           </a>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
-          <Card className="p-5 sm:p-7 flex flex-col" interactive={false} glow="cyan">
-            <div className="text-xs tracking-[0.24em] text-[color:var(--accent-cyan)] mb-4">
+          <Card className="p-5 sm:p-7 flex flex-col" interactive={false} glow="primary">
+            <div className="text-xs tracking-[0.24em] text-[color:var(--label)] mb-4">
               路線 A · 讓 AI 幫你裝
             </div>
             <h3 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
@@ -230,12 +230,12 @@ export default function MiniBrainPage() {
               然後把下面那段 prompt 整段貼給它。
             </p>
 
-            <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-[color:var(--border)] bg-[#050814] p-4 text-sm leading-relaxed text-[color:var(--fg-0)]">
+            <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-[color:var(--border)] bg-[color:var(--metal-ink)] on-ink p-4 text-sm leading-relaxed text-[color:var(--fg-0)]">
               <code>{installCommands}</code>
             </pre>
 
-            <details className="mt-5 rounded-lg border border-[color:var(--border)] bg-[#050814]/55 p-4">
-              <summary className="cursor-pointer text-sm font-semibold text-[color:var(--accent-cyan)]">
+            <details className="mt-5 rounded-lg border border-[color:var(--border)] bg-[color:var(--metal-ink)] on-ink p-4">
+              <summary className="cursor-pointer text-sm font-semibold text-[color:var(--link)]">
                 展開看它會請 AI 做哪些步驟，包含失敗時怎麼處理
               </summary>
               <pre className="mt-4 max-h-[34rem] overflow-x-auto whitespace-pre-wrap text-sm leading-relaxed text-[color:var(--fg-1)]">
@@ -248,8 +248,8 @@ export default function MiniBrainPage() {
             </div>
           </Card>
 
-          <Card className="p-5 sm:p-7 flex flex-col" interactive={false} glow="purple">
-            <div className="text-xs tracking-[0.24em] text-[color:var(--accent-purple)] mb-4">
+          <Card className="p-5 sm:p-7 flex flex-col" interactive={false} glow="secondary">
+            <div className="text-xs tracking-[0.24em] text-[color:var(--label)] mb-4">
               路線 B · 自己貼命令
             </div>
             <h3 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
@@ -261,14 +261,14 @@ export default function MiniBrainPage() {
                 href={INSTALL_DOC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[color:var(--accent-cyan)] underline underline-offset-4"
+                className="text-[color:var(--link)] underline underline-offset-4"
               >
                 官方安裝手冊 §2
               </a>{" "}
               是同一套，不是另外寫的簡版。
             </p>
 
-            <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-[color:var(--border)] bg-[#050814] p-4 text-sm leading-relaxed text-[color:var(--fg-0)]">
+            <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-[color:var(--border)] bg-[color:var(--metal-ink)] on-ink p-4 text-sm leading-relaxed text-[color:var(--fg-0)]">
               <code>{manualCommands}</code>
             </pre>
 
@@ -320,7 +320,7 @@ export default function MiniBrainPage() {
               <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-5">
                 {item.body}
               </p>
-              <span className="mt-auto text-sm text-[color:var(--accent-cyan)]">
+              <span className="mt-auto text-sm text-[color:var(--link)]">
                 開啟連結 →
               </span>
             </Card>
@@ -329,9 +329,9 @@ export default function MiniBrainPage() {
       </section>
 
       <section className="px-5 sm:px-6 py-16 max-w-5xl mx-auto w-full">
-        <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center rounded-xl border border-[color:var(--accent-cyan)]/30 bg-[color:var(--accent-cyan)]/10 p-6 sm:p-8">
+        <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center rounded-xl border border-[color:var(--label)]/30 bg-[color:var(--label)]/10 p-6 sm:p-8">
           <div>
-            <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
+            <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
               TRY FIRST
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
@@ -352,8 +352,8 @@ export default function MiniBrainPage() {
       </section>
 
       <section className="px-5 sm:px-6 py-16 max-w-5xl mx-auto w-full">
-        <div className="rounded-xl border border-[color:var(--border)] bg-[#050814]/35 p-6 sm:p-8 text-center">
-          <div className="text-xs tracking-[0.3em] text-[color:var(--accent-purple)] mb-3">
+        <div className="rounded-xl border border-[color:var(--border)] bg-[color:var(--metal-ink-raise)] p-6 sm:p-8 text-center">
+          <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
             FULL AIWFF / CUSTOM
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">

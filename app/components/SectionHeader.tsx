@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-type Accent = "cyan" | "purple";
+type Accent = "primary" | "secondary";
 
 type SectionHeaderProps = {
   accent?: Accent;
@@ -14,12 +14,12 @@ type SectionHeaderProps = {
 };
 
 const accentClass: Record<Accent, string> = {
-  cyan: "text-[color:var(--accent-cyan)]",
-  purple: "text-[color:var(--accent-purple)]",
+  primary: "text-[color:var(--label)]",
+  secondary: "text-[color:var(--label)]",
 };
 
 export function SectionHeader({
-  accent = "cyan",
+  accent = "primary",
   badge,
   children,
   className = "",

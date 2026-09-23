@@ -64,7 +64,7 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
         type="email"
         placeholder="你的 email"
         className={[
-          "min-h-11 rounded-md border border-[color:var(--border)] bg-[color:var(--bg-0)]/70 px-4 py-2.5 text-sm text-[color:var(--fg-0)] outline-none transition placeholder:text-[color:var(--fg-2)] focus:border-[color:var(--accent-cyan)]",
+          "min-h-11 rounded-md border border-[color:var(--border)] bg-[color:var(--bg-0)]/70 px-4 py-2.5 text-sm text-[color:var(--fg-0)] outline-none transition placeholder:text-[color:var(--fg-2)] focus:border-[color:var(--link)]",
           compact ? "w-full sm:w-56" : "",
         ].join(" ")}
       />
@@ -78,12 +78,12 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
         訂閱實作紀錄
       </button>
       {status === "unconfigured" ? (
-        <p aria-live="polite" className="text-sm text-[color:var(--accent-cyan)]">
+        <p aria-live="polite" className="text-sm text-[color:var(--label)]">
           訂閱功能設定中，請稍後再試。
         </p>
       ) : null}
       {status === "error" ? (
-        <p aria-live="polite" className="text-sm text-[color:var(--accent-purple)]">
+        <p aria-live="polite" className="text-sm text-[color:var(--arc-orange)]">
           請先填入 email。
         </p>
       ) : null}
@@ -121,9 +121,9 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
 
   return (
     <section className="px-5 sm:px-6 w-full py-16 md:py-20">
-      <div className="mx-auto grid max-w-5xl gap-6 rounded-xl border border-[color:var(--accent-cyan)]/30 bg-[color:var(--accent-cyan)]/10 p-6 sm:p-8 lg:grid-cols-[1fr_minmax(18rem,24rem)] lg:items-center">
+      <div className="mx-auto grid max-w-5xl gap-6 rounded-xl border border-[color:var(--label)]/30 bg-[color:var(--label)]/10 p-6 sm:p-8 lg:grid-cols-[1fr_minmax(18rem,24rem)] lg:items-center">
         <div>
-          <div className="mb-3 text-xs tracking-[0.3em] text-[color:var(--accent-cyan)]">
+          <div className="mb-3 text-xs tracking-[0.3em] text-[color:var(--label)]">
             NEWSLETTER
           </div>
           <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
@@ -148,7 +148,7 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
           </p>
           <Link
             href="/checklist"
-            className="mt-5 inline-flex text-sm font-semibold text-[color:var(--accent-cyan)] hover:underline"
+            className="mt-5 inline-flex text-sm font-semibold text-[color:var(--link)] hover:underline"
           >
             看 AI agent 紀律檢查表 →
           </Link>

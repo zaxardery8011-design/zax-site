@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
-type CardGlow = "none" | "cyan" | "purple";
+type CardGlow = "none" | "primary" | "secondary";
 
 type CardProps<T extends ElementType = "div"> = {
   as?: T;
@@ -12,8 +12,8 @@ type CardProps<T extends ElementType = "div"> = {
 
 const glowClass: Record<CardGlow, string> = {
   none: "",
-  cyan: "glow-cyan",
-  purple: "glow-purple",
+  primary: "glow-primary",
+  secondary: "glow-secondary",
 };
 
 export function Card<T extends ElementType = "div">({
@@ -26,7 +26,7 @@ export function Card<T extends ElementType = "div">({
 }: CardProps<T>) {
   const Component = as ?? "div";
   const classes = [
-    "glass rounded-xl",
+    "metal-card rounded-xl",
     glowClass[glow],
     interactive ? "card-hover" : "",
     className,

@@ -41,7 +41,7 @@ export function PageHero({
         </div>
       ) : null}
       {badge ? (
-        <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-6">
+        <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-6">
           {badge}
         </div>
       ) : null}

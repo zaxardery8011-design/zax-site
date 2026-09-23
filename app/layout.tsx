@@ -156,8 +156,8 @@ export default function RootLayout({
 
         {/* ── Top Nav ── */}
         <header className="sticky top-0 z-20 w-full">
-          <nav className="w-full px-5 sm:px-6 py-4 flex items-center gap-4 sm:gap-6 glass border-b border-[color:var(--border)]">
-            <Link href="/" className="font-bold tracking-widest text-lg neon-text">
+          <nav className="w-full px-5 sm:px-6 py-4 flex items-center gap-4 sm:gap-6 plate-ink border-b border-[color:var(--border)]">
+            <Link href="/" className="font-bold tracking-widest text-lg steel-text">
               ZAX
             </Link>
             <div className="hidden md:flex gap-5 text-sm text-[color:var(--fg-1)] ml-4">
@@ -165,7 +165,7 @@ export default function RootLayout({
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="hover:text-[color:var(--accent-cyan)]"
+                  className="hover:text-[color:var(--link)]"
                 >
                   {link.label}
                 </Link>
@@ -184,7 +184,7 @@ export default function RootLayout({
               等於窄螢幕只到得了首頁跟 /contact。這排用橫向捲動補上,不需要 JS。 */}
           <nav
             aria-label="頁面導覽"
-            className="md:hidden w-full glass border-b border-[color:var(--border)]"
+            className="md:hidden w-full plate-ink border-b border-[color:var(--border)]"
           >
             <div className="flex gap-2 overflow-x-auto px-5 py-2.5 text-xs text-[color:var(--fg-1)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {NAV_LINKS.map((link) => (
@@ -208,7 +208,7 @@ export default function RootLayout({
         <footer className="px-5 sm:px-6 py-10 mt-auto border-t border-[color:var(--border)] text-xs text-[color:var(--fg-2)]">
           <div className="max-w-5xl mx-auto flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="neon-text font-bold tracking-widest">ZAX</span>
+              <span className="steel-text font-bold tracking-widest">ZAX</span>
               <span>· 小主腦 open source · MIT</span>
               <span>· 技術支援: GitHub Issues</span>
               <span>· 完整版 / 客製: zax.com.tw</span>
@@ -277,7 +277,7 @@ export default function RootLayout({
                 <span>瀏覽人次</span>
                 <span
                   id="goatcounter-visitor-count-target"
-                  className="inline-flex items-center text-[color:var(--accent-cyan)]"
+                  className="inline-flex items-center text-[color:var(--label)]"
                 >
                   GoatCounter
                 </span>

@@ -118,11 +118,11 @@ function Badge({
   tone = "plain",
 }: {
   children: React.ReactNode;
-  tone?: "plain" | "cyan";
+  tone?: "plain" | "primary";
 }) {
   const cls =
-    tone === "cyan"
-      ? "bg-[color:var(--accent-cyan)]/15 text-[color:var(--accent-cyan)] border-[color:var(--accent-cyan)]/30"
+    tone === "primary"
+      ? "bg-[color:var(--label)]/15 text-[color:var(--label)] border-[color:var(--label)]/30"
       : "border-[color:var(--border)] text-[color:var(--fg-1)]";
   return (
     <span className={`text-xs px-2.5 py-1 rounded border ${cls}`}>
@@ -140,7 +140,7 @@ export default async function OpenSource() {
         badge="OPEN SOURCE"
         title={
           <>
-            <span className="neon-text">站在巨人肩上,</span>
+            <span className="steel-text">站在巨人肩上,</span>
             <br />
             長成讓人站的巨人。
           </>
@@ -168,12 +168,12 @@ export default async function OpenSource() {
               <Card
                 key={repo.name}
                 className="p-5 flex flex-col"
-                glow={repo.kind === "internal" ? "cyan" : "none"}
+                glow={repo.kind === "internal" ? "primary" : "none"}
               >
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   {repo.kind === "internal" ? <Badge>主打頁</Badge> : null}
                   {meta ? <Badge>★ {meta.stars}</Badge> : null}
-                  <Badge tone="cyan">{repo.license}</Badge>
+                  <Badge tone="primary">{repo.license}</Badge>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-[color:var(--fg-0)]">
                   {repo.name}
@@ -191,10 +191,10 @@ export default async function OpenSource() {
                 </p>
 
                 <div className="mb-4">
-                  <div className="text-[11px] tracking-[0.2em] text-[color:var(--accent-cyan)] mb-1.5">
+                  <div className="text-[11px] tracking-[0.2em] text-[color:var(--label)] mb-1.5">
                     一行上手
                   </div>
-                  <pre className="text-xs font-mono leading-relaxed rounded-lg border border-[color:var(--border)] bg-black/30 p-3 overflow-x-auto whitespace-pre text-[color:var(--fg-1)]">
+                  <pre className="text-xs font-mono leading-relaxed rounded-lg border border-[color:var(--border)] bg-[color:var(--fg-0)]/5 p-3 overflow-x-auto whitespace-pre text-[color:var(--fg-1)]">
                     <code>{repo.start}</code>
                   </pre>
                   {repo.startNote ? (
@@ -207,7 +207,7 @@ export default async function OpenSource() {
                 {repo.kind === "internal" ? (
                   <Link
                     href={repo.url}
-                    className="mt-auto text-sm text-[color:var(--accent-cyan)]"
+                    className="mt-auto text-sm text-[color:var(--link)]"
                   >
                     看小主腦 →
                   </Link>
@@ -216,7 +216,7 @@ export default async function OpenSource() {
                     href={repo.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto text-sm text-[color:var(--accent-cyan)]"
+                    className="mt-auto text-sm text-[color:var(--link)]"
                   >
                     GitHub →
                   </a>
@@ -234,9 +234,9 @@ export default async function OpenSource() {
           target="_blank"
           rel="noopener noreferrer"
           className="p-6 sm:p-8 block"
-          glow="cyan"
+          glow="primary"
         >
-          <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
+          <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
             ZAX GITHUB
           </div>
           <h2 className="text-2xl md:text-3xl font-bold mb-4">看全部開源 →</h2>

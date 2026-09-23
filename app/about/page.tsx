@@ -17,7 +17,7 @@ export default function About() {
         className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <SectionHeader
-          accent="purple"
+          accent="secondary"
           badge="ABOUT"
           title="About — 白天焊金屬,晚上焊系統。"
           titleClassName="mb-6"
@@ -32,7 +32,7 @@ export default function About() {
             </p>
           </Card>
           <Card className="p-6">
-            <div className="text-[color:var(--accent-cyan)] text-xs mb-3">守則</div>
+            <div className="text-[color:var(--label)] text-xs mb-3">守則</div>
             <ul className="space-y-2 text-sm">
               <li>· 不寫「處理 N 萬筆」假數字</li>
               <li>· 不堆漂亮 landing 騙看的人</li>
@@ -43,7 +43,7 @@ export default function About() {
           </Card>
         </div>
         <Card className="p-6 mt-6 text-[color:var(--fg-1)] leading-relaxed">
-          <div className="text-[color:var(--accent-purple)] text-xs tracking-[0.3em] mb-3">
+          <div className="text-[color:var(--label)] text-xs tracking-[0.3em] mb-3">
             FDE · AI 落地工程師
           </div>
           <p>

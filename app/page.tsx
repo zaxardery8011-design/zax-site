@@ -19,7 +19,7 @@ const featuredCases = [
     method:
       "用本機檔案匯流排保存任務、進度與產出,讓使用者能在瀏覽器看狀態,也能回頭查檔案證據。",
     result: "已整理成小主腦頁、安裝手冊與公開 repo,可從零開始導入。",
-    glow: "cyan",
+    glow: "primary",
   },
   {
     name: "soplint",
@@ -55,7 +55,7 @@ const featuredCases = [
     method:
       "做成 MCP 本地遙測閘道,攔下「完成」宣稱、要求附上真實檔案與時間戳。",
     result: "已開源上架,把「可查證」變成可裝的護欄。",
-    glow: "purple",
+    glow: "secondary",
   },
 ] as const;
 
@@ -66,7 +66,7 @@ const routeCards = [
     body: "會開終端機、會複製貼上就夠。預設 mock 模式免費跑通,一段 prompt 交給你的 AI coding agent 自動裝好。",
     cta: "看一鍵安裝 →",
     href: "/minibrain",
-    glow: "cyan",
+    glow: "primary",
   },
   {
     eyebrow: "路線 B · 我想先玩 / 要人幫我做",
@@ -74,7 +74,7 @@ const routeCards = [
     body: "懶得碰命令列、想先確認合不合用——直接在 LINE 跟一個跑起來的主腦聊,體驗過再決定。或找我們幫你導入完整版。",
     cta: "加 LINE 先體驗 →",
     href: LINE_URL,
-    glow: "purple",
+    glow: "secondary",
   },
 ] as const;
 
@@ -92,7 +92,7 @@ export default async function Home() {
           <>
             讓 AI 真的把事做完,
             <br />
-            <span className="neon-text">而且能證明它做了。</span>
+            <span className="steel-text">而且能證明它做了。</span>
           </>
         }
         titleClassName="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6"
@@ -138,14 +138,14 @@ export default async function Home() {
                 className="p-6 sm:p-7 flex min-h-72 flex-col"
                 glow={item.glow}
               >
-                <div className="text-xs tracking-[0.24em] text-[color:var(--accent-cyan)] mb-4">
+                <div className="text-xs tracking-[0.24em] text-[color:var(--label)] mb-4">
                   {item.eyebrow}
                 </div>
                 <h2 className="text-2xl font-bold mb-4">{item.title}</h2>
                 <p className="text-sm text-[color:var(--fg-1)] leading-relaxed mb-6">
                   {item.body}
                 </p>
-                <span className="mt-auto text-sm font-semibold text-[color:var(--accent-cyan)]">
+                <span className="mt-auto text-sm font-semibold text-[color:var(--link)]">
                   {item.cta}
                 </span>
               </Card>
@@ -205,15 +205,15 @@ export default async function Home() {
                 </p>
                 <div className="space-y-3 text-sm text-[color:var(--fg-1)] leading-relaxed">
                   <p>
-                    <span className="text-[color:var(--accent-cyan)]">怎麼做：</span>
+                    <span className="text-[color:var(--label)]">怎麼做：</span>
                     {item.method}
                   </p>
                   <p>
-                    <span className="text-[color:var(--accent-purple)]">成果：</span>
+                    <span className="text-[color:var(--label)]">成果：</span>
                     {item.result}
                   </p>
                 </div>
-                <span className="mt-auto pt-6 text-sm font-semibold text-[color:var(--accent-cyan)]">
+                <span className="mt-auto pt-6 text-sm font-semibold text-[color:var(--link)]">
                   {isExternal ? "看 repo →" : "看入口 →"}
                 </span>
               </Card>
@@ -234,9 +234,9 @@ export default async function Home() {
         id="line"
         className="px-5 sm:px-6 py-16 md:py-20 max-w-5xl mx-auto w-full"
       >
-        <div className="grid gap-6 rounded-xl border border-[color:var(--accent-cyan)]/30 bg-[color:var(--accent-cyan)]/10 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-6 rounded-xl border border-[color:var(--label)]/30 bg-[color:var(--label)]/10 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <div className="text-xs tracking-[0.3em] text-[color:var(--accent-cyan)] mb-3">
+            <div className="text-xs tracking-[0.3em] text-[color:var(--label)] mb-3">
               LINE MAIN BRAIN LAB
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
