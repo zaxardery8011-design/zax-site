@@ -3,11 +3,12 @@
 /*
  * 配色：銀（不變色的鋼本色）為主調＋焊弧橘為動作色。
  * - 銀族（--metal-*、--hairline）一律中性無彩，任何回火色相不得混入。
- * - --arc-orange 只用在主 CTA、警示、點亮高光；一屏實心橘塊最多 1 個。
+ * - --arc-orange 只用在警示、深底連結、點亮高光；主 CTA 改用回火金（見下）。
  * - 回火色只出現在「熱影響區」：CTA hover、頁尾分隔線、卡片左緣、hero 一道弧；大面積仍是銀／墨。
  *   hex 從實拍回火鋼條吸色（Wikimedia Commons「Tempering colors in steel.jpg」，21×21 取平均）：
  *   gold @(780,380)、bronze @(1030,400)。紫藍 --temper-edge 不落（藍紫＝焊過熱；隊長 09-23 定案不用，tle_025766）。
- * - --cta-fill 預設焊弧橘；回火金版把它換成 var(--temper-gold)，兩版截圖待隊長選。
+ * - --cta-fill＝回火金（隊長 09-23 10:31「照建議繼續」採 B 建議：焊弧橘不在回火色序列、屬熾熱發光色）。
+ *   焊弧橘仍保留給警示與深底連結。
  */
 :root {
   --metal-ink: #1b1a17;
@@ -19,7 +20,7 @@
   --temper-gold: #f2c578;
   --temper-bronze: #e59479;
   --temper-band: linear-gradient(90deg, var(--temper-gold), var(--temper-bronze));
-  --cta-fill: var(--arc-orange);
+  --cta-fill: var(--temper-gold);
 
   --bg-0: var(--metal-ink);
   --bg-1: var(--metal-ink-raise);
