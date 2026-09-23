@@ -46,32 +46,50 @@ npm run start   # 本地預覽 production build,localhost:3000
 
 ---
 
-## Deploy — Cloudflare Pages × 自管 DNS × PChome 網域
+## Deploy — Vercel（現況）
+
+- **線上由 Vercel 服務**：2026-09-23 10:32 實測 `www.zax.com.tw` 回應標頭有
+  `Server: Vercel`、`X-Vercel-Cache`、`X-Nextjs-Prerender`。
+- **推 `master` 自動部署**：2026-09-23 09:59 推的 `9c967d5` 約 10:11 已上線
+  （以線上 HTML 含該 commit 新增的句子驗證）。不需要手動觸發。
+- **DNS 託管現況待確認**：網域在 PChome 註冊；下方「歷史紀錄」的 PChome → Cloudflare
+  自管 DNS 步驟當初是否完成、DNS 目前是否仍在 Cloudflare，未驗。
+- **英文站發布閘**：`content/en/*` 任一字串還含 `[EN TBD by A]` 時，該英文頁 build 出 404、
+  中文頁不輸出 hreflang en／x-default、header 不出現語言切換鈕（判定在 `app/lib/en-ready.ts`）。
+  英文填完後推 `master`，下一次部署自動上線，不用改程式。
+
+---
+
+## 歷史紀錄
+
+### 原規劃：Cloudflare Pages × 自管 DNS × PChome 網域（非現況）
+
+> 以下是最初的部署規劃，保留作紀錄；線上實際走 Vercel（見上）。
 
 `zax.com.tw` 目前在 PChome 註冊,要把 DNS 從 PChome 預設移到 Cloudflare 自管 DNS,
 然後 Cloudflare Pages 接 GitHub repo 自動 build。
 
-### Step 1 — Cloudflare add site
+#### Step 1 — Cloudflare add site
 
 1. 登入 [dash.cloudflare.com](https://dash.cloudflare.com/) → **Add a site**
 2. 輸入 `zax.com.tw` → 選 **Free plan**
 3. Cloudflare 會自動掃既有 DNS record (從 PChome 抓)
 4. 記下 Cloudflare 給的兩台 **name server** (形如 `xxx.ns.cloudflare.com`),Step 2 要填回 PChome
 
-### Step 2 — PChome 換 name server (自管 DNS)
+#### Step 2 — PChome 換 name server (自管 DNS)
 
 1. 登入 PChome 網域中心 → 找到 `zax.com.tw`
 2. **「網域名稱伺服器設定 (DNS / NS)」** → 改成 Step 1 的兩台 Cloudflare ns
 3. 儲存。**這一步把 DNS 主控權從 PChome 移到 Cloudflare**,
    之後所有 A / CNAME / TXT record 都在 Cloudflare 改
 
-### Step 3 — 等 NS propagate
+#### Step 3 — 等 NS propagate
 
 - DNS 變更全球生效約 **數分鐘 ~ 24 小時** (PChome → Cloudflare 通常 < 1 小時)
 - 查 propagate 狀態:[whatsmydns.net](https://www.whatsmydns.net/) 輸入 `zax.com.tw` 選 `NS`
 - Cloudflare dashboard 上的網域狀態變成 **Active** 才算完成
 
-### Step 4 — Cloudflare Pages 接 GitHub repo
+#### Step 4 — Cloudflare Pages 接 GitHub repo
 
 1. Cloudflare dashboard → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**
 2. 授權 GitHub → 選 `zax-site` repo → branch `main`
@@ -87,9 +105,7 @@ npm run start   # 本地預覽 production build,localhost:3000
 6. Cloudflare 會自動建 CNAME / A record;憑證自動發 (Universal SSL)。
    完成後 `https://zax.com.tw` 直接通
 
----
-
-## 為什麼不是 Vercel?
+### 當時為什麼不選 Vercel（原規劃的理由，現況已改走 Vercel）
 
 - Cloudflare Pages = 100k req/day 免費 + 無流量計費門檻
 - 本人不接創投線,先省一筆是一筆
@@ -109,9 +125,16 @@ npm run start   # 本地預覽 production build,localhost:3000
 
 ## 視覺風格 reference
 
-設計參考 `C:\AIWFF\agent\public\index.html` 與 dashboard 既有 neon
-配色:`#070b18 / #0b1730 / #11264a` 深色漸層 + `#4ff0de` 青 / `#b48fff` 紫
-neon accent + glassmorphism cards (見 `app/globals.css` 的 `.glass` / `.neon-text`)。
+以 `app/globals.css` 頂部註解為準（色票與規則都寫在那裡）：
+
+- **主調：銀／墨**。亮面是不變色的鋼本色（`--metal-face`），深面是墨色（`--metal-ink`）；
+  銀族一律中性無彩，不混入任何回火色相。大面積只用銀與墨。
+- **回火金＝主 CTA 與熱影響區**。`--cta-fill` 用回火金（`--temper-gold`）；回火色（金 → 銅，
+  `--temper-band`）只出現在熱影響區：CTA hover、頁尾分隔線、卡片左緣、hero 一道弧。
+  紫藍回火色不用。
+- **焊弧橘只做警示與深底連結**（`--arc-orange`，也用於點亮高光），不當主 CTA。
+- 版面 class：`.plate-ink`（深底面板）、`.metal-card`（亮面卡片）、`.steel-text`、
+  `.temper-rule-top`、`.btn-primary`／`.btn-ghost`。
 
 ## License / 授權
 

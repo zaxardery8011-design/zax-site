@@ -2,6 +2,7 @@ import Link from "next/link";
 import Script from "next/script";
 import type { ReactNode } from "react";
 import type { LayoutContent, Locale, SocialKind } from "@/content/schema";
+import { enReady } from "@/app/lib/en-ready";
 import { LangSwitch } from "./LangSwitch";
 
 // 兩個 root layout（app/(zh)、app/en）共用的外殼：導覽、頁尾、GoatCounter。
@@ -81,6 +82,12 @@ const socialIcon: Record<SocialKind, () => ReactNode> = {
   contact: ContactIcon,
 };
 
+// 發布閘（app/lib/en-ready.ts）：只有過了閘的英文頁才出現在切換鈕的目標裡（中文路徑）。
+const EN_READY_PATHS = [
+  ...(enReady.home ? ["/"] : []),
+  ...(enReady.openSource ? ["/open-source"] : []),
+];
+
 const socialClass =
   "inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition";
 
@@ -97,6 +104,9 @@ export function SiteShell({
   newsletter?: ReactNode;
 }) {
   const { footer } = content;
+  // 中文頁的切換鈕在沒對應英文頁時會退回 /en，所以 /en 沒過閘就整顆不渲染。
+  // 英文頁本身只有過閘才會渲染 SiteShell，切回中文永遠可用。
+  const showLangSwitch = locale === "en" || enReady.home;
 
   return (
     <>
@@ -151,7 +161,9 @@ export function SiteShell({
             ))}
           </div>
           <div className="grow" />
-          <LangSwitch current={locale} {...content.langSwitch} />
+          {showLangSwitch && (
+            <LangSwitch current={locale} bilingualPaths={EN_READY_PATHS} {...content.langSwitch} />
+          )}
           <Link
             href={content.headerCta.href}
             className="inline-flex min-h-11 items-center text-xs px-3 rounded-md btn-ghost transition"
