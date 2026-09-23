@@ -1,6 +1,7 @@
 import type { HomeContent } from "../schema";
 
-// 逐字搬自 app/page.tsx（eaf3d25），文案未改。
+// 逐字搬自 app/page.tsx（eaf3d25）。
+// 2026-09-23 A 改：每張卡加 evidence（點得到的證據）、result 去掉點不到的自述、新增 line-persona 卡。
 // 原本 JSX 裡跨行的段落，瀏覽器看到的是「行與行之間補一個半形空白」，這裡照渲染結果保留那個空白。
 const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
@@ -53,6 +54,10 @@ export const home: HomeContent = {
         method:
           "用本機檔案匯流排保存任務、進度與產出,讓使用者能在瀏覽器看狀態,也能回頭查檔案證據。",
         result: "已整理成本機任務引擎頁、安裝手冊與公開 repo,可從零開始導入。",
+        evidence: {
+          label: "GitHub Actions 自動測試（綠燈）",
+          href: "https://github.com/zaxardery8011-design/aiwff-runtime/actions",
+        },
       },
       {
         name: "soplint",
@@ -62,7 +67,22 @@ export const home: HomeContent = {
         pitch:
           "對 AI 工作節點的 SOP 執行做靜態規則審計,治長時間運行的「指令漂移」與工作紀律失修。",
         method: "把 SOP 落成可掃描的靜態規則,對節點產出逐條審計,抓出偏離。",
-        result: "已開源上架、目前 star 前列。",
+        result: "已開源，每次提交都跑自動測試；星數在卡片上即時更新。",
+        evidence: {
+          label: "GitHub Actions 自動測試（綠燈）",
+          href: "https://github.com/zaxardery8011-design/soplint/actions",
+        },
+      },
+      {
+        name: "line-persona / LINE 影分身",
+        repo: "zaxardery8011-design/line-persona",
+        license: "MIT",
+        href: "https://github.com/zaxardery8011-design/line-persona",
+        pitch: "填三個檔，就有一隻活在 LINE 上、講你的話、用你自己選的模型的 AI 分身。",
+        method:
+          ".env 放鑰匙與模型、profile.md 放口吻、knowledge.md 放資料；雲端或本地模型隨切，不會寫程式可以直接叫 AI 讀 AGENTS.md 幫你架。",
+        result: "v0.2.0 已開源。主腦實驗室的 LINE 帳號就在線上，可以先加來聊。",
+        evidence: { label: "加 LINE 直接跟跑起來的分身聊", href: LINE_URL },
       },
       {
         name: "tidetrace / 潮痕",
@@ -72,7 +92,11 @@ export const home: HomeContent = {
         pitch:
           "Threads 社群輿情監控 Chrome 擴充:本地關鍵字高亮 + 回覆狀態追蹤 + BYOK 多 LLM 自訂回覆生成。",
         method: "做成 Chrome 擴充,在地端跑關鍵字高亮與回覆追蹤,LLM 用 BYOK 自帶金鑰。",
-        result: "已開源上架,功能鏈完整可裝來用。",
+        result: "已開源，載入未封裝即可裝來用。",
+        evidence: {
+          label: "安裝步驟（還沒有公開截圖）",
+          href: "https://github.com/zaxardery8011-design/tidetrace#readme",
+        },
       },
       {
         name: "execution-proofs",
@@ -82,7 +106,11 @@ export const home: HomeContent = {
         pitch:
           "別讓 AI 說謊!基於 MCP 的本地遙測閘道,讓自動化 Client 回報「完成」時必須用真實檔案與時間戳記證明。",
         method: "做成 MCP 本地遙測閘道,攔下「完成」宣稱、要求附上真實檔案與時間戳。",
-        result: "已開源上架,把「可查證」變成可裝的護欄。",
+        result: "已開源，附測試檔，clone 下來自己跑得到。",
+        evidence: {
+          label: "測試檔，clone 後 npm test 自己跑",
+          href: "https://github.com/zaxardery8011-design/execution-proofs/blob/main/test/core.test.ts",
+        },
       },
     ],
     labels: {
@@ -91,10 +119,11 @@ export const home: HomeContent = {
       result: "成果：",
       repoLink: "看 repo →",
       entryLink: "看入口 →",
+      evidence: "證據：",
     },
     allCta: { label: "看全部開源專案 →", href: "/open-source" },
     casesNote:
-      "上面四個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
+      "上面五個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
     casesCta: { label: "看實戰案例 →", href: "/cases" },
   },
   showNewsletter: true,

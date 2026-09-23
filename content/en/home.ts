@@ -4,6 +4,7 @@ import type { HomeContent } from "../schema";
 // 規則：能從已公開的 GitHub 個人頁 README 逐字取的就取（註明來源）；
 // 取不到的依中文正本起草英文。
 // 註「README 候選」＝README 有意思相近但不等價的句子，留給 A 決定要不要用。
+// 2026-09-23 A 改：每張卡加 evidence、result 去掉點不到的自述、新增 line-persona 卡（與中文同批）。
 const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
 export const home: HomeContent = {
@@ -60,6 +61,10 @@ export const home: HomeContent = {
         method:
           "A local file bus records tasks, progress, and outputs, so users can watch status in the browser and still inspect the file evidence later.",
         result: "Packaged into the local task engine page, install guide, and public repo so it can be adopted from zero.",
+        evidence: {
+          label: "Automated tests on GitHub Actions (passing)",
+          href: "https://github.com/zaxardery8011-design/aiwff-runtime/actions",
+        },
       },
       {
         name: "soplint",
@@ -70,7 +75,24 @@ export const home: HomeContent = {
         pitch:
           "Static SOP-compliance audit for AI work nodes — catches instruction drift over long runs",
         method: "Turns SOPs into scannable static rules, audits node outputs line by line, and catches drift.",
-        result: "Open sourced and currently among the higher-starred repos.",
+        result: "Open source, with automated tests on every push. The star count on this card is live.",
+        evidence: {
+          label: "Automated tests on GitHub Actions (passing)",
+          href: "https://github.com/zaxardery8011-design/soplint/actions",
+        },
+      },
+      {
+        name: "line-persona",
+        repo: "zaxardery8011-design/line-persona",
+        license: "MIT",
+        href: "https://github.com/zaxardery8011-design/line-persona",
+        pitch:
+          "Fill in three files and you get an AI twin that lives on LINE, talks like you, and runs on the model you choose.",
+        method:
+          "Keys and model go in .env, your voice in profile.md, your data in knowledge.md. Switch between cloud and local models freely. If you don't code, have your AI read AGENTS.md and set it up for you.",
+        result:
+          "v0.2.0 is open source. Our Brain Lab account is live on LINE, so you can try one before building your own.",
+        evidence: { label: "Chat with a live one on LINE", href: LINE_URL },
       },
       {
         name: "tidetrace",
@@ -82,7 +104,11 @@ export const home: HomeContent = {
           "Threads keyword patrol Chrome extension — local highlight + reply tracking + BYOK LLM",
         method:
           "Built as a Chrome extension that runs keyword highlighting and reply tracking locally, with BYOK for LLM access.",
-        result: "Open sourced with a complete usable feature chain.",
+        result: "Open source. Load it unpacked in Chrome and use it.",
+        evidence: {
+          label: "Install steps (no public screenshots yet)",
+          href: "https://github.com/zaxardery8011-design/tidetrace#readme",
+        },
       },
       {
         name: "execution-proofs",
@@ -94,7 +120,11 @@ export const home: HomeContent = {
           'MCP telemetry gateway — forces agents to prove "done" with real files & timestamps',
         method:
           'Built as a local MCP telemetry gateway that intercepts "done" claims and requires real files plus timestamps.',
-        result: 'Open sourced as an installable guardrail for making "verifiable" real.',
+        result: "Open source, test suite included. Clone it and run it yourself.",
+        evidence: {
+          label: "Test file: clone it and run npm test",
+          href: "https://github.com/zaxardery8011-design/execution-proofs/blob/main/test/core.test.ts",
+        },
       },
     ],
     labels: {
@@ -103,6 +133,7 @@ export const home: HomeContent = {
       result: "Result:",
       repoLink: "View repo →",
       entryLink: "View entry →",
+      evidence: "Proof:",
     },
     allCta: { label: "See all open source projects →", href: "/en/open-source" },
   },
