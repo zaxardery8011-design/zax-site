@@ -1,30 +1,34 @@
 @import "tailwindcss";
 
 /*
- * 配色：銀（不變色的鋼本色）為主調＋焊弧橘為動作色。
- * - 銀族（--metal-*、--hairline）一律中性無彩，任何回火色相不得混入。
- * - --arc-orange 只用在警示、深底連結、點亮高光；主 CTA 改用回火金（見下）。
+ * 配色：銀（不變色的鋼本色）為主調＋回火色只在熱影響區。
+ * - 色值來源：A 隨身儀表 aiwff_pocket_console.html 同色調（隊長 09-23 11:25 桌面「跟你隨身儀表同色調。」，
+ *   任務 b_zax_site_palette_to_pocket_console_20260923）。取代先前的 Wikimedia 回火鋼條吸色。
+ * - 墨底：底 #101715、表面 #182120、下沉 #131b1a、邊 #2a3634（儀表深色主題）。
+ * - 銀族（--metal-face*、--hairline）一律中性無彩，任何回火色相不得混入。
  * - 回火色只出現在「熱影響區」：CTA hover、頁尾分隔線、卡片左緣、hero 一道弧；大面積仍是銀／墨。
- *   hex 從實拍回火鋼條吸色（Wikimedia Commons「Tempering colors in steel.jpg」，21×21 取平均）：
- *   gold @(780,380)、bronze @(1030,400)。紫藍 --temper-edge 不落（藍紫＝焊過熱；隊長 09-23 定案不用，tle_025766）。
- * - --cta-fill＝回火金（隊長 09-23 10:31「照建議繼續」採 B 建議：焊弧橘不在回火色序列、屬熾熱發光色）。
- *   焊弧橘仍保留給警示與深底連結。
+ *   回火帶＝金 #d4a463 → 綠松 #6fbfa5（綠松屬回火譜藍段；隊長 09-13「就回火色整個漸層都可以上」）。
+ *   淺底對應值：金 #9a6b2f、綠松 #2d6a5a、警示 #a8442e（目前全站深底，先不落）。
+ * - --cta-fill＝回火金；CTA 上墨字 #101715 對 #d4a463 實量 8.04:1（≥4.5）。
+ * - --arc-orange 保留變數名，值改儀表警示色 #e08a70：只用在警示、深底連結（對 #101715 6.96:1）。
  */
 :root {
-  --metal-ink: #1b1a17;
-  --metal-ink-raise: #24231f;
+  --metal-ink: #101715;
+  --metal-ink-raise: #182120;
+  --metal-ink-sunk: #131b1a;
+  --metal-edge: #2a3634;
   --metal-face: #e8e6e1;
   --metal-face-dim: #a9a7a1;
   --hairline: rgba(232, 230, 225, 0.14);
-  --arc-orange: #ff7a1a;
-  --temper-gold: #f2c578;
-  --temper-bronze: #e59479;
+  --arc-orange: #e08a70;
+  --temper-gold: #d4a463;
+  --temper-bronze: #6fbfa5;
   --temper-band: linear-gradient(90deg, var(--temper-gold), var(--temper-bronze));
   --cta-fill: var(--temper-gold);
 
   --bg-0: var(--metal-ink);
   --bg-1: var(--metal-ink-raise);
-  --bg-2: #2d2c28;
+  --bg-2: var(--metal-ink-sunk);
 }
 
 /* 深面語境（全頁底、深面板） */
@@ -35,7 +39,7 @@
   --fg-2: #8f8d88;
   --label: var(--metal-face-dim);
   --link: var(--arc-orange);
-  --border: var(--hairline);
+  --border: var(--metal-edge);
 }
 
 /* 亮面語境（卡片／銘牌的面） */
@@ -46,7 +50,7 @@
   --fg-2: #5f5d58;
   --label: #5f5d58;
   --link: var(--metal-ink);
-  --border: rgba(27, 26, 23, 0.16);
+  --border: rgba(16, 23, 21, 0.16);
 }
 
 @theme inline {
@@ -206,7 +210,7 @@ html, body {
 }
 .btn-primary:hover {
   filter: brightness(1.08);
-  box-shadow: 0 0 0 1px var(--temper-gold), 0 6px 18px rgba(242, 197, 120, 0.22);
+  box-shadow: 0 0 0 1px var(--temper-gold), 0 6px 18px rgba(212, 164, 99, 0.22);
 }
 
 /* 分隔線：頂邊一道回火細線，兩端收進墨色 */

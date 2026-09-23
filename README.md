@@ -129,10 +129,11 @@ npm run start   # 本地預覽 production build,localhost:3000
 
 - **主調：銀／墨**。亮面是不變色的鋼本色（`--metal-face`），深面是墨色（`--metal-ink`）；
   銀族一律中性無彩，不混入任何回火色相。大面積只用銀與墨。
-- **回火金＝主 CTA 與熱影響區**。`--cta-fill` 用回火金（`--temper-gold`）；回火色（金 → 銅，
+- 色值與 A 隨身儀表（aiwff_pocket_console.html）同色調：墨底 `#101715`、回火金 `#d4a463`、綠松 `#6fbfa5`。
+- **回火金＝主 CTA 與熱影響區**。`--cta-fill` 用回火金（`--temper-gold`）；回火色（金 → 綠松，
   `--temper-band`）只出現在熱影響區：CTA hover、頁尾分隔線、卡片左緣、hero 一道弧。
   紫藍回火色不用。
-- **焊弧橘只做警示與深底連結**（`--arc-orange`，也用於點亮高光），不當主 CTA。
+- **警示色只做警示與深底連結**（`--arc-orange`，值為儀表警示色 `#e08a70`），不當主 CTA。
 - 版面 class：`.plate-ink`（深底面板）、`.metal-card`（亮面卡片）、`.steel-text`、
   `.temper-rule-top`、`.btn-primary`／`.btn-ghost`。
 
