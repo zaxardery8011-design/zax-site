@@ -205,7 +205,7 @@ export default function RootLayout({
         <NewsletterSignup compact source="site-footer" />
 
         {/* ── Footer ── */}
-        <footer className="px-5 sm:px-6 py-10 mt-auto border-t border-[color:var(--border)] text-xs text-[color:var(--fg-2)]">
+        <footer className="px-5 sm:px-6 py-10 mt-auto temper-rule-top text-xs text-[color:var(--fg-2)]">
           <div className="max-w-5xl mx-auto flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-3">
               <span className="steel-text font-bold tracking-widest">ZAX</span>

@@ -4,7 +4,10 @@
  * 配色：銀（不變色的鋼本色）為主調＋焊弧橘為動作色。
  * - 銀族（--metal-*、--hairline）一律中性無彩，任何回火色相不得混入。
  * - --arc-orange 只用在主 CTA、警示、點亮高光；一屏實心橘塊最多 1 個。
- * - 回火三變數（--temper-gold / --temper-bronze / --temper-edge）hex 待隊長定，尚未落地。
+ * - 回火色只出現在「熱影響區」：CTA hover、頁尾分隔線、卡片左緣、hero 一道弧；大面積仍是銀／墨。
+ *   hex 從實拍回火鋼條吸色（Wikimedia Commons「Tempering colors in steel.jpg」，21×21 取平均）：
+ *   gold @(780,380)、bronze @(1030,400)。紫藍 --temper-edge 這版不落（藍紫＝焊過熱，待隊長定）。
+ * - --cta-fill 預設焊弧橘；回火金版把它換成 var(--temper-gold)，兩版截圖待隊長選。
  */
 :root {
   --metal-ink: #1b1a17;
@@ -13,6 +16,10 @@
   --metal-face-dim: #a9a7a1;
   --hairline: rgba(232, 230, 225, 0.14);
   --arc-orange: #ff7a1a;
+  --temper-gold: #f2c578;
+  --temper-bronze: #e59479;
+  --temper-band: linear-gradient(90deg, var(--temper-gold), var(--temper-bronze));
+  --cta-fill: var(--arc-orange);
 
   --bg-0: var(--metal-ink);
   --bg-1: var(--metal-ink-raise);
@@ -91,6 +98,20 @@ html, body {
     background 180ms ease;
 }
 
+/* 卡片左緣：一道回火細線，hover 時才亮起 */
+.card-hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14%;
+  bottom: 14%;
+  width: 2px;
+  background: linear-gradient(180deg, var(--temper-gold), var(--temper-bronze));
+  opacity: 0.35;
+  transition: opacity 180ms ease;
+}
+.card-hover:hover::before { opacity: 1; }
+
 .card-hover:hover {
   border-color: var(--metal-face-dim);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
@@ -128,7 +149,7 @@ html, body {
   animation: hero-grid-drift 16s linear infinite;
 }
 
-/* 中性高光掠過（不染回火色） */
+/* 高光掠過：第一道是 hero 唯一的回火弧，第二道維持中性 */
 .hero-ribbon {
   position: absolute;
   height: 1px;
@@ -141,6 +162,7 @@ html, body {
   left: 28%;
   top: 18%;
   width: 56%;
+  background: linear-gradient(90deg, transparent, var(--temper-gold), var(--temper-bronze), transparent);
 }
 
 .hero-ribbon-two {
@@ -177,11 +199,20 @@ html, body {
 }
 
 .btn-primary {
-  background: var(--arc-orange);
+  background: var(--cta-fill);
   color: var(--metal-ink);
   font-weight: 600;
 }
-.btn-primary:hover { filter: brightness(1.08); }
+.btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 0 1px var(--temper-gold), 0 6px 18px rgba(242, 197, 120, 0.22);
+}
+
+/* 分隔線：頂邊一道回火細線，兩端收進墨色 */
+.temper-rule-top {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--temper-gold) 30%, var(--temper-bronze) 70%, transparent) 1;
+}
 
 .btn-ghost {
   border: 1px solid var(--border);
