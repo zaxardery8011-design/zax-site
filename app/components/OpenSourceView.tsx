@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { OpenSourceContent } from "@/content/schema";
 import { fetchRepoMetas } from "@/app/lib/github";
+import { prefixGap } from "@/app/lib/prefixGap";
 import { Card } from "./Card";
 import { PageHero } from "./PageHero";
 import { SectionHeader } from "./SectionHeader";
@@ -99,6 +100,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
 
                 <p className="text-xs text-[color:var(--fg-1)] mb-4">
                   {labels.evidence}
+                  {prefixGap(labels.evidence)}
                   <a
                     href={repo.evidence.href}
                     target={repo.evidence.href.startsWith("https://") ? "_blank" : undefined}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { HomeContent } from "@/content/schema";
 import { fetchRepoMetas } from "@/app/lib/github";
+import { prefixGap } from "@/app/lib/prefixGap";
 import { Card } from "./Card";
 import { CTAButton } from "./CTAButton";
 import { NewsletterSignup } from "./NewsletterSignup";
@@ -218,17 +219,20 @@ export async function HomeView({ content }: { content: HomeContent }) {
                     <span className="text-[color:var(--label)]">
                       {s4OpenSource.labels.method}
                     </span>
+                    {prefixGap(s4OpenSource.labels.method)}
                     {item.method}
                   </p>
                   <p>
                     <span className="text-[color:var(--label)]">
                       {s4OpenSource.labels.result}
                     </span>
+                    {prefixGap(s4OpenSource.labels.result)}
                     {item.result}
                   </p>
                 </div>
                 <p className="mt-4 text-xs text-[color:var(--fg-1)]">
                   {s4OpenSource.labels.evidence}
+                  {prefixGap(s4OpenSource.labels.evidence)}
                   <a
                     href={item.evidence.href}
                     target={isExternalHref(item.evidence.href) ? "_blank" : undefined}
