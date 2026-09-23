@@ -97,6 +97,18 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
                   ) : null}
                 </div>
 
+                <p className="text-xs text-[color:var(--fg-1)] mb-4">
+                  {labels.evidence}
+                  <a
+                    href={repo.evidence.href}
+                    target={repo.evidence.href.startsWith("https://") ? "_blank" : undefined}
+                    rel={repo.evidence.href.startsWith("https://") ? "noopener noreferrer" : undefined}
+                    className="underline underline-offset-2 text-[color:var(--link)]"
+                  >
+                    {repo.evidence.label}
+                  </a>
+                </p>
+
                 {repo.kind === "internal" ? (
                   <Link href={repo.url} className="mt-auto text-sm text-[color:var(--link)]">
                     {labels.internalLink}

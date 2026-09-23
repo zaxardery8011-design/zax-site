@@ -184,14 +184,13 @@ export async function HomeView({ content }: { content: HomeContent }) {
           {s4OpenSource.cards.map((item, i) => {
             const isExternal = isExternalHref(item.href);
             const meta = metas[i];
+            const CardLink = isExternal ? "a" : Link;
 
+            // 卡片裡有證據連結，整張卡不能再是 <a>（巢狀 a 不合法）：
+            // 改由底部連結的 ::after 蓋滿整張卡，證據連結 z-10 浮在上面。
             return (
               <Card
-                as={isExternal ? "a" : Link}
                 key={item.href}
-                href={item.href}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
                 className="p-6 flex min-h-[27rem] flex-col"
                 glow={CASE_GLOW[item.repo] ?? "none"}
               >
@@ -228,9 +227,25 @@ export async function HomeView({ content }: { content: HomeContent }) {
                     {item.result}
                   </p>
                 </div>
-                <span className="mt-auto pt-6 text-sm font-semibold text-[color:var(--link)]">
+                <p className="mt-4 text-xs text-[color:var(--fg-1)]">
+                  {s4OpenSource.labels.evidence}
+                  <a
+                    href={item.evidence.href}
+                    target={isExternalHref(item.evidence.href) ? "_blank" : undefined}
+                    rel={isExternalHref(item.evidence.href) ? "noopener noreferrer" : undefined}
+                    className="relative z-10 underline underline-offset-2 text-[color:var(--link)]"
+                  >
+                    {item.evidence.label}
+                  </a>
+                </p>
+                <CardLink
+                  href={item.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="mt-auto pt-6 text-sm font-semibold text-[color:var(--link)] after:absolute after:inset-0 after:rounded-xl"
+                >
                   {isExternal ? s4OpenSource.labels.repoLink : s4OpenSource.labels.entryLink}
-                </span>
+                </CardLink>
               </Card>
             );
           })}

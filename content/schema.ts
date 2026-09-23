@@ -69,6 +69,8 @@ export type HomeCaseCard = {
   pitch: string;
   method: string;
   result: string;
+  /** 一個點得到的證據：看的人點下去能自己確認，不是我們的自述（2026-09-23 A 提、B 實作） */
+  evidence: { label: string; href: string };
 };
 
 export type HomeContent = {
@@ -113,6 +115,8 @@ export type HomeContent = {
       result: string;
       repoLink: string;
       entryLink: string;
+      /** 證據連結前綴字（中「證據：」／英「Proof:」） */
+      evidence: string;
     };
     allCta: LinkText;
     /** 可選：卡片下方導向實戰案例頁的一段話＋主按鈕（開源卡≠案例，要有路去 /cases） */
@@ -152,6 +156,8 @@ export type OpenSourceRepo = {
   pitch: string;
   start: string;
   startNote: string;
+  /** 一個點得到的證據：看的人點下去能自己確認，不是我們的自述（2026-09-23 A 提、B 實作） */
+  evidence: { label: string; href: string };
 };
 
 export type OpenSourceContent = {
@@ -174,6 +180,8 @@ export type OpenSourceContent = {
     quickStart: string;
     internalLink: string;
     externalLink: string;
+    /** 證據連結前綴字 */
+    evidence: string;
   };
   allRepos: {
     href: string;
