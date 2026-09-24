@@ -1,6 +1,7 @@
 import { SiteShell } from "@/app/components/SiteShell";
 import { EN_NOT_READY_METADATA, enReady } from "@/app/lib/en-ready";
 import { geistMono, geistSans } from "@/app/lib/fonts";
+import { JsonLd, siteJsonLd } from "@/app/lib/jsonld";
 import { layoutMetadata } from "@/app/lib/metadata";
 import { layout } from "@/content/en/layout";
 import "../globals.css";
@@ -30,6 +31,7 @@ export default function EnRootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
+        <JsonLd data={siteJsonLd(layout)} />
         <SiteShell content={layout} locale="en">
           {children}
         </SiteShell>

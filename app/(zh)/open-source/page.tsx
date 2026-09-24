@@ -1,6 +1,8 @@
 import { OpenSourceView } from "@/app/components/OpenSourceView";
 import { enReady } from "@/app/lib/en-ready";
+import { JsonLd, openSourceJsonLd } from "@/app/lib/jsonld";
 import { bilingualAlternates, pageMetadata } from "@/app/lib/metadata";
+import { layout } from "@/content/zh-Hant/layout";
 import { openSource } from "@/content/zh-Hant/open-source";
 
 // Copy lives in content/zh-Hant/open-source.ts; layout in app/components/OpenSourceView.tsx.
@@ -17,5 +19,10 @@ export const metadata = pageMetadata({
 export const revalidate = 3600;
 
 export default function OpenSource() {
-  return <OpenSourceView content={openSource} />;
+  return (
+    <>
+      <JsonLd data={openSourceJsonLd(openSource, layout.htmlLang)} />
+      <OpenSourceView content={openSource} />
+    </>
+  );
 }

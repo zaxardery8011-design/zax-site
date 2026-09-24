@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { OpenSourceView } from "@/app/components/OpenSourceView";
 import { EN_NOT_READY_METADATA, enReady } from "@/app/lib/en-ready";
+import { JsonLd, openSourceJsonLd } from "@/app/lib/jsonld";
 import { bilingualAlternates, pageMetadata } from "@/app/lib/metadata";
+import { layout } from "@/content/en/layout";
 import { openSource } from "@/content/en/open-source";
 
 // Copy lives in content/en/open-source.ts; layout in app/components/OpenSourceView.tsx.
@@ -20,5 +22,10 @@ export const revalidate = 3600;
 
 export default function OpenSourceEn() {
   if (!enReady.openSource) notFound();
-  return <OpenSourceView content={openSource} />;
+  return (
+    <>
+      <JsonLd data={openSourceJsonLd(openSource, layout.htmlLang)} />
+      <OpenSourceView content={openSource} />
+    </>
+  );
 }

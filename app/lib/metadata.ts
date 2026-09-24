@@ -3,6 +3,12 @@ import type { LayoutContent } from "@/content/schema";
 
 export const SITE_URL = "https://www.zax.com.tw";
 
+/** 站內路徑轉絕對網址（"/" → SITE_URL，與 canonical 同形）；已是絕對網址就原樣回傳。 */
+export function absoluteUrl(href: string): string {
+  if (!href.startsWith("/")) return href;
+  return href === "/" ? SITE_URL : `${SITE_URL}${href}`;
+}
+
 // hreflang：一頁同時有中英版時，兩語系都掛同一組 languages；x-default 指中文。
 export function bilingualAlternates(zhPath: string, enPath: string) {
   return {
