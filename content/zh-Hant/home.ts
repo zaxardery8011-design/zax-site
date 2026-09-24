@@ -143,7 +143,7 @@ export const home: HomeContent = {
     },
     allCta: { label: "看全部開源專案 →", href: "/open-source" },
     casesNote:
-      "上面四個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
+      "上面四個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線（已下線）、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
     casesCta: { label: "看實戰案例 →", href: "/cases" },
   },
   showNewsletter: true,
