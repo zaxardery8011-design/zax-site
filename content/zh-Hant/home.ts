@@ -134,6 +134,6 @@ export const home: HomeContent = {
     title: "不想自己裝？先在 LINE 聊,或直接看服務方案",
     body: "加 LINE 主腦實驗室,直接體驗一個跑起來的主腦怎麼回應你。已經確定要找人做的,服務方案頁分三層寫:LINE 分身架設、小主腦導入、完整版客製大腦——每層含什麼、不含什麼都列出來了。",
     cta: { label: "加 LINE 主腦實驗室 →", href: LINE_URL },
-    secondaryCta: { label: "看服務方案 →", href: "/contact" },
+    secondaryCta: { label: "看服務方案 →", href: "/services" },
   },
 };

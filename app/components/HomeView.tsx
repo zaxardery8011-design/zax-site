@@ -27,6 +27,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
     s1Hero,
     northStar,
     starter,
+    newbie,
     routes,
     s2Evidence,
     s3Governance,
@@ -129,6 +130,59 @@ export async function HomeView({ content }: { content: HomeContent }) {
               {starter.cta.label}
             </CTAButton>
           </Card>
+        </section>
+      ) : null}
+
+      {/* 新手 30 秒：四格（適合／不適合／費用組成／不寫程式怎麼開始）；沒填不渲染 */}
+      {newbie ? (
+        <section
+          id="newbie"
+          className="px-5 sm:px-6 pb-12 md:pb-16 max-w-5xl mx-auto w-full"
+        >
+          <h2 className="text-xl sm:text-2xl font-bold mb-5">{newbie.title}</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card className="p-6" interactive={false}>
+              <h3 className="text-sm font-semibold text-[color:var(--label)] mb-3">
+                {newbie.labels.fit}
+              </h3>
+              <ul className="space-y-2 text-sm text-[color:var(--fg-1)] leading-relaxed">
+                {newbie.fit.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </Card>
+            <Card className="p-6" interactive={false}>
+              <h3 className="text-sm font-semibold text-[color:var(--label)] mb-3">
+                {newbie.labels.notFit}
+              </h3>
+              <ul className="space-y-2 text-sm text-[color:var(--fg-1)] leading-relaxed">
+                {newbie.notFit.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </Card>
+            <Card className="p-6" interactive={false}>
+              <h3 className="text-sm font-semibold text-[color:var(--label)] mb-3">
+                {newbie.labels.cost}
+              </h3>
+              <dl className="space-y-3 text-sm leading-relaxed">
+                {newbie.costItems.map((item) => (
+                  <div key={item.name}>
+                    <dt className="font-semibold text-[color:var(--fg-0)]">{item.name}</dt>
+                    <dd className="text-[color:var(--fg-1)]">{item.when}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Card>
+            <Card className="p-6" interactive={false}>
+              <h3 className="text-sm font-semibold text-[color:var(--label)] mb-3">
+                {newbie.labels.startNoCode}
+              </h3>
+              <p className="text-sm text-[color:var(--fg-1)] leading-relaxed">
+                {newbie.startNoCode}
+              </p>
+            </Card>
+          </div>
         </section>
       ) : null}
 

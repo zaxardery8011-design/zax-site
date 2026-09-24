@@ -17,6 +17,7 @@ export const layout: LayoutContent = {
     { href: "/minibrain", label: "本機任務引擎" },
     { href: "/open-source", label: "開源" },
     { href: "/checklist", label: "檢查表" },
+    { href: "/services", label: "服務方案" },
     { href: "/about", label: "關於 ZAX" },
     { href: "/contact", label: "聯絡" },
   ],
