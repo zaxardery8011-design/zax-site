@@ -41,12 +41,13 @@ type RealCase = {
 const REAL_CASES: RealCase[] = [
   {
     id: "real-case",
-    title: "fortune LINE bot — 5/29 上線",
+    title: "fortune LINE bot — 5/29 上線（已下線）",
     description: (
       <>
         fortune 系統是 ZAX 主腦線上第一個跑到「真實朋友 user」的產品。
         AI 算命 LINE bot — 接 LINE webhook、本地 AI 模型出文、4 主題卡片 +
-        三派折疊 + hero 區塊;目前先在朋友開的通訊行落地試用。
+        三派折疊 + hero 區塊;當時在朋友開的通訊行落地試用。算命功能已經下線,
+        同一個 LINE 帳號現在是下面的「AI 主腦實驗室」。
       </>
     ),
     cards: [
@@ -217,7 +218,8 @@ const REAL_CASES: RealCase[] = [
     description: (
       <>
         想先看主腦長什麼樣又不想碰命令列,這是最短的一條路:加好友就能跟一個
-        正在跑的主腦對話,入口功能是 AI 算命。我們不公布它的使用者數——
+        正在跑的主腦對話:問它主腦是什麼、怎麼打造自己的大腦,看它記得你什麼,
+        或出題抓它的錯。我們不公布它的使用者數——
         還沒有值得拿出來講的數字,有了再補。
       </>
     ),
