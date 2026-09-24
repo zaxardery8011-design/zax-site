@@ -93,7 +93,7 @@ export type HomeContent = {
    * - title：區塊標題
    * - labels：各格小標（字放內容檔，HomeView 不放文案）
    * - fit / notFit：各一串條列；可選，沒填那格不渲染
-   * - cost：錢花在哪，分「一次性」「每月」兩欄，不寫單價（A 裁示 a2b-20260924_074945-04cedcbb）
+   * - cost：錢花在哪，分「一次性」「後續（依用量）」兩欄（monthly 鍵名沿用，欄名以 labels.monthly 為準），不寫單價（A 裁示 a2b-20260924_074945-04cedcbb）
    * - startNoCode：不寫程式的起步方式，一段話；可選，沒填那格不渲染
    */
   newbie?: {

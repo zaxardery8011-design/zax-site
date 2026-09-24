@@ -35,7 +35,7 @@ export const home: HomeContent = {
   // 草稿，隊長過目後才合 master。適合／不適合／不寫程式怎麼開始三格未授權，不填。
   newbie: {
     title: "錢花在哪",
-    labels: { cost: "價格洽詢；這裡先列錢會花在哪幾項", oneTime: "一次性", monthly: "每月" },
+    labels: { cost: "價格洽詢；這裡先列錢會花在哪幾項", oneTime: "一次性", monthly: "後續（依用量）" },
     cost: {
       oneTime: [
         "方案費用：LINE 分身架設、本機任務引擎導入、完整版客製大腦，不一定要一次做完整套。價格洽詢。",
@@ -44,9 +44,9 @@ export const home: HomeContent = {
       ],
       monthly: [
         "LLM/API 費用：由你自己的帳號負擔，不含在報價內。",
-        "LINE 分身架設不含後續代管維運。",
       ],
-      note: "三個方案各自含什麼、不含什麼，看服務方案頁。",
+      // 「不含代管」放小註不放右欄，免得被讀成另有月費代管（A 裁示 a2b-20260924_092744-57cebdb4）。
+      note: "LINE 分身架設不含後續代管維運。三個方案各自含什麼、不含什麼，看服務方案頁。",
     },
   },
   routes: {
