@@ -31,6 +31,24 @@ export const home: HomeContent = {
     ],
     cta: { label: "開源 repo 都在這 →", href: "https://github.com/zaxardery8011-design" },
   },
+  // 錢花在哪：只從 /contact 方案文字整理，不寫單價、不加 /contact 沒有的費用項目（A 裁示 a2b-20260924_074945-04cedcbb）。
+  // 草稿，隊長過目後才合 master。適合／不適合／不寫程式怎麼開始三格未授權，不填。
+  newbie: {
+    title: "錢花在哪",
+    labels: { cost: "價格洽詢；這裡先列錢會花在哪幾項", oneTime: "一次性", monthly: "每月" },
+    cost: {
+      oneTime: [
+        "方案費用：LINE 分身架設、本機任務引擎導入、完整版客製大腦，不一定要一次做完整套。價格洽詢。",
+        "LINE 分身架設包含：協助申請 Messaging API 與 webhook 上線、填寫基礎資料、交付使用教學。",
+        "交付驗收後 7 天內免費微調；超過另計。",
+      ],
+      monthly: [
+        "LLM/API 費用：由你自己的帳號負擔，不含在報價內。",
+        "LINE 分身架設不含後續代管維運。",
+      ],
+      note: "三個方案各自含什麼、不含什麼，看服務方案頁。",
+    },
+  },
   routes: {
     badge: "MINI BRAIN",
     title: "本機任務引擎：每個「做完了」都要留收據的 agent runtime",
