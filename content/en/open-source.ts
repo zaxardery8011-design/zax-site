@@ -77,7 +77,7 @@ export const openSource: OpenSourceContent = {
       license: "Apache-2.0",
       kind: "external",
       pitch:
-        "A personal brain that runs on your own machine: a soul file, memory across chats, and a warning when the soul file is quietly changed.",
+        "A personal brain that runs on your own machine: a soul file (the settings that say who it is and who you are), memory across chats, and a warning when the soul file is quietly changed.",
       start: "Read README.md in this folder and install aiwff-mini for me.",
       startNote:
         "Paste this into your AI tool (Claude Code, Codex, Cursor, etc.). It lists the files it will create and waits for your OK. Requires PowerShell 7.",
@@ -99,7 +99,7 @@ export const openSource: OpenSourceContent = {
         "git clone https://github.com/zaxardery8011-design/execution-proofs\nnpm install\nnpm run build",
       startNote: "After the build, add the server to your MCP client config.",
       evidence: {
-        label: "Test file: clone it and run npm test",
+        label: "Clone the repo and run npm test",
         href: "https://github.com/zaxardery8011-design/execution-proofs/blob/main/test/core.test.ts",
       },
     },
@@ -110,7 +110,7 @@ export const openSource: OpenSourceContent = {
       license: "Apache-2.0",
       kind: "external",
       pitch:
-        "A single-machine task ledger that keeps AI agents from inventing progress: receipts on disk, progress from disk facts only, and work that survives a kill.",
+        "A single-machine task ledger: progress is read from facts on disk, not from the agent's own report, and work survives a kill.",
       start: "pip install -e .\ntask-ledger demo-resume",
       startNote: "No network, no API key. Requires Python 3.10+. Currently alpha.",
       evidence: {
@@ -158,12 +158,12 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "external",
       pitch:
-        "Send a YouTube URL from your phone via Telegram, and a distilled Markdown note lands on your own computer.",
+        "Send a YouTube URL in Telegram; get a Markdown note saved on your own machine.",
       start:
         "git clone https://github.com/zaxardery8011-design/dataflywheel\npip install -r requirements.txt",
       startNote: "Requires ffmpeg and your own Gemini key.",
       evidence: {
-        label: "Test file",
+        label: "Test file: clone the repo and run pytest",
         href: "https://github.com/zaxardery8011-design/dataflywheel/blob/main/tests/test_url_parsing.py",
       },
     },

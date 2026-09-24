@@ -2,6 +2,7 @@ import type { HomeContent } from "../schema";
 
 // 逐字搬自 app/page.tsx（eaf3d25）。
 // 2026-09-23 A 改：每張卡加 evidence（點得到的證據）、result 去掉點不到的自述、新增 line-persona 卡。
+// 2026-09-24 對齊 A 13:35 定稿：加北極星（northStar）與新手入口（starter）；精選拿掉沒有公開證據的 Threads 擴充（只留開源頁），剩 4 張。
 // 原本 JSX 裡跨行的段落，瀏覽器看到的是「行與行之間補一個半形空白」，這裡照渲染結果保留那個空白。
 const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
@@ -14,6 +15,21 @@ export const home: HomeContent = {
       "每個「做完了」都要留收據——結果、過程、它哪裡沒做到, 都是你電腦上查得到的檔案。想自己裝一台?想先體驗? 兩條路都給你。",
     primaryCta: { label: "幫自己裝一台本機任務引擎 →", href: "/minibrain" },
     secondaryCta: { label: "不想裝？LINE 先體驗", href: LINE_URL },
+  },
+  northStar: {
+    lines: [
+      "每個人都該有一個自己的主腦。",
+      "住在自己電腦上，做的每件事都查得到。",
+      "讓你跟你的主腦，一起走向下一個未來。",
+    ],
+  },
+  starter: {
+    lines: [
+      "不用自己看懂。",
+      "把網址丟給你的 AI，說「讀完解釋給我聽，我是新手」。",
+      "需要什麼自己拿。",
+    ],
+    cta: { label: "開源 repo 都在這 →", href: "https://github.com/zaxardery8011-design" },
   },
   routes: {
     badge: "MINI BRAIN",
@@ -85,20 +101,6 @@ export const home: HomeContent = {
         evidence: { label: "加 LINE 直接跟跑起來的分身聊", href: LINE_URL },
       },
       {
-        name: "tidetrace / 潮痕",
-        repo: "zaxardery8011-design/tidetrace",
-        license: "MIT",
-        href: "https://github.com/zaxardery8011-design/tidetrace",
-        pitch:
-          "Threads 社群輿情監控 Chrome 擴充:本地關鍵字高亮 + 回覆狀態追蹤 + BYOK 多 LLM 自訂回覆生成。",
-        method: "做成 Chrome 擴充,在地端跑關鍵字高亮與回覆追蹤,LLM 用 BYOK 自帶金鑰。",
-        result: "已開源，載入未封裝即可裝來用。",
-        evidence: {
-          label: "安裝步驟（還沒有公開截圖）",
-          href: "https://github.com/zaxardery8011-design/tidetrace#readme",
-        },
-      },
-      {
         name: "execution-proofs",
         repo: "zaxardery8011-design/execution-proofs",
         license: "MIT",
@@ -123,7 +125,7 @@ export const home: HomeContent = {
     },
     allCta: { label: "看全部開源專案 →", href: "/open-source" },
     casesNote:
-      "上面五個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
+      "上面四個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
     casesCta: { label: "看實戰案例 →", href: "/cases" },
   },
   showNewsletter: true,

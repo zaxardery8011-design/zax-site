@@ -23,8 +23,17 @@ const CASE_GLOW: Record<string, Glow> = {
 const isExternalHref = (href: string) => href.startsWith("https://");
 
 export async function HomeView({ content }: { content: HomeContent }) {
-  const { s1Hero, routes, s2Evidence, s3Governance, s4OpenSource, s5Try, s6Collab } =
-    content;
+  const {
+    s1Hero,
+    northStar,
+    starter,
+    routes,
+    s2Evidence,
+    s3Governance,
+    s4OpenSource,
+    s5Try,
+    s6Collab,
+  } = content;
   const metas = await fetchRepoMetas(s4OpenSource.cards.map((c) => c.repo));
 
   const s5Cta = (
@@ -82,6 +91,46 @@ export async function HomeView({ content }: { content: HomeContent }) {
       >
         <p>{s1Hero.subtitle}</p>
       </PageHero>
+
+      {/* 北極星：方向句，不取代 hero 的能力句；沒填不渲染 */}
+      {northStar ? (
+        <section
+          id="north-star"
+          className="px-5 sm:px-6 pb-12 md:pb-16 max-w-5xl mx-auto w-full"
+        >
+          <div className="border-l-2 border-[color:var(--link)] pl-5 sm:pl-6 space-y-2">
+            {northStar.lines.map((line) => (
+              <p key={line} className="text-lg sm:text-xl md:text-2xl font-semibold leading-snug">
+                {line}
+              </p>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* 新手入口：一段話＋一顆按鈕；沒填不渲染 */}
+      {starter ? (
+        <section
+          id="starter"
+          className="px-5 sm:px-6 pb-12 md:pb-16 max-w-5xl mx-auto w-full"
+        >
+          <Card className="p-6 sm:p-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between" interactive={false}>
+            <div className="space-y-1 text-sm sm:text-base text-[color:var(--fg-1)] leading-relaxed">
+              {starter.lines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
+            <CTAButton
+              href={starter.cta.href}
+              target={isExternalHref(starter.cta.href) ? "_blank" : undefined}
+              variant="ghost"
+              className="w-full text-center sm:w-fit shrink-0"
+            >
+              {starter.cta.label}
+            </CTAButton>
+          </Card>
+        </section>
+      ) : null}
 
       {s2Evidence ? (
         <section

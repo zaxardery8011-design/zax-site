@@ -83,6 +83,10 @@ export type HomeContent = {
     primaryCta: LinkText;
     secondaryCta: LinkText;
   };
+  /** 北極星：hero 正下方的三行方向句，不取代 hero。可選＝未填不渲染（2026-09-23 A 定稿） */
+  northStar?: { lines: [string, string, string] };
+  /** 新手入口：北極星正下方，一段話＋一顆按鈕。可選＝未填不渲染 */
+  starter?: { lines: string[]; cta: LinkText };
   /** 小主腦兩條路線（現行首頁區塊，規格 §3 未列，先照現況收進合約） */
   routes: {
     badge: string;

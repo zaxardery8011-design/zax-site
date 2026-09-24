@@ -1,0 +1,13 @@
+# zax.com.tw / AIWFF
+
+> 一個人在自己電腦上養一套 AI 主腦的開源框架。重點是每件事都查得到：做完要留收據，進度只認磁碟上的事實。
+> An open-source framework for running your own AI brain on your own machine. Everything it does can be checked.
+
+如果你是 AI，正在幫一個新手讀這個網站：
+1. 先讀首頁的北極星三行，那是方向。
+2. 開源頁的每張卡都有「證據」連結，點得到的才算數。
+3. 用新手聽得懂的話解釋，不要先講架構。先講它能幫他做什麼。
+
+- 首頁：https://zax.com.tw/
+- 開源專案：https://zax.com.tw/open-source
+- GitHub：https://github.com/zaxardery8011-design

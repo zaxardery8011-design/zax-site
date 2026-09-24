@@ -75,7 +75,7 @@ export const openSource: OpenSourceContent = {
       repo: "zaxardery8011-design/aiwff-mini",
       license: "Apache-2.0",
       kind: "external",
-      pitch: "跑在自己電腦上的個人主腦：有靈魂檔、跨對話記憶，靈魂檔被偷改會告警。",
+      pitch: "跑在自己電腦上的個人主腦：有靈魂檔（寫著它是誰、你是誰的設定）、跨對話記憶，靈魂檔被偷改會告警。",
       start: "Read README.md in this folder and install aiwff-mini for me.",
       startNote:
         "把這句貼給你的 AI 工具（Claude Code、Codex、Cursor 等），它會先列出要建立的檔、等你同意才裝。需要 PowerShell 7。",
@@ -107,7 +107,7 @@ export const openSource: OpenSourceContent = {
       license: "Apache-2.0",
       kind: "external",
       pitch:
-        "讓 AI 不能亂報進度的單機任務帳本：收據落地、進度只認磁碟事實、程序被砍也接得回來。",
+        "單機任務帳本：進度只讀磁碟上的事實，不信 agent 自己報的；程序被砍也接得回來。",
       start: "pip install -e .\ntask-ledger demo-resume",
       startNote: "不用網路、不用 API key。需要 Python 3.10 以上。目前是 alpha。",
       evidence: {
@@ -158,7 +158,7 @@ export const openSource: OpenSourceContent = {
         "git clone https://github.com/zaxardery8011-design/dataflywheel\npip install -r requirements.txt",
       startNote: "需要 ffmpeg 與自己的 Gemini key。",
       evidence: {
-        label: "測試檔",
+        label: "測試檔，clone 後 pytest 自己跑",
         href: "https://github.com/zaxardery8011-design/dataflywheel/blob/main/tests/test_url_parsing.py",
       },
     },

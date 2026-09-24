@@ -5,6 +5,7 @@ import type { HomeContent } from "../schema";
 // 取不到的依中文正本起草英文。
 // 註「README 候選」＝README 有意思相近但不等價的句子，留給 A 決定要不要用。
 // 2026-09-23 A 改：每張卡加 evidence、result 去掉點不到的自述、新增 line-persona 卡（與中文同批）。
+// 2026-09-24 對齊 A 13:35 定稿：加 northStar／starter；精選拿掉沒有公開證據的 Threads 擴充（只留開源頁），剩 4 張。
 const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 
 export const home: HomeContent = {
@@ -19,6 +20,21 @@ export const home: HomeContent = {
       'Every "done" needs a receipt: the result, the process, and what it failed to do all stay as files you can inspect on your own machine. Install your own node, or try a running one first.',
     primaryCta: { label: "Install a local task engine →", href: "/minibrain" },
     secondaryCta: { label: "Try it first on LINE", href: LINE_URL },
+  },
+  northStar: {
+    lines: [
+      "Everyone deserves an AI brain of their own.",
+      "It lives on your machine, and everything it does can be checked.",
+      "You and your brain, walking into what comes next together.",
+    ],
+  },
+  starter: {
+    lines: [
+      "You don't have to understand it yourself.",
+      'Give this URL to your AI and say: "Read it and explain it to me. I\'m new."',
+      "Take whatever you need.",
+    ],
+    cta: { label: "All open-source repos →", href: "https://github.com/zaxardery8011-design" },
   },
   routes: {
     badge: "MINI BRAIN",
@@ -93,22 +109,6 @@ export const home: HomeContent = {
         result:
           "v0.2.0 is open source. Our Brain Lab account is live on LINE, so you can try one before building your own.",
         evidence: { label: "Chat with a live one on LINE", href: LINE_URL },
-      },
-      {
-        name: "tidetrace",
-        repo: "zaxardery8011-design/tidetrace",
-        license: "MIT",
-        href: "https://github.com/zaxardery8011-design/tidetrace",
-        // README 核心工具鏈表
-        pitch:
-          "Threads keyword patrol Chrome extension — local highlight + reply tracking + BYOK LLM",
-        method:
-          "Built as a Chrome extension that runs keyword highlighting and reply tracking locally, with BYOK for LLM access.",
-        result: "Open source. Load it unpacked in Chrome and use it.",
-        evidence: {
-          label: "Install steps (no public screenshots yet)",
-          href: "https://github.com/zaxardery8011-design/tidetrace#readme",
-        },
       },
       {
         name: "execution-proofs",
