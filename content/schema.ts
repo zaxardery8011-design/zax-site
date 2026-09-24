@@ -87,6 +87,23 @@ export type HomeContent = {
   northStar?: { lines: [string, string, string] };
   /** 新手入口：北極星正下方，一段話＋一顆按鈕。可選＝未填不渲染 */
   starter?: { lines: string[]; cta: LinkText };
+  /**
+   * 新手 30 秒：新手入口正下方的四格（適合誰／不適合誰／費用組成／不寫程式怎麼開始）。
+   * 可選＝未填不渲染。框架 B 出（2026-09-24，A 裁示 a2b-20260924_065914-d6e62db5），內容等 A 填。
+   * - title：區塊標題
+   * - labels：各格小標（字放內容檔，HomeView 不放文案）
+   * - fit / notFit：各一串條列；可選，沒填那格不渲染
+   * - cost：錢花在哪，分「一次性」「後續（依用量）」兩欄（monthly 鍵名沿用，欄名以 labels.monthly 為準），不寫單價（A 裁示 a2b-20260924_074945-04cedcbb）
+   * - startNoCode：不寫程式的起步方式，一段話；可選，沒填那格不渲染
+   */
+  newbie?: {
+    title: string;
+    labels: { cost: string; oneTime: string; monthly: string; fit?: string; notFit?: string; startNoCode?: string };
+    fit?: string[];
+    notFit?: string[];
+    cost: { oneTime: string[]; monthly: string[]; note?: string };
+    startNoCode?: string;
+  };
   /** 小主腦兩條路線（現行首頁區塊，規格 §3 未列，先照現況收進合約） */
   routes: {
     badge: string;
