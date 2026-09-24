@@ -67,7 +67,8 @@ export const openSource: OpenSourceContent = {
       pitch: "BYO-AI LINE clone framework — how the stack reaches real users.",
       start:
         "git clone https://github.com/zaxardery8011-design/line-persona\nnpm install\nnpm start",
-      startNote: "",
+      startNote:
+        "You need: a LINE Messaging API channel from LINE Developers (channel access token and channel secret), a model API key (any OpenAI-compatible endpoint, or a local model instead), Node 18+, and a publicly reachable webhook URL.",
       evidence: { label: "Chat with a live one on LINE", href: "https://line.me/R/ti/p/@395jcpsb" },
     },
     {

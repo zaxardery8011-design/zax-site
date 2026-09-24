@@ -60,10 +60,11 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "external",
       pitch:
-        "LINE 原生 AI 分身框架。填 env、人格與知識檔就能上線,可用自己的 API key 在雲端與本地模型之間切換。",
+        "LINE 原生 AI 分身框架。填 env、人格與知識檔就能上線,可用自己的模型 API key 在雲端與本地模型之間切換。",
       start:
         "git clone https://github.com/zaxardery8011-design/line-persona\nnpm install\nnpm start",
-      startNote: "",
+      startNote:
+        "要先準備:LINE Developers 的 Messaging API channel(channel access token 與 channel secret)、一個模型 API key(OpenAI 相容即可,或改用本地模型),Node 18 以上,以及一個對外連得到的 webhook 網址。",
       evidence: {
         label: "加 LINE 直接跟跑起來的分身聊",
         href: "https://line.me/R/ti/p/@395jcpsb",
