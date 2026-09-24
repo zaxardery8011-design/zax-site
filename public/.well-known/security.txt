@@ -1,0 +1,5 @@
+Contact: mailto:zaxardery8011@gmail.com
+Contact: https://www.zax.com.tw/contact
+Expires: 2027-09-23T00:00:00.000Z
+Preferred-Languages: zh-Hant, en
+Canonical: https://www.zax.com.tw/.well-known/security.txt
