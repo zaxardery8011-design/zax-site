@@ -10,7 +10,7 @@
 ## 本地開發
 
 ```powershell
-cd C:\Users\User\Desktop\demon\zax-site
+cd <你的專案目錄>
 npm install   # 第一次跑才需要
 npm run dev   # http://localhost:3000
 ```
