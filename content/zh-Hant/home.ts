@@ -9,8 +9,8 @@ const LINE_URL = "https://line.me/R/ti/p/@395jcpsb";
 export const home: HomeContent = {
   s1Hero: {
     eyebrow: "AI 工作節點 · 開源 · 可查證",
-    titleLead: "別人讓 AI 跑得動,",
-    titleEmphasis: "我們讓一個人管得住一群會唬爛的 AI。",
+    titleLead: "讓 AI 真的把事做完,",
+    titleEmphasis: "而且能證明它做了。",
     subtitle:
       "每個「做完了」都要留收據——結果、過程、它哪裡沒做到, 都是你電腦上查得到的檔案。想自己裝一台?想先體驗? 兩條路都給你。",
     primaryCta: { label: "幫自己裝一台本機任務引擎 →", href: "/minibrain" },
@@ -18,7 +18,7 @@ export const home: HomeContent = {
   },
   northStar: {
     lines: [
-      "每個人都該有一個自己的主腦。",
+      "讓 AI 真的把事做完，而且能證明它做了。",
       "住在自己電腦上，做的每件事都查得到。",
       "讓你跟你的主腦，一起走向下一個未來。",
     ],
@@ -119,6 +119,35 @@ export const home: HomeContent = {
         evidence: { label: "加 LINE 直接跟跑起來的分身聊", href: LINE_URL },
       },
       {
+        name: "dig-loop / 挖洞迴圈",
+        repo: "zaxardery8011-design/dig-loop",
+        license: "MIT",
+        href: "https://github.com/zaxardery8011-design/dig-loop",
+        pitch:
+          "AI 每天去一個領域挖還沒被解決的問題。解過的不收。做完寫進已解清單。",
+        method:
+          "挖到的先對已解清單。沒解過的收回來。人決定值不值得做。",
+        result: "挖過的有記下來才算。下一輪不再收同一個洞。",
+        evidence: {
+          label: "檔頭檢查程式，clone 後自己跑",
+          href: "https://github.com/zaxardery8011-design/dig-loop/blob/main/tools/verify_header.py",
+        },
+      },
+      {
+        name: "grok-bot-routines-tw",
+        repo: "zaxardery8011-design/grok-bot-routines-tw",
+        license: "MIT",
+        href: "https://github.com/zaxardery8011-design/grok-bot-routines-tw",
+        pitch: "建排程的教學很多。這裡多教一件事。確認它真的做完。",
+        method:
+          "把 repo 交給你的 AI，或交給 Grok Bot。兩邊都要打開自動化清單核對。",
+        result: "AI 說建好了不算數。清單上有那一列才算。",
+        evidence: {
+          label: "交給 AI 之前先讀的 AGENTS.md",
+          href: "https://github.com/zaxardery8011-design/grok-bot-routines-tw/blob/main/AGENTS.md",
+        },
+      },
+      {
         name: "execution-proofs",
         repo: "zaxardery8011-design/execution-proofs",
         license: "MIT",
@@ -143,7 +172,7 @@ export const home: HomeContent = {
     },
     allCta: { label: "看全部開源專案 →", href: "/open-source" },
     casesNote:
-      "上面四個是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線（已下線）、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
+      "上面這些是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線（已下線）、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
     casesCta: { label: "看實戰案例 →", href: "/cases" },
   },
   showNewsletter: true,

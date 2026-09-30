@@ -71,6 +71,37 @@ export const openSource: OpenSourceContent = {
       },
     },
     {
+      name: "dig-loop / 挖洞迴圈",
+      url: "https://github.com/zaxardery8011-design/dig-loop",
+      repo: "zaxardery8011-design/dig-loop",
+      license: "MIT",
+      kind: "external",
+      pitch:
+        "AI 每天去一個領域挖還沒被解決的問題。解過的不收。做完寫進已解清單。",
+      start: "git clone https://github.com/zaxardery8011-design/dig-loop",
+      startNote:
+        "這是範本。複製出去，填上自己的領域。用 AI 架的話，叫它先讀 AGENTS.md。",
+      evidence: {
+        label: "檔頭檢查程式，clone 後自己跑",
+        href: "https://github.com/zaxardery8011-design/dig-loop/blob/main/tools/verify_header.py",
+      },
+    },
+    {
+      name: "grok-bot-routines-tw",
+      url: "https://github.com/zaxardery8011-design/grok-bot-routines-tw",
+      repo: "zaxardery8011-design/grok-bot-routines-tw",
+      license: "MIT",
+      kind: "external",
+      pitch: "建排程的教學很多。這裡多教一件事。確認它真的做完。",
+      start:
+        "把 https://github.com/zaxardery8011-design/grok-bot-routines-tw 交給你的 AI，叫它讀 AGENTS.md",
+      startNote: "做完打開 Grok 自動化清單核對那一列。清單上有，才算。",
+      evidence: {
+        label: "交給 AI 之前先讀的 AGENTS.md",
+        href: "https://github.com/zaxardery8011-design/grok-bot-routines-tw/blob/main/AGENTS.md",
+      },
+    },
+    {
       name: "aiwff-mini",
       url: "https://github.com/zaxardery8011-design/aiwff-mini",
       repo: "zaxardery8011-design/aiwff-mini",

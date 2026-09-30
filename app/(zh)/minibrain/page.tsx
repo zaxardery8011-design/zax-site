@@ -148,6 +148,9 @@ export default function MiniBrainPage() {
             <p className="text-base md:text-lg text-[color:var(--fg-1)] leading-relaxed max-w-3xl mb-6">
               把一件事丟給它，它會在你電腦裡跑，做完把結果交回來；你也能用瀏覽器看進度。所有狀態都留在你電腦的檔案裡，不上別人的伺服器。
             </p>
+            <p className="text-base md:text-lg text-[color:var(--fg-1)] leading-relaxed max-w-3xl mb-6">
+              引擎。預設 mock，不叫任何模型。要真的跑，設 ENABLE_REAL_CLAUDE_WORKER=1。這版用 CLAUDE_CMD 啟動 Claude CLI，參數帶 --print。另外有一條 OpenAI 相容端點，預設關閉，沒有工具，只把回覆寫成檔。Gemini 與 Codex 在 README 寫成以後再加。這版沒把它們接成 worker。
+            </p>
             <BillingCallout />
           </div>
 

@@ -72,6 +72,39 @@ export const openSource: OpenSourceContent = {
       evidence: { label: "Chat with a live one on LINE", href: "https://line.me/R/ti/p/@395jcpsb" },
     },
     {
+      name: "dig-loop",
+      url: "https://github.com/zaxardery8011-design/dig-loop",
+      repo: "zaxardery8011-design/dig-loop",
+      license: "MIT",
+      kind: "external",
+      pitch:
+        "An AI digs one domain each day for problems that are not solved yet. Solved items are not collected again. Finished digs go on the solved list.",
+      start: "git clone https://github.com/zaxardery8011-design/dig-loop",
+      startNote:
+        "This repo is a template. Copy it and fill in your own domain. If an AI sets it up, tell that AI to read AGENTS.md first.",
+      evidence: {
+        label: "Header check script. Clone it and run it yourself.",
+        href: "https://github.com/zaxardery8011-design/dig-loop/blob/main/tools/verify_header.py",
+      },
+    },
+    {
+      name: "grok-bot-routines-tw",
+      url: "https://github.com/zaxardery8011-design/grok-bot-routines-tw",
+      repo: "zaxardery8011-design/grok-bot-routines-tw",
+      license: "MIT",
+      kind: "external",
+      pitch:
+        "Plenty of guides teach you to schedule a bot. This one adds the check that it actually finished.",
+      start:
+        "Hand https://github.com/zaxardery8011-design/grok-bot-routines-tw to your AI and tell it to read AGENTS.md",
+      startNote:
+        "When it says it is done, open the Grok automation list and find that row. The row has to be there.",
+      evidence: {
+        label: "The AGENTS.md to read before handing this to an AI",
+        href: "https://github.com/zaxardery8011-design/grok-bot-routines-tw/blob/main/AGENTS.md",
+      },
+    },
+    {
       name: "aiwff-mini",
       url: "https://github.com/zaxardery8011-design/aiwff-mini",
       repo: "zaxardery8011-design/aiwff-mini",

@@ -8,9 +8,9 @@ export const layout: LayoutContent = {
   htmlLang: "en",
   ogLocale: "en_US",
   meta: {
-    title: "ZAX | One person keeping a crowd of bluffing AI agents in check",
+    title: "ZAX | Make AI actually finish the work, and prove that it did",
     description:
-      'ZAX builds local task engines and AI workstations where every "done" leaves a receipt, and both result and process stay in files you can inspect.',
+      'Make AI actually finish the work, and prove that it did. Every "done" leaves a receipt. The result and the process stay in files you can inspect.',
   },
   brand: "ZAX",
   homeHref: "/en",

@@ -5,9 +5,9 @@ export const layout: LayoutContent = {
   htmlLang: "zh-Hant",
   ogLocale: "zh_TW",
   meta: {
-    title: "ZAX | 讓一個人管得住一群會唬爛的 AI",
+    title: "ZAX | 讓 AI 真的把事做完，而且能證明它做了",
     description:
-      "ZAX 做本機任務引擎與 AI 工作站:每個「做完了」都要留收據,結果與過程都留在你看得到的檔案裡。",
+      "讓 AI 真的把事做完，而且能證明它做了。每個「做完了」都要留收據，結果與過程都留在你看得到的檔案裡。",
   },
   brand: "ZAX",
   homeHref: "/",

@@ -24,6 +24,8 @@ export const servicePackages = [
       "填寫 env、persona、knowledge 基礎資料",
       "交付使用教學,不含後續代管維運",
     ],
+    receipt:
+      "交付時你拿到哪些收據。上線的 webhook。填好的 env、persona、knowledge。一份使用教學。",
     href:
       "mailto:zaxardery8011@gmail.com?subject=LINE%E5%88%86%E8%BA%AB%E6%9E%B6%E8%A8%AD%E8%AB%AE%E8%A9%A2",
     cta: "詢問 LINE 分身架設",
@@ -37,6 +39,8 @@ export const servicePackages = [
       "mock 驗證與真實 worker 串接邊界說明",
       "使用手冊導讀與後續自跑方式整理",
     ],
+    receipt:
+      "交付時你拿到哪些收據。裝好的本機。mock 驗證結果。真實 worker 的邊界說明。一份你之後自己跑的整理。",
     href:
       "mailto:zaxardery8011@gmail.com?subject=%E6%9C%AC%E6%A9%9F%E4%BB%BB%E5%8B%99%E5%BC%95%E6%93%8E%E5%B0%8E%E5%85%A5%E8%AB%AE%E8%A9%A2",
     cta: "詢問本機任務引擎導入",
@@ -50,13 +54,15 @@ export const servicePackages = [
       "客製 SOP 與工作節點邊界整理",
       "可附 soplint 紀律現況售前評估",
     ],
+    receipt:
+      "交付時你拿到哪些收據。接好的節點。寫下來的 SOP 與邊界。soplint 現況評估是可附的，不是每單都有。",
     href:
       "mailto:zaxardery8011@gmail.com?subject=%E5%AE%8C%E6%95%B4%E7%89%88%E5%AE%A2%E8%A3%BD%E8%AB%AE%E8%A9%A2",
     cta: "詢問完整版客製",
   },
 ] as const;
 
-export function ServicePackages() {
+export function ServicePackages({ showReceipts = false }: { showReceipts?: boolean }) {
   return (
     <section
       id="packages"
@@ -88,6 +94,11 @@ export function ServicePackages() {
                 </li>
               ))}
             </ul>
+            {showReceipts ? (
+              <p className="text-sm text-[color:var(--fg-0)] leading-relaxed mb-5">
+                {item.receipt}
+              </p>
+            ) : null}
             <div className="mt-auto pt-4">
               <p className="text-sm font-semibold text-[color:var(--fg-0)] mb-4">
                 價格：洽詢

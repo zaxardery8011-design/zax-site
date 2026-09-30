@@ -12,9 +12,8 @@ export const home: HomeContent = {
   s1Hero: {
     eyebrow: "AI work nodes · open source · verifiable",
     // README H1（A 09:46 裁示英文首屏可用個人頁 tagline）
-    titleLead: "Anyone can make AI agents run.",
-    titleEmphasis:
-      "I build the part that lets one person keep a crowd of bluffing agents in check.",
+    titleLead: "Make AI actually finish the work,",
+    titleEmphasis: "and prove that it did.",
     // README 候選：…you get a local AI work node that finishes work *and* proves it.
     subtitle:
       'Every "done" needs a receipt: the result, the process, and what it failed to do all stay as files you can inspect on your own machine. Install your own node, or try a running one first.',
@@ -23,7 +22,7 @@ export const home: HomeContent = {
   },
   northStar: {
     lines: [
-      "Everyone deserves an AI brain of their own.",
+      "Make AI actually finish the work, and prove that it did.",
       "It lives on your machine, and everything it does can be checked.",
       "You and your brain, walking into what comes next together.",
     ],
@@ -109,6 +108,37 @@ export const home: HomeContent = {
         result:
           "v0.2.0 is open source. Our Brain Lab account is live on LINE, so you can try one before building your own.",
         evidence: { label: "Chat with a live one on LINE", href: LINE_URL },
+      },
+      {
+        name: "dig-loop",
+        repo: "zaxardery8011-design/dig-loop",
+        license: "MIT",
+        href: "https://github.com/zaxardery8011-design/dig-loop",
+        pitch:
+          "An AI digs one domain each day for problems that are not solved yet. Solved items are not collected again. Finished digs go on the solved list.",
+        method:
+          "Each find is checked against the solved list. New ones come back. A person decides what is worth doing.",
+        result:
+          "A dig counts only after it is written down. The next round does not collect the same hole.",
+        evidence: {
+          label: "Header check script. Clone it and run it yourself.",
+          href: "https://github.com/zaxardery8011-design/dig-loop/blob/main/tools/verify_header.py",
+        },
+      },
+      {
+        name: "grok-bot-routines-tw",
+        repo: "zaxardery8011-design/grok-bot-routines-tw",
+        license: "MIT",
+        href: "https://github.com/zaxardery8011-design/grok-bot-routines-tw",
+        pitch:
+          "Plenty of guides teach you to schedule a bot. This one adds the check that it actually finished.",
+        method:
+          "Hand the repo to your AI, or to Grok Bot. Both have to match a row on the automation list.",
+        result: "The AI saying it is built does not count. The row has to be on the list.",
+        evidence: {
+          label: "The AGENTS.md to read before handing this to an AI",
+          href: "https://github.com/zaxardery8011-design/grok-bot-routines-tw/blob/main/AGENTS.md",
+        },
       },
       {
         name: "execution-proofs",
