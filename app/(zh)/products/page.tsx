@@ -61,7 +61,7 @@ const contactItems = [
   { label: "LINE ID", value: "@hlc2703600", href: "https://line.me/R/ti/p/@hlc2703600" },
   { label: "Facebook", value: "合利鑫科技", href: "https://www.facebook.com/HLC2703600" },
   { label: "地址", value: "台南市仁德區中山路730號(仁德家樂福對面)" },
-  { label: "營業時間", value: "週一至週五 08:30–18:00(週末公休)" },
+  { label: "營業時間", value: "週一至週五 08:30 到 18:00(週末公休)" },
   { label: "服務範圍", value: "台南為主，含南部地區" },
 ];
 

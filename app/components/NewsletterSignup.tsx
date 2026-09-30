@@ -136,8 +136,7 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
             {ISSUES_SENT === 0 ? (
               <>
                 <span className="text-[color:var(--fg-0)]">目前寄出 0 期。</span>
-                這份名單從今天開始,你會是最早收到的那幾個。
-                沒做出東西的那週就不寄,這裡不會為了湊週更生一封出來。
+                沒做出東西的那週就不寄。
               </>
             ) : (
               <>

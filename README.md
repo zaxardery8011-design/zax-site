@@ -4,13 +4,13 @@
 
 - **Stack**: Next.js 16 · React 19 · Tailwind v4 · App Router · TypeScript
 - **Phase 1 範圍**: 5 個 section 真實內容 hardcoded (Hero / Real case / Phase 1 demo / About / Contact)
-- **CMS**: 無 (Phase 1 內容寫在 `app/page.tsx`,改稿直接改 tsx)
+- **CMS**: 無 (可見文案在 `content\`)
 - **後端**: 無 (Contact 用 `mailto:` 即可)
 
 ## 本地開發
 
 ```powershell
-cd C:\Users\User\Desktop\demon\zax-site
+cd C:\Users\User\Desktop\AIWORK\zax-site
 npm install   # 第一次跑才需要
 npm run dev   # http://localhost:3000
 ```
@@ -107,7 +107,7 @@ npm run start   # 本地預覽 production build,localhost:3000
 
 ### 當時為什麼不選 Vercel（原規劃的理由，現況已改走 Vercel）
 
-- Cloudflare Pages = 100k req/day 免費 + 無流量計費門檻
+- Cloudflare Pages 沒有流量計費門檻
 - 本人不接創投線,先省一筆是一筆
 - Next.js 16 在 Cloudflare 上需要 `@cloudflare/next-on-pages` adapter
   (Phase 1 用 standard Next.js build 跑得起來,後續若要 edge runtime 再切)

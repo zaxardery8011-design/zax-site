@@ -7,14 +7,14 @@ export const openSource: OpenSourceContent = {
   meta: {
     title: "開源專案 | ZAX",
     description:
-      "我們把踩過的坑碼化成工具,開源給站在後面的人。每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的——不是我說它還活著,是 GitHub 說的。",
+      "我們把踩過的坑做成工具，放上 GitHub。星數和最近更新每小時向 GitHub 取。活著與否看 GitHub。",
   },
   hero: {
     badge: "OPEN SOURCE",
-    titleEmphasis: "站在巨人肩上,",
-    titleRest: "長成讓人站的巨人。",
-    body: "我們把踩過的坑碼化成工具,開源給站在後面的人。每張卡的星數與「最近更新」 都是每小時回源 GitHub 抓的,不是寫死的定版數字——",
-    bodyEmphasis: "不是我說它還活著,是 GitHub 說的。",
+    titleEmphasis: "我們把踩過的坑做成工具，",
+    titleRest: "放上 GitHub。",
+    body: "星數和最近更新每小時向 GitHub 取。",
+    bodyEmphasis: "活著與否看 GitHub。",
   },
   reposSection: {
     badge: "PUBLIC REPOS",
@@ -28,12 +28,12 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "internal",
       pitch:
-        "裝在自己電腦上的開源 AI 任務主腦。預設 mock 模式免費跑通,要接真 Claude worker 時才需要付費 Claude 訂閱。",
+        "裝在自己電腦上的開源任務引擎。每件任務留檔。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。",
       start:
         "git clone https://github.com/zaxardery8011-design/aiwff-runtime\ncp .env.example .env\nnpm start",
       startNote: "",
       evidence: {
-        label: "GitHub Actions 自動測試（綠燈）",
+        label: "測試在 GitHub Actions，連結在這。過不過以那個頁面當下的結果為準。",
         href: "https://github.com/zaxardery8011-design/aiwff-runtime/actions",
       },
     },
@@ -49,7 +49,7 @@ export const openSource: OpenSourceContent = {
       startNote:
         "在 Claude Code 裡輸入這行即可;不用 plugin 就 clone repo 改 soplint.config.json。",
       evidence: {
-        label: "GitHub Actions 自動測試（綠燈）",
+        label: "測試在 GitHub Actions，連結在這。過不過以那個頁面當下的結果為準。",
         href: "https://github.com/zaxardery8011-design/soplint/actions",
       },
     },
@@ -107,7 +107,7 @@ export const openSource: OpenSourceContent = {
       repo: "zaxardery8011-design/aiwff-mini",
       license: "Apache-2.0",
       kind: "external",
-      pitch: "跑在自己電腦上的個人主腦：有靈魂檔（寫著它是誰、你是誰的設定）、跨對話記憶，靈魂檔被偷改會告警。",
+      pitch: "跑在自己電腦上的設定與記憶檔。它是誰、你是誰，寫在檔裡。檔被改會告警。",
       start: "Read README.md in this folder and install aiwff-mini for me.",
       startNote:
         "把這句貼給你的 AI 工具（Claude Code、Codex、Cursor 等），它會先列出要建立的檔、等你同意才裝。需要 PowerShell 7。",
@@ -154,12 +154,12 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "external",
       pitch:
-        "用 MCP 讓 AI 管 Hyper-V 虛擬機：開機、快照、還原。目前是規格加 PoC，先用 mock 模式跑。",
+        "已封存。規格加 PoC，mock 可跑。不再加功能。",
       start:
         "git clone https://github.com/zaxardery8011-design/hyperv-mcp\npip install mcp\npython tests\\mock_server_test.py",
       startNote: "mock 模式不用管理員權限、不用裝 Hyper-V。",
       evidence: {
-        label: "GitHub Actions 自動測試（綠燈）",
+        label: "測試在 GitHub Actions，連結在這。過不過以那個頁面當下的結果為準。",
         href: "https://github.com/zaxardery8011-design/hyperv-mcp/actions",
       },
     },
@@ -185,7 +185,7 @@ export const openSource: OpenSourceContent = {
       repo: "zaxardery8011-design/dataflywheel",
       license: "MIT",
       kind: "external",
-      pitch: "手機用 Telegram 丟 YouTube 網址，整理好的 Markdown 筆記落在你自己的電腦。",
+      pitch: "已封存。Telegram 收 YouTube 網址，Markdown 寫到你自己的電腦。不再加功能。",
       start:
         "git clone https://github.com/zaxardery8011-design/dataflywheel\npip install -r requirements.txt",
       startNote: "需要 ffmpeg 與自己的 Gemini key。",

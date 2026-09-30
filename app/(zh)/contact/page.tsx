@@ -25,7 +25,7 @@ export default function Contact() {
       >
         <SectionHeader
           badge="CONTACT"
-          title="不用先想清楚要什麼——把最煩的一件事講給我,我幫你看。"
+          title="把最煩的一件事寄給我。我回你這件事能不能做。"
           titleClassName="mb-6"
         />
         <Card className="p-6 max-w-2xl">

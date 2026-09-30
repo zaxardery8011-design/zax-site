@@ -12,7 +12,7 @@ export const EMAIL = "zaxardery8011@gmail.com";
 
 // /contact 原有的 meta description（逐字）。/services 講的是同一組方案,共用這一句,不另寫。
 export const PACKAGES_META_DESCRIPTION =
-  "三個方案:LINE 分身架設、本機任務引擎導入、完整版客製大腦。每個方案都寫清楚含什麼、不含什麼,每個出口都有 email 與 LINE 兩條路。";
+  "三個方案:LINE 分身架設、本機任務引擎導入、完整版客製。把你電腦裡的資料接成查得到的工作紀錄。每個方案都寫清楚含什麼、不含什麼,每個出口都有 email 與 LINE 兩條路。";
 
 export const servicePackages = [
   {
@@ -47,8 +47,8 @@ export const servicePackages = [
   },
   {
     code: "P-full",
-    name: "完整版客製大腦",
-    summary: "把多節點、規則與既有流程接起來,做成可複製、可查證的專案制工作腦。",
+    name: "完整版客製",
+    summary: "把你電腦裡的資料接成查得到的工作紀錄。",
     bullets: [
       "多節點、規則與既有流程客製串接",
       "客製 SOP 與工作節點邊界整理",
@@ -73,7 +73,7 @@ export function ServicePackages({ showReceipts = false }: { showReceipts?: boole
         title="你可以從哪一層開始"
         titleClassName="mb-8"
       >
-        不一定要一次做完整套。先從 LINE 分身、本機任務引擎導入,或直接做客製大腦都可以。
+        不一定要一次做完整套。先從 LINE 分身、本機任務引擎導入,或直接做完整版客製都可以。把你電腦裡的資料接成查得到的工作紀錄。
       </SectionHeader>
 
       <div className="grid gap-4 lg:grid-cols-3">
@@ -101,7 +101,7 @@ export function ServicePackages({ showReceipts = false }: { showReceipts?: boole
             ) : null}
             <div className="mt-auto pt-4">
               <p className="text-sm font-semibold text-[color:var(--fg-0)] mb-4">
-                價格：洽詢
+                費用不寫在這頁。寫信或加 LINE 問。
               </p>
               <CTAButton href={item.href} className="block w-full text-center">
                 {item.cta}
@@ -126,7 +126,7 @@ export function ServicePackages({ showReceipts = false }: { showReceipts?: boole
       </p>
 
       <p className="mt-5 text-xs text-[color:var(--fg-2)] leading-relaxed">
-        交付驗收後 7 天內免費微調,超過另計；LLM/API 費用由客戶自己的帳號負擔,不含在報價內；簽約與發票主體目前為臻安鑫實業社。
+        驗收後 7 天內的小改另寫在報價裡。LLM/API 費用由客戶自己的帳號負擔,不含在報價內；簽約與發票主體目前為臻安鑫實業社。
       </p>
     </section>
   );

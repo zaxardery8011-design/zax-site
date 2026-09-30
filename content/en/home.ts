@@ -24,7 +24,7 @@ export const home: HomeContent = {
     lines: [
       "Make AI actually finish the work, and prove that it did.",
       "It lives on your machine, and everything it does can be checked.",
-      "You and your brain, walking into what comes next together.",
+      "Files on your computer can become your brain.",
     ],
   },
   starter: {
@@ -40,27 +40,27 @@ export const home: HomeContent = {
     title: 'Local task engine: an agent runtime where every "done" leaves a receipt',
     // README 候選：A local minimal brain. Send a task to Telegram, Claude runs it on your machine…
     intro:
-      "Send it a task, let it run in the background, get the result back, and watch progress in the browser. All state stays on your machine, not on someone else's server. Open source, MIT, free to run in mock mode.",
+      "Send it a task, let it run in the background, get the result back, and watch progress in the browser. Task state stays in files on your machine. You can open them. Open source, MIT. Default mock mode does not need an API key. To make Claude CLI actually run, you use your own Claude account.",
     cards: [
       {
         eyebrow: "Path A · I want to run it myself",
         title: "DIY: clone it and run it",
-        body: "If you can open a terminal and copy-paste, you can start. Mock mode runs the full loop for free, and one prompt can ask your AI coding agent to install it.",
+        body: "If you can open a terminal and copy-paste, you can start. Default mock mode does not need an API key. To make Claude CLI actually run, you use your own Claude account. One prompt can ask your AI coding agent to install it.",
         cta: "Read the one-prompt install →",
         href: "/minibrain",
       },
       {
         eyebrow: "Path B · I want to try it first",
-        title: "Try it: LINE main brain lab",
-        body: "Skip the command line for now. Talk to a running main brain in LINE, see whether the model fits your workflow, then decide whether to run your own copy or plan a fuller setup.",
+        title: "Try it: LINE lab",
+        body: "LINE lab. Talk to a running LINE twin. The lab account is live on LINE.",
         cta: "Add LINE and try it →",
         href: LINE_URL,
       },
     ],
   },
   s4OpenSource: {
-    badge: "FEATURED CASES",
-    title: "Featured cases: build the engine first, then add the guardrails",
+    badge: "FEATURED OPEN SOURCE",
+    title: "Featured open source: build the engine first, then add the guardrails",
     intro:
       "These are not concept drafts. They are projects iterated inside AIWFF work nodes, published on GitHub, or turned into entry points. Each card's stars and last-updated value are pulled from GitHub every hour, not frozen by hand.",
     introEmphasis: "It is not me saying the project is alive. GitHub says it.",
@@ -72,12 +72,12 @@ export const home: HomeContent = {
         href: "/minibrain",
         // README 候選：The local agent runtime — the engine that runs disciplined agents
         pitch:
-          'An agent runtime where every "done" leaves a receipt: install it on your own machine, run the full loop in mock mode first, then decide whether to connect real workers.',
+          'An agent runtime where every "done" leaves a receipt: install it on your own machine. Default mock mode does not need an API key. To make Claude CLI actually run, you use your own Claude account. Then decide whether to connect a real worker.',
         method:
           "A local file bus records tasks, progress, and outputs, so users can watch status in the browser and still inspect the file evidence later.",
         result: "Packaged into the local task engine page, install guide, and public repo so it can be adopted from zero.",
         evidence: {
-          label: "Automated tests on GitHub Actions (passing)",
+          label: "Tests are on GitHub Actions. The link is here. Pass or fail is whatever that page shows now.",
           href: "https://github.com/zaxardery8011-design/aiwff-runtime/actions",
         },
       },
@@ -88,11 +88,11 @@ export const home: HomeContent = {
         href: "https://github.com/zaxardery8011-design/soplint",
         // README 核心工具鏈表
         pitch:
-          "Static SOP-compliance audit for AI work nodes — catches instruction drift over long runs",
+          "Static SOP audit for AI work nodes. It catches instruction drift.",
         method: "Turns SOPs into scannable static rules, audits node outputs line by line, and catches drift.",
         result: "Open source, with automated tests on every push. The star count on this card is live.",
         evidence: {
-          label: "Automated tests on GitHub Actions (passing)",
+          label: "Tests are on GitHub Actions. The link is here. Pass or fail is whatever that page shows now.",
           href: "https://github.com/zaxardery8011-design/soplint/actions",
         },
       },
@@ -106,7 +106,7 @@ export const home: HomeContent = {
         method:
           "Keys and model go in .env, your voice in profile.md, your data in knowledge.md. Switch between cloud and local models freely. If you don't code, have your AI read AGENTS.md and set it up for you.",
         result:
-          "v0.2.0 is open source. Our Brain Lab account is live on LINE, so you can try one before building your own.",
+          "v0.2.0 is open source. The lab account is live on LINE.",
         evidence: { label: "Chat with a live one on LINE", href: LINE_URL },
       },
       {
@@ -147,7 +147,7 @@ export const home: HomeContent = {
         href: "https://github.com/zaxardery8011-design/execution-proofs",
         // README 核心工具鏈表
         pitch:
-          'MCP telemetry gateway — forces agents to prove "done" with real files & timestamps',
+          "MCP telemetry gateway. Forces agents to prove done with real files and timestamps.",
         method:
           'Built as a local MCP telemetry gateway that intercepts "done" claims and requires real files plus timestamps.',
         result: "Open source, test suite included. Clone it and run it yourself.",
@@ -170,10 +170,10 @@ export const home: HomeContent = {
   // 電子報文案目前只有中文，英文版不渲染（要開請 A 先給英文文案）
   showNewsletter: false,
   s5Try: {
-    badge: "LINE MAIN BRAIN LAB",
-    title: "Do not want to install yet? Talk to a running main brain in LINE first",
+    badge: "LINE LAB",
+    title: "Do not want to install yet? Talk to a running LINE twin first",
     // README 候選：don't want to install anything? Chat with a running brain first, then decide.
-    body: "Add the LINE main brain lab and see how a running brain responds to real tasks. Try the loop first, then decide whether to install your own node or plan a fuller setup.",
+    body: "Talk to a running LINE twin. The lab account is live on LINE.",
     // README「Elsewhere」
     cta: { label: "Add on LINE: @395jcpsb", href: LINE_URL },
   },

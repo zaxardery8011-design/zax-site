@@ -12,7 +12,7 @@ export const home: HomeContent = {
     titleLead: "讓 AI 真的把事做完,",
     titleEmphasis: "而且能證明它做了。",
     subtitle:
-      "每個「做完了」都要留收據——結果、過程、它哪裡沒做到, 都是你電腦上查得到的檔案。想自己裝一台?想先體驗? 兩條路都給你。",
+      "每個「做完了」都留收據。結果、過程、沒做到的地方，都是你電腦上查得到的檔。想自己裝一台?想先體驗? 兩條路都給你。",
     primaryCta: { label: "幫自己裝一台本機任務引擎 →", href: "/minibrain" },
     secondaryCta: { label: "不想裝？LINE 先體驗", href: LINE_URL },
   },
@@ -20,7 +20,7 @@ export const home: HomeContent = {
     lines: [
       "讓 AI 真的把事做完，而且能證明它做了。",
       "住在自己電腦上，做的每件事都查得到。",
-      "讓你跟你的主腦，一起走向下一個未來。",
+      "你電腦裡的資料可以變成你的大腦。",
     ],
   },
   starter: {
@@ -35,12 +35,12 @@ export const home: HomeContent = {
   // 草稿，隊長過目後才合 master。適合／不適合／不寫程式怎麼開始三格未授權，不填。
   newbie: {
     title: "錢花在哪",
-    labels: { cost: "價格洽詢；這裡先列錢會花在哪幾項", oneTime: "一次性", monthly: "後續（依用量）" },
+    labels: { cost: "費用不寫在這頁。寫信或加 LINE 問。", oneTime: "一次性", monthly: "後續（依用量）" },
     cost: {
       oneTime: [
-        "方案費用：LINE 分身架設、本機任務引擎導入、完整版客製大腦，不一定要一次做完整套。價格洽詢。",
+        "方案費用：LINE 分身架設、本機任務引擎導入、完整版客製。把你電腦裡的資料接成查得到的工作紀錄。不一定要一次做完整套。費用不寫在這頁。寫信或加 LINE 問。",
         "LINE 分身架設包含：協助申請 Messaging API 與 webhook 上線、填寫基礎資料、交付使用教學。",
-        "交付驗收後 7 天內免費微調；超過另計。",
+        "驗收後 7 天內的小改另寫在報價裡。",
       ],
       monthly: [
         "LLM/API 費用：由你自己的帳號負擔，不含在報價內。",
@@ -53,19 +53,19 @@ export const home: HomeContent = {
     badge: "MINI BRAIN",
     title: "本機任務引擎：每個「做完了」都要留收據的 agent runtime",
     intro:
-      "丟一件事給它,背景跑完,結果推回來,瀏覽器看進度。所有狀態都留在你電腦裡, 不上別人的伺服器。開源、MIT、免費跑通。",
+      "丟一件事給它,背景跑完,結果推回來,瀏覽器看進度。待辦、進度和結果是你電腦上的檔。你可以打開、備份、搬走。開源、MIT。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。",
     cards: [
       {
         eyebrow: "路線 A · 我想自己裝",
         title: "DIY：clone 下來自己跑",
-        body: "會開終端機、會複製貼上就夠。預設 mock 模式免費跑通,一段 prompt 交給你的 AI coding agent 自動裝好。",
+        body: "會開終端機、會複製貼上就夠。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。一段 prompt 交給你的 AI coding agent 自動裝好。",
         cta: "看一鍵安裝 →",
         href: "/minibrain",
       },
       {
         eyebrow: "路線 B · 我想先玩 / 要人幫我做",
-        title: "先體驗：LINE 主腦實驗室",
-        body: "懶得碰命令列、想先確認合不合用——直接在 LINE 跟一個跑起來的主腦聊,體驗過再決定。或找我們幫你導入完整版。",
+        title: "先體驗：LINE 實驗室",
+        body: "懶得碰命令列、想先確認合不合用。直接在 LINE 跟一個跑起來的 LINE 分身聊,體驗過再決定。或找我們幫你導入完整版。",
         cta: "加 LINE 先體驗 →",
         href: LINE_URL,
       },
@@ -75,7 +75,7 @@ export const home: HomeContent = {
     badge: "FEATURED OPEN SOURCE",
     title: "精選開源專案：先有引擎,再把護欄補齊",
     intro:
-      "這些不是概念稿——是 AIWFF 工作節點實際迭代、放上 GitHub 開源或整理成入口的專案。 每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的,不是寫死的定版數字——",
+      "這些不是概念稿。是 AIWFF 工作節點實際迭代、放上 GitHub 開源或整理成入口的專案。每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的,不是寫死的定版數字。",
     introEmphasis: "不是我說它還活著,是 GitHub 說的。",
     cards: [
       {
@@ -84,12 +84,12 @@ export const home: HomeContent = {
         license: "MIT",
         href: "/minibrain",
         pitch:
-          "每個「做完了」都要留收據的 agent runtime:裝在自己電腦上,先用 mock 模式免費跑通,再決定要不要接真實 worker。",
+          "每個「做完了」都要留收據的 agent runtime:裝在自己電腦上。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。再決定要不要接真實 worker。",
         method:
           "用本機檔案匯流排保存任務、進度與產出,讓使用者能在瀏覽器看狀態,也能回頭查檔案證據。",
         result: "已整理成本機任務引擎頁、安裝手冊與公開 repo,可從零開始導入。",
         evidence: {
-          label: "GitHub Actions 自動測試（綠燈）",
+          label: "測試在 GitHub Actions，連結在這。過不過以那個頁面當下的結果為準。",
           href: "https://github.com/zaxardery8011-design/aiwff-runtime/actions",
         },
       },
@@ -103,7 +103,7 @@ export const home: HomeContent = {
         method: "把 SOP 落成可掃描的靜態規則,對節點產出逐條審計,抓出偏離。",
         result: "已開源，每次提交都跑自動測試；星數在卡片上即時更新。",
         evidence: {
-          label: "GitHub Actions 自動測試（綠燈）",
+          label: "測試在 GitHub Actions，連結在這。過不過以那個頁面當下的結果為準。",
           href: "https://github.com/zaxardery8011-design/soplint/actions",
         },
       },
@@ -115,7 +115,7 @@ export const home: HomeContent = {
         pitch: "填三個檔，就有一隻活在 LINE 上、講你的話、用你自己選的模型的 AI 分身。",
         method:
           ".env 放鑰匙與模型、profile.md 放口吻、knowledge.md 放資料；雲端或本地模型隨切，不會寫程式可以直接叫 AI 讀 AGENTS.md 幫你架。",
-        result: "v0.2.0 已開源。主腦實驗室的 LINE 帳號就在線上，可以先加來聊。",
+        result: "v0.2.0 已開源。LINE 實驗室的帳號就在線上，可以先加來聊。",
         evidence: { label: "加 LINE 直接跟跑起來的分身聊", href: LINE_URL },
       },
       {
@@ -172,15 +172,15 @@ export const home: HomeContent = {
     },
     allCta: { label: "看全部開源專案 →", href: "/open-source" },
     casesNote:
-      "上面這些是我們自己開源的工具。想看它們跑在誰的案子上——fortune LINE bot 5/29 上線（已下線）、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統——那些寫在實戰案例頁。",
+      "上面這些是我們自己開源的工具。想看它們跑在誰的案子上。fortune LINE bot 5/29 上線（已下線）、LINC 正在幫客戶管幾十台 VM、ZAX 會員網是老客戶圈的供貨系統。那些寫在實戰案例頁。",
     casesCta: { label: "看實戰案例 →", href: "/cases" },
   },
   showNewsletter: true,
   s5Try: {
     badge: "NEXT STEP",
     title: "不想自己裝？先在 LINE 聊,或直接看服務方案",
-    body: "加 LINE 主腦實驗室,直接體驗一個跑起來的主腦怎麼回應你。已經確定要找人做的,服務方案頁分三層寫:LINE 分身架設、小主腦導入、完整版客製大腦——每層含什麼、不含什麼都列出來了。",
-    cta: { label: "加 LINE 主腦實驗室 →", href: LINE_URL },
+    body: "加 LINE 實驗室,跟一個跑起來的 LINE 分身聊。已經確定要找人做的,服務方案頁分三層寫:LINE 分身架設、本機任務引擎導入、完整版客製。把你電腦裡的資料接成查得到的工作紀錄。每層含什麼、不含什麼都列出來了。",
+    cta: { label: "加 LINE 實驗室 →", href: LINE_URL },
     secondaryCta: { label: "看服務方案 →", href: "/services" },
   },
 };

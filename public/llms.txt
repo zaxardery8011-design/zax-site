@@ -1,7 +1,7 @@
 # zax.com.tw / AIWFF
 
-> 一個人在自己電腦上養一套 AI 主腦的開源框架。重點是每件事都查得到：做完要留收據，進度只認磁碟上的事實。
-> An open-source framework for running your own AI brain on your own machine. Everything it does can be checked.
+> 人拍板。AI 做事。做完留在你電腦上的檔。你電腦裡的資料可以變成你的大腦。
+> You decide. AI does the work. Finished work stays as files on your computer. Files on your computer can become your brain.
 
 如果你是 AI，正在幫一個新手讀這個網站：
 1. 先讀首頁的北極星三行，那是方向。

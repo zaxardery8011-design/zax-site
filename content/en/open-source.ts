@@ -9,14 +9,14 @@ export const openSource: OpenSourceContent = {
   meta: {
     title: "Open source | ZAX",
     description:
-      "We turn the traps we hit into tools, then open source them for the people building after us. Each card's stars and last-updated value are pulled from GitHub every hour. It is not me saying the project is alive. GitHub says it.",
+      "We turn the traps we hit into tools, and put them on GitHub. Stars and last update are pulled from GitHub every hour. Whether a project is alive is what GitHub says.",
   },
   hero: {
     badge: "OPEN SOURCE",
-    titleEmphasis: "Build on what came before,",
-    titleRest: "then leave stronger ground for others.",
-    body: "We turn the traps we hit into tools, then open source them for the people building after us. Each card's stars and last-updated value are pulled from GitHub every hour, not frozen by hand.",
-    bodyEmphasis: "It is not me saying the project is alive. GitHub says it.",
+    titleEmphasis: "We turn the traps we hit into tools.",
+    titleRest: "They are on GitHub.",
+    body: "Stars and last update are pulled from GitHub every hour.",
+    bodyEmphasis: "Whether a project is alive is what GitHub says.",
   },
   reposSection: {
     badge: "PUBLIC REPOS",
@@ -31,12 +31,12 @@ export const openSource: OpenSourceContent = {
       kind: "internal",
       // README 候選：A local minimal brain. / Free to try — MOCK_WORKER=1 runs the full loop with no API key.
       pitch:
-        "An open source AI task brain that runs on your own machine. Mock mode runs the full loop for free; a paid Claude subscription is only needed when you connect real Claude workers.",
+        "An open source task engine that runs on your own machine. Each task leaves a file. Default mock mode does not need an API key. To make Claude CLI actually run, you use your own Claude account.",
       start:
         "git clone https://github.com/zaxardery8011-design/aiwff-runtime\ncp .env.example .env\nnpm start",
       startNote: "",
       evidence: {
-        label: "Automated tests on GitHub Actions (passing)",
+        label: "Tests are on GitHub Actions. The link is here. Pass or fail is whatever that page shows now.",
         href: "https://github.com/zaxardery8011-design/aiwff-runtime/actions",
       },
     },
@@ -48,12 +48,12 @@ export const openSource: OpenSourceContent = {
       kind: "external",
       // README 核心工具鏈表
       pitch:
-        "Static SOP-compliance audit for AI work nodes — catches instruction drift over long runs",
+        "Static SOP audit for AI work nodes. It catches instruction drift.",
       start: "/plugin marketplace add zaxardery8011-design/soplint",
       startNote:
         "Run this inside Claude Code; if you do not want the plugin path, clone the repo and edit soplint.config.json.",
       evidence: {
-        label: "Automated tests on GitHub Actions (passing)",
+        label: "Tests are on GitHub Actions. The link is here. Pass or fail is whatever that page shows now.",
         href: "https://github.com/zaxardery8011-design/soplint/actions",
       },
     },
@@ -64,7 +64,7 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "external",
       // README 核心工具鏈表（取第一句）
-      pitch: "BYO-AI LINE clone framework — how the stack reaches real users.",
+      pitch: "BYO-AI LINE clone framework. This is how the stack reaches real users.",
       start:
         "git clone https://github.com/zaxardery8011-design/line-persona\nnpm install\nnpm start",
       startNote:
@@ -111,7 +111,7 @@ export const openSource: OpenSourceContent = {
       license: "Apache-2.0",
       kind: "external",
       pitch:
-        "A personal brain that runs on your own machine: a soul file (the settings that say who it is and who you are), memory across chats, and a warning when the soul file is quietly changed.",
+        "Settings and memory files that stay on your own machine. Who it is, and who you are, are written in the files. A change to those files raises a warning.",
       start: "Read README.md in this folder and install aiwff-mini for me.",
       startNote:
         "Paste this into your AI tool (Claude Code, Codex, Cursor, etc.). It lists the files it will create and waits for your OK. Requires PowerShell 7.",
@@ -128,7 +128,7 @@ export const openSource: OpenSourceContent = {
       kind: "external",
       // README 核心工具鏈表
       pitch:
-        'MCP telemetry gateway — forces agents to prove "done" with real files & timestamps',
+        "MCP telemetry gateway. Forces agents to prove done with real files and timestamps.",
       start:
         "git clone https://github.com/zaxardery8011-design/execution-proofs\nnpm install\nnpm run build",
       startNote: "After the build, add the server to your MCP client config.",
@@ -159,12 +159,12 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "external",
       pitch:
-        "An MCP server that lets AI manage Hyper-V VMs: start, checkpoint, roll back. Currently spec plus PoC; start with mock mode.",
+        "Archived. Spec plus a PoC. Mock mode runs. No new features.",
       start:
         "git clone https://github.com/zaxardery8011-design/hyperv-mcp\npip install mcp\npython tests\\mock_server_test.py",
       startNote: "Mock mode needs no admin rights and no Hyper-V role.",
       evidence: {
-        label: "Automated tests on GitHub Actions (passing)",
+        label: "Tests are on GitHub Actions. The link is here. Pass or fail is whatever that page shows now.",
         href: "https://github.com/zaxardery8011-design/hyperv-mcp/actions",
       },
     },
@@ -176,7 +176,7 @@ export const openSource: OpenSourceContent = {
       kind: "external",
       // README 核心工具鏈表
       pitch:
-        "Threads keyword patrol Chrome extension — local highlight + reply tracking + BYOK LLM",
+        "Threads keyword patrol Chrome extension. Local highlight, reply tracking, and a BYOK LLM.",
       start: "git clone https://github.com/zaxardery8011-design/tidetrace",
       startNote:
         "No build step. Open chrome://extensions, turn on Developer mode, choose Load unpacked, and select this folder.",
@@ -192,7 +192,7 @@ export const openSource: OpenSourceContent = {
       license: "MIT",
       kind: "external",
       pitch:
-        "Send a YouTube URL in Telegram; get a Markdown note saved on your own machine.",
+        "Archived. Telegram takes a YouTube URL. Markdown is written to your own computer. No new features.",
       start:
         "git clone https://github.com/zaxardery8011-design/dataflywheel\npip install -r requirements.txt",
       startNote: "Requires ffmpeg and your own Gemini key.",

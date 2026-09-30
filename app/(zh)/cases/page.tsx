@@ -6,7 +6,7 @@ import { pageMetadata } from "@/app/lib/metadata";
 export const metadata = pageMetadata({
   title: "實戰案例 | ZAX",
   description:
-    "已經在跑的案子:fortune LINE bot、LINC 遠端 VM 群監控、ZAX 會員網、soplint、AI 主腦實驗室。開源那幾個的星數與最近更新是回源 GitHub 抓的,不是寫死的定版數字。",
+    "已經在跑的案子:fortune LINE bot、LINC 遠端 VM 群監控、ZAX 會員網、soplint、LINE 實驗室。開源那幾個的星數與最近更新是回源 GitHub 抓的,不是寫死的定版數字。",
   path: "/cases",
 });
 
@@ -41,13 +41,13 @@ type RealCase = {
 const REAL_CASES: RealCase[] = [
   {
     id: "real-case",
-    title: "fortune LINE bot — 5/29 上線（已下線）",
+    title: "fortune LINE bot，5/29 上線，現已下線。",
     description: (
       <>
-        fortune 系統是 ZAX 主腦線上第一個跑到「真實朋友 user」的產品。
-        AI 算命 LINE bot — 接 LINE webhook、本地 AI 模型出文、4 主題卡片 +
+        fortune 系統是 ZAX 線上第一個跑到「真實朋友 user」的產品。
+        AI 算命 LINE bot。接 LINE webhook、本地 AI 模型出文、4 主題卡片 +
         三派折疊 + hero 區塊;當時在朋友開的通訊行落地試用。算命功能已經下線,
-        同一個 LINE 帳號現在是下面的「AI 主腦實驗室」。
+        同一個 LINE 帳號現在是下面的「LINE 實驗室」。
       </>
     ),
     cards: [
@@ -83,13 +83,13 @@ const REAL_CASES: RealCase[] = [
   },
   {
     id: "real-case-linc",
-    title: "LINC — 遠端 VM 群監控儀表板",
+    title: "LINC。遠端 VM 群監控儀表板",
     description: (
       <>
         幫客戶裝完 VM 之後,下一個真實痛點是「人眼盯不過來幾十台機器」。
         LINC 把自架 VM 群的畫面集中到一個瀏覽器頁面,
         拖拉分類、即時看狀態、出狀況時 AI 視覺辨識先一步抓出來。
-        已 production 服務既有付費客戶,不是 demo。
+        已有登入後才看得到的頁面：lc.zaxtw.com。台數、是否付費、審核要幾天，這頁沒有附公開收據，先不要寫死。
       </>
     ),
     footer: (
@@ -143,7 +143,7 @@ const REAL_CASES: RealCase[] = [
   },
   {
     id: "real-case-member",
-    title: "ZAX 會員網 — 老客戶圈 穩定供貨",
+    title: "ZAX 會員網。老客戶圈，穩定供貨",
     description: (
       <>
         ZAX 會員網是集團最早一條變現線。沒有公開廣告、不對外擴張,
@@ -189,11 +189,11 @@ const REAL_CASES: RealCase[] = [
   },
   {
     id: "real-case-soplint",
-    title: "soplint — AI agent 行為規範 lint 工具",
+    title: "soplint。AI agent 行為規範 lint 工具",
     description: (
       <>
         長時間跑的 AI 工作節點會「指令漂移」:SOP 還在,但做出來的事慢慢偏掉。
-        soplint 把 SOP 落成可掃描的靜態規則,對節點產出逐條審計——
+        soplint 把 SOP 落成可掃描的靜態規則,對節點產出逐條審計。
         查的是行為,不是設定檔格式。下面每一格都能點進 repo 自己對。
       </>
     ),
@@ -214,13 +214,10 @@ const REAL_CASES: RealCase[] = [
   },
   {
     id: "real-case-ai-brain-line",
-    title: "AI 主腦實驗室 LINE bot",
+    title: "LINE 實驗室",
     description: (
       <>
-        想先看主腦長什麼樣又不想碰命令列,這是最短的一條路:加好友就能跟一個
-        正在跑的主腦對話:問它主腦是什麼、怎麼打造自己的大腦,看它記得你什麼,
-        或出題抓它的錯。我們不公布它的使用者數——
-        還沒有值得拿出來講的數字,有了再補。
+        加好友可以問一件事怎麼做、做完怎麼查。你電腦裡的資料可以變成你的大腦。
       </>
     ),
     descriptionClassName: "mb-6",
@@ -230,7 +227,7 @@ const REAL_CASES: RealCase[] = [
         target="_blank"
         className="inline-block"
       >
-        📱 加好友體驗主腦實驗室
+        跟一個跑起來的 LINE 分身聊
       </CTAButton>
     ),
   },
@@ -262,7 +259,16 @@ function soplintCards(meta: RepoMeta | null): SummaryCard[] {
     glow: "secondary",
     body: (
       <>
-        測試在三個 OS 上各跑一輪,最近一次全綠。Actions 頁公開,可以自己點進去看。
+        測試在 GitHub Actions，
+        <a
+          href="https://github.com/zaxardery8011-design/soplint/actions"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[color:var(--link)] hover:underline"
+        >
+          連結在這
+        </a>
+        。過不過以那個頁面當下的結果為準。
       </>
     ),
   });
@@ -343,7 +349,7 @@ export default async function Cases() {
       <section id="demo" className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
         <SectionHeader
           badge="PHASE 1 DEMO"
-          title="social-poster — 11 產業社群發文 SaaS"
+          title="social-poster。11 產業社群發文 SaaS"
         >
           social-poster 是下一條 user-facing 線。獨立 Next.js 專案,Phase 1
           全 Demo Mode (fake data / fake publish),畫面同時當 Meta App Review demo 素材;
@@ -378,7 +384,7 @@ export default async function Cases() {
             <div>
               <div className="text-[color:var(--fg-2)] text-xs mb-1">BLOCKER</div>
               <div className="text-[color:var(--fg-0)]">
-                Meta App Review 排隊中 (7-30 天) — code 不卡,審核才卡
+                審核才會卡住，程式本身還在 demo。審核要幾天，這頁沒有附公開收據，先不要寫死。
               </div>
             </div>
             <div>
@@ -390,14 +396,13 @@ export default async function Cases() {
           </div>
         </Card>
         <p className="text-xs text-[color:var(--fg-2)]">
-          狀態真實揭露:Phase 1 dashboard 在做,Meta App Review 排隊中,
-          不假裝已經有真實付費用戶。
+          台數、是否付費、審核要幾天，這頁沒有附公開收據，先不要寫死。審核才會卡住，程式本身還在 demo。
         </p>
       </section>
 
       {/* ── Self-built — 自家實測 ── */}
       <section id="self-built" className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full">
-        <SectionHeader badge="SELF-BUILT" title="自家實測 — 我先拿自己開刀">
+        <SectionHeader badge="SELF-BUILT" title="自家每天在用的三件事">
           我做得出來、跑得起來,才敢拿來幫你做。下面這些,全是我自己每天真的在用的東西。
         </SectionHeader>
 
@@ -500,7 +505,7 @@ export default async function Cases() {
               </li>
             </ol>
             <p className="text-xs text-[color:var(--fg-2)] border-l-2 border-[color:var(--label)] pl-3 leading-relaxed">
-              誠實註記:自家每日在跑的流程,成本幾乎是零(用本地與免費資源)。
+              誠實註記:自家每天在跑。用的是這台電腦上的工具。
             </p>
           </Card>
 

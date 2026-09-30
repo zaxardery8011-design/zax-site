@@ -68,12 +68,12 @@ const scenarioCards = [
   {
     title: "全在你本機",
     label: "LOCAL FILES",
-    body: "待辦、進度、結果都放在你看得到的資料夾裡，不是雲端 SaaS。你可以直接查檔案、備份、搬走。",
+    body: "待辦、進度和結果在你看得到的資料夾裡。你可以打開那些檔。",
   },
   {
-    title: "開箱免費跑通",
+    title: "預設 mock 不需要 API key",
     label: "MOCK MODE",
-    body: "第一次安裝不需 API key、不需付費帳號、不需 Telegram，就能看完整「丟任務、跑起來、拿結果」。",
+    body: "要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。",
   },
   {
     title: "改文字檔就改個性",
@@ -91,7 +91,7 @@ const docLinks = [
   {
     title: "安裝手冊 install.md",
     href: INSTALL_DOC_URL,
-    body: "一步步把它裝起來、跑通第一次；一開始就先講清楚哪些免費、哪些需要付費。",
+    body: "一步步把它裝起來、跑通第一次。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。",
   },
   {
     title: "使用手冊 usage.md",
@@ -113,7 +113,7 @@ const docLinks = [
 export const metadata = pageMetadata({
   title: "本機任務引擎 | aiwff-runtime",
   description:
-    "本機任務引擎（aiwff-runtime）是每個「做完了」都要留收據的 agent runtime，裝在自己電腦上。預設 mock 模式免費跑通，要接真 Claude worker 時才需要付費 Claude 訂閱。",
+    "本機任務引擎（aiwff-runtime）是每個「做完了」都要留收據的 agent runtime，裝在自己電腦上。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。",
   path: "/minibrain",
 });
 
@@ -126,8 +126,7 @@ function BillingCallout({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
     <div className={`rounded-lg border p-4 leading-relaxed ${classes}`}>
       <p className="text-base">
-        免費跑通 <strong>mock 模式</strong> 不用錢、不需 API key。只有要讓它真的叫 Claude
-        幫你做事時，才需要 <strong>付費的 Claude 訂閱</strong>；這件事我們裝之前就講清楚。
+        預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。
       </p>
     </div>
   );
@@ -146,7 +145,7 @@ export default function MiniBrainPage() {
               幫自己裝一台 <span className="steel-text">本機任務引擎</span>
             </h1>
             <p className="text-base md:text-lg text-[color:var(--fg-1)] leading-relaxed max-w-3xl mb-6">
-              把一件事丟給它，它會在你電腦裡跑，做完把結果交回來；你也能用瀏覽器看進度。所有狀態都留在你電腦的檔案裡，不上別人的伺服器。
+              把一件事丟給它，它會在你電腦裡跑，做完把結果交回來；你也能用瀏覽器看進度。待辦、進度和結果是你電腦上的檔。你可以打開、備份、搬走。
             </p>
             <p className="text-base md:text-lg text-[color:var(--fg-1)] leading-relaxed max-w-3xl mb-6">
               引擎。預設 mock，不叫任何模型。要真的跑，設 ENABLE_REAL_CLAUDE_WORKER=1。這版用 CLAUDE_CMD 啟動 Claude CLI，參數帶 --print。另外有一條 OpenAI 相容端點，預設關閉，沒有工具，只把回覆寫成檔。Gemini 與 Codex 在 README 寫成以後再加。這版沒把它們接成 worker。
@@ -171,7 +170,7 @@ export default function MiniBrainPage() {
 
       <section className="px-5 sm:px-6 py-16 max-w-5xl mx-auto w-full">
         <SectionHeader badge="WHAT IT DOES" title="它能幫你做什麼">
-          本機任務引擎不是雲端聊天工具；它是一個把任務、進度和產出都留在本機的最小 AI 任務 runtime。
+          待辦、進度和結果在你看得到的資料夾裡。你可以打開那些檔。
         </SectionHeader>
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {scenarioCards.map((item) => (
@@ -341,7 +340,7 @@ export default function MiniBrainPage() {
               不想自己裝？先玩玩看
             </h2>
             <p className="text-[color:var(--fg-1)] leading-relaxed max-w-3xl">
-              不確定合不合用、或懶得碰命令列，可以先到 LINE 主腦實驗室直接跟一個跑起來的主腦聊，體驗過再決定要不要自己裝。
+              不確定合不合用、或懶得碰命令列，可以先到 LINE 實驗室，跟一個跑起來的 LINE 分身聊，體驗過再決定要不要自己裝。
             </p>
           </div>
           <CTAButton
@@ -349,7 +348,7 @@ export default function MiniBrainPage() {
             target="_blank"
             className="w-full justify-center sm:w-fit"
           >
-            加 LINE 主腦實驗室
+            加 LINE 實驗室
           </CTAButton>
         </div>
       </section>
