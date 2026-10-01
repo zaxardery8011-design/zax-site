@@ -31,12 +31,14 @@ export function JsonLd({ data }: { data: unknown }) {
 const ORG_ID = `${SITE_URL}/#organization`;
 
 // sameAs 只收頁尾既有的對外社群連結（Facebook／LINE／GitHub），不收 mailto 與站內聯絡頁。
+// 個人 LINE（/ti/p/~<id>）不進 sameAs，只留官方帳號；頁尾連結照常顯示（tle_031896）。
 const SAME_AS_KINDS = new Set(["facebook", "line", "github"]);
+const PERSONAL_LINE = /line\.me\/R\/ti\/p\/~/;
 
 /** 中英 root layout 共用：Organization + WebSite。 */
 export function siteJsonLd(content: LayoutContent) {
   const sameAs = content.footer.social
-    .filter((s) => SAME_AS_KINDS.has(s.kind) && /^https?:\/\//.test(s.href))
+    .filter((s) => SAME_AS_KINDS.has(s.kind) && /^https?:\/\//.test(s.href) && !PERSONAL_LINE.test(s.href))
     .map((s) => s.href);
 
   return {
