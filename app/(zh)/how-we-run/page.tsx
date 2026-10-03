@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/app/lib/metadata";
+import { redirect } from "next/navigation";
 
 export const metadata = pageMetadata({
   title: "我們怎麼運作",
@@ -7,13 +8,5 @@ export const metadata = pageMetadata({
 });
 
 export default function HowWeRun() {
-  return (
-    <main className="flex w-full flex-1">
-      <iframe
-        className="h-screen w-full border-0"
-        src="/how-we-run/index.html"
-        title="我們怎麼運作"
-      />
-    </main>
-  );
+  redirect("/how-we-run/index.html");
 }
