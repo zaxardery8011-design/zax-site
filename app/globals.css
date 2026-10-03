@@ -67,8 +67,22 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* header 黏住後，頁內錨點（/minibrain #install #docs、/checklist #list）會捲到 header 底下。
+   實量 header 高：md 以下兩排 158px（375 寬），md 以上 61px；各留一點空。 */
+html {
+  scroll-padding-top: 10.5rem;
+}
+@media (width >= 48rem) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+}
+
+/* overflow-x 用 clip 不用 hidden：hidden 會讓 html/body 變成捲動容器，
+   SiteShell 的 sticky header 就黏在一個不會捲的 body 上，等於整個失效（06-11 起）。
+   clip 一樣切掉橫向溢出，但不建立捲動容器。 */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
   background:
     radial-gradient(1200px 600px at 15% -10%, rgba(232, 230, 225, 0.06), transparent 60%),
     var(--metal-ink);
