@@ -18,7 +18,6 @@ export const layout: LayoutContent = {
     { href: "/open-source", label: "開源" },
     { href: "/checklist", label: "檢查表" },
     { href: "/services", label: "服務方案" },
-    { href: "/how-we-run/index.html", label: "怎麼運作" },
     { href: "/about", label: "關於 ZAX" },
     { href: "/contact", label: "聯絡" },
   ],
