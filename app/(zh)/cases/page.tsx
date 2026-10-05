@@ -6,7 +6,7 @@ import { pageMetadata } from "@/app/lib/metadata";
 export const metadata = pageMetadata({
   title: "實戰案例 | ZAX",
   description:
-    "已經在跑的案子:fortune LINE bot、LINC 遠端 VM 群監控、ZAX 會員網、soplint、LINE 實驗室。開源那幾個的星數與最近更新是回源 GitHub 抓的,不是寫死的定版數字。",
+    "實際做過的案子:fortune LINE bot(已下線)、LINC 遠端 VM 群監控、ZAX 會員網、soplint、LINE 實驗室。開源那幾個的星數與最近更新是回源 GitHub 抓的,不是寫死的定版數字。",
   path: "/cases",
 });
 
