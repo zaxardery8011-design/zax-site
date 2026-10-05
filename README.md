@@ -119,7 +119,7 @@ npm run start   # 本地預覽 production build,localhost:3000
 - [x] Phase 1 — 5 section landing (本 repo)
 - [ ] Phase 2 — `/blog` 區段 + RSS (MDX,還是不接 CMS)
 - [ ] Phase 3 — `/products/social-poster` 子頁,接 social-poster Phase 1 demo 截圖
-- [ ] Phase 4 — `/products/fortune` 子頁,接 LINE bot QR code
+- [ ] Phase 4 — `/products/fortune` 子頁（fortune LINE bot 已下線，暫不接 LINE bot QR code）
 
 ---
 
