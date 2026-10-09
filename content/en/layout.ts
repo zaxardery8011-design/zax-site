@@ -10,7 +10,7 @@ export const layout: LayoutContent = {
   meta: {
     title: "ZAX | Make AI actually finish the work, and prove that it did",
     description:
-      'Make AI actually finish the work, and prove that it did. Every "done" leaves a receipt. The result and the process stay in files you can inspect.',
+      "Help AI finish work and leave inspectable records of results and process. Grow your own human–AI partnership, starting with open-source tools, the public-beta checkup, and practical entry points.",
   },
   brand: "ZAX",
   homeHref: "/en",
@@ -36,7 +36,7 @@ export const layout: LayoutContent = {
       "· aiwff-runtime open source · MIT",
       "· Technical support: GitHub Issues",
       // README「Elsewhere」：zax.com.tw — full AIWFF version, custom builds, and consulting.
-      "· zax.com.tw. Full version, custom work, and consulting.",
+      "· Discuss implementation and custom work for your needs. Decisions and approval: the Captain; drafts and verification: the primary AI. 判斷與拍板：隊長；草稿與查證：主腦",
     ],
     copyright: "© 2026 zax.com.tw",
     social: [

@@ -7,18 +7,18 @@ export const openSource: OpenSourceContent = {
   meta: {
     title: "開源專案 | ZAX",
     description:
-      "我們把踩過的坑做成工具，放上 GitHub。星數和最近更新每小時向 GitHub 取。活著與否看 GitHub。",
+      "做事時踩過的坑 整理成公開工具 想看引擎、查規則或拿現成工具 先從三個入口挑一個 專案狀態看各自 README 與證據連結",
   },
   hero: {
     badge: "OPEN SOURCE",
-    titleEmphasis: "我們把踩過的坑做成工具，",
-    titleRest: "放上 GitHub。",
-    body: "星數和最近更新每小時向 GitHub 取。",
-    bodyEmphasis: "活著與否看 GitHub。",
+    titleEmphasis: "踩過的坑 做成工具",
+    titleRest: "原始碼放在 GitHub",
+    body: "看引擎、查規則、拿工具 不用一次全裝 挑今天用得到的就好",
+    bodyEmphasis: "星數與最近更新是線索 能不能用 還要看說明、測試與自己的驗收",
   },
   reposSection: {
     badge: "PUBLIC REPOS",
-    title: "做給自己用,也讓開發者直接看見做法",
+    title: "三個入口先看 前三張依序是引擎、規則、LINE 分身",
   },
   repos: [
     {
@@ -250,7 +250,7 @@ export const openSource: OpenSourceContent = {
     href: "https://github.com/zaxardery8011-design",
     badge: "ZAX GITHUB",
     title: "看全部開源 →",
-    body: "其他公開實驗、工具與自動化專案會持續放在 GitHub,等有穩定截圖或文件再補進官網。",
+    body: "其他工具與公開實驗放在 GitHub 有文件或可查證的展示再補到這頁 不代表每個 repo 都是成熟產品",
   },
   casesCard: {
     href: "/cases",
