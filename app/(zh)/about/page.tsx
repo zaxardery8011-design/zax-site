@@ -35,16 +35,16 @@ const exits = [
 ] as const;
 
 export const metadata = pageMetadata({
-  title: "關於 ZAX | 白天焊金屬,晚上焊系統",
+  title: "關於 ZAX | 讓 AI 真的把事做完，而且能證明它做了",
   description:
-    "ZAX 是一個焊工的工作站。本業是精密氬焊(TIG / ASME 等級)。後來把同一套驗收寫進本機任務引擎。人決定派什麼。AI 做事。做完留檔。",
+    "讓 AI 真的把事做完，而且能證明它做了。這裡的我們是人加他的主腦。人做判斷，AI 協助做事與查證。不賣打包好的腦。",
   path: "/about",
 });
 
 export default function About() {
   return (
     <main className="flex flex-col w-full overflow-x-hidden">
-      {/* ── About ── */}
+      {/* About */}
       <section
         id="about"
         className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
@@ -52,16 +52,16 @@ export default function About() {
         <SectionHeader
           accent="secondary"
           badge="ABOUT"
-          title="白天焊金屬，晚上焊系統。"
+          title="讓 AI 真的把事做完，而且能證明它做了。"
           titleClassName="mb-6"
         />
         <div className="grid md:grid-cols-2 gap-6 text-[color:var(--fg-1)] leading-relaxed">
           <Card className="p-6">
             <p className="mb-3">
-              ZAX 不是一間科技公司,是一個焊工的工作站。本業是精密氬焊(TIG / ASME 等級),焊的是不能漏、要扛壓力的管路。這行要通過檢驗。
+              這裡的我們是人加他的主腦。人做判斷，AI 協助做事與查證。不賣打包好的腦。
             </p>
             <p>
-              後來開始寫 AI,發現寫系統跟焊接是同一回事:跑得起來、扛得住、修得動,才算數。後來把同一套驗收寫進本機任務引擎。人決定派什麼。AI 做事。做完留檔。一個人,做給自己用,順手給朋友用。
+              把驗收寫進本機任務引擎。人決定派什麼。AI 做事。做完留檔。跑得起來、扛得住、修得動，才算數。
             </p>
           </Card>
           <Card className="p-6">
@@ -80,11 +80,11 @@ export default function About() {
             FDE · AI 落地工程師
           </div>
           <p>
-            最近這個角色有了名字:Forward Deployed Engineer(FDE,中文叫 AI 落地工程師)。人到現場，把一件事做成每天用得到的系統。我做的就是這個。差別是,我還帶著焊接的驗收標準:做不出來、修不動,我不會擺上來給你看。
+            最近這個角色有了名字:Forward Deployed Engineer(FDE,中文叫 AI 落地工程師)。人到現場，把一件事做成每天用得到的系統。我做的就是這個。驗收標準是:做不出來、修不動,我不會擺上來給你看。
           </p>
         </Card>
 
-        {/* ── 出口:上面講完了,底下是可以自己去看的 ── */}
+        {/* 出口:上面講完了,底下是可以自己去看的 */}
         <div className="mt-16">
           <SectionHeader
             badge="NEXT"
@@ -123,6 +123,9 @@ export default function About() {
             </CTAButton>
           </div>
         </div>
+        <p className="mt-8 text-sm text-[color:var(--label)]">
+          判斷與拍板：隊長；草稿與查證：主腦。
+        </p>
       </section>
     </main>
   );
