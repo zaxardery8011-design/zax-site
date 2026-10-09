@@ -16,28 +16,20 @@ export const home: HomeContent = {
     titleEmphasis: "and prove that it did.",
     // README 候選：…you get a local AI work node that finishes work *and* proves it.
     subtitle:
-      'Every "done" needs a receipt: the result, the process, and what it failed to do all stay as files you can inspect on your own machine. Install your own node, or try a running one first.',
+      "Every done needs a receipt: results, process, and what was missed can be checked. Start with the beta checkup to compare your own answers with a scan, install a local task engine, or try the LINE lab first.",
     primaryCta: { label: "Install a local task engine →", href: "/minibrain" },
-    secondaryCta: { label: "Try it first on LINE", href: LINE_URL },
+    secondaryCta: { label: "Tried it or want to join? Check in at Future Village →", href: "https://future-village.github.io/en/" },
   },
   northStar: {
-    lines: [
-      "Make AI actually finish the work, and prove that it did.",
-      "It lives on your machine, and everything it does can be checked.",
-      "Files on your computer can become your brain.",
-    ],
+    lines: ["Help each person grow their own human–AI partnership", "Here, the partnership means the Captain plus the primary AI: the person decides, and the AI helps execute and verify", "Find the gaps first, then add tools, learning materials, or hands-on support. A prepackaged brain is not the offer"],
   },
   starter: {
-    lines: [
-      "You don't have to understand it yourself.",
-      'Give this URL to your AI and say: "Read it and explain it to me. I\'m new."',
-      "Take whatever you need.",
-    ],
-    cta: { label: "All open-source repos →", href: "https://github.com/zaxardery8011-design" },
+    lines: ["AI checkup: public beta", "Give the repo to your AI and read the instructions first. Compare your self-assessment with the scan of your computer", "It can misjudge. A person must review the result. Remove private details before sharing; do not post raw logs"],
+    cta: { label: "Read the checkup instructions and known misjudgments →", href: "https://github.com/zaxardery8011-design/aiwff-checkup-public" },
   },
   routes: {
     badge: "MINI BRAIN",
-    title: 'Local task engine: an agent runtime where every "done" leaves a receipt',
+    title: "See how it works, then decide whether to install it",
     // README 候選：A local minimal brain. Send a task to Telegram, Claude runs it on your machine…
     intro:
       "Send it a task, let it run in the background, get the result back, and watch progress in the browser. Task state stays in files on your machine. You can open them. Open source, MIT. Default mock mode does not need an API key. To make Claude CLI actually run, you use your own Claude account.",
@@ -50,11 +42,11 @@ export const home: HomeContent = {
         href: "/minibrain",
       },
       {
-        eyebrow: "Path B · I want to try it first",
-        title: "Try it: LINE lab",
-        body: "LINE lab. Talk to a running LINE twin. The lab account is live on LINE.",
-        cta: "Add LINE and try it →",
-        href: LINE_URL,
+        eyebrow: "Path B · I want to see it in action first",
+        title: "Tour the AIWFF R&D workspace (Machine A)",
+        body: "See how a task is assigned, leaves a result, and is checked afterward. This is the Captain's own R&D workspace. The public local task engine is a starting point, not a packaged copy of Machine A.",
+        cta: "Watch the full tour on the ZAX Taiwan channel →",
+        href: "https://www.youtube.com/watch?v=t75XOEyOELQ",
       },
     ],
   },
@@ -62,7 +54,7 @@ export const home: HomeContent = {
     badge: "FEATURED OPEN SOURCE",
     title: "Featured open source: build the engine first, then add the guardrails",
     intro:
-      "These are not concept drafts. They are projects iterated inside AIWFF work nodes, published on GitHub, or turned into entry points. Each card's stars and last-updated value are pulled from GitHub every hour, not frozen by hand.",
+      "These are tools and entry points published after iteration in the AIWFF R&D workspace (Machine A). Start with aiwff-runtime for the engine, soplint for rule checks, or line-persona for a LINE twin. See the cards for stars and update dates; the copy does not freeze those numbers.",
     introEmphasis: "It is not me saying the project is alive. GitHub says it.",
     cards: [
       {

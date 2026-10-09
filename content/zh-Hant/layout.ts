@@ -7,7 +7,7 @@ export const layout: LayoutContent = {
   meta: {
     title: "ZAX | 讓 AI 真的把事做完，而且能證明它做了",
     description:
-      "讓 AI 真的把事做完，而且能證明它做了。每個「做完了」都要留收據，結果與過程都留在你看得到的檔案裡。",
+      "讓 AI 把事做完 結果與過程留檔可查 陪每個人養出自己的「我們」 從開源工具、健檢公開測試版與實作入口開始",
   },
   brand: "ZAX",
   homeHref: "/",
@@ -33,7 +33,7 @@ export const layout: LayoutContent = {
     items: [
       "· aiwff-runtime open source · MIT",
       "· 技術支援: GitHub Issues",
-      "· 完整版 / 客製: zax.com.tw",
+      "· 導入與客製依需求討論 判斷與拍板：隊長；草稿與查證：主腦",
     ],
     copyright: "© 2026 zax.com.tw",
     social: [

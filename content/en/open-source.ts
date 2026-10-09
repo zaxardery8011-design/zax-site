@@ -9,18 +9,18 @@ export const openSource: OpenSourceContent = {
   meta: {
     title: "Open source | ZAX",
     description:
-      "We turn the traps we hit into tools, and put them on GitHub. Stars and last update are pulled from GitHub every hour. Whether a project is alive is what GitHub says.",
+      "Problems encountered in real work, turned into public tools. Choose an entry point for the engine, rule checks, or a ready-made tool. Check each README and evidence link for project status.",
   },
   hero: {
     badge: "OPEN SOURCE",
-    titleEmphasis: "We turn the traps we hit into tools.",
-    titleRest: "They are on GitHub.",
-    body: "Stars and last update are pulled from GitHub every hour.",
-    bodyEmphasis: "Whether a project is alive is what GitHub says.",
+    titleEmphasis: "Problems encountered in real work, turned into tools.",
+    titleRest: "Source code is on GitHub.",
+    body: "Explore the engine, check rules, or take a tool. Start with what you need today; you do not need the whole stack.",
+    bodyEmphasis: "Stars and update dates are clues. Suitability still depends on the docs, tests, and your own acceptance checks.",
   },
   reposSection: {
     badge: "PUBLIC REPOS",
-    title: "Built for our own work, exposed so developers can inspect the method",
+    title: "Start with the first three cards: the engine, rule checks, and a LINE twin",
   },
   repos: [
     {
@@ -258,6 +258,6 @@ export const openSource: OpenSourceContent = {
     href: "https://github.com/zaxardery8011-design",
     badge: "ZAX GITHUB",
     title: "See all open source →",
-    body: "Other public experiments, tools, and automation projects keep landing on GitHub. They get added to the site when the screenshots or docs are stable enough.",
+    body: "Other tools and public experiments are on GitHub. They are added here when there are docs or inspectable demos. A public repo is not necessarily a mature product.",
   },
 };

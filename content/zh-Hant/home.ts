@@ -12,24 +12,16 @@ export const home: HomeContent = {
     titleLead: "讓 AI 真的把事做完,",
     titleEmphasis: "而且能證明它做了。",
     subtitle:
-      "每個「做完了」都留收據。結果、過程、沒做到的地方，都是你電腦上查得到的檔。想自己裝一台?想先體驗? 兩條路都給你。",
+      "每個「做完了」都留收據 結果、過程、沒做到的地方 都能回頭查 想先看自己跟 AI 缺哪一段 可以從健檢開始 想裝本機任務引擎或先在 LINE 聊 也有入口",
     primaryCta: { label: "幫自己裝一台本機任務引擎 →", href: "/minibrain" },
-    secondaryCta: { label: "不想裝？LINE 先體驗", href: LINE_URL },
+    secondaryCta: { label: "用過或想一起玩 到未來村報到 →", href: "https://future-village.github.io/" },
   },
   northStar: {
-    lines: [
-      "讓 AI 真的把事做完，而且能證明它做了。",
-      "住在自己電腦上，做的每件事都查得到。",
-      "你電腦裡的資料可以變成你的大腦。",
-    ],
+    lines: ["陪每個人養出自己的「我們」", "這裡的「我們」是隊長＋主腦 人做判斷 AI 協助做事與查證", "先找你跟 AI 缺哪一段 再補工具、教材或陪跑 不賣打包好的腦"],
   },
   starter: {
-    lines: [
-      "不用自己看懂。",
-      "把網址丟給你的 AI，說「讀完解釋給我聽，我是新手」。",
-      "需要什麼自己拿。",
-    ],
-    cta: { label: "開源 repo 都在這 →", href: "https://github.com/zaxardery8011-design" },
+    lines: ["AI 健檢 公開測試版", "把 repo 丟給你的 AI 先讀說明 對照你的自評與電腦上的掃描結果", "工具會誤判 結果要由人再看 分享前先刪掉私人內容 不要貼原始紀錄"],
+    cta: { label: "看健檢說明與已知誤判 →", href: "https://github.com/zaxardery8011-design/aiwff-checkup-public" },
   },
   // 錢花在哪：只從 /contact 方案文字整理，不寫單價、不加 /contact 沒有的費用項目（A 裁示 a2b-20260924_074945-04cedcbb）。
   // 草稿，隊長過目後才合 master。適合／不適合／不寫程式怎麼開始三格未授權，不填。
@@ -51,7 +43,7 @@ export const home: HomeContent = {
   },
   routes: {
     badge: "MINI BRAIN",
-    title: "本機任務引擎：每個「做完了」都要留收據的 agent runtime",
+    title: "先看怎麼做 再決定要不要自己裝",
     intro:
       "丟一件事給它,背景跑完,結果推回來,瀏覽器看進度。待辦、進度和結果是你電腦上的檔。你可以打開、備份、搬走。開源、MIT。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。",
     cards: [
@@ -63,11 +55,11 @@ export const home: HomeContent = {
         href: "/minibrain",
       },
       {
-        eyebrow: "路線 B · 我想先玩 / 要人幫我做",
-        title: "先體驗：LINE 實驗室",
-        body: "懶得碰命令列、想先確認合不合用。直接在 LINE 跟一個跑起來的 LINE 分身聊,體驗過再決定。或找我們幫你導入完整版。",
-        cta: "加 LINE 先體驗 →",
-        href: LINE_URL,
+        eyebrow: "路線 B · 我想先看實際怎麼跑",
+        title: "AIWFF 研發廠區（A 機）導覽",
+        body: "看一件任務怎麼被派出去、留下結果 再回頭查證 這是隊長自己用的研發廠區 公開的本機任務引擎是一個起步入口 不是整台 A 機的打包複製",
+        cta: "看 ZAX 台灣隊完整導覽 →",
+        href: "https://www.youtube.com/watch?v=t75XOEyOELQ",
       },
     ],
   },
@@ -75,7 +67,7 @@ export const home: HomeContent = {
     badge: "FEATURED OPEN SOURCE",
     title: "精選開源專案：先有引擎,再把護欄補齊",
     intro:
-      "這些不是概念稿。是 AIWFF 工作節點實際迭代、放上 GitHub 開源或整理成入口的專案。每張卡的星數與「最近更新」都是每小時回源 GitHub 抓的,不是寫死的定版數字。",
+      "這些是 AIWFF 研發廠區（A 機）迭代後公開的工具與入口 想看引擎從 aiwff-runtime 開始 想查規則看 soplint 想拿 LINE 分身看 line-persona 星數與最近更新看卡片 不在文案裡寫死",
     introEmphasis: "不是我說它還活著,是 GitHub 說的。",
     cards: [
       {
