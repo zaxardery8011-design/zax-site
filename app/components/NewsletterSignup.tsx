@@ -64,7 +64,7 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
         type="email"
         placeholder="你的 email"
         className={[
-          "min-h-11 rounded-md border border-[color:var(--border)] bg-[color:var(--bg-0)]/70 px-4 py-2.5 text-sm text-[color:var(--fg-0)] outline-none transition placeholder:text-[color:var(--fg-2)] focus:border-[color:var(--link)]",
+          "min-h-11 rounded-md border border-[color:var(--border)] bg-[color:var(--bg-0)]/70 px-4 py-2.5 text-sm text-[color:var(--fg-0)] transition placeholder:text-[color:var(--fg-2)] focus:border-[color:var(--link)]",
           compact ? "w-full sm:w-56" : "",
         ].join(" ")}
       />
