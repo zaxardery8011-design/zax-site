@@ -33,7 +33,7 @@ export const openSource: OpenSourceContent = {
       pitch:
         "An open source task engine that runs on your own machine. Each task leaves a file. Default mock mode does not need an API key. To make Claude CLI actually run, you use your own Claude account.",
       start:
-        "git clone https://github.com/zaxardery8011-design/aiwff-runtime\ncp .env.example .env\nnpm start",
+        "git clone https://github.com/zaxardery8011-design/aiwff-runtime\ncd aiwff-runtime\ncp .env.example .env\nnpm run doctor\nnpm run demo\nnpm run verify-demo\nnpm run web",
       startNote: "",
       evidence: {
         label: "Tests are on GitHub Actions. The link is here. Pass or fail is whatever that page shows now.",
