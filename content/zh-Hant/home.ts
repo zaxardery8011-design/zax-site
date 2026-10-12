@@ -36,6 +36,8 @@ export const home: HomeContent = {
       ],
       monthly: [
         "LLM/API 費用：由你自己的帳號負擔，不含在報價內。",
+        // 隊長 10-12 答「客人自付」（tle_039423，A 裁示 a2b-20261012_010148-f9ed4bcf）；只補這句，不加金額或方案名。
+        "LINE 官方帳號費、主機費由客人自付。",
       ],
       // 「不含代管」放小註不放右欄，免得被讀成另有月費代管（A 裁示 a2b-20260924_092744-57cebdb4）。
       note: "LINE 分身架設不含後續代管維運。三個方案各自含什麼、不含什麼，看服務方案頁。",
@@ -48,14 +50,15 @@ export const home: HomeContent = {
       "丟一件事給它,背景跑完,結果推回來,瀏覽器看進度。待辦、進度和結果是你電腦上的檔。你可以打開、備份、搬走。開源、MIT。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。",
     cards: [
       {
-        eyebrow: "路線 A · 我想自己裝",
+        // 不用 A/B 編號：/minibrain 的「路線 A／B」是兩種裝法，首頁再編號會撞名（回歸 #5，A 裁示 a2b-20261012_010148-f9ed4bcf）。
+        eyebrow: "自己裝 · 到 /minibrain 選裝法",
         title: "DIY：clone 下來自己跑",
         body: "會開終端機、會複製貼上就夠。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。一段 prompt 交給你的 AI coding agent 自動裝好。",
         cta: "看一鍵安裝 →",
         href: "/minibrain",
       },
       {
-        eyebrow: "路線 B · 我想先看實際怎麼跑",
+        eyebrow: "先看 · 我想先看實際怎麼跑",
         title: "AIWFF 研發廠區（A 機）導覽",
         body: "看一件任務怎麼被派出去、留下結果 再回頭查證 這是隊長自己用的研發廠區 公開的本機任務引擎是一個起步入口 不是整台 A 機的打包複製",
         cta: "看 ZAX 台灣隊完整導覽 →",

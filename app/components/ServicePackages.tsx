@@ -126,7 +126,7 @@ export function ServicePackages({ showReceipts = false }: { showReceipts?: boole
       </p>
 
       <p className="mt-5 text-xs text-[color:var(--fg-2)] leading-relaxed">
-        驗收後 7 天內的小改另寫在報價裡。LLM/API 費用由客戶自己的帳號負擔,不含在報價內；簽約與發票主體目前為臻安鑫實業社。
+        驗收後 7 天內的小改另寫在報價裡。LLM/API 費用由客戶自己的帳號負擔,不含在報價內；LINE 官方帳號費、主機費由客人自付；簽約與發票主體目前為臻安鑫實業社。
       </p>
     </section>
   );

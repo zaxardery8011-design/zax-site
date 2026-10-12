@@ -30,8 +30,9 @@ export const openSource: OpenSourceContent = {
       pitch:
         "裝在自己電腦上的開源任務引擎。每件任務留檔。預設 mock 不需要 API key。要叫 Claude CLI 真的跑，要用你自己的 Claude 帳號。",
       start:
-        "git clone https://github.com/zaxardery8011-design/aiwff-runtime\ncp .env.example .env\nnpm start",
-      startNote: "",
+        // 跟 /minibrain 路線 B 同一套（官方 docs/zh-TW/install.md），不再寫 npm start（回歸 #23）。
+        "git clone https://github.com/zaxardery8011-design/aiwff-runtime\ncd aiwff-runtime\ncp .env.example .env\nnpm run doctor\nnpm run demo\nnpm run verify-demo\nnpm run web",
+      startNote: "Windows 寫法和每一步說明看 /minibrain。",
       evidence: {
         label: "測試在 GitHub Actions，連結在這。過不過以那個頁面當下的結果為準。",
         href: "https://github.com/zaxardery8011-design/aiwff-runtime/actions",
