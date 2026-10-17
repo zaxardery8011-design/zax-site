@@ -19,7 +19,7 @@ export const metadata = pageMetadata({
 
 export default function Services() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <ServicePackages showReceipts />
       <section className="px-5 sm:px-6 pt-4 pb-20 max-w-5xl mx-auto w-full">
         <CTAButton href={layout.headerCta.href} className="inline-block text-center">
