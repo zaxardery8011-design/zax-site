@@ -44,6 +44,11 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // 兩個 root layout（app/(zh)、app/en）沒有共用的頂層 layout，對不上任何路由的網址
+  // 只能拿到 Next 內建的白底 404；開這個旗標後改由 app/global-not-found.tsx 接。
+  experimental: {
+    globalNotFound: true,
+  },
   async redirects() {
     return [
       { source: "/tw", destination: "/products", permanent: true },
