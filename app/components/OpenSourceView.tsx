@@ -56,7 +56,9 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
           title={reposSection.title}
           titleClassName="mb-10"
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* 手機單欄也要明寫 grid-cols-1（minmax(0,1fr)）：只寫 grid 時隱含欄是 auto，
+            卡內 whitespace-pre 的長指令會把整欄撐到 600px 以上，375 寬右半張卡被裁掉。 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {repos.map((repo, i) => {
             const meta = metas[i];
             return (
