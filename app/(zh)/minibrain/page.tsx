@@ -219,7 +219,9 @@ export default function MiniBrainPage() {
           </a>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
+        {/* grid-cols-1：lg 以下要明寫欄寬上限，否則 pre 裡不能斷的長網址／命令會用 min-content
+            把整欄撐出 320px 畫面外（被 body 的 overflow-x-clip 裁掉、量不到捲軸）。 */}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:items-start">
           <Card className="p-5 sm:p-7 flex flex-col" interactive={false} glow="primary">
             <div className="text-xs tracking-[0.24em] text-[color:var(--label)] mb-4">
               路線 A · 讓 AI 幫你裝
