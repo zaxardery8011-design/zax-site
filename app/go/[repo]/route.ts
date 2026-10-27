@@ -1,29 +1,4 @@
-const GITHUB_OWNER = "zaxardery8011-design";
-
-// GitHub public repositories fetched from the owner's public-repos API on
-// 2026-10-01. Keep this explicit so /go cannot become an open redirect.
-const ALLOWED_REPOS = new Set([
-  "aiwff-claude-plugin",
-  "aiwff-mini",
-  "aiwff-runtime",
-  "dataflywheel",
-  "dig-loop",
-  "execution-proofs",
-  "field-ops-demo",
-  "grok-bot-routines-tw",
-  "hyperv-mcp",
-  "line-persona",
-  "minibrain-cli",
-  "minibrain-kit",
-  "my-desktop-pet",
-  "soplint",
-  "task-ledger",
-  "tidetrace",
-  "x-fetch",
-  "zax-site",
-  "zax-social-assets",
-  "zaxardery8011-design",
-]);
+import { ALLOWED_REPOS, GITHUB_OWNER } from "@/app/lib/go";
 
 const SOURCE_PATTERN = /^[a-z0-9_-]{1,32}$/;
 
