@@ -67,6 +67,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* 標題平衡斷行（text-wrap: balance，Baseline 2024）：中文標題在窄寬常剩一兩個字掉到下一行。
+   1029 實量 11 頁 × 375/768/1280 共 37 個標題末行不到最長行的 34%。
+   放 @layer base：元件上若寫了 text-* 斷行工具類，工具類照樣蓋得過。 */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
 /* header 黏住後，頁內錨點（/minibrain #install #docs、/checklist #list）會捲到 header 底下。
    實量 header 高：md 以下兩排 158px（375 寬），md 以上 61px；各留一點空。 */
 html {
