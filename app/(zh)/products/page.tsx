@@ -72,9 +72,11 @@ export default function Products() {
         badge="PRODUCTS · 合利鑫科技"
         title={
           <>
-            <span className="steel-text">合利鑫科技有限公司</span>
-            <br />
-            監控器材 · 影音對講 · 商用音響 · 工程服務
+            {/* Two block lines instead of <br />: Chromium does not apply
+                text-wrap: balance to the text after a forced break, so the
+                second line left 工程服務 alone on its own row at 375/768. */}
+            <span className="block steel-text">合利鑫科技有限公司</span>
+            <span className="block">監控器材 · 影音對講 · 商用音響 · 工程服務</span>
           </>
         }
       >
