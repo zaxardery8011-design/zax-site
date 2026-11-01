@@ -7,7 +7,8 @@ import { SectionHeader } from "./SectionHeader";
 
 // 這頁每個行動原本都只有 mailto 一條路。瀏覽器沒設定郵件程式時,mailto 是點了沒反應
 // 的靜默失敗,所以每個出口都並排一條 LINE,兩條路指向同一個人。
-export const LINE_PERSONAL_URL = "https://line.me/R/ti/p/~zaxvip888";
+export const LINE_PERSONAL_ID = "zaxvip888";
+export const LINE_PERSONAL_URL = `https://line.me/R/ti/p/~${LINE_PERSONAL_ID}`;
 export const EMAIL = "zaxardery8011@gmail.com";
 
 // /contact 原有的 meta description（逐字）。/services 講的是同一組方案,共用這一句,不另寫。
@@ -100,9 +101,6 @@ export function ServicePackages({ showReceipts = false }: { showReceipts?: boole
               </p>
             ) : null}
             <div className="mt-auto pt-4">
-              <p className="text-sm font-semibold text-[color:var(--fg-0)] mb-4">
-                費用不寫在這頁。寫信或加 LINE 問。
-              </p>
               <CTAButton href={item.href} className="block w-full text-center">
                 {item.cta}
               </CTAButton>
@@ -114,6 +112,9 @@ export function ServicePackages({ showReceipts = false }: { showReceipts?: boole
               >
                 或加 LINE 直接問 →
               </CTAButton>
+              <p className="mt-2 text-center text-xs text-[color:var(--fg-1)]">
+                LINE ID：<span className="font-mono text-[color:var(--fg-0)]">{LINE_PERSONAL_ID}</span>
+              </p>
             </div>
           </Card>
         ))}
@@ -126,7 +127,7 @@ export function ServicePackages({ showReceipts = false }: { showReceipts?: boole
       </p>
 
       <p className="mt-5 text-xs text-[color:var(--fg-2)] leading-relaxed">
-        驗收後 7 天內的小改另寫在報價裡。LLM/API 費用由客戶自己的帳號負擔,不含在報價內；LINE 官方帳號費、主機費由客人自付；簽約與發票主體目前為臻安鑫實業社。
+        簽約與發票主體目前為臻安鑫實業社。
       </p>
     </section>
   );

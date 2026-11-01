@@ -133,7 +133,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
         </section>
       ) : null}
 
-      {/* 新手 30 秒：適合／不適合／錢花在哪／不寫程式怎麼開始；整區或單格沒填不渲染 */}
+      {/* 新手 30 秒：適合／不適合／不寫程式怎麼開始；整區或單格沒填不渲染 */}
       {newbie ? (
         <section
           id="newbie"
@@ -165,37 +165,6 @@ export async function HomeView({ content }: { content: HomeContent }) {
                 </ul>
               </Card>
             ) : null}
-            {/* 錢花在哪：一次性／每月兩欄，不寫單價；佔滿整列 */}
-            <Card id="cost" className="p-6 md:col-span-2" interactive={false}>
-              <h3 className="text-sm font-semibold text-[color:var(--label)] mb-4">
-                {newbie.labels.cost}
-              </h3>
-              <div className="grid gap-6 sm:grid-cols-2">
-                {(
-                  [
-                    [newbie.labels.oneTime, newbie.cost.oneTime],
-                    [newbie.labels.monthly, newbie.cost.monthly],
-                  ] as const
-                ).map(([label, items]) => (
-                  <div key={label}>
-                    <h4 className="font-semibold text-[color:var(--fg-0)] mb-2">{label}</h4>
-                    <ul className="space-y-2 text-sm text-[color:var(--fg-1)] leading-relaxed">
-                      {items.map((item) => (
-                        <li key={item} className="flex gap-2">
-                          <span className="text-[color:var(--label)]">-</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-              {newbie.cost.note ? (
-                <p className="mt-5 text-xs text-[color:var(--fg-2)] leading-relaxed">
-                  {newbie.cost.note}
-                </p>
-              ) : null}
-            </Card>
             {newbie.startNoCode ? (
               <Card className="p-6" interactive={false}>
                 <h3 className="text-sm font-semibold text-[color:var(--label)] mb-3">

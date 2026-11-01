@@ -45,7 +45,7 @@ const brands = [
 ];
 
 // 這六個型號原本擠在上面那張品牌卡的一行敘述裡,產品線區塊擺的是四個永遠不會填上的
-// 灰色骨架。真東西在,只是沒被擺到該擺的位置。規格與報價不寫死在頁面上,問現場才準。
+// 灰色骨架。真東西在,只是沒被擺到該擺的位置。規格不寫死在頁面上,問現場才準。
 const productLine = [
   { model: "M10", name: "10 吋室內機", group: "室內機" },
   { model: "P7", name: "7 吋室內機", group: "室內機" },
@@ -151,7 +151,7 @@ export default function Products() {
           title="產品線 · 優美達 UMDEYE"
         >
           下面六台是這條線目前實際供應的型號。沒列出來的品項不代表調不到,問了才知道。
-          規格與報價會隨場域配置不同,以現場確認為準,不在這頁寫死。
+          規格會隨場域配置不同,以現場確認為準,不在這頁寫死。
         </SectionHeader>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {productLine.map((item) => (
