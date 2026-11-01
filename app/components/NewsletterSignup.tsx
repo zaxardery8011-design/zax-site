@@ -62,6 +62,8 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
         name="email_address"
         required
         type="email"
+        // 標明欄位用途(WCAG 1.3.5),手機鍵盤上方與瀏覽器才會跳出存好的 email 一鍵帶入。
+        autoComplete="email"
         placeholder="你的 email"
         className={[
           "min-h-11 rounded-md border border-[color:var(--border)] bg-[color:var(--bg-0)]/70 px-4 py-2.5 text-sm text-[color:var(--fg-0)] outline-none transition placeholder:text-[color:var(--fg-2)] focus:border-[color:var(--link)]",
