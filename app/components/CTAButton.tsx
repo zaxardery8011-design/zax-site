@@ -37,7 +37,9 @@ export function CTAButton({
     .join(" ");
 
   if (isExternalHref(href)) {
-    const safeRel = target === "_blank" ? rel ?? "noopener noreferrer" : rel;
+    // 不加 noreferrer：全站 Referrer-Policy 已是 strict-origin-when-cross-origin，只送出 https://www.zax.com.tw/；
+    // 加了反而讓 GitHub 流量報表看不到使用者是從官網點進 repo 的。
+    const safeRel = target === "_blank" ? rel ?? "noopener" : rel;
 
     return (
       <a className={classes} href={href} rel={safeRel} target={target} {...props}>

@@ -105,7 +105,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
                   <a
                     href={repo.evidence.href}
                     target={repo.evidence.href.startsWith("https://") ? "_blank" : undefined}
-                    rel={repo.evidence.href.startsWith("https://") ? "noopener noreferrer" : undefined}
+                    rel={repo.evidence.href.startsWith("https://") ? "noopener" : undefined}
                     className="underline underline-offset-2 text-[color:var(--link)]"
                   >
                     {repo.evidence.label}
@@ -120,7 +120,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
                   <a
                     href={repo.url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="mt-auto text-sm text-[color:var(--link)]"
                   >
                     {labels.externalLink}
@@ -143,7 +143,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
             as="a"
             href={allRepos.href}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="p-6 sm:p-8 flex flex-col h-full"
             glow="primary"
           >
