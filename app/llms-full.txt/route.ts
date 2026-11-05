@@ -1,5 +1,13 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import type { Metadata } from "next";
+import { metadata as aboutMeta } from "@/app/(zh)/about/page";
+import { metadata as casesMeta } from "@/app/(zh)/cases/page";
+import { metadata as checklistMeta } from "@/app/(zh)/checklist/page";
+import { metadata as contactMeta } from "@/app/(zh)/contact/page";
+import { metadata as minibrainMeta } from "@/app/(zh)/minibrain/page";
+import { metadata as productsMeta } from "@/app/(zh)/products/page";
+import { metadata as servicesMeta } from "@/app/(zh)/services/page";
 import { enReady } from "@/app/lib/en-ready";
 import { absoluteUrl } from "@/app/lib/metadata";
 import { prefixGap } from "@/app/lib/prefixGap";
@@ -25,6 +33,22 @@ export const dynamic = "force-static";
 
 const link = (l: LinkText) => `[${l.label}](${absoluteUrl(l.href)})`;
 const join2 = (a: string, b: string) => `${a}${prefixGap(a)}${b}`;
+
+// 文案寫在 page.tsx、沒進 content/** 的中文頁：排它們既有的 metadata，與 <head> 同一份字，不另寫說法。
+// 新增這類頁要補進來，否則 AI 在這裡只看得到導覽列上的連結。
+const ZH_PAGE_METAS: [string, Metadata][] = [
+  ["/cases", casesMeta],
+  ["/products", productsMeta],
+  ["/minibrain", minibrainMeta],
+  ["/checklist", checklistMeta],
+  ["/services", servicesMeta],
+  ["/about", aboutMeta],
+  ["/contact", contactMeta],
+];
+
+function pageMetaSection([path, meta]: [string, Metadata]): string[] {
+  return [`# ${meta.title}`, "", absoluteUrl(path), "", `> ${meta.description}`, ""];
+}
 
 function layoutSection(c: LayoutContent): string[] {
   return [
@@ -170,6 +194,8 @@ function build(): string {
     homeSection(zhHome),
     ["---", ""],
     openSourceSection(zhOpenSource, "/open-source"),
+    ["---", ""],
+    ...ZH_PAGE_METAS.map(pageMetaSection),
     ["---", ""],
     footerSection(zhLayout),
   ];
