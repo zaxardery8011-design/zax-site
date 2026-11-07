@@ -299,9 +299,17 @@ html, body {
     break-after: avoid;
   }
 
+  /* 頁尾第二排是社群鈕＋瀏覽人次，只留第一排的品牌與版權。
+     下內距也拿掉：/checklist 實量這兩樣會多擠出一張只有頁尾線的紙 */
+  footer {
+    padding-bottom: 0;
+    break-inside: avoid;
+  }
+
   /* 導覽、訂閱表單、按鈕在紙上按不了；hero 的動態底紋只會多印線條 */
   header,
   section:has(form),
+  footer > div > div:last-child,
   .hero-motion-layer,
   .btn-primary,
   .btn-ghost {
