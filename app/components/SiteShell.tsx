@@ -171,29 +171,32 @@ export function SiteShell({
             {content.headerCta.label}
           </Link>
         </nav>
-
-        {/* 手機那排。上面那排在 md 以下整個 hidden,沒有漢堡選單,
-            等於窄螢幕只到得了首頁跟 /contact。這排補上。
-            原本用橫向捲動,但捲軸是藏起來的:375px 下這排內容寬 535px、
-            可視只有 373px,「關於 ZAX」跟「聯絡」被切在右邊界外,
-            而畫面上沒有任何東西告訴你還能往右滑。改成換行,七項一次全在。 */}
-        <nav
-          aria-label={content.mobileNavLabel}
-          className="md:hidden w-full plate-ink border-b border-[color:var(--border)]"
-        >
-          <div className="flex flex-wrap gap-x-1.5 px-5 py-1 text-xs text-[color:var(--fg-1)]">
-            {content.nav.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="inline-flex min-h-11 items-center px-2.5 rounded-md btn-ghost transition whitespace-nowrap"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </nav>
       </header>
+
+      {/* 手機那排。上面那排在 md 以下整個 hidden,沒有漢堡選單,
+          等於窄螢幕只到得了首頁跟 /contact。這排補上。
+          原本用橫向捲動,但捲軸是藏起來的:375px 下這排內容寬 535px、
+          可視只有 373px,「關於 ZAX」跟「聯絡」被切在右邊界外,
+          而畫面上沒有任何東西告訴你還能往右滑。改成換行,七項一次全在。
+          放在 sticky header 外面:換行後這排有兩三行高,跟著黏住的話
+          375×667 一直蓋掉 24% 畫面、320×568 蓋掉 36%(11-09 實量)。
+          現在捲下去只留上面那排品牌＋CTA,這排跟內容一起捲走。 */}
+      <nav
+        aria-label={content.mobileNavLabel}
+        className="md:hidden w-full plate-ink border-b border-[color:var(--border)]"
+      >
+        <div className="flex flex-wrap gap-x-1.5 px-5 py-1 text-xs text-[color:var(--fg-1)]">
+          {content.nav.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="inline-flex min-h-11 items-center px-2.5 rounded-md btn-ghost transition whitespace-nowrap"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
 
       {children}
 

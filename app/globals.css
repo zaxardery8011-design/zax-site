@@ -79,14 +79,9 @@
 }
 
 /* header 黏住後，頁內錨點（/minibrain #install #docs、/checklist #list）會捲到 header 底下。
-   實量 header 高：md 以下兩排 158px（375 寬），md 以上 61px；各留一點空。 */
+   手機那排導覽 11-09 移出 sticky header，各寬度黏住的都只剩上面那排（實量 61px）；留一點空。 */
 html {
-  scroll-padding-top: 10.5rem;
-}
-@media (width >= 48rem) {
-  html {
-    scroll-padding-top: 4.5rem;
-  }
+  scroll-padding-top: 4.5rem;
 }
 
 /* overflow-x 用 clip 不用 hidden：hidden 會讓 html/body 變成捲動容器，
