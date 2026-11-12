@@ -268,3 +268,70 @@ html, body {
   color: var(--fg-0);
 }
 .btn-ghost:hover { border-color: var(--link); color: var(--link); }
+
+/* 列印：/checklist 寫明不提供下載，要留一份就是按列印。瀏覽器預設不印背景，
+   .steel-text 的字是透明的、靠背景裁出來，於是紙上標題跟品牌字整段消失（1107 實量 11/11 頁）。
+   這裡把語境變數換成白紙墨字，所以背景圖形開或關都讀得到；只在紙上有用的互動元件不印。 */
+@media print {
+  :root,
+  .on-ink,
+  .metal-card,
+  .on-face {
+    --bg-0: #fff;
+    --bg-1: #fff;
+    --bg-2: #fff;
+    --metal-ink-raise: #fff;
+    --metal-ink-sunk: #fff;
+    --fg-0: #101715;
+    --fg-1: #4d4b46;
+    --fg-2: #5f5d58;
+    --label: #5f5d58;
+    --link: #101715;
+    --border: #c9c7c2;
+  }
+
+  html,
+  body {
+    background: #fff;
+  }
+
+  .steel-text {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  /* /minibrain 提示框的淺琥珀字是 Tailwind 色票，不走語境變數，白紙上只有 1.11:1 */
+  .text-amber-100 {
+    color: var(--fg-0);
+  }
+
+  .metal-card {
+    background: #fff;
+    border-color: var(--border);
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  /* 頁尾第二排是社群鈕＋瀏覽人次，只留第一排的品牌與版權。
+     下內距也拿掉：/checklist 實量這兩樣會多擠出一張只有頁尾線的紙 */
+  footer {
+    padding-bottom: 0;
+    break-inside: avoid;
+  }
+
+  /* 導覽、訂閱表單、按鈕在紙上按不了；hero 的動態底紋只會多印線條 */
+  header,
+  section:has(form),
+  footer > div > div:last-child,
+  .hero-motion-layer,
+  .btn-primary,
+  .btn-ghost {
+    display: none;
+  }
+}
