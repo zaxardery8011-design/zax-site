@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { LayoutContent } from "@/content/schema";
 
 export const SITE_URL = "https://www.zax.com.tw";
@@ -67,6 +67,15 @@ export function pageMetadata({
     },
   };
 }
+
+// 兩個 root layout 共用的 viewport。全站只有深色底（globals.css 的墨底 --metal-ink）:
+// - themeColor:手機瀏覽器網址列跟著墨底,不會在深色頁面頂上亮出一條白。
+// - colorScheme:宣告整頁是深色,原生的捲軸、輸入框、自動填入底色才會跟著變深;
+//   沒宣告時是 normal,這些原生元件照淺色畫。
+export const siteViewport: Viewport = {
+  themeColor: "#101715",
+  colorScheme: "dark",
+};
 
 // root layout 的預設 metadata（每一頁沒自己寫 metadata 時的退路）。
 // metadataBase 一定要有:各頁的 canonical 與 og:url 用相對路徑寫,靠它組成絕對網址。

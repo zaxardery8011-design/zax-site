@@ -2,7 +2,7 @@ import { SiteShell } from "@/app/components/SiteShell";
 import { EN_NOT_READY_METADATA, enReady } from "@/app/lib/en-ready";
 import { geistMono, geistSans } from "@/app/lib/fonts";
 import { JsonLd, siteJsonLd } from "@/app/lib/jsonld";
-import { layoutMetadata } from "@/app/lib/metadata";
+import { layoutMetadata, siteViewport } from "@/app/lib/metadata";
 import { layout } from "@/content/en/layout";
 import "../globals.css";
 
@@ -11,6 +11,7 @@ import "../globals.css";
 // 發布閘（app/lib/en-ready.ts）：layout 內容還有佔位時，不渲染 SiteShell、metadata 也不用那份內容，
 // 這樣底下頁面 notFound() 出來的 404 HTML 裡不會帶任何佔位字串。
 export const metadata = enReady.layout ? layoutMetadata(layout) : EN_NOT_READY_METADATA;
+export const viewport = siteViewport;
 
 export default function EnRootLayout({
   children,

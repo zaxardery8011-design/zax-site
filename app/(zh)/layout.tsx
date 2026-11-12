@@ -2,12 +2,13 @@ import { NewsletterSignup } from "@/app/components";
 import { SiteShell } from "@/app/components/SiteShell";
 import { geistMono, geistSans } from "@/app/lib/fonts";
 import { JsonLd, siteJsonLd } from "@/app/lib/jsonld";
-import { layoutMetadata } from "@/app/lib/metadata";
+import { layoutMetadata, siteViewport } from "@/app/lib/metadata";
 import { layout } from "@/content/zh-Hant/layout";
 import "../globals.css";
 
 // 中文 root layout：網址維持原樣（/、/cases…），字從 content/zh-Hant/layout.ts 來。
 export const metadata = layoutMetadata(layout);
+export const viewport = siteViewport;
 
 export default function ZhRootLayout({
   children,
