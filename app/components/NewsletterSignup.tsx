@@ -51,6 +51,16 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
     }
   }
 
+  // 錯誤訊息的 live region 一開始就要在 DOM 裡(空的、sr-only 不佔版面),
+  // 跟文字一起插進去的 live region 螢幕報讀器常常不念。
+  const messageId = `newsletter-message-${source}`;
+  const message =
+    status === "unconfigured"
+      ? "訂閱功能設定中，請稍後再試。"
+      : status === "error"
+        ? "請先填入 email。"
+        : "";
+
   // 輸入框 + 送出鈕 + 錯誤訊息。兩種版型共用,差別只在外層排法。
   const formBody = (
     <>
@@ -63,6 +73,8 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
         required
         type="email"
         placeholder="你的 email"
+        aria-invalid={status === "error" ? true : undefined}
+        aria-describedby={message ? messageId : undefined}
         className={[
           "min-h-11 rounded-md border border-[color:var(--border)] bg-[color:var(--bg-0)]/70 px-4 py-2.5 text-sm text-[color:var(--fg-0)] transition placeholder:text-[color:var(--fg-2)] focus:border-[color:var(--link)]",
           compact ? "w-full sm:w-56" : "",
@@ -77,16 +89,19 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
       >
         訂閱實作紀錄
       </button>
-      {status === "unconfigured" ? (
-        <p aria-live="polite" className="text-sm text-[color:var(--label)]">
-          訂閱功能設定中，請稍後再試。
-        </p>
-      ) : null}
-      {status === "error" ? (
-        <p aria-live="polite" className="text-sm text-[color:var(--arc-orange)]">
-          請先填入 email。
-        </p>
-      ) : null}
+      <p
+        id={messageId}
+        aria-live="polite"
+        className={
+          status === "error"
+            ? "text-sm text-[color:var(--arc-orange)]"
+            : status === "unconfigured"
+              ? "text-sm text-[color:var(--label)]"
+              : "sr-only"
+        }
+      >
+        {message}
+      </p>
     </>
   );
 
