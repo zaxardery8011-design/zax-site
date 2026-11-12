@@ -195,7 +195,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
                 <a
                   href={item.sourceHref}
                   target={isExternalHref(item.sourceHref) ? "_blank" : undefined}
-                  rel={isExternalHref(item.sourceHref) ? "noopener noreferrer" : undefined}
+                  rel={isExternalHref(item.sourceHref) ? "noopener" : undefined}
                   className="mt-auto text-xs text-[color:var(--link)]"
                 >
                   <time className="font-mono">{item.measuredAt}</time>
@@ -224,7 +224,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
                 key={item.title}
                 href={item.href}
                 target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
+                rel={isExternal ? "noopener" : undefined}
                 className="p-6 sm:p-7 flex min-h-72 flex-col"
                 glow={ROUTE_GLOW[i] ?? "none"}
               >
@@ -257,7 +257,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
                 key={col.name}
                 href={col.repoHref}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="p-6 flex flex-col"
               >
                 <h3 className="text-xl font-bold mb-3">{col.name}</h3>
@@ -333,7 +333,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
                   <a
                     href={item.evidence.href}
                     target={isExternalHref(item.evidence.href) ? "_blank" : undefined}
-                    rel={isExternalHref(item.evidence.href) ? "noopener noreferrer" : undefined}
+                    rel={isExternalHref(item.evidence.href) ? "noopener" : undefined}
                     className="relative z-10 underline underline-offset-2 text-[color:var(--link)]"
                   >
                     {item.evidence.label}
@@ -342,7 +342,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
                 <CardLink
                   href={item.href}
                   target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  rel={isExternal ? "noopener" : undefined}
                   className="mt-auto pt-6 text-sm font-semibold text-[color:var(--link)] after:absolute after:inset-0 after:rounded-xl"
                 >
                   {isExternal ? s4OpenSource.labels.repoLink : s4OpenSource.labels.entryLink}

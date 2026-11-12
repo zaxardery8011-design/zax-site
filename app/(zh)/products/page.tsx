@@ -177,7 +177,7 @@ export default function Products() {
           <a
             href="https://line.me/R/ti/p/@hlc2703600"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="text-[color:var(--link)] hover:underline"
           >
             LINE @hlc2703600
@@ -199,7 +199,7 @@ export default function Products() {
                   <a
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener" : undefined}
                     className="text-[color:var(--link)] hover:underline"
                   >
                     {item.value}

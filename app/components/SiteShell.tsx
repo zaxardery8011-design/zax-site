@@ -250,7 +250,7 @@ export function SiteShell({
                   key={s.href}
                   href={s.href}
                   target={external ? "_blank" : undefined}
-                  rel={external ? "noopener noreferrer" : undefined}
+                  rel={external ? "noopener" : undefined}
                   aria-label={s.label}
                   title={s.label}
                   className={socialClass}

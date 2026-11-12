@@ -212,7 +212,7 @@ export default function MiniBrainPage() {
           <a
             href={REPO_URL}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="text-xs px-3 py-1.5 rounded border border-[color:var(--border)] text-[color:var(--fg-0)] hover:text-[color:var(--link)] transition"
           >
             看原始碼 repo
@@ -264,7 +264,7 @@ export default function MiniBrainPage() {
               <a
                 href={INSTALL_DOC_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="text-[color:var(--link)] underline underline-offset-4"
               >
                 官方安裝手冊 §2
@@ -315,7 +315,7 @@ export default function MiniBrainPage() {
               key={item.href}
               href={item.href}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="p-5 flex flex-col min-h-48"
             >
               <h2 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">

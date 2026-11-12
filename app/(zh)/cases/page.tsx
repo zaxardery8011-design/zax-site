@@ -100,7 +100,7 @@ const REAL_CASES: RealCase[] = [
         <a
           href="https://lc.zaxtw.com"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="text-[color:var(--link)] hover:underline"
         >
           lc.zaxtw.com
@@ -205,7 +205,7 @@ const REAL_CASES: RealCase[] = [
         <a
           href="https://github.com/zaxardery8011-design/soplint"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="text-[color:var(--link)] hover:underline"
         >
           github.com/zaxardery8011-design/soplint
@@ -265,7 +265,7 @@ function soplintCards(meta: RepoMeta | null): SummaryCard[] {
         <a
           href="https://github.com/zaxardery8011-design/soplint/actions"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="text-[color:var(--link)] hover:underline"
         >
           連結在這
