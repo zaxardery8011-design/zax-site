@@ -32,7 +32,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
   const metas = await fetchRepoMetas(repos.map((r) => r.repo));
 
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <PageHero
         badge={hero.badge}
         title={

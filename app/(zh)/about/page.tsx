@@ -43,7 +43,7 @@ export const metadata = pageMetadata({
 
 export default function About() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       {/* ── About ── */}
       <section
         id="about"

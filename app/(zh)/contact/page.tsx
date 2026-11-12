@@ -15,7 +15,7 @@ export const metadata = pageMetadata({
 
 export default function Contact() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <ServicePackages />
 
       {/* ── Contact ── */}

@@ -336,7 +336,7 @@ export default async function Cases() {
   );
 
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <PageHero
         baseClassName="px-5 sm:px-6 pt-20 pb-4 max-w-5xl mx-auto w-full"
         title={<span className="steel-text">實戰案例</span>}

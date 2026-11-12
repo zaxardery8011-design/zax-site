@@ -67,7 +67,7 @@ const contactItems = [
 
 export default function Products() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <PageHero
         badge="PRODUCTS · 合利鑫科技"
         title={

@@ -139,7 +139,7 @@ export const metadata = pageMetadata({
 
 export default function ChecklistPage() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <PageHero
         badge={`CHECKLIST · ${totalItems} 條`}
         title={

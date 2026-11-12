@@ -63,7 +63,7 @@ export async function HomeView({ content }: { content: HomeContent }) {
   );
 
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <PageHero
         animated
         id="hero"

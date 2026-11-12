@@ -88,6 +88,14 @@ const EN_READY_PATHS = [
   ...(enReady.openSource ? ["/open-source"] : []),
 ];
 
+// 跳到主要內容（WCAG 2.4.1）：鍵盤使用者不用每頁先 Tab 過整排導覽。
+// 目標是每頁 <main id="main">；捲動位置由 globals.css 的 scroll-padding-top 讓開 sticky header。
+// 字先放這裡：content/** 的 LayoutContent 沒有這個欄位，要搬進 content 由 A 決定。
+const skipLinkLabel: Record<Locale, string> = {
+  "zh-Hant": "跳到主要內容",
+  en: "Skip to main content",
+};
+
 const socialClass =
   "inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition";
 
@@ -138,6 +146,13 @@ export function SiteShell({
             })();
           `}
       </Script>
+
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:inline-flex focus:min-h-11 focus:items-center focus:px-4 focus:rounded-md btn-primary text-sm"
+      >
+        {skipLinkLabel[locale]}
+      </a>
 
       {/* ── Top Nav ──
           觸控目標：導覽每一格 min-h-11（44px）。響應式基線量到舊版膠囊約 30px 高，是每頁 <44px 目標數的主因。 */}

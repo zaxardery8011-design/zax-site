@@ -134,7 +134,7 @@ function BillingCallout({ tone = "light" }: { tone?: "light" | "dark" }) {
 
 export default function MiniBrainPage() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <section className="px-5 sm:px-6 pt-20 pb-14 md:pt-28 md:pb-20 max-w-5xl mx-auto w-full">
         <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div>
