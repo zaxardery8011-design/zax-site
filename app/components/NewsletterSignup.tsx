@@ -72,6 +72,8 @@ export function NewsletterSignup({ compact = false, source }: NewsletterSignupPr
         name="email_address"
         required
         type="email"
+        // 標明欄位用途(WCAG 1.3.5),手機鍵盤上方與瀏覽器才會跳出存好的 email 一鍵帶入。
+        autoComplete="email"
         placeholder="你的 email"
         aria-invalid={status === "error" ? true : undefined}
         aria-describedby={message ? messageId : undefined}
