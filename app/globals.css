@@ -125,7 +125,7 @@ html, body {
     background 180ms ease;
 }
 
-/* 卡片左緣：一道回火細線，hover 時才亮起 */
+/* 卡片左緣：一道回火細線，hover 或鍵盤焦點落在卡片（或卡片內連結）時亮起 */
 .card-hover::before {
   content: "";
   position: absolute;
@@ -137,7 +137,9 @@ html, body {
   opacity: 0.35;
   transition: opacity 180ms ease;
 }
-.card-hover:hover::before { opacity: 1; }
+.card-hover:hover::before,
+.card-hover:focus-visible::before,
+.card-hover:has(:focus-visible)::before { opacity: 1; }
 
 .card-hover:hover {
   border-color: var(--metal-face-dim);
