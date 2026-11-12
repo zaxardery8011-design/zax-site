@@ -217,6 +217,10 @@ html, body {
   .hero-ribbon {
     animation: none;
   }
+  /* 卡片 hover 不上浮、不放大；左緣亮線和陰影照舊，回饋還在 */
+  .card-hover:hover {
+    transform: none;
+  }
 }
 
 /* 標題強調：鋼面亮部到暗部的中性漸層 */
