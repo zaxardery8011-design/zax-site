@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
+import case1Tool from "@/public/case1_tool.png";
 import { Card, CTAButton, PageHero, SectionHeader } from "@/app/components";
 import { fetchRepoMeta, type RepoMeta } from "@/app/lib/github";
 import { pageMetadata } from "@/app/lib/metadata";
@@ -451,8 +453,14 @@ export default async function Cases() {
               </li>
             </ol>
             <div className="rounded-lg overflow-hidden border border-[color:var(--border)] mb-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/case1_tool.png" alt="社群貼文工具實際畫面" className="block w-full" />
+              {/* 靜態 import：寬高與模糊預覽自動帶上，依螢幕寬出 WebP；預設 lazy，捲到才下載 */}
+              <Image
+                src={case1Tool}
+                alt="社群貼文工具實際畫面"
+                sizes="(min-width: 1280px) 932px, calc(100vw - 84px)"
+                placeholder="blur"
+                className="block h-auto w-full"
+              />
             </div>
             <p className="text-xs text-[color:var(--fg-2)] mb-4">
               ↑ 工具實際畫面:左邊貼舊文＋主題,右邊內建貼文公式,按一下就出文
