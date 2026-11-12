@@ -50,6 +50,7 @@ export default function About() {
         className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <SectionHeader
+          as="h1"
           accent="secondary"
           badge="ABOUT"
           title="白天焊金屬，晚上焊系統。"

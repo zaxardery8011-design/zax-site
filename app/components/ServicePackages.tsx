@@ -63,6 +63,7 @@ export const servicePackages = [
   },
 ] as const;
 
+// /services 和 /contact 都以方案區開頭，沒有 PageHero，所以方案標題就是那一頁的 h1。
 export function ServicePackages({ showReceipts = false }: { showReceipts?: boolean }) {
   return (
     <section
@@ -70,6 +71,7 @@ export function ServicePackages({ showReceipts = false }: { showReceipts?: boole
       className="px-5 sm:px-6 pt-20 pb-12 max-w-5xl mx-auto w-full"
     >
       <SectionHeader
+        as="h1"
         badge="PACKAGES"
         title="你可以從哪一層開始"
         titleClassName="mb-8"
