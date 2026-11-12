@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { OpenSourceContent } from "@/content/schema";
 import { fetchRepoMetas } from "@/app/lib/github";
+import { goHref } from "@/app/lib/go";
 import { prefixGap } from "@/app/lib/prefixGap";
 import { Card } from "./Card";
 import { PageHero } from "./PageHero";
@@ -120,7 +121,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
                   </Link>
                 ) : (
                   <a
-                    href={repo.url}
+                    href={goHref(repo.url, "open-source")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-auto text-sm text-[color:var(--link)]"
