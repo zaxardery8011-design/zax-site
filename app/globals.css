@@ -40,6 +40,7 @@
   --label: var(--metal-face-dim);
   --link: var(--arc-orange);
   --border: var(--metal-edge);
+  --focus-ring: var(--temper-gold);
 }
 
 /* 亮面語境（卡片／銘牌的面） */
@@ -51,6 +52,7 @@
   --label: #5f5d58;
   --link: var(--metal-ink);
   --border: rgba(16, 23, 21, 0.16);
+  --focus-ring: var(--metal-ink);
 }
 
 @theme inline {
@@ -231,6 +233,22 @@ html, body {
 .btn-primary:hover {
   filter: brightness(1.08);
   box-shadow: 0 0 0 1px var(--temper-gold), 0 6px 18px rgba(212, 164, 99, 0.22);
+}
+
+/* 鍵盤焦點框（2026-10-11）：原本全站靠瀏覽器預設的 auto 框（各家長得不一樣），
+   email 輸入框又寫了 outline-none，只剩 1px 邊框換色。
+   統一成 2px 回火金實線、外推 2px：11 頁×2 寬 Tab 實量，框色對背後底色最低 7.27:1（WCAG 1.4.11 要 ≥3:1）。
+   框色跟著語境變數 --focus-ring 走（定義在上方深面／亮面兩段）：亮面卡片裡的元素用墨色，
+   卡片裡再嵌的深面板（.on-ink，例如 /minibrain 的 details）自動回到金色。
+   卡片本身被聚焦時框落在卡片外面的墨底，所以另外指定金色。
+   只掛 :focus-visible：滑鼠點按鈕不出框，鍵盤 Tab 才出。 */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+.metal-card:focus-visible,
+.on-face:focus-visible {
+  outline-color: var(--temper-gold);
 }
 
 /* 分隔線：頂邊一道回火細線，兩端收進墨色 */
