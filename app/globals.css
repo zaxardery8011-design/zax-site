@@ -165,16 +165,26 @@ html, body {
   pointer-events: none;
 }
 
+/* 格線漂移：動 ::before 的 transform（合成器跑），不動 background-position。
+   1108 實量：舊寫法閒置 4 秒主執行緒 Paint 964 次，首頁一打開就每幀重繪。
+   ::before 往左上多鋪一格 52px，位移剛好一格，接縫看不出來。 */
 .hero-grid {
   position: absolute;
   inset: 6% -10% 4%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 70%, transparent);
+  opacity: 0.32;
+  transform: perspective(900px) rotateX(58deg) translateY(8%);
+}
+
+.hero-grid::before {
+  content: "";
+  position: absolute;
+  inset: -52px 0 0 -52px;
   background-image:
     linear-gradient(rgba(232, 230, 225, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(232, 230, 225, 0.07) 1px, transparent 1px);
   background-size: 52px 52px;
-  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 70%, transparent);
-  opacity: 0.32;
-  transform: perspective(900px) rotateX(58deg) translateY(8%);
   animation: hero-grid-drift 16s linear infinite;
 }
 
@@ -203,8 +213,8 @@ html, body {
 }
 
 @keyframes hero-grid-drift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 52px 52px, 52px 52px; }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(52px, 52px, 0); }
 }
 
 @keyframes hero-ribbon-sweep {
@@ -213,7 +223,7 @@ html, body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-grid,
+  .hero-grid::before,
   .hero-ribbon {
     animation: none;
   }
