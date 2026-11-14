@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import type { LayoutContent, Locale, SocialKind } from "@/content/schema";
 import { enReady } from "@/app/lib/en-ready";
 import { LangSwitch } from "./LangSwitch";
+import { NavLink } from "./NavLink";
 
 // 兩個 root layout（app/(zh)、app/en）共用的外殼：導覽、頁尾、GoatCounter。
 // 字全部從 content/<locale>/layout.ts 來，這支只管版面。
@@ -96,6 +97,11 @@ const skipLinkLabel: Record<Locale, string> = {
   en: "Skip to main content",
 };
 
+// 目前頁：顏色加底線，不只靠顏色分辨（WCAG 1.4.1）。
+// 顏色要加 !：手機那排的 .btn-ghost 寫在 globals.css 沒進 layer，會蓋過 utilities。
+const navCurrentClass =
+  "aria-[current=page]:text-[color:var(--link)]! aria-[current=page]:underline aria-[current=page]:underline-offset-4";
+
 const socialClass =
   "inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition";
 
@@ -166,13 +172,13 @@ export function SiteShell({
           </Link>
           <div className="hidden md:flex gap-5 text-sm text-[color:var(--fg-1)] ml-4">
             {content.nav.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
-                className="inline-flex min-h-11 items-center hover:text-[color:var(--link)]"
+                className={`inline-flex min-h-11 items-center hover:text-[color:var(--link)] ${navCurrentClass}`}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
           </div>
           <div className="grow" />
@@ -202,13 +208,13 @@ export function SiteShell({
       >
         <div className="flex flex-wrap gap-x-1.5 px-5 py-1 text-xs text-[color:var(--fg-1)]">
           {content.nav.map((link) => (
-            <Link
+            <NavLink
               key={link.href}
               href={link.href}
-              className="inline-flex min-h-11 items-center px-2.5 rounded-md btn-ghost transition whitespace-nowrap"
+              className={`inline-flex min-h-11 items-center px-2.5 rounded-md btn-ghost transition whitespace-nowrap ${navCurrentClass}`}
             >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </nav>
