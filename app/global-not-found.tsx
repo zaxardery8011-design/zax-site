@@ -25,7 +25,9 @@ export default function GlobalNotFound() {
           locale="zh-Hant"
           newsletter={<NewsletterSignup compact source="site-footer" />}
         >
+          {/* id="main"：SiteShell 的「跳到主要內容」指向 #main，少了它這頁的跳轉鍵沒有目標（11-17 實測）。 */}
           <main
+            id="main"
             lang="en"
             className="flex flex-1 flex-col items-center justify-center gap-2 px-5 py-24 text-center"
           >
