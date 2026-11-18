@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NewsletterSignup } from "@/app/components";
 import { SiteShell } from "@/app/components/SiteShell";
 import { geistMono, geistSans } from "@/app/lib/fonts";
+import { siteViewport } from "@/app/lib/metadata";
 import { layout } from "@/content/zh-Hant/layout";
 import "./globals.css";
 
@@ -12,6 +13,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "404: This page could not be found.",
 };
+// 跟兩個 root layout 一樣帶 viewport：少了它，這頁沒有 color-scheme: dark 與 theme-color，
+// 深色站上的 email 輸入框、捲軸會用淺色原生樣式（11-18 實測）。
+export const viewport = siteViewport;
 
 export default function GlobalNotFound() {
   return (
