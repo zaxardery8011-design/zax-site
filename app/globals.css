@@ -279,6 +279,15 @@ html, body {
 }
 .btn-ghost:hover { border-color: var(--link); color: var(--link); }
 
+/* 高對比模式（Windows 對比佈景主題，forced-colors: active）：瀏覽器把底色換成系統色，
+   .btn-primary 只靠回火金底撐外型、沒有框，於是主按鈕跟一般連結長得一樣（1119 用 CDP 模擬實量，
+   5 頁×2 寬 每頁 3～6 顆全部 0px 框）。只在這個模式補一道系統按鈕框色；平常的畫面一個像素都不動。 */
+@media (forced-colors: active) {
+  .btn-primary {
+    border: 1px solid ButtonBorder;
+  }
+}
+
 /* 列印：/checklist 寫明不提供下載，要留一份就是按列印。瀏覽器預設不印背景，
    .steel-text 的字是透明的、靠背景裁出來，於是紙上標題跟品牌字整段消失（1107 實量 11/11 頁）。
    這裡把語境變數換成白紙墨字，所以背景圖形開或關都讀得到；只在紙上有用的互動元件不印。 */
