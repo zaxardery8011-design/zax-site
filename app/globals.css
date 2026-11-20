@@ -137,14 +137,21 @@ html, body {
   opacity: 0.35;
   transition: opacity 180ms ease;
 }
-.card-hover:hover::before,
 .card-hover:focus-visible::before,
 .card-hover:has(:focus-visible)::before { opacity: 1; }
 
-.card-hover:hover {
-  border-color: var(--metal-face-dim);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
-  transform: translateY(-2px) scale(1.01);
+/* 手寫的 :hover 一律包在 (hover: hover)：手機點一下會把 :hover 黏在元素上，
+   卡片停在上浮放大、按鈕停在發亮，直到點別處才放掉（1120 CDP 觸控模擬實量 4 頁 × 3 類 12/12 都黏住）。
+   Tailwind v4 的 hover: 工具類本來就這樣包；這裡讓 globals.css 的手寫規則跟它一致。
+   鍵盤焦點（:focus-visible）不受影響。 */
+@media (hover: hover) {
+  .card-hover:hover::before { opacity: 1; }
+
+  .card-hover:hover {
+    border-color: var(--metal-face-dim);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
+    transform: translateY(-2px) scale(1.01);
+  }
 }
 
 .hero-ambient {
@@ -246,9 +253,11 @@ html, body {
   color: var(--metal-ink);
   font-weight: 600;
 }
-.btn-primary:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 0 0 1px var(--temper-gold), 0 6px 18px rgba(212, 164, 99, 0.22);
+@media (hover: hover) {
+  .btn-primary:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 0 0 1px var(--temper-gold), 0 6px 18px rgba(212, 164, 99, 0.22);
+  }
 }
 
 /* 鍵盤焦點框（2026-10-11）：原本全站靠瀏覽器預設的 auto 框（各家長得不一樣），
@@ -277,7 +286,9 @@ html, body {
   border: 1px solid var(--border);
   color: var(--fg-0);
 }
-.btn-ghost:hover { border-color: var(--link); color: var(--link); }
+@media (hover: hover) {
+  .btn-ghost:hover { border-color: var(--link); color: var(--link); }
+}
 
 /* 高對比模式（Windows 對比佈景主題，forced-colors: active）：瀏覽器把底色換成系統色，
    .btn-primary 只靠回火金底撐外型、沒有框，於是主按鈕跟一般連結長得一樣（1119 用 CDP 模擬實量，
