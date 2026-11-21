@@ -102,8 +102,10 @@ const skipLinkLabel: Record<Locale, string> = {
 const navCurrentClass =
   "aria-[current=page]:text-[color:var(--link)]! aria-[current=page]:underline aria-[current=page]:underline-offset-4";
 
+// 頁尾社群鈕只有圖示、每頁 6 顆（LINE、寄信、聯絡頁都從這裡進）。
+// 原本 h-9 w-9（36px），跟導覽同標準拉到 44px（1121 實量 11 頁 × 3 寬，每格 6 顆全部 36×36）。
 const socialClass =
-  "inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition";
+  "inline-flex h-11 w-11 items-center justify-center rounded-md btn-ghost transition";
 
 export function SiteShell({
   children,
