@@ -28,8 +28,10 @@ export function CTAButton({
   variant = "primary",
   ...props
 }: CTAButtonProps) {
+  // 觸控目標：py-3（12px×2）＋ text-sm 行高 20px ＝ 44px。舊 py-2.5 只有 40～42px。
+  // 不改 display（呼叫端有 block / inline-block），所以用 padding 而不是 min-h-11。
   const classes = [
-    "px-5 py-2.5 rounded-md text-sm transition",
+    "px-5 py-3 rounded-md text-sm transition",
     variantClass[variant],
     className,
   ]

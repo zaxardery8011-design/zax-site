@@ -366,7 +366,7 @@ export default function MiniBrainPage() {
           <p className="mx-auto max-w-3xl text-[color:var(--fg-1)] leading-relaxed mb-6">
             本機任務引擎是開源最小版本。若你要多台機器一起跑、要規則控管、要接進你自己的流程，或想要有人幫你導入客製，聊聊。
           </p>
-          <CTAButton href="/contact" className="w-full justify-center sm:w-fit">
+          <CTAButton href="/contact" className="inline-flex w-full justify-center sm:w-fit">
             聯絡 zax.com.tw
           </CTAButton>
         </div>
