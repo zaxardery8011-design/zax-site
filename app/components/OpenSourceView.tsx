@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { OpenSourceContent } from "@/content/schema";
 import { fetchRepoMetas } from "@/app/lib/github";
+import { goHref } from "@/app/lib/go";
 import { prefixGap } from "@/app/lib/prefixGap";
 import { Card } from "./Card";
 import { PageHero } from "./PageHero";
@@ -32,7 +33,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
   const metas = await fetchRepoMetas(repos.map((r) => r.repo));
 
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <PageHero
         badge={hero.badge}
         title={
@@ -56,7 +57,9 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
           title={reposSection.title}
           titleClassName="mb-10"
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* 手機單欄也要明寫 grid-cols-1（minmax(0,1fr)）：只寫 grid 時隱含欄是 auto，
+            卡內 whitespace-pre 的長指令會把整欄撐到 600px 以上，375 寬右半張卡被裁掉。 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {repos.map((repo, i) => {
             const meta = metas[i];
             return (
@@ -105,7 +108,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
                   <a
                     href={repo.evidence.href}
                     target={repo.evidence.href.startsWith("https://") ? "_blank" : undefined}
-                    rel={repo.evidence.href.startsWith("https://") ? "noopener noreferrer" : undefined}
+                    rel={repo.evidence.href.startsWith("https://") ? "noopener" : undefined}
                     className="underline underline-offset-2 text-[color:var(--link)]"
                   >
                     {repo.evidence.label}
@@ -118,9 +121,9 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
                   </Link>
                 ) : (
                   <a
-                    href={repo.url}
+                    href={goHref(repo.url, "open-source")}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="mt-auto text-sm text-[color:var(--link)]"
                   >
                     {labels.externalLink}
@@ -143,7 +146,7 @@ export async function OpenSourceView({ content }: { content: OpenSourceContent }
             as="a"
             href={allRepos.href}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="p-6 sm:p-8 flex flex-col h-full"
             glow="primary"
           >

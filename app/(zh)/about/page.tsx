@@ -43,13 +43,14 @@ export const metadata = pageMetadata({
 
 export default function About() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       {/* ── About ── */}
       <section
         id="about"
         className="px-5 sm:px-6 py-20 max-w-5xl mx-auto w-full"
       >
         <SectionHeader
+          as="h1"
           accent="secondary"
           badge="ABOUT"
           title="白天焊金屬，晚上焊系統。"

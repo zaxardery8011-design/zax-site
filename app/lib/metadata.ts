@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { LayoutContent } from "@/content/schema";
 
 export const SITE_URL = "https://www.zax.com.tw";
@@ -32,6 +32,9 @@ export const OG_IMAGE = {
   alt: "ZAX:讓 AI 真的把事做完,而且能證明它做了。",
 } as const;
 
+// /llms-full.txt 不在 sitemap、robots、llms.txt 裡,這條 <link rel="alternate"> 是站上唯一指向它的入口。
+const LLMS_FULL_TYPES = { "text/plain": "/llms-full.txt" };
+
 // 一頁的 <title> 與它分享出去的 og:title 必須是同一句話。
 // 分開寫兩份,改一邊就會分岔 —— 而分享卡片那一份,自己在站上永遠看不到,錯了也不會被發現。
 // 所以這裡只收一份文案,title / og:title / canonical / og:url 全部從它長出來。
@@ -53,7 +56,9 @@ export function pageMetadata({
   return {
     title,
     description,
-    alternates: languages ? { canonical: path, languages } : { canonical: path },
+    alternates: languages
+      ? { canonical: path, languages, types: LLMS_FULL_TYPES }
+      : { canonical: path, types: LLMS_FULL_TYPES },
     // Next 合併 metadata 時,頁面這個 openGraph 物件會整塊蓋掉 layout 的那份
     // (不是逐欄合併),所以 siteName 與 locale 必須在這裡再寫一次,否則只有首頁有。
     openGraph: {
@@ -67,6 +72,15 @@ export function pageMetadata({
     },
   };
 }
+
+// 兩個 root layout 共用的 viewport。全站只有深色底（globals.css 的墨底 --metal-ink）:
+// - themeColor:手機瀏覽器網址列跟著墨底,不會在深色頁面頂上亮出一條白。
+// - colorScheme:宣告整頁是深色,原生的捲軸、輸入框、自動填入底色才會跟著變深;
+//   沒宣告時是 normal,這些原生元件照淺色畫。
+export const siteViewport: Viewport = {
+  themeColor: "#101715",
+  colorScheme: "dark",
+};
 
 // root layout 的預設 metadata（每一頁沒自己寫 metadata 時的退路）。
 // metadataBase 一定要有:各頁的 canonical 與 og:url 用相對路徑寫,靠它組成絕對網址。

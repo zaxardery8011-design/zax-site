@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import type { LayoutContent, Locale, SocialKind } from "@/content/schema";
 import { enReady } from "@/app/lib/en-ready";
 import { LangSwitch } from "./LangSwitch";
+import { NavLink } from "./NavLink";
 
 // 兩個 root layout（app/(zh)、app/en）共用的外殼：導覽、頁尾、GoatCounter。
 // 字全部從 content/<locale>/layout.ts 來，這支只管版面。
@@ -88,8 +89,23 @@ const EN_READY_PATHS = [
   ...(enReady.openSource ? ["/open-source"] : []),
 ];
 
+// 跳到主要內容（WCAG 2.4.1）：鍵盤使用者不用每頁先 Tab 過整排導覽。
+// 目標是每頁 <main id="main">；捲動位置由 globals.css 的 scroll-padding-top 讓開 sticky header。
+// 字先放這裡：content/** 的 LayoutContent 沒有這個欄位，要搬進 content 由 A 決定。
+const skipLinkLabel: Record<Locale, string> = {
+  "zh-Hant": "跳到主要內容",
+  en: "Skip to main content",
+};
+
+// 目前頁：顏色加底線，不只靠顏色分辨（WCAG 1.4.1）。
+// 顏色要加 !：手機那排的 .btn-ghost 寫在 globals.css 沒進 layer，會蓋過 utilities。
+const navCurrentClass =
+  "aria-[current=page]:text-[color:var(--link)]! aria-[current=page]:underline aria-[current=page]:underline-offset-4";
+
+// 頁尾社群鈕只有圖示、每頁 6 顆（LINE、寄信、聯絡頁都從這裡進）。
+// 原本 h-9 w-9（36px），跟導覽同標準拉到 44px（1121 實量 11 頁 × 3 寬，每格 6 顆全部 36×36）。
 const socialClass =
-  "inline-flex h-9 w-9 items-center justify-center rounded-md btn-ghost transition";
+  "inline-flex h-11 w-11 items-center justify-center rounded-md btn-ghost transition";
 
 export function SiteShell({
   children,
@@ -139,6 +155,13 @@ export function SiteShell({
           `}
       </Script>
 
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:inline-flex focus:min-h-11 focus:items-center focus:px-4 focus:rounded-md btn-primary text-sm"
+      >
+        {skipLinkLabel[locale]}
+      </a>
+
       {/* ── Top Nav ──
           觸控目標：導覽每一格 min-h-11（44px）。響應式基線量到舊版膠囊約 30px 高，是每頁 <44px 目標數的主因。 */}
       <header className="sticky top-0 z-20 w-full">
@@ -151,13 +174,13 @@ export function SiteShell({
           </Link>
           <div className="hidden md:flex gap-5 text-sm text-[color:var(--fg-1)] ml-4">
             {content.nav.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
-                className="inline-flex min-h-11 items-center hover:text-[color:var(--link)]"
+                className={`inline-flex min-h-11 items-center hover:text-[color:var(--link)] ${navCurrentClass}`}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
           </div>
           <div className="grow" />
@@ -187,13 +210,13 @@ export function SiteShell({
       >
         <div className="flex flex-wrap gap-x-1.5 px-5 py-1 text-xs text-[color:var(--fg-1)]">
           {content.nav.map((link) => (
-            <Link
+            <NavLink
               key={link.href}
               href={link.href}
-              className="inline-flex min-h-11 items-center px-2.5 rounded-md btn-ghost transition whitespace-nowrap"
+              className={`inline-flex min-h-11 items-center px-2.5 rounded-md btn-ghost transition whitespace-nowrap ${navCurrentClass}`}
             >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </nav>
@@ -235,7 +258,7 @@ export function SiteShell({
                   key={s.href}
                   href={s.href}
                   target={external ? "_blank" : undefined}
-                  rel={external ? "noopener noreferrer" : undefined}
+                  rel={external ? "noopener" : undefined}
                   aria-label={s.label}
                   title={s.label}
                   className={socialClass}

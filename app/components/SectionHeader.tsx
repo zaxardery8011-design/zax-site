@@ -4,6 +4,8 @@ type Accent = "primary" | "secondary";
 
 type SectionHeaderProps = {
   accent?: Accent;
+  /** 頁面沒有 PageHero 時，第一個區塊標題傳 "h1"，整頁才有一個 h1。樣式不變。 */
+  as?: "h1" | "h2";
   badge?: ReactNode;
   children?: ReactNode;
   className?: string;
@@ -20,6 +22,7 @@ const accentClass: Record<Accent, string> = {
 
 export function SectionHeader({
   accent = "primary",
+  as: Heading = "h2",
   badge,
   children,
   className = "",
@@ -38,7 +41,7 @@ export function SectionHeader({
           {badge}
         </div>
       ) : null}
-      <h2 className={resolvedHeadingClassName}>{title}</h2>
+      <Heading className={resolvedHeadingClassName}>{title}</Heading>
       {children ? (
         <p className={`text-[color:var(--fg-1)] leading-relaxed max-w-3xl ${descriptionClassName}`}>
           {children}

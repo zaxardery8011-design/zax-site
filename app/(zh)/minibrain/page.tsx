@@ -134,7 +134,7 @@ function BillingCallout({ tone = "light" }: { tone?: "light" | "dark" }) {
 
 export default function MiniBrainPage() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <section className="px-5 sm:px-6 pt-20 pb-14 md:pt-28 md:pb-20 max-w-5xl mx-auto w-full">
         <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div>
@@ -212,14 +212,16 @@ export default function MiniBrainPage() {
           <a
             href={REPO_URL}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="text-xs px-3 py-1.5 rounded border border-[color:var(--border)] text-[color:var(--fg-0)] hover:text-[color:var(--link)] transition"
           >
             看原始碼 repo
           </a>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
+        {/* grid-cols-1：lg 以下要明寫欄寬上限，否則 pre 裡不能斷的長網址／命令會用 min-content
+            把整欄撐出 320px 畫面外（被 body 的 overflow-x-clip 裁掉、量不到捲軸）。 */}
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:items-start">
           <Card className="p-5 sm:p-7 flex flex-col" interactive={false} glow="primary">
             <div className="text-xs tracking-[0.24em] text-[color:var(--label)] mb-4">
               路線 A · 讓 AI 幫你裝
@@ -262,7 +264,7 @@ export default function MiniBrainPage() {
               <a
                 href={INSTALL_DOC_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="text-[color:var(--link)] underline underline-offset-4"
               >
                 官方安裝手冊 §2
@@ -313,7 +315,7 @@ export default function MiniBrainPage() {
               key={item.href}
               href={item.href}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="p-5 flex flex-col min-h-48"
             >
               <h2 className="text-xl font-bold mb-3 text-[color:var(--fg-0)]">
@@ -364,7 +366,7 @@ export default function MiniBrainPage() {
           <p className="mx-auto max-w-3xl text-[color:var(--fg-1)] leading-relaxed mb-6">
             本機任務引擎是開源最小版本。若你要多台機器一起跑、要規則控管、要接進你自己的流程，或想要有人幫你導入客製，聊聊。
           </p>
-          <CTAButton href="/contact" className="w-full justify-center sm:w-fit">
+          <CTAButton href="/contact" className="inline-flex w-full justify-center sm:w-fit">
             聯絡 zax.com.tw
           </CTAButton>
         </div>

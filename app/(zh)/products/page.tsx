@@ -67,14 +67,16 @@ const contactItems = [
 
 export default function Products() {
   return (
-    <main className="flex flex-col w-full overflow-x-hidden">
+    <main id="main" className="flex flex-col w-full overflow-x-hidden">
       <PageHero
         badge="PRODUCTS · 合利鑫科技"
         title={
           <>
-            <span className="steel-text">合利鑫科技有限公司</span>
-            <br />
-            監控器材 · 影音對講 · 商用音響 · 工程服務
+            {/* Two block lines instead of <br />: Chromium does not apply
+                text-wrap: balance to the text after a forced break, so the
+                second line left 工程服務 alone on its own row at 375/768. */}
+            <span className="block steel-text">合利鑫科技有限公司</span>
+            <span className="block">監控器材 · 影音對講 · 商用音響 · 工程服務</span>
           </>
         }
       >
@@ -175,7 +177,7 @@ export default function Products() {
           <a
             href="https://line.me/R/ti/p/@hlc2703600"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="text-[color:var(--link)] hover:underline"
           >
             LINE @hlc2703600
@@ -197,7 +199,7 @@ export default function Products() {
                   <a
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener" : undefined}
                     className="text-[color:var(--link)] hover:underline"
                   >
                     {item.value}
